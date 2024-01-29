@@ -72,67 +72,76 @@
 
 <header class="header" data-header>
     <div class="container">
+            <div class="overlay" data-overlay></div>
+                <a href="#">
+                <h1 class="logo">HaiuCare Indonesia</h1>
+                </a>
 
-      <div class="overlay" data-overlay></div>
+            <nav class="navbar" data-navbar>
+                <div class="navbar-top">
+                <a href="#" class="logo">HaiuCare</a>
 
-      <a href="#">
-        <h1 class="logo">HaiuCare Indonesia</h1>
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <div class="navbar-top">
-          <a href="#" class="logo">Desinic</a>
-
-          <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-        </div>
+                <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+                </div>
 
         <ul class="navbar-list">
 
-          <li class="navbar-item">
+            <li class="navbar-item">
             <a href="/" class="navbar-link <?= ($active === "beranda") ? 'active' : ''; ?>" data-navbar-link>Beranda</a>
-            {{-- <a class="nav-link <?= ($active === "beranda") ? 'active' : ''; ?> text-white " aria-current="page" href="/"></i><h4>Beranda</h4></a> --}}
-        </li>
+            </li>
         
-        <li class="navbar-item">
-            <a href="#about" class="navbar-link <?= ($active === "tentang") ? 'active' : ''; ?>" data-navbar-link>Tentang</a>
-            {{-- <a class="nav-link <?= ($active === "beranda") ? 'active' : ''; ?> text-white" aria-current="page" href="/"></i><h4>Tentang</h4></a> --}}
-        </li>
+            <li class="navbar-item">
+            <a href="/tentang" class="navbar-link <?= ($active === "tentang") ? 'active' : ''; ?>" data-navbar-link>Tentang</a>
+            </li>
         
-        <li class="navbar-item">
+            <li class="navbar-item">
             <a href="#about" class="navbar-link <?= ($active === "layanan") ? 'active' : ''; ?>" data-navbar-link>Layanan</a>
-            {{-- <a href="#services" class="navbar-link" data-navbar-link>Services</a> --}}
-        </li>
+            </li>
         
-        <li class="navbar-item">
-              <a href="#about" class="navbar-link <?= ($active === "donasi") ? 'active' : ''; ?>" data-navbar-link>Donasi</a>
-              {{-- <a href="#features" class="navbar-link" data-navbar-link>Features</a> --}}
+            <li class="navbar-item">
+            <a href="#about" class="navbar-link <?= ($active === "donasi") ? 'active' : ''; ?>" data-navbar-link>Donasi</a>
             </li>
             
             <li class="navbar-item">
-                <a href="#about" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>Project</a>
-                {{-- <a href="#blog" class="navbar-link" data-navbar-link>Blog</a> --}}
+            <a href="#about" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>Project</a>
             </li>
             
-          <li class="navbar-item">
-              <a href="#about" class="navbar-link <?= ($active === "kontak") ? 'active' : ''; ?>" data-navbar-link>Kontak</a>
-            {{-- <a href="#" class="navbar-link" data-navbar-link>Contact Us</a> --}}
-        </li>
+            <li class="navbar-item">
+            <a href="#about" class="navbar-link <?= ($active === "kontak") ? 'active' : ''; ?>" data-navbar-link>Kontak</a>
+            </li>
 
         </ul>
 
       </nav>
 
-      <a href="/login" class="btn">
-        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-        <span>Login</span>
-      </a>
+      <ul class="navbar-nav ms-auto">
 
-      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
+        @auth
 
-    </div>
-  </header>
+        <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, <br> {{ auth()->user()->name }}
+            </a>
+
+        </ul>
+            <a class="btn-4" href="/dashboard"><ion-icon name="list-circle-outline"></ion-icon></i></a>
+        </li>
+            
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="btn-4"><ion-icon name="log-out-outline"></ion-icon></button>
+                    </form>
+            
+        </li>
+
+        @else
+        <li class="nav-item"></li>
+        <a href="/login" class="btn-2 <?= ($active === "login") ? 'active' : ''; ?> text-dark"><i class="bi bi-box-arrow-in-right mr-2 text-dark"></i> Login</a>
+
+        @endauth
+    </ul>
+</div>      
+        </header>

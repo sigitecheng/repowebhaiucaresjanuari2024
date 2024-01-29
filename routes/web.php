@@ -48,36 +48,20 @@ Route::get('/', function () {
         "donasi3"           =>  "frontendweb/donasi/donasi3.jpg",
         "donasi4"           =>  "frontendweb/donasi/donasi4.jpg",
         "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
-        // "nama"              => "Sigit Septiadi Prasetyo",
-        // "email"             => "Sigit@gmail.com",
-        // "image"             => "beranda/beranda.jpg ",
-        // "anak-anak"         => "beranda/anak-anak.jpg ",
-        // "anak"              => "beranda/anak.jpg ",
-        // "bangunan"          => "beranda/bangunan.jpg ",
-        // "bangunantaklayak"  => "beranda/bangunantaklayak.jpg ",
-        // "barangjual"        => "beranda/barangjual.jpg ",
-        // "baru1"             => "beranda/baru1.jpg ",
-        // "beranda"           => "beranda/beranda.jpg ",
-        // "gambar2"           => "beranda/gambar2.jpg ",
-        // "gambar3"           => "beranda/gambar3.jpg ",
-        // "gambar4"           => "beranda/gambar4.jpg ",
-        // "gambar5"           => "beranda/gambar5.jpg ",
-        // "lambang1"          => "beranda/lambang1.jpg ",
-        // "lambang2"          => "beranda/lambang2.jpg ",
-        // "lambang3"          => "beranda/lambang3.jpg ",
-        // "lambang4"          => "beranda/lambang4.jpg ",
-        // "lambang5"          => "beranda/lambang5.jpg ",        
-        // "hero"              => "beranda/hero.jpg ",        
-        // "makanan"           => "beranda/makanan.jpg ",        
-        // "makananbaru"       => "beranda/makananbaru.jpg ",        
-        // "pendidikan"        => "beranda/pendidikan.jpg ",        
-        // "pendidikanbaru"    => "beranda/pendidikanbaru.jpg ",
-        // "imageistriku"      => "istriku.jpg ",        
-        // "active"            => 'beranda'
+      
     ]);
 });
 
 
+Route::get('/tentang', function () {
+    return view('frontendweb/tentang', [
+        "title"     => "Tentang",
+        // "nama"      => "Sigit Septiadi Prasetyo",
+        // "email"     => "Sigit@gmail.com",
+        // "image"     => "istriku.jpg ",
+        "active" => 'tentang'
+    ]);
+});
 
 
 

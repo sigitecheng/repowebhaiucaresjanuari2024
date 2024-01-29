@@ -27,22 +27,25 @@
     --royal-blue-dark: hsl(236, 100%, 50%);
     --chrome-yellow: hsl(39, 100%, 52%);
     --space-cadet-1: hsl(230, 41%, 25%);
-    --space-cadet-2: hsl(230, 59%, 16%);
+    --space-cadet-2: hsl(230, 59%, 20%);
     --winter-sky_50: hsla(335, 87%, 53%, 0.5);
     --purple-navy: hsl(236, 26%, 43%);
     --ksu-purple: hsl(0, 90%, 60%);
     --winter-sky: hsl(236, 100%, 50%);
+    --winter-skyblue: hsl(210, 100%, 60%);
     --razzmatazz: hsl(335, 87%, 40%);
     --platinum: hsl(0, 0%, 80%);
     --black_70: hsla(0, 0%, 0%, 0.7);
     --rajah: hsl(29, 99%, 67%);
     --white: hsl(0, 0%, 100%);
   
-    --gradient-1: linear-gradient(90deg,var(--royal-blue-dark) 0,var(--ksu-purple) 51%,var(--royal-blue-dark));
+    --gradient-1: linear-gradient(90deg,var(--royal-blue-dark) 0,var(--winter-skyblue) 51%,var(--royal-blue-dark));
     --gradient-2: linear-gradient(90deg,var(--razzmatazz) ,var(--rajah));
     --gradient-3: linear-gradient(90deg, hsl(210, 100%, 70%), hsl(240, 100%, 20%));
     --gradient-4: linear-gradient(90deg, hsl(0, 0%, 50%), hsl(210, 100%, 70%));
     --gradient-5: linear-gradient(90deg, hsl(220, 100%, 20%), hsl(240, 100%, 50%));
+    --gradient-6: linear-gradient(90deg, hsl(0, 90%, 60%),  hsl(335, 87%, 40%);
+    );
     
     
   
@@ -168,12 +171,21 @@
     #REUSED STYLE
   \*-----------------------------------*/
   
+
+
+
+  
+  
+  /*-----------------------------------*\
+    #HEADER STYLE
+  \*-----------------------------------*/
+  
   .container { padding-inline: 15px; }
   
   .h2,
   .h3 { 
     font-family: var(--ff-source-sans-pro); 
-    font-size: 10px;
+    font-size: 12px;
 }
   
   .btn {
@@ -212,6 +224,19 @@
     margin-top: 1px;
   }
 
+  .btn-4 {
+    background-image: var(--gradient-5);
+    background-size: 100%;
+    color: var(--white);
+    padding: 12px 35px;
+    font-size: var(--fs-8);
+    font-weight: var(--fw-500);
+    border-radius: 0 25px;
+    transition: var(--transition-2);
+    margin-top: 1px;
+    gap: 0px;
+  }
+
   .btn-judul {
     background-image: var(--gradient-5);
     background-size: 100%;
@@ -236,7 +261,6 @@
     border-radius: 0 25px;
     transition: var(--transition-3);
   }
-
   
   .btn:is(:hover, :focus) { background-position: right; }
   
@@ -337,7 +361,7 @@
   }
   
   .navbar {
-    background-color: var(--white);
+    background-color: var(--black_70);
     position: fixed;
     top: 0;
     left: -280px;
@@ -364,7 +388,7 @@
   }
   
   .navbar-top .logo {
-    color: var(--st-patricks-blue);
+    color: var(--black_70);
     font-size: 4.2rem;
     font-weight: var(--fw-700);
   }
@@ -421,7 +445,7 @@
   .hero-content { margin-block-end: 50px; }
   
   .hero-subtitle {
-    color: var(--chrome-yellow);
+    color: var(--chrome-yellow);s
     font-family: var(--ff-source-sans-pro);
     font-size: var(--fs-7);
     margin-block-end: 15px;
@@ -765,7 +789,7 @@
     position: fixed;
     bottom: 0;
     right: 15px;
-    background-color: var(--winter-sky);
+    background-color: var(--chrome-yellow);
     color: var(--white);
     font-size: 2rem;
     padding: 14px;
@@ -987,6 +1011,8 @@
     .navbar-list {
       display: flex;
       gap: 25px;
+      color: black;
+
     }
   
     .navbar-item:not(:last-child) { border-bottom: none; }
@@ -1114,7 +1140,7 @@
 
 
   /* ==================== HALAMAN LOGIN ================ */
-  .form-signin .form-floating:focus-within {
+.form-signin .form-floating:focus-within {
     z-index: 2;
 }
 
@@ -1163,3 +1189,127 @@
     height: auto;
   }
   
+
+  .playstore {
+  width: 150px; /* Sesuaikan ukuran lebar sesuai keinginan */
+  height: 50px; /* Sesuaikan ukuran tinggi sesuai keinginan */
+}
+
+
+/* ===============HEADER LOGIN */
+
+.header-login .btn { display: none; }
+  
+.header-login {
+  --color: var(--black_70);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 14px;
+  z-index: 4;
+  transition: var(--transition-1);
+}
+
+.header-login .active {
+  --color: var(--black_70);
+
+  position: fixed;
+  background-color: var(--white);
+  box-shadow: 0 2px 30px hsla(0, 0%, 0%, 0.1);
+}
+
+.header-login .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+
+.header-login .btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-inline-start: auto;
+}
+
+
+  
+.header-login { padding-block: 20px; }
+
+
+/* HALAMAN LOGIN */
+/* ------------------------------------------------ */
+
+/* =============== */
+.container.halaman-login {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-signin {
+  text-align: center;
+}
+
+.form-signin h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-floating {
+  margin-bottom: 15px;
+}
+
+.form-floating input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-floating label {
+  position: relative;
+  top: -25px;
+  font-size: 14px;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.d-block.text-center {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.alert {
+  margin-top: 15px;
+}
+
+.alert-danger,
+.alert-success {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+

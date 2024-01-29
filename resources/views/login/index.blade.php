@@ -2,8 +2,10 @@
 
 @section('container')
 
-<h1>Ini adalah halaman login</h1>
-{{-- <div class="row justify-content-center">
+<div class="container halaman-login">
+    
+    <h1>Ini adalah halaman login</h1>
+    <div class="row">
     <div class="col-md-4">
 
         @if(session()->has('success'))
@@ -22,7 +24,7 @@
         @endif
 
 
-        <main class="form-signin w-100 m-auto">
+        <main class="form-signin">
             <form target="_blank" action="/login" method="post">
                 @csrf
                 <h1 class="h3 mb-3 fw-normal text-center">{{ $title }}</h1>
@@ -57,5 +59,9 @@
             </form>
         </main>
     </div>
-</div> --}}
+    </div> 
+
+</div>
 @endsection
+
+{{-- @extends('layouts.footer') --}}

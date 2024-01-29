@@ -10,6 +10,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors"> -->
     <meta name="generator" content="Hugo 0.111.3">
 
+    <link rel="stylesheet" href="./css/home.css">
+
     <style>
         body {
             background-color: #00FFFF;
@@ -136,4 +138,4 @@
         </div>
 
 
-        @include('dashboard.layouts.footer')
+        {{-- @include('layouts.footer') --}}
