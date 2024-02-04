@@ -36,11 +36,12 @@ use App\Http\Controllers\AdminDashboardInvoicePesananController;
 
 // =======================================================================
 // HALAMAAN DASHBOARD FRONTEND WEB USERS
+
 Route::get('/', function () {
     return view('frontendweb/home', [
         "title"             => "Beranda",
         "active"            => "beranda",
-        "imagehome"         =>  "frontendweb/home/home.png",
+        "imagehome"         =>  "frontendweb/home/feberanda.png",
         "imagehome2"        =>  "frontendweb/home/home2.png",
         "imagehome3"        =>  "frontendweb/home/berandabaru.png",
         "donasi1"           =>  "frontendweb/donasi/donasi1.jpg",
@@ -48,20 +49,132 @@ Route::get('/', function () {
         "donasi3"           =>  "frontendweb/donasi/donasi3.jpg",
         "donasi4"           =>  "frontendweb/donasi/donasi4.jpg",
         "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
-      
+        
     ]);
 });
 
+
+// =======================================================================
+// HALAMAAN DASHBOARD FRONTEND WEB TENTANG
 
 Route::get('/tentang', function () {
     return view('frontendweb/tentang', [
-        "title"     => "Tentang",
-        // "nama"      => "Sigit Septiadi Prasetyo",
-        // "email"     => "Sigit@gmail.com",
-        // "image"     => "istriku.jpg ",
-        "active" => 'tentang'
+        "title"             => "Tentang",
+        "active"            => 'tentang',
+        "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
+        "imagetentang"      =>  "frontendweb/tentang/fetentang.png",
+        "imagetentang1"      =>  "frontendweb/tentang/tentang1.png",
     ]);
 });
+
+// =======================================================================
+// HALAMAAN DASHBOARD FRONTEND WEB LAYANAN
+
+Route::get('/layanan', function () {
+    return view('frontendweb/layanan', [
+        "title"             => "Layanan",
+        "active"            => 'layanan',
+        "imagelayanan"      =>  "frontendweb/layanan/felayanan.png",
+    ]);
+});
+
+
+
+// =======================================================================
+// HALAMAAN DONASI FRONTEND WEB LAYANAN
+
+Route::get('/donasi', function () {
+    return view('frontendweb/donasi', [
+        "title"             => "Donasi",
+        "active"            => 'donasi',
+        "imagedonasi"           =>  "frontendweb/donasi/fedonasi.png",
+        "imagedoninfra"         =>  "frontendweb/donasi/doninfrastruktur.jpg",
+        "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
+        "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
+        "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
+    ]);
+});
+
+
+// =======================================================================
+// HALAMAAN PROJECT FRONTEND WEB PROJECT 
+
+Route::get('/project', function () {
+    return view('frontendweb/project', [
+        "title"             => "Infrastruktur",
+        "active"            => 'project',
+        "imagedonasi"           =>  "frontendweb/donasi/fedonasi.png",
+        "imagedoninfra"         =>  "frontendweb/donasi/doninfrastruktur.jpg",
+        "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
+        "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
+        "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
+    ]);
+});
+
+// =======================================================================
+// HALAMAAN PROJECT FRONTEND WEB PROJECT 
+
+Route::get('/projectpendidikan', function () {
+    return view('frontendweb/projectpendidikan', [
+        "title"             => "Pendidikan",
+        "active"            => 'pendidikan',
+        "imagedonasi"           =>  "frontendweb/donasi/fedonasi.png",
+        "imagedoninfra"         =>  "frontendweb/donasi/doninfrastruktur.jpg",
+        "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
+        "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
+        "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
+    ]);
+});
+
+// =======================================================================
+// HALAMAAN PROJECT FRONTEND WEB PROJECT 
+
+Route::get('/projectkesehatan', function () {
+    return view('frontendweb/projectkesehatan', [
+        "title"             => "Kesehatan",
+        "active"            => 'kesehatan',
+        "imagedonasi"           =>  "frontendweb/donasi/fedonasi.png",
+        "imagedoninfra"         =>  "frontendweb/donasi/doninfrastruktur.jpg",
+        "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
+        "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
+        "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
+    ]);
+});
+
+// =======================================================================
+// HALAMAAN PROJECT FRONTEND WEB PROJECT 
+
+Route::get('/projectmakanan', function () {
+    return view('frontendweb/projectmakanan', [
+        "title"             => "Makanan",
+        "active"            => 'makanan',
+        "imagedonasi"           =>  "frontendweb/donasi/fedonasi.png",
+        "imagedoninfra"         =>  "frontendweb/donasi/doninfrastruktur.jpg",
+        "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
+        "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
+        "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
+    ]);
+});
+
+
+
+
+// MENAMBAHKAN FITUR MIDLEWARE -> PENGGUNAAN GUEST UNTUK HALAMAN YANG BELUM TERAUTENTIKASI ATAU TERDAFTAR
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest'); // PENAMBAHAN FITUR GUEST 
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
+
+//Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', function () {
+    return view('dashboard.index', [
+        "title"        => "Dashboard",
+    ]);
+})->middleware('auth');
+
+
 
 
 
@@ -172,22 +285,6 @@ Route::get('/authors/{author:username}', function (User $author) {
 
     ]);
 });
-
-// MENAMBAHKAN FITUR MIDLEWARE -> PENGGUNAAN GUEST UNTUK HALAMAN YANG BELUM TERAUTENTIKASI ATAU TERDAFTAR
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest'); // PENAMBAHAN FITUR GUEST 
-Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
-
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store']);
-
-//Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware('auth');
-
-
-
 
 // Route::get('/dashboard/posts/checkSLug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::get('dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');

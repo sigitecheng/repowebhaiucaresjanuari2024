@@ -1,45 +1,4 @@
-{{-- <!doctype html>
-<html lang="en"> --}}
-    
-    {{-- <head> --}}
-        <!-- Required meta tags -->
-    {{-- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     --}}
-    <!-- Bootstrap CSS -->
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
-
-    <!-- BOOTSTRAP ICON -->
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/beranda.css"> --}}
-    <!-- 
-      - favicon
-    -->
-    {{-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> --}}
-  
-    <!-- 
-      - custom css link
-    -->
-    {{-- <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Sans+Pro:wght@600;700&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"> --}}
-  
-    <!-- 
-      - google font link
-    -->
-    <!-- MY STYLE -->
-    
-  {{-- <link rel="stylesheet" href="./css/home.css"> --}}
-
-  <!-- 
-    - google font link
-  -->
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -56,8 +15,11 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./css/home.css">
-  {{-- <link rel="stylesheet" href="./css/style.css"> --}}
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/tentang.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layanan.css">
+  <link rel="stylesheet" href="css/donasi.css">
 
   <!-- 
     - google font link
@@ -73,7 +35,7 @@
 
     @include('partials.navbar')
     
-    {{-- <div class="container mx-auto flex items-center justify-between"> --}}
+    {{-- <div class="container mx-auto flex items-caenter justify-between"> --}}
       @yield('container')
       {{-- </div> --}}
       

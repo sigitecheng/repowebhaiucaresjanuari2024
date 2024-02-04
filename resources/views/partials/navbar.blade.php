@@ -97,19 +97,32 @@
             </li>
         
             <li class="navbar-item">
-            <a href="#about" class="navbar-link <?= ($active === "layanan") ? 'active' : ''; ?>" data-navbar-link>Layanan</a>
+            <a href="/layanan" class="navbar-link <?= ($active === "layanan") ? 'active' : ''; ?>" data-navbar-link>Layanan</a>
             </li>
         
             <li class="navbar-item">
-            <a href="#about" class="navbar-link <?= ($active === "donasi") ? 'active' : ''; ?>" data-navbar-link>Donasi</a>
+            <a href="/donasi" class="navbar-link <?= ($active === "donasi") ? 'active' : ''; ?>" data-navbar-link>Donasi</a>
+            </li>
+{{--             
+            <li class="navbar-item">
+            <a href="/project" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>Project</a>
+            </li> --}}
+
+            <li class="navbar-item">
+                <a href="/project" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>
+                    Project
+                </a>
+                <ul class="dropdown">
+                    <li><a class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link href="/project">Infrastruktur</a></li>        
+                    <li><a class="navbar-link <?= ($active === "pendidikan") ? 'active' : ''; ?>" data-navbar-link href="/projectpendidikan">Pendidikan</a></li>
+                    <li><a class="navbar-link <?= ($active === "kesehatan") ? 'active' : ''; ?>" data-navbar-link href="/projectkesehatan">Kesehatan</a></li>
+                    <li><a class="navbar-link <?= ($active === "makanan") ? 'active' : ''; ?>" data-navbar-link href="/projectmakanan">Makanan</a></li>
+                </ul>
             </li>
             
-            <li class="navbar-item">
-            <a href="#about" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>Project</a>
-            </li>
             
             <li class="navbar-item">
-            <a href="#about" class="navbar-link <?= ($active === "kontak") ? 'active' : ''; ?>" data-navbar-link>Kontak</a>
+            <a href="#footer" class="navbar-link <?= ($active === "kontak") ? 'active' : ''; ?>" data-navbar-link>Kontak</a>
             </li>
 
         </ul>
@@ -123,16 +136,19 @@
         <li class="nav-item dropdown">
 
             <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Welcome, <br> {{ auth()->user()->name }}
+                Welcome, {{ auth()->user()->name }}
             </a>
 
         </ul>
-            <a class="btn-4" href="/dashboard"><ion-icon name="list-circle-outline"></ion-icon></i></a>
+            <a class="btn-2" href="/dashboard">
+                <ion-icon name="list-circle-outline">
+                    </ion-icon></i>
+                </a>
         </li>
             
                     <form action="/logout" method="post">
                         @csrf
-                        <button type="submit" class="btn-4"><ion-icon name="log-out-outline"></ion-icon></button>
+                        <button type="submit" class="btn-2"><ion-icon name="log-out-outline"></ion-icon></button>
                     </form>
             
         </li>

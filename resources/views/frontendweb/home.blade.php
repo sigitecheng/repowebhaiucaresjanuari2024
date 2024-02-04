@@ -2,7 +2,6 @@
 
 @section('container')
 
-
 {{-- ======================================================================================== --}}
 {{-- HALAMAN BERANDA KAMI HAIU CARE INDONESIA --}}
 {{-- ======================================================================================== --}}
@@ -23,7 +22,9 @@
             "Tangan membantu merupakan sumber inspirasi untuk menciptakan perubahan bersama."
             </p>
 
-            <button class="btn">Kontak Kami</button>
+            <a href="#footer" >
+              <button class="btn-2" >Kontak Kami</button>
+            </a>
 
           </div>
 
@@ -49,7 +50,12 @@
 
           <div class="about-content">
 
-            <h2 class="h2 section-title underline"> ~ Mengapa Memilih Kami !?</h2>
+            {{-- <h2 class="h2 section-title underline"> ~ Mengapa Memilih Kami !?</h2> --}}
+            
+            <h2 class="h2 section-title underline">Mengapa Memilih Kami !? </h2>
+
+          {{-- <h2 class="h2 section-title underline">Mengapa Memilih Kami !? </h2> --}}
+
 
             <a href="" class="btn-misi">
                 {{-- <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon> --}}
@@ -81,7 +87,7 @@
 
           </div>
         <div class="div">  
-          <a href="" class="btn">
+          <a href="" class="btn-2">
             {{-- <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon> --}}
             <span>Fokus Pekerjaan Kami</span>
           </a>
@@ -163,7 +169,10 @@
       <section class="section service" id="services">
         <div class="container">
 
-          <h3 class="h2 section-title">~ Kami Bekerja dengan Cara yang Berbeda</h2>
+          {{-- <h3 class="h2 section-title">~ Kami Bekerja dengan Cara yang Berbeda</h2> --}}
+            
+          <h2 class="h2 section-title underline">Kami Bekerja dengan Cara yang Berbeda </h2>
+
 
           <ul class="service-list">
 
@@ -240,10 +249,10 @@
                     <div class="service-card">
                         <a href="/">
                     <div class="card-icon">
-                        <ion-icon name='basket'></ion-icon>
+                      <ion-icon name="medkit"></ion-icon>
                     </div>
                     <br>
-                    <h3 class="h3 title">Distribusi Barang</h3>
+                    <h3 class="h3 title">Kesehatan</h3>
 
                     <p class="text">
                         HaiuCare memberikan akses barang second berkualitas bagi semua, memastikan setiap orang dapat memenuhi kebutuhan sehari-hari dengan baik.    
@@ -356,7 +365,10 @@
 {{-- HALAMAN DONASI YANG SUDAH TERKUMPUL DI HAIU CARE INDONESIA --}}
 {{-- ======================================================================================== --}}
 
-<h3 class="h2 section-title">~ Distribusi Kemanusiaan</h2>
+{{-- <h3 class="h2 section-title">~ Distribusi Kemanusiaan</h2> --}}
+  
+  <h2 class="h2 section-title underline">Distribusi Kemanusiaan </h2>
+
 
 <section class="image-section2">
       <div class="image-container">
@@ -394,7 +406,7 @@
 {{-- HALAMAN FEATURES KAMI HAIU CARE INDONESIA --}}
 {{-- ======================================================================================== --}}
 
- <section class="section features" id="features"> 
+ {{-- <section class="section features" id="features"> 
         <div class="container">
 
           <h2 class="h2 section-title underline">Our Features</h2>
@@ -488,7 +500,7 @@
       </section>
  
 
-
+ --}}
 
 
 {{-- ======================================================================================== --}}

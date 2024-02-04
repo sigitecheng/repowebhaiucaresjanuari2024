@@ -44,8 +44,9 @@
     --gradient-3: linear-gradient(90deg, hsl(210, 100%, 70%), hsl(240, 100%, 20%));
     --gradient-4: linear-gradient(90deg, hsl(0, 0%, 50%), hsl(210, 100%, 70%));
     --gradient-5: linear-gradient(90deg, hsl(220, 100%, 20%), hsl(240, 100%, 50%));
-    --gradient-6: linear-gradient(90deg, hsl(0, 90%, 60%),  hsl(335, 87%, 40%);
-    );
+    --gradient-6: linear-gradient(90deg, hsl(0, 90%, 60%),  hsl(335, 87%, 40%));
+    --gradient-fedonasi: linear-gradient(90deg, hsl(120, 100%, 25%), hsl(60, 100%, 50%));
+
     
     
   
@@ -185,11 +186,18 @@
   .h2,
   .h3 { 
     font-family: var(--ff-source-sans-pro); 
-    font-size: 12px;
+    font-size: 2rem;
 }
+
+h2 {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
   
   .btn {
-    background-image: var(--gradient-2);
+    background-image: var(--gradient-1);
     background-size: 150%;
     color: var(--white);
     padding: 12px 35px;
@@ -201,7 +209,7 @@
   }
 
   .btn-2 {
-    background-image: var(--gradient-3);
+    background-image: var(--gradient-2);
     background-size: 150%;
     color: var(--white);
     padding: 12px 35px;
@@ -213,7 +221,7 @@
   }
 
   .btn-3 {
-    background-image: var(--gradient-4);
+    background-image: var(--gradient-3);
     background-size: 150%;
     color: var(--white);
     padding: 12px 35px;
@@ -224,18 +232,48 @@
     margin-top: 1px;
   }
 
-  .btn-4 {
-    background-image: var(--gradient-5);
-    background-size: 100%;
+  .btn-donasi1 {
+    background-image: var(--gradient-3);
+    background-size: 150%;
     color: var(--white);
     padding: 12px 35px;
     font-size: var(--fs-8);
     font-weight: var(--fw-500);
-    border-radius: 0 25px;
+    border-radius: 0 100px;
     transition: var(--transition-2);
-    margin-top: 1px;
-    gap: 0px;
+    margin-top: 3px;
+    width: 300px;
+    /* margin-bottom: 10px; */
   }
+
+  .btn-donasi2 {
+    background-image: var(--gradient-fedonasi);
+    background-size: 150%;
+    color: var(--white);
+    padding: 12px 35px;
+    font-size: var(--fs-8);
+    font-weight: var(--fw-500);
+    border-radius: 0 100px;
+    transition: var(--transition-2);
+    margin-top: 3px;
+    width: 300px;
+    /* margin-bottom: 10px; */
+  }
+
+  .btn-donasi3 {
+    background-image: var(--gradient-2);
+    background-size: 150%;
+    color: var(--white);
+    padding: 12px 35px;
+    font-size: var(--fs-8);
+    font-weight: var(--fw-500);
+    border-radius: 0 100px;
+    transition: var(--transition-2);
+    margin-top: 3px;
+    width: 300px;
+    /* margin-bottom: 10px; */
+  }
+
 
   .btn-judul {
     background-image: var(--gradient-5);
@@ -250,6 +288,31 @@
     
   }
 
+
+  /* Gaya CSS untuk flexbox container */
+.donasi-lengkap {
+  display: flex;
+  flex-direction: column; /* Mengatur tata letak elemen dalam kolom */
+  gap: 10px; /* Memberikan jarak antar elemen */
+}
+
+/* Gaya CSS untuk Learn More Link */
+.learn-more-link {
+  display: block;
+  color: var(--gradient-3);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  -webkit-text-stroke: 0.3px #000; /* Lebar garis 2px dengan warna hitam */
+  text-stroke: 0.3px #000; /* Lebar garis 2px dengan warna hitam */
+}
+
+.learn-more-link ion-icon {
+  margin-right: 5px; /* Memberikan jarak antara ikon dan teks */
+}
+
+
+
   .btn-misi {
     background-image: var(--gradient-2);
     background-size: 100%;
@@ -261,6 +324,8 @@
     border-radius: 0 25px;
     transition: var(--transition-3);
   }
+
+
   
   .btn:is(:hover, :focus) { background-position: right; }
   
@@ -269,7 +334,7 @@
   .banner-animation { animation: waveAnim 2s linear infinite alternate; }
   
   @keyframes waveAnim {
-    0% { transform: translate(0, 0) rotate(0); }
+    0% { transform: translate(0, 0) rotate(0p); }
     100% { transform: translate(2px, 2px) rotate(1deg); }
   }
   
@@ -461,7 +526,19 @@
     color: var(--white);
     font-size: var(--fs-8);
     margin-block-end: 30px;
+    text-align: justify;
   }
+
+  .hero {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  
+  
+  
+  
+  
   
   
   
@@ -573,7 +650,29 @@
     background-color: var(--winter-sky);
   }
   
-  
+  /* ----------TAMBAHAN BARU ---------- */
+
+  .card-donasi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px;
+  }
+
+  .card-donasi img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+
+  .card-donasi-text {
+    flex: 1;
+  }
   
   
   
@@ -619,7 +718,12 @@
     #BLOG
   \*-----------------------------------*/
   
-  .blog { padding-block-end: 120px; }
+  .blog { 
+    padding-block-end: 120px; 
+    margin-top:0px;
+    margin-bottom:0px;
+  
+  }
   
   .blog-list {
     display: grid;
@@ -670,6 +774,11 @@
     color: var(--winter-sky);
     font-size: 22px;
     --ionicon-stroke-width: 35px;
+  }
+
+  .blog-projet{
+    background-color: #ccc; /* Ganti dengan warna abu-abu yang diinginkan */
+    padding: 20px;
   }
   
   .publish-date,
@@ -863,7 +972,10 @@
       display: grid;
       grid-template-columns: 0.75fr 1fr;
       gap: 20px;
-      padding: 30px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+      margin-bottom: 15px; 
     }
   
     .blog-card .banner { margin-block-end: 0; }
@@ -930,7 +1042,8 @@
      * SERVICE
      */
   
-    .service-list { grid-template-columns: 1fr 1fr; }
+    .service-list { grid-template-columns: 2fr 1fr; }
+    .service-donasi { grid-template-columns: 4fr 1fr; }
   
   
   
@@ -1046,6 +1159,7 @@
      */
   
     .service-list { grid-template-columns: repeat(4, 1fr); }
+    /* .service-donasi { grid-template-columns: r_epeat(2, 1fr); } */
   
   
   
@@ -1115,6 +1229,7 @@
      * BLOG
      */
   
+    /* .blog-list { grid-template-columns: 1fr 1fr; } */
     .blog-list { grid-template-columns: 1fr 1fr; }
   
     .blog-card { height: 100%; }
@@ -1137,29 +1252,6 @@
   
   }
 
-
-
-  /* ==================== HALAMAN LOGIN ================ */
-.form-signin .form-floating:focus-within {
-    z-index: 2;
-}
-
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.form-registration input {
-    border-radius: 0;
-    margin-bottom: 1px;
-}
 
 
 /* ============================================= */
@@ -1243,44 +1335,6 @@
 /* HALAMAN LOGIN */
 /* ------------------------------------------------ */
 
-/* =============== */
-.container.halaman-login {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-signin {
-  text-align: center;
-}
-
-.form-signin h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.form-floating {
-  margin-bottom: 15px;
-}
-
-.form-floating input {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.form-floating label {
-  position: relative;
-  top: -25px;
-  font-size: 14px;
-  color: #333;
-}
 
 .btn-primary {
   background-color: #3498db;
@@ -1313,3 +1367,62 @@
   margin-bottom: 15px;
 }
 
+/* HALAMAN TENTANG  */
+/* ========================================= */
+.tentang.about {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Jika ingin menghilangkan jarak dari elemen induk juga */
+.tentang {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Jika ingin menghilangkan jarak dari semua elemen */
+
+/* --------------------------- */
+
+/* ====================================================== */
+/* Menyembunyikan dropdown secara default */
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--winter-skyblue); /* Warna latar belakang dropdown */
+  box-shadow: 2px 8px 16px 2px rgba(0, 0, 0, 0.2);
+  padding: 8px 8px;
+  z-index: 1;
+  font-weight: bold;
+  border-radius: 12px;
+  margin-top: 0px ; /* Menambahkan jarak atas dan bawah pada tulisan dalam dropdown */
+  margin-bottom: 0px ; /* Menambahkan jarak atas dan bawah pada tulisan dalam dropdown */
+}
+
+
+.dropdown a {
+  margin-top: 0px ; /* Menambahkan jarak atas dan bawah pada tulisan dalam dropdown */
+  margin-bottom: 0px ; /* Menambahkan jarak atas dan bawah pada tulisan dalam dropdown */
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+/* Menampilkan dropdown saat menu dihover */
+.navbar-item:hover .dropdown {
+  display: block;
+
+}
+
+/* -------------------- */
+.text-infra{
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.img-infra {
+  display: block; /* Membuat gambar menjadi blok, agar bisa menggunakan margin otomatis */
+  margin: auto; /* Memberikan margin otomatis untuk menengahkan gambar */
+  margin-top: 25px;
+}
