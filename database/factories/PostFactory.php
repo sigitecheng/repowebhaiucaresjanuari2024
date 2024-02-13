@@ -18,16 +18,34 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(mt_rand(1, 10)),
+            'user_id' => mt_rand(1, 8),
+            'category_id' => mt_rand(1, 4),
+            'kontraktor_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
+            'penanggung_jawab_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah penanggung jawab yang sesuai
+            'pengawas_lapangan_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah pengawas lapangan yang sesuai
+            'title' => $this->faker->sentence(mt_rand(5, 10)),
             'slug' => $this->faker->slug(),
+            'image' => $this->faker->imageUrl(),
+            // 'image' => $this->faker->image(storage_path('app/public/images'), 400, 300, null, false),
             'excerpt' => $this->faker->paragraph(),
             // 'body' => $this->faker->paragraphs(mt_rand(15, 30,)), (CARA PERTAMA)
             // 'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(mt_rand(15, 30,))) . '</p>', (CARA KEDUA)
             'body' => collect($this->faker->paragraphs(mt_rand(5, 15,)))
                 ->map(fn ($p) => "<p>$p</p>")
                 ->implode(''),
-            'user_id' => mt_rand(1, 8),
-            'category_id' => mt_rand(1, 6)
-        ];
+            
+            'lokasi' => $this->faker->address,
+            'anggaran' => $this->faker->randomFloat(2, 100000, 1000000),
+            'waktu_pelaksanaan' => $this->faker->date(),
+            'tujuan_proyek' => $this->faker->paragraph,
+            'risiko_mitigasi' => $this->faker->paragraph,
+            'dampak_lingkungan' => $this->faker->paragraph,
+            'status_id' => mt_rand(1, 4),
+            'tanggal_mulai' => $this->faker->date(),
+            'tanggal_selesai' => $this->faker->optional(0.7)->date(),
+            'published_at' => $this->faker->optional(0.8)->dateTimeThisMonth,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];        
     }
 }

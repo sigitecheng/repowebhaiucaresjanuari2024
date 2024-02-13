@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Dataproject_status;
+
+
 use Illuminate\Http\Request;
 use Psy\CodeCleaner\ReturnTypePass;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -17,19 +20,49 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        // return Post::where('user_id', auth()->user()->id)->get();
-        return view('dashboard.posts.index', [
-            'posts' => Post::where('user_id', auth()->user()->id)->get(),
+
+        return view('backend.fe_dataprojectpekerjaan.index', [
+            'posts'             => Post::where('user_id', auth()->user()->id)
+                                    ->orderBy('created_at', 'desc') // Menambahkan orderBy untuk mengurutkan berdasarkan waktu pembuatan secara descending
+                                        ->get(),
+            'title'             => 'Data Project',
+            'title_dashboard'   => 'Data Project Pekerjaan',
+            'categories'        => Category::all()
         ]);
+    // backend.fe_dataprojectpekerjaan.index
+    
+        
     }
+
+    // public function sub_infrastruktur()
+    // {
+    //      // Mengambil post berdasarkan kategori 'Infrastruktur'
+    //         $posts = Post::whereHas('category_id', function ($query) {
+    //             $query->where('name', 'Infrastruktur');
+    //         })
+    //         ->where('user_id', auth()->user()->id)
+    //         ->orderBy('created_at', 'desc')
+    //         ->get();
+
+    //         return view('backend.fe_dataprojectpekerjaan.sub_pekerjaan.infrastruktur', [
+    //         'posts'             => $posts,
+    //         'title'             => 'Data Project',
+    //         'title_dashboard'   => 'Data Project Pekerjaan'           
+    //         ]);
+    // }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create() // UNTUK MELAKUKAN PEMANGGILAN TANGKAP DATA DARI FORM YANG DIKIRIMKAN USERS
     {
-        return view('dashboard.posts.create', [
-            'categories' => Category::all()
+        return view('backend.fe_dataprojectpekerjaan.create', [
+            // 'post'                  => $post,
+            'post'                  => Post::all(),
+            'categories'            => Category::all(),
+            'status'                => Dataproject_status::all(),
+            'title'                 => 'Create New Project',
+            'title_halaman'         => 'Create New Project'
         ]);
     }
 
@@ -41,11 +74,23 @@ class DashboardPostController extends Controller
         // return $request->file('image')->store('post-images');
 
         $validateData = $request->validate([
-            'title' => 'required|max:255',
-            'slug' => 'required|unique:posts',
-            'category_id' => 'required',
-            'image' => 'image|file|max:1024',
-            'body' => 'required'
+            'title'                     => 'required|max:255',
+            'slug'                      => 'required|unique:posts',
+            'category_id'               => 'required',
+            'image'                     => 'image|file|max:1024',
+            'body'                      => 'required',
+            'kontraktor_id'             => 'required',
+            'penanggung_jawab_id'       => 'required',
+            'pengawas_lapangan_id'      => 'required',
+            'lokasi'                    => 'required',
+            'anggaran'                  => 'required',
+            'waktu_pelaksanaan'         => 'required',
+            'tujuan_proyek'             => 'required',
+            'risiko_mitigasi'           => 'required',
+            'dampak_lingkungan'         => 'required',
+            'status_id'                 => 'required',
+            'tanggal_mulai'             => 'required',
+            'tanggal_selesai'           => 'required'
         ]);
 
         if ($request->file('image')) {
@@ -57,7 +102,7 @@ class DashboardPostController extends Controller
 
         Post::create($validateData);
 
-        return redirect('/dashboard/posts')->with('success', 'New post has been added was successfully !');
+        return redirect('/dashboard/posts')->with('success', 'New Project has been added was successfully !');
     }
 
     /**
@@ -67,7 +112,9 @@ class DashboardPostController extends Controller
     {
         // return $post;
 
-        return view('dashboard.posts.show', [
+        return view('backend.fe_dataprojectpekerjaan.show', [
+            'title' => 'Show Data Project',
+            'title_halaman' => 'View Data',
             'post' => $post
         ]);
     }
@@ -77,9 +124,11 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)  // METHOD UNTUK MELAKUKAN UPDATE DATA DENGAN MENAMPILKAN DATA SEBELUMNYA YANG AKAN DI EDIT 
     {
-        return view('dashboard.posts.edit', [
+        return view('backend.fe_dataprojectpekerjaan.edit', [
             'post' => $post,
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'title' => 'Update Data',
+            'title_halaman' => 'Update Data',
         ]);
     }
 
@@ -91,11 +140,22 @@ class DashboardPostController extends Controller
         $rules = [
             'title' => 'required|max:255',
             // 'slug' => 'required|unique:posts',  // ITEM INI DI HILANGKAN KARENA SLUG YANG LAMA AKAN DITIMPA MENJADI YANG BARU 
-            'category_id' => 'required',
-            'image' => 'image|file|max:1024',
-            'body' => 'required'
+            'category_id'               => 'required',
+            'image'                     => 'image|file|max:1024',
+            'body'                      => 'required',
+            'kontraktor_id'             => 'required',
+            'penanggung_jawab_id'       => 'required',
+            'pengawas_lapangan_id'      => 'required',
+            'lokasi'                    => 'required',
+            'anggaran'                  => 'required',
+            'waktu_pelaksanaan'         => 'required',
+            'tujuan_proyek'             => 'required',
+            'risiko_mitigasi'           => 'required',
+            'dampak_lingkungan'         => 'required',
+            'status'                    => 'required',
+            'tanggal_mulai'             => 'required',
+            'tanggal_selesai'           => 'required'
         ];
-
 
         if ($request->slug != $post->slug) {
             $rules['slug'] = 'required|unique:posts';
@@ -118,7 +178,7 @@ class DashboardPostController extends Controller
         Post::where('id', $post->id)
             ->update($validateData);
 
-        return redirect('/dashboard/posts')->with('success', 'Post has been updated was successfully !');
+        return redirect('/dashboard/posts')->with('update', 'Project has been updated was successfully !');
     }
 
     /**
@@ -132,7 +192,7 @@ class DashboardPostController extends Controller
 
         Post::destroy($post->id);
 
-        return redirect('/dashboard/posts')->with('success', 'Post has been deleted was successfully !');
+        return redirect('/dashboard/posts')->with('delete', 'Project has been deleted was successfully !');
     }
 
     public function checkSlug(request $request)

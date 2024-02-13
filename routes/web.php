@@ -5,6 +5,7 @@
 
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Feadminberanda;
 
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +15,15 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminDashboardInvoicePesananController;
+use App\Http\Controllers\Fe_adminberandawebController;
+use App\Http\Controllers\DatausersandroidController;
+use App\Http\Controllers\SubController;
 // use App\Http\Controllers\AdminItemBarangdanHargaController;
 // use App\Http\Controllers\BarangbarangController;
 // use App\Http\Controllers\UserTabelBarangbarangController;
 // use App\Models\UserTabelBarangbarang;
 // use GuzzleHttp\Middleware;
+use App\Models\Datausersandroid;
 
 // use App\Models\Post;
 
@@ -169,15 +174,26 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 //Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard', function () {
-    return view('dashboard.index', [
+    return view('backend/dashboard.index', [
         "title"        => "Dashboard",
     ]);
 })->middleware('auth');
 
 
+// -----------------------------------------------------------
+// BACKEND ADMIN BERANDA FRONTENT WEB 
+// Route::get('/backendberanda', [Fe_DashboardwebadminController::class, 'index']);
+// Route::get('/backendberanda/edit/{dataadminberanda}', [Fe_DashboardwebController::class, 'edit']);
 
+Route::resource('/backendberanda', Fe_adminberandawebController::class)->middleware('auth');
+// routes/web.php
+Route::resource('/datausers', DatausersandroidController::class)->middleware('auth');
 
-
+// ---------------- ---------------- ---------------- ---------------- ---------------- ----------------
+// ROUTE UNTUK PANGAMBILAN DATA PROJECT
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+// Route::resource('/dashboard/posts/sub_infrastruktur', DashboardPostController::class,'sub_infrastruktur')->middleware('auth');
+Route::get('/sub/sub-infrastruktur', [SubController::class, 'sub_infrastruktur'])->middleware('auth');
 
 
 
@@ -199,20 +215,23 @@ Route::get('/dashboard', function () {
 // });
 
 // ========================================================================
-Route::get('/about', function () {
-    return view('about', [
-        "title"     => "Tentang",
-        "nama"      => "Sigit Septiadi Prasetyo",
-        "email"     => "Sigit@gmail.com",
-        "image"     => "istriku.jpg ",
-        "active" => 'tentang'
-    ]);
-});
+// Route::get('/about', function () {
+//     return view('about', [
+//         "title"     => "Tentang",
+//         "nama"      => "Sigit Septiadi Prase
+//         tyo",
+//         "email"     => "Sigit@gmail.com",
+//         "image"     => "istriku.jpg ",
+//         "active" => 'tentang'
+//     ]);
+// });
 
 // ========================================================================
 
 
 Route::get('/blog', [PostController::class, 'index']);
+Route::delete('/blog/{slug}', [PostController::class, 'destroy']);
+
 // Route::get('/blog', function () {
 
 //     // return view('post', [
@@ -224,7 +243,7 @@ Route::get('/blog', [PostController::class, 'index']);
 // ========================================================================
 //HALAMAN SINGLE POST 
 
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
+// Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 //{
 // $blog_post = [
@@ -248,6 +267,7 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 //         $new_post = $post;
 //     }
 // }
+
 
 // return view('posts', [
 //     "title" => "Single Post",
@@ -276,51 +296,12 @@ Route::get('/categories', function () {
     ]);
 });
 
-Route::get('/authors/{author:username}', function (User $author) {
-    return view('authordetails', [
-        'title' => "Author By : $author->name",
-        "active" => 'posts',
-        // N+1 Problem Menggunakan lazy Eiger Loading 
-        'posts' => $author->posts->load('category', 'user')
+// Route::get('/authors/{author:username}', function (User $author) {
+//     return view('authordetails', [
+//         'title' => "Author By : $author->name",
+//         "active" => 'posts',
+//         // N+1 Problem Menggunakan lazy Eiger Loading 
+//         'posts' => $author->posts->load('category', 'user')
 
-    ]);
-});
-
-// Route::get('/dashboard/posts/checkSLug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
-Route::get('dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
-
-
-// ROUTE MENGGUNAKAN METODE RESOURCES UNTUK KEPERLUAN CRUD YANG SUDAH DISEDIAKAN OLEH LARAVEL 
-
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
-
-
-// ROUTE UNTUK MENAMBAHKAN KATEGORI YANG ADA SESUAI DENGAN KEBUTUHAN ADMINISTRASI WEB 
-Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
-
-
-// =================================================================================================================== 
-// Route::resource('/admin_itembarangdanharga/all_category', AdminItemBarangdanHargaController::class);
-
-//ROUTE MENUJU ADMIN_DASHBOARDINVOCEPESANAN 
-Route::resource('/admin_dashboardinvoicepesanan/all_invoicepesanan', AdminDashboardInvoicePesananController::class)->middleware('admin');
-
-//ROUTE MENUJU ADMIN_DASHBOARDINVOCEPESANAN 
-// Route::resource('/admin_dashboardinvoicepesanan/all_invoice', AdminDashboardInvoicePesananController::class, 'history')->middleware('admin');
-
-//ROUTE UNTUK PROGRESS INVOICE PENJUALAN 
-// Route::resource('/admin_dashboardinvoicepesananprogress/all-data', ProgressController::class)->middleware('auth');
-
-
-
-//ROUTE UNTUK HISTORY PESANAN
-// /admin_dashboardinvoicepesanan/historyinvoicepesanan
-
-//Route::get('/dashboard', [DashboardController::class, 'index']);
-// Route::get('/admin_dashboardinvoicepesanan/historyinvoicepesanan', function () {
-//     return view('dashboard.index');
-// })->middleware('auth');
-
-
-// ROUTE INVOICE PESANAN PROGRESS
-// Route::get('/admin_dashboardinvoicepesanan/progress', [InvoicepesananProgressController::class, 'index'])->middleware('auth');
+//     ]);
+// });

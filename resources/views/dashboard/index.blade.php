@@ -129,29 +129,206 @@
                                 <td>layout</td>
                                 <td>dashboard</td>
                             </tr>
-                            <tr>
-                                <td>1,013</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>visual</td>
-                            </tr>
-                            <tr>
-                                <td>1,014</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,015</td>
-                                <td>random</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>text</td>
-                            </tr>
+                          
                         </tbody>
                     </table>
                 </div> 
+
+
+                
+      <section class="section service" id="services">
+        <div class="container">
+
+          {{-- <h3 class="h2 section-title">~ Kami Bekerja dengan Cara yang Berbeda</h2> --}}
+            
+          <h2 class="h2 section-title underline">Kami Bekerja dengan Cara yang Berbeda </h2>
+
+
+          <ul class="service-list">
+
+
+            {{-- ================================================= --}}
+            <li>
+              <div class="service-card">
+                  <a href="/">
+                <div class="card-icon">
+                  <ion-icon name="home"></ion-icon>
+                </div>
+                <br>
+
+                <h3 class="h3 title">Infrastruktur</h3>
+
+                <p class="text">
+                    Kami, HaiuCare, akan merenovasi infrastruktur bangunan tak layak menjadi tempat yang aman, fungsional, dan menciptakan hunian yang layak.                    
+                </p>
+                
+                <button class="card-btn" aria-label="Show More">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+                </a>
+
+              </div>
+            </li>
+
+                {{-- ================================================= --}}
+                <li>
+                    <div class="service-card">
+                        <a href="/">
+                    <div class="card-icon">
+                        <ion-icon name='school'></ion-icon>
+                    </div>
+                    <br>
+                    <h3 class="h3 title">Pendidikan</h3>
+
+                    <p class="text">
+                        HaiuCare fokus memberi pendidikan pada anak-anak tak mampu, menawarkan kesempatan belajar berkualitas untuk masa depan cerah
+                    </p>
+                    
+                    <button class="card-btn" aria-label="Show More">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                    </a>
+
+                    </div>
+                </li>
+
+                {{-- ================================================= --}}
+                <li>
+                    <div class="service-card">
+                        <a href="/">
+                    <div class="card-icon">
+                        <ion-icon name='bag'></ion-icon>
+                    </div>
+                    <br>
+                    <h3 class="h3 title">Makanan</h3>
+
+                    <p class="text">
+                    HaiuCare, kami berkomitmen untuk memberikan akses makanan kepada mereka yang membutuhkan.
+                    </p>
+                    
+                    <button class="card-btn" aria-label="Show More">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                    </a>
+
+                    </div>
+                </li>
+                
+                {{-- ================================================= --}}
+                <li>
+                    <div class="service-card">
+                        <a href="/">
+                    <div class="card-icon">
+                      <ion-icon name="medkit"></ion-icon>
+                    </div>
+                    <br>
+                    <h3 class="h3 title">Kesehatan</h3>
+
+                    <p class="text">
+                        HaiuCare memberikan akses barang second berkualitas bagi semua, memastikan setiap orang dapat memenuhi kebutuhan sehari-hari dengan baik.    
+                    </p>
+                    
+                    <button class="card-btn" aria-label="Show More">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                    </a>
+
+                    </div>
+                </li>
+
+                
+                {{-- ================================================= --}}
+                <li>
+                    <div class="service-card">
+                        <a href="/">
+                    <div class="card-icon">
+                        <ion-icon name='albums'></ion-icon>
+                    </div>
+                    <br>
+                    <h3 class="h3 title">Laporan Project</h3>
+
+                    <p class="text">
+                        HaiuCare menyajikan laporan proyek yang terperinci untuk klien, memastikan informasi yang jelas dan akurat untuk kelancaran proyek.
+                    </p>
+                    
+                    <button class="card-btn" aria-label="Show More">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                    </a>
+
+                    </div>
+                </li>
+                
+                {{-- ================================================= --}}
+                <li>
+                    <div class="service-card">
+                        <a href="/">
+                    <div class="card-icon">
+                        <ion-icon name='pencil-sharp'></ion-icon>
+                    </div>
+                    <br>
+                    <h3 class="h3 title">Mitra Kerjasama</h3>
+
+                    <p class="text">
+                        HaiuCare memberikan informasi terstruktur kepada mitra, menjaga kelancaran kerja sama demi mencapai tujuan bersama.
+                    </p>
+                    
+                    <button class="card-btn" aria-label="Show More">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                    </a>
+
+                    </div>
+                </li>
+                
+                {{-- ================================================= --}}
+                <li>
+                    <div class="service-card">
+                        <a href="/">
+                    <div class="card-icon">
+                        <ion-icon name='bookmark-sharp'></ion-icon>
+                    </div>
+                    <br>
+                    <h3 class="h3 title">Mitra Pekerjaan</h3>
+
+                    <p class="text">
+                        HaiuCare bersama mitra menjaga kerjasama efisien demi mencapai tujuan bersama dengan informasi yang jelas.
+                    </p>
+                    
+                    <button class="card-btn" aria-label="Show More">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                    </a>
+
+                    </div>
+                </li>
+                
+                {{-- ================================================= --}}
+                <li>
+                    <div class="service-card">
+                        <a href="/">
+                    <div class="card-icon">
+                        <ion-icon name='eye'></ion-icon>
+                    </div>
+                    <br>
+                    <h3 class="h3 title">Transparansi</h3>
+
+                    <p class="text">
+                        HaiuCare bersama mitra menjaga kerjasama efisien demi mencapai tujuan bersama dengan informasi yang jelas.
+                    </p>
+                    
+                    <button class="card-btn" aria-label="Show More">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                    </a>
+
+                    </div>
+                </li>
+                
+      
+          </ul>
+
+        </div>
+      </section>
 
 @endsection

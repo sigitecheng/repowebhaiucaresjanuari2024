@@ -15,14 +15,31 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->foreignId('user_id');
+            $table->foreignId('kontraktor_id');
+            // $table->foreignId('kontraktor_id')->constrained('kontraktors');
+            $table->foreignId('penanggung_jawab_id');
+            // $table->foreignId('penanggung_jawab_id')->constrained('penanggung_jawabs');
+            $table->foreignId('pengawas_lapangan_id');
+            // $table->foreignId('pengawas_lapangan_id')->constrained('pengawas_lapangans');
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->text('excerpt');
             $table->text('body');
+           
+            $table->string('lokasi');
+            $table->double('anggaran', 10, 2);
+            $table->date('waktu_pelaksanaan');
+            $table->text('tujuan_proyek')->nullable();
+            $table->text('risiko_mitigasi')->nullable();
+            $table->text('dampak_lingkungan')->nullable();
+            $table->foreignId('status_id');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_selesai')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**
