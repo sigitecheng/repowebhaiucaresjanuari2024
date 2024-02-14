@@ -7,14 +7,31 @@
 
         <!--Content right-->
         <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
-            <h5 class="mb-3 mt-3" ><i class='fa fa-map-signs'></i> <strong>Halaman | {{ $title }}</strong></h5>
-
-            <div class="row mt-3">
-                <div class="col-sm-12">
-                    <!--Default elements-->
-                    <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm">
-
+            <h5 class="mb-3 mt-3" ><i class='fa fa-map-signs'>
+                </i> <strong>Halaman | {{ $title }}</strong>
+                </h5>
+                
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        
+                        <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm">
                     
+                    <div class="row border-bottom mb-4">
+                        <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header"><button class="btn btn-secondary mr-2"><i class="fa fa-file-excel"></i></button>
+                            {{ $title_halaman }} </h6></div>
+                        <div class="col-sm-4 text-right pb-3">
+                            
+                            <a href="/dashboard/posts">
+                                <button type="button" class="btn btn-secondary icon-round shadow pull-right mr-2">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </a>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!--Default elements-->
+
                         <form method="post" action="/dashboard/posts" enctype="multipart/form-data">
                             @csrf
 
@@ -34,7 +51,7 @@
 {{-- ------------------------------------------------------------------------------------------ --}}
                             <div class="form-group row">
                                 <label for="exampleFormControlSelect1" class="control-label col-sm-2">Kategori Project</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-2">
                                     <select class="form-control" name="category_id" id="category_id">
                                         @foreach($categories as $category)
                                         @if(old('category_id')) 
@@ -119,7 +136,7 @@
 
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                          
-                            <div class="form-group row">
+                            {{-- <div class="form-group row">
                                 <label for="image" class="control-label col-sm-2" >Image Project </label>
                                 <img class="img-preview img-fluid mb-3 col-sm-5">
                                 <div class="col-sm-10">
@@ -130,7 +147,27 @@
                                    {{ $message }}
                                </div>
                                @enderror
+                            </div> --}}
+
+                            <div class="form-group row">
+                                <label for="image" class="control-label col-sm-2">Image Project</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control-file @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
+                                    @error('image')
+                                    <div class="invalid-feedback mb-2">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
                             </div>
+                            
+                            <div class="form-group row">
+                                <label class="control-label col-sm-2"></label>
+                                <div class="col-sm-10">
+                                    <img class="img-preview img-fluid mb-3 col-sm-5" id="image-preview" alt="Image Preview">
+                                </div>
+                            </div>
+                            
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
                                 <label class="control-label col-sm-2" for="excerpt">Keterangan</label>
@@ -195,9 +232,9 @@
                                 <label class="control-label col-sm-2" for="waktu_pelaksanaan">Waktu</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="date" class="form-control @error('waktu_pelaksanaan') is-invalid @enderror" id="waktu_pelaksanaan" name="waktu_pelaksanaan" required value="{{ old('waktu_pelaksanaan')}} " autofocus>
+                                    <input type="date" class="form-control @error('waktu_pelaksanaan') is-invalid @enderror" id="waktu_pelaksanaan" name="waktu_pelaksanaan" required value="{{ old('waktu_pelaksanaan') }}" autofocus>
                                 </div>
-                                @error('waktu_pelaksanaan')
+                                    @error('waktu_pelaksanaan')
                                 <div class="invalid-feedback mb-2">
                                     {{ $message }}
                                 </div>
@@ -247,21 +284,22 @@
                             </div>
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
-                            
-                            <div class="form-group row">
-                                <label for="exampleFormControlSelect1" class="control-label col-sm-2">Status Pekerjaan</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="status_id" id="status_id">
-                                        @foreach($status as $data_status)
-                                        @if(old('status_id')) 
-                                        <option value="{{ $data_status->id }}" selected>{{ $data_status->status }}</option>
-                                        @else
-                                        <option value="{{ $data_status->id }}">{{ $data_status->status }}</option>
-                                        @endif
-                                         @endforeach
-                                    </select>
-                                </div>
-                            </div>
+                                            
+                <div class="form-group row">
+                    <label for="exampleFormControlSelect1" class="control-label col-sm-2">Kategori Project</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="datapekerjaanstatus_id" id="datapekerjaanstatus_id">
+                            @foreach($datapekerjaanstatus as $status)
+                            @if(old('datapekerjaanstatus_id')) 
+                            <option value="{{ $status->id }}" selected>{{ $status->nama_status }}</option>
+                            @else
+                            <option value="{{ $status->id }}">{{ $status->nama_status }}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
 
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
@@ -269,7 +307,7 @@
                                 <label class="control-label col-sm-2" for="tanggal_mulai">Tanggal Mulai Pekerjaan</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="date" class="form-control @error('tanggal_mulai') is-invalid @enderror" id="tanggal_mulai" name="tanggal_mulai" required value="{{ old('tanggal_mulai')}} " autofocus>
+                                    <input type="date" class="form-control @error('tanggal_mulai') is-invalid @enderror" id="tanggal_mulai" name="tanggal_mulai" required value="{{ old('tanggal_mulai') }}" autofocus>
                                 </div>
                                 @error('tanggal_mulai')
                                 <div class="invalid-feedback mb-2">
@@ -283,7 +321,7 @@
                                 <label class="control-label col-sm-2" for="tanggal_selesai">Tanggal Selesai Pekerjaan</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="date" class="form-control @error('tanggal_selesai') is-invalid @enderror" id="tanggal_selesai" name="tanggal_selesai" required value="{{ old('tanggal_selesai')}} " autofocus>
+                                    <input type="date" class="form-control @error('tanggal_selesai') is-invalid @enderror" id="tanggal_selesai" name="tanggal_selesai" required value="{{ old('tanggal_selesai') }}" autofocus>
                                 </div>
                                 @error('tanggal_selesai')
                                 <div class="invalid-feedback mb-2">
@@ -292,7 +330,7 @@
                                 @enderror
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary mb-4"><i class="fa fa-file"></i> Update Project </button>
+                            <button type="submit" class="btn btn-primary mb-4"><i class="fa fa-file"></i> Create New Project </button>
                     </div>
 
                     @include('backend.dashboard.part.menufooter')

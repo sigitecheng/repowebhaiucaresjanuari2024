@@ -21,13 +21,31 @@
     <div class="table-responsive col-lg-12 ">
     
 {{-- ========================= PAKET LINK KATEGORI ======================================= --}}
-        @foreach ($categories as $cat)
-    <a href="/blog?category={{ $cat->slug }}" class="btn btn-sn btn-primary mb-3 rounded">
-        <span data-feather="file-plus"></span>
-        <i class="fa fa-file"></i> {{ $cat->nama_kategori }}
-      </a>
-      @endforeach
-      
+
+<a href="/dashboard/posts" class=" btn btn-sn btn-success mb-4 rounded">
+    <span data-feather="file-plus"></span>
+    <i class="fas fa-database mr-2"></i> All Data 
+</a>
+
+@php
+    $categoryIcons = [
+        'All Data' => 'fa fa-database mr-2',
+        'Infrastruktur' => 'fas fa-hammer mr-2',
+        'Pendidikan' => 'fa fa-book mr-2',
+        'Kesehatan' => 'fa fa-hospital mr-2',
+        'Makanan' => 'fas fa-utensils mr-2',
+    ];
+@endphp
+
+
+    @foreach ($categories as $cat)
+            <a href="/blog?category={{ $cat->slug }}" class=" btn btn-sn btn-primary mb-4 rounded">
+                <span data-feather="file-plus"></span>
+                <i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}
+            </a>
+    @endforeach
+
+        
       @if(session()->has('success'))
       <div class="alert alert-success alert-dismissible fade show col-lg-12" role="alert">
           <strong>{{ session('success') }}</strong>
@@ -54,10 +72,12 @@
     <table class="table table-striped table-sm">
         <thead>
             <tr>
-                <th scope="col" class="text-center">No</th>
-                <th scope="col" class="text-center">Judul Project</th>
-                <th scope="col" class="text-center" >Kategori</th>
-                <th scope="col" class="text-center" style="width: 15%">Aksi</th>
+                <th scope="col" class="text-center" style="width: 50px;">No</th>
+                <th scope="col" class="text-center" style="width: 250px;">Judul Project</th>
+                <th scope="col" class="text-center" style="width: 100px;">Kategori</th>
+                <th scope="col" class="text-center" style="width: 100px;">Status</th>
+                <th scope="col" class="text-center" style="width: 100px;">Username</th>
+                <th scope="col" class="text-center" style="width: 100px;">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -66,6 +86,23 @@
                 <td class="text-center">{{ $loop->iteration }}</td>
                 <td>{{ $post->title}}</td>
                 <td class="text-center">{{ $post->category->nama_kategori }}</td>
+                <td>
+                    @if (is_object($post) && isset($post->datapekerjaanstatus))
+                        @if ($post->datapekerjaanstatus->nama_status == 'Selesai')
+                            <i class="fas fa-check-circle text-success"></i> Selesai
+                        @elseif ($post->datapekerjaanstatus->nama_status == 'Pending')
+                            <i class="fas fa-exclamation-circle text-danger"></i> Pending
+                        @elseif ($post->datapekerjaanstatus->nama_status == 'Tertunda')
+                            <i class="fas fa-clock text-warning"></i> Tertunda
+                        @elseif ($post->datapekerjaanstatus->nama_status == 'Sedang Berjalan')
+                            <i class="fas fa-spinner text-primary"></i> Sedang Berjalan
+                        @else
+                            {{ $post->datapekerjaanstatus->nama_status }}
+                        @endif
+                    @endif
+                </td>
+                
+                <td class="text-center">{{ $post->user->username }}</td>
                 <td class="text-center">
                     <!-- HATI HATI DI BAWAH IN IMENGGUNAKAN FITU GETROUTEKEYNAME AGAR TIDAK MENCARI ID BERDASARKAN NO MELAINKAN SESUAI YANG KITA INGINKAN  DENGAN CONTOH TABLE 'SLUG'-->
                     <a href="/dashboard/posts/{{ $post->slug }}">
@@ -116,7 +153,11 @@
 
         </tbody>
     </table>
+
+    @include('backend.dashboard.part.menufooter')
 </div>
 </div>
+
+
 
 @endsection

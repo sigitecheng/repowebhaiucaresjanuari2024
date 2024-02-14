@@ -21,6 +21,7 @@ return new class extends Migration
             // $table->foreignId('penanggung_jawab_id')->constrained('penanggung_jawabs');
             $table->foreignId('pengawas_lapangan_id');
             // $table->foreignId('pengawas_lapangan_id')->constrained('pengawas_lapangans');
+            $table->foreignId('datapekerjaanstatus_id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
@@ -33,7 +34,6 @@ return new class extends Migration
             $table->text('tujuan_proyek')->nullable();
             $table->text('risiko_mitigasi')->nullable();
             $table->text('dampak_lingkungan')->nullable();
-            $table->foreignId('status_id');
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai')->nullable();
             $table->timestamp('published_at')->nullable();

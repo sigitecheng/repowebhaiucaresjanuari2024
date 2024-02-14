@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
-use App\Models\Dataproject_status;
+use App\Models\Datapekerjaanstatus;
 
 class DatabaseSeeder extends Seeder
 {
@@ -56,28 +56,28 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // ------------------------------------------------------
-        Dataproject_status::create([
-            'status'  => 'Selesai',
+        Datapekerjaanstatus::create([
+            'nama_status'  => 'Selesai',
             'slug'  => 'selesai'
         ]);
 
-        Dataproject_status::create([
-            'status'  => 'Pending',
+        Datapekerjaanstatus::create([
+            'nama_status'  => 'Pending',
             'slug'  => 'pending'
         ]);
 
-        Dataproject_status::create([
-            'status'  => 'Tertunda',
+        Datapekerjaanstatus::create([
+            'nama_status'  => 'Tertunda',
             'slug'  => 'tertunda'
         ]);
 
-        Dataproject_status::create([
-            'status'  => 'Sedang Berjalan',
+        Datapekerjaanstatus::create([
+            'nama_status'  => 'Sedang Berjalan',
             'slug'  => 'sedang_berjalan'
         ]);
 
 
-        Post::factory(100)->create();
+        Post::factory(125)->create();
 
     }
 }

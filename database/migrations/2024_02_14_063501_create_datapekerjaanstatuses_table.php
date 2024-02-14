@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dataproject_statuses', function (Blueprint $table) {
+        Schema::create('datapekerjaanstatuses', function (Blueprint $table) {
             $table->id();
-            $table->string('status')->unique();
+            $table->string('nama_status')->unique();
             $table->string('slug')->unique();
             $table->timestamps();
         });
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dataproject_statuses');
+        Schema::dropIfExists('datapekerjaanstatuses');
     }
 };

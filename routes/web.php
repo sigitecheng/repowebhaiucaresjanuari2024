@@ -176,6 +176,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', function () {
     return view('backend/dashboard.index', [
         "title"        => "Dashboard",
+        'categories'        => Category::all()
     ]);
 })->middleware('auth');
 

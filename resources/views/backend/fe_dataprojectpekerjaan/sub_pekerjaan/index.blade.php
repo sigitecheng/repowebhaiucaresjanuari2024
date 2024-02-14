@@ -19,13 +19,31 @@
     </h5>
     <div class="table-responsive col-lg-12 ">
 
+
 {{-- ========================= PAKET LINK KATEGORI ======================================= --}}
-@foreach ($categories as $cat)
-<a href="/blog?category={{ $cat->slug }}" class="btn btn-sn btn-primary mb-3 rounded">
+
+<a href="/dashboard/posts" class=" btn btn-sn btn-success mb-4 rounded">
     <span data-feather="file-plus"></span>
-    <i class="fa fa-file"></i> {{ $cat->nama_kategori }}
-  </a>
-  @endforeach
+    <i class="fas fa-database mr-2"></i> All Data 
+</a>
+
+@php
+    $categoryIcons = [
+        'All Data' => 'fa fa-database mr-2',
+        'Infrastruktur' => 'fas fa-hammer mr-2',
+        'Pendidikan' => 'fa fa-book mr-2',
+        'Kesehatan' => 'fa fa-hospital mr-2',
+        'Makanan' => 'fas fa-utensils mr-2',
+    ];
+@endphp
+
+    @foreach ($categories as $cat)
+            <a href="/blog?category={{ $cat->slug }}" class=" btn btn-sn btn-primary mb-4 rounded">
+                <span data-feather="file-plus"></span>
+                <i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}
+            </a>
+    @endforeach
+
   
   @if(session()->has('success'))
   <div class="alert alert-success alert-dismissible fade show col-lg-12" role="alert">
@@ -51,45 +69,17 @@
 
     
 {{-- ========================================================================== --}}
-{{-- @foreach ($post->skip(1) as $pos)
-
-<div class="col-md-4 py-3">
-    <div class="card">
-        <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0, 0, 0, 0.7)"><a href="/blog?category={{ $pos->category->slug }}" class="text-decoration-none text-white">{{ $pos->category->nama_kategori }}</a></div>
-        @if ($pos->image)
-        <div style="max-height: 350px; overflow:hidden">
-            <img src="{{ asset('storage/' . $pos->image )}}" alt="{{ $pos->category->nama_kategori }}">
-        </div>
-        @else
-        <img src="https://source.unsplash.com/500x400?{{ $pos->category->nama_kategori }}" class="card-img-top" alt="{{ $pos->category->nama_kategori }}">
-        @endif
-
-        <div class="card-body">
-            <h5 class="card-title">{{ $pos->title }}</h5>
-            <p>
-                <small> By. <a href="/blog?user={{ $pos->user->username }}" class="text-decoration-none">{{ $pos->user->name }}</a>
-                    {{ $pos->created_at->diffForHumans() }}</small>
-            </p>
-            <p class="card-text">{{ $pos->excerpt }}</p>
-            <a href="/posts/{{ $pos->slug }} " class="btn btn-primary">Read More</a>
-        </div>
-    </div>
-</div>
-
-@endforeach --}}
-
-
-{{-- ========================= PAKET LINK KATEGORI ======================================= --}}        
         
       
     <table class="table table-striped table-sm">
         <thead>
             <tr>
-                <th scope="col" class="text-center">No</th>
-                <th scope="col" class="text-center">Judul Project</th>
-                <th scope="col" class="text-center">Author</th>
-                <th scope="col" class="text-center" >Kategori</th>
-                <th scope="col" class="text-center" style="width: 15%">Aksi</th>
+                <th scope="col" class="text-center" style="width: 50px;">No</th>
+                <th scope="col" class="text-center" style="width: 250px;">Judul Project</th>
+                <th scope="col" class="text-center" style="width: 100px;">Kategori</th>
+                <th scope="col" class="text-center" style="width: 100px;">Status</th>
+                <th scope="col" class="text-center" style="width: 100px;">Username</th>
+                <th scope="col" class="text-center" style="width: 100px;">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -99,8 +89,23 @@
             <tr>
                 <td class="text-center">{{ $loop->iteration }}</td>
                 <td>{{ $pos->title}}</td>
-                <td>{{ $pos->user->username }}</td>
                 <td class="text-center">{{ $pos->category->nama_kategori}}</td>
+                <td>
+                    @if (is_object($pos) && isset($pos->datapekerjaanstatus))
+                        @if ($pos->datapekerjaanstatus->nama_status == 'Selesai')
+                            <i class="fas fa-check-circle text-success"></i> Selesai
+                        @elseif ($pos->datapekerjaanstatus->nama_status == 'Pending')
+                            <i class="fas fa-exclamation-circle text-danger"></i> Pending
+                        @elseif ($pos->datapekerjaanstatus->nama_status == 'Tertunda')
+                            <i class="fas fa-clock text-warning"></i> Tertunda
+                        @elseif ($pos->datapekerjaanstatus->nama_status == 'Sedang Berjalan')
+                            <i class="fas fa-spinner text-primary"></i> Sedang Berjalan
+                        @else
+                            {{ $pos->datapekerjaanstatus->nama_status }}
+                        @endif
+                    @endif
+                </td>
+                <td class="text-center">{{ $pos->user->username }}</td>
                 <td class="text-center">
                     <!-- HATI HATI DI BAWAH IN IMENGGUNAKAN FITU GETROUTEKEYNAME AGAR TIDAK MENCARI ID BERDASARKAN NO MELAINKAN SESUAI YANG KITA INGINKAN  DENGAN CONTOH TABLE 'SLUG'-->
                     <a href="/dashboard/posts/{{ $pos->slug }}">
@@ -151,6 +156,9 @@
 
         </tbody>
     </table>
+
+    
+    @include('backend.dashboard.part.menufooter')
 
 
 </div>

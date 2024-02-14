@@ -9,12 +9,6 @@
 <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
     <h5 class="mb-3 mt-3" ><i class='fa fa-map-signs'></i> <strong>Halaman | {{ $title }}</strong></h5>
 {{-- ============================== HALAMAN DATABASE PROJECT SUB BIDANG PEKERJAAN =========================== --}}
-                              <!--Dashboard widget-->
-               
-                <!--/Dashboard widget-->
- <!--/Dashboard widget-->
-
-
 {{-- ================================ AKHIR HALAMAN DASHBOARD DATABASE PROJEK PEKERJAAN ===========================  --}}
                 
                 <div class="mt-4 mb-4 p-3 bg-white border shadow-sm lh-sm">
@@ -22,7 +16,7 @@
                     <div class="product-list">
                         
                         <div class="row border-bottom mb-4">
-                            <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header">{{ $title_halaman }} -> {{ $post->category->nama_kategori }} </h6></div>
+                            <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header"><button class="btn btn-secondary mr-2"><i class="fa fa-file-excel"></i></button>{{ $title_halaman }} <i class="fas fa-arrow-right mr-2 ml-2"></i> {{ $post->category->nama_kategori }} </h6></div>
                             <div class="col-sm-4 text-right pb-3">
                                 
                                 <a href="/dashboard/posts">
@@ -67,14 +61,6 @@
                                 <a href="/dashboard/posts/{{ $post->slug }}/edit">
                                     <button class="btn btn-success icon-round shadow pull-right mr-2" data-toggle="modal" ><i class="fas fa-file"></i></button>
                                 </a>
-                                
-                                {{-- <div class="pull-right mr-3 btn-order-bulk">
-                                    <select class="shadow bg-primary bulk-actions">
-                                        <option data-display="<span class='text-white'><b>Data Status</b></span>">Data Status options</option>
-                                        <option value="/dashboard/posts/{{ $post->slug }}/edit">Update</option>
-                                        <option value="2">Pending</option>
-                                    </select>
-                                </div> --}}
 
                                 <div class="clearfix"></div>
                             </div>
@@ -100,9 +86,9 @@
                             
                                 <tbody>                            
                                     <tr>
-                                        <td class="align-items-center justify-content-center"><i class="fa fa-home"></i></td>
-                                        <td><strong>Judul Project</strong></td>
-                                        <td class="text-center">:</td>
+                                        <td class="align-items-center justify-content-center" style="width: 35px;"><i class="fa fa-home"></i></td>
+                                        <td style="width: 100px;"><strong>Judul Project</strong></td>
+                                        <td style="width: 15px;"class="text-center">:</td>
                                         <td>{{ $post->title }}</td>
                                     </tr>            
                                 
@@ -193,40 +179,30 @@
                                         <td class="align-items-center justify-content-center"><i class="fa fa-tree"></i></td>
                                         <td><strong>Dampak</strong></td>
                                         <td class="text-center">:</td>
-                                        <td>{{ $post->dampak_Lingkungan }}</td>
+                                        <td>{{ $post->dampak_lingkungan }}</td>
                                     </tr>   
-                        
+
                                     <tr>
-                                        <td class="align-items-center justify-content-center">
-                                            <i class="fa fa-question"></i>
-                                        </td>
+                                        <td class="align-items-center justify-content-center"><i class="fa fa-user-secret"></i></td>
                                         <td><strong>Status</strong></td>
                                         <td class="text-center">:</td>
-                                        <td class="d-flex align-items-center ">
-                                            @php
-                                                $status = $post->status;
-                                                $badgeClass = '';
-                                    
-                                                switch ($status) {
-                                                    case 'sedang_berjalan':
-                                                        $badgeClass = 'badge-warning';
-                                                        break;
-                                                    case 'tertunda':
-                                                        $badgeClass = 'badge-danger';
-                                                        break;
-                                                    case 'selesai':
-                                                        $badgeClass = 'badge-success';
-                                                        break;
-                                                    default:
-                                                        // Tindakan default jika diperlukan
-                                                        break;
-                                                }
-                                            @endphp
-                                    
-                                            <span class="badge {{ $badgeClass }}">{{ $status }}</span>
+                                        <td>
+                                            @if (is_object($post) && isset($post->datapekerjaanstatus))
+                                                @if ($post->datapekerjaanstatus->nama_status == 'Selesai')
+                                                    <i class="fas fa-check-circle text-success"></i> Selesai
+                                                @elseif ($post->datapekerjaanstatus->nama_status == 'Pending')
+                                                    <i class="fas fa-exclamation-circle text-danger"></i> Pending
+                                                @elseif ($post->datapekerjaanstatus->nama_status == 'Tertunda')
+                                                    <i class="fas fa-clock text-warning"></i> Tertunda
+                                                @elseif ($post->datapekerjaanstatus->nama_status == 'Sedang Berjalan')
+                                                    <i class="fas fa-spinner text-primary"></i> Sedang Berjalan
+                                                @else
+                                                    {{ $post->datapekerjaanstatus->nama_status }}
+                                                @endif
+                                            @endif
                                         </td>
-                                    </tr>            
-                                    
+                                    </tr>
+                    
                             </table>
                             <a href="/dashboard/posts">
                                 <div class="text-right">

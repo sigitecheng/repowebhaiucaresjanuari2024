@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
-use App\Models\Dataproject_status;
+use App\Models\Datapekerjaanstatus;
 
 
 use Illuminate\Http\Request;
@@ -22,12 +22,20 @@ class DashboardPostController extends Controller
     {
 
         return view('backend.fe_dataprojectpekerjaan.index', [
-            'posts'             => Post::where('user_id', auth()->user()->id)
-                                    ->orderBy('created_at', 'desc') // Menambahkan orderBy untuk mengurutkan berdasarkan waktu pembuatan secara descending
+            // 'posts'        => POst::all(),
+            // 'posts'             => Post::where('user_id', auth()->user()->id)
+            //                         ->orderBy('created_at', 'desc') // Menambahkan orderBy untuk mengurutkan berdasarkan waktu pembuatan secara descending
+            //                             ->get(),
+             'posts' => Post::whereHas('user', function ($query) {
+                                $query->where('username', auth()->user()->username);
+                                        })
+                                        ->orderBy('created_at', 'desc')
                                         ->get(),
+                            
             'title'             => 'Data Project',
             'title_dashboard'   => 'Data Project Pekerjaan',
-            'categories'        => Category::all()
+            'categories'        => Category::all(),
+            'datapekerjaanstatus' => Datapekerjaanstatus::all()
         ]);
     // backend.fe_dataprojectpekerjaan.index
     
@@ -60,7 +68,7 @@ class DashboardPostController extends Controller
             // 'post'                  => $post,
             'post'                  => Post::all(),
             'categories'            => Category::all(),
-            'status'                => Dataproject_status::all(),
+            'datapekerjaanstatus'   => Datapekerjaanstatus::all(),
             'title'                 => 'Create New Project',
             'title_halaman'         => 'Create New Project'
         ]);
@@ -88,7 +96,7 @@ class DashboardPostController extends Controller
             'tujuan_proyek'             => 'required',
             'risiko_mitigasi'           => 'required',
             'dampak_lingkungan'         => 'required',
-            'status_id'                 => 'required',
+            'datapekerjaanstatus_id'    => 'required',
             'tanggal_mulai'             => 'required',
             'tanggal_selesai'           => 'required'
         ]);
@@ -113,9 +121,10 @@ class DashboardPostController extends Controller
         // return $post;
 
         return view('backend.fe_dataprojectpekerjaan.show', [
-            'title' => 'Show Data Project',
-            'title_halaman' => 'View Data',
-            'post' => $post
+            'title'             => 'Show Data Project',
+            'title_halaman'     => 'View Data',
+            'post'              => $post,
+            'categories'        => Category::all(),
         ]);
     }
 
@@ -125,10 +134,12 @@ class DashboardPostController extends Controller
     public function edit(Post $post)  // METHOD UNTUK MELAKUKAN UPDATE DATA DENGAN MENAMPILKAN DATA SEBELUMNYA YANG AKAN DI EDIT 
     {
         return view('backend.fe_dataprojectpekerjaan.edit', [
-            'post' => $post,
-            'categories' => Category::all(),
-            'title' => 'Update Data',
-            'title_halaman' => 'Update Data',
+            'post'              => $post,
+            'title'             => 'Update Data',
+            'title_halaman'     => 'Update Data',
+            'categories'        => Category::all(),
+            'datapekerjaanstatus' => Datapekerjaanstatus::all()
+                                
         ]);
     }
 
@@ -152,7 +163,7 @@ class DashboardPostController extends Controller
             'tujuan_proyek'             => 'required',
             'risiko_mitigasi'           => 'required',
             'dampak_lingkungan'         => 'required',
-            'status'                    => 'required',
+            'datapekerjaanstatus_id'    => 'required',
             'tanggal_mulai'             => 'required',
             'tanggal_selesai'           => 'required'
         ];

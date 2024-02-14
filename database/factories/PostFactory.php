@@ -23,6 +23,7 @@ class PostFactory extends Factory
             'kontraktor_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
             'penanggung_jawab_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah penanggung jawab yang sesuai
             'pengawas_lapangan_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah pengawas lapangan yang sesuai
+            'datapekerjaanstatus_id' => mt_rand(1, 4),
             'title' => $this->faker->sentence(mt_rand(5, 10)),
             'slug' => $this->faker->slug(),
             'image' => $this->faker->imageUrl(),
@@ -40,7 +41,6 @@ class PostFactory extends Factory
             'tujuan_proyek' => $this->faker->paragraph,
             'risiko_mitigasi' => $this->faker->paragraph,
             'dampak_lingkungan' => $this->faker->paragraph,
-            'status_id' => mt_rand(1, 4),
             'tanggal_mulai' => $this->faker->date(),
             'tanggal_selesai' => $this->faker->optional(0.7)->date(),
             'published_at' => $this->faker->optional(0.8)->dateTimeThisMonth,

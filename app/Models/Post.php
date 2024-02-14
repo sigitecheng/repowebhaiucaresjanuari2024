@@ -61,7 +61,6 @@ class Post extends Model
         );
     }
 
-
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -71,13 +70,13 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
-    // PENCARIAN DENGAN TIDAK MENGGUNAKAN ID 
+
+    
+// PENCARIAN DENGAN TIDAK MENGGUNAKAN ID 
     public function getRouteKeyName()
     {
         return 'slug';
     }
-
-
 
     // FITUR OTOMATIS UNTUK PEMBUATAN SLUG PADA FORM 
     public function sluggable(): array
@@ -87,5 +86,10 @@ class Post extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function datapekerjaanstatus()
+    {
+        return $this->belongsTo(Datapekerjaanstatus::class);
     }
 }

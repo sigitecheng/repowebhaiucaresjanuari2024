@@ -17,6 +17,7 @@
                         
                         <div class="row border-bottom mb-4">
                             <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header">{{ $title_halaman }} -> {{ $post->category->nama_kategori }} </h6></div>
+                            
                             <div class="col-sm-4 text-right pb-3">
                                 
 
@@ -70,7 +71,7 @@
 
 {{-- ------------------------------------------------------------------------------------------ --}}
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="title">Judul Project</label>
+                                <label class="control-label col-sm-2" for="title"><i class="fa fa-home mr-2"></i>Judul Project</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" required value="{{ old('title', $post->title )}} " autofocus>
@@ -85,7 +86,7 @@
 
 {{-- ------------------------------------------------------------------------------------------ --}}
                             <div class="form-group row">
-                                <label for="exampleFormControlSelect1" class="control-label col-sm-2">Kategori Project</label>
+                                <label for="exampleFormControlSelect1" class="control-label col-sm-2"><i class="fa fa-book mr-2"></i>Kategori<i class="fas fa-key ml-2"></i></label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="category_id" id="category_id">
                                         @foreach($categories as $category)
@@ -101,7 +102,7 @@
 
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="user_id">User</label>
+                                <label class="control-label col-sm-2" for="user_id"><i class="fa fa-user mr-2"></i>User<i class="fas fa-key ml-2"></i></label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('user_id') is-invalid @enderror" id="user_id" name="user_id" required value="{{ old('user_id', $post->user_id )}} " autofocus>
@@ -115,7 +116,7 @@
 
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="kontraktor_id">Kontraktor</label>
+                                <label class="control-label col-sm-2" for="kontraktor_id"><i class="fas fa-building mr-2"></i>Kontraktor<i class="fas fa-key ml-2"></i></label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('kontraktor_id') is-invalid @enderror" id="kontraktor_id" name="kontraktor_id" required value="{{ old('kontraktor_id', $post->kontraktor_id )}} " autofocus>
@@ -129,7 +130,7 @@
 
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="penanggung_jawab_id">PIC</label>
+                                <label class="control-label col-sm-2" for="penanggung_jawab_id"><i class="fas fa-user mr-2"></i>PIC<i class="fas fa-key ml-2"></i></label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('penanggung_jawab_id') is-invalid @enderror" id="penanggung_jawab_id" name="penanggung_jawab_id" required value="{{ old('penanggung_jawab_id', $post->penanggung_jawab_id )}} " autofocus>
@@ -143,7 +144,7 @@
 
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="pengawas_lapangan_id">Pengawas Lapangan</label>
+                                <label class="control-label col-sm-2" for="pengawas_lapangan_id"><i class="fas fa-user mr-2"></i>Pengawas<i class="fas fa-key ml-2"></i> </label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('pengawas_lapangan_id') is-invalid @enderror" id="pengawas_lapangan_id" name="pengawas_lapangan_id" required value="{{ old('pengawas_lapangan_id', $post->pengawas_lapangan_id )}} " autofocus>
@@ -157,7 +158,7 @@
 
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="slug">Slug Project</label>
+                                <label class="control-label col-sm-2" for="slug"><i class="fas fa-file mr-2"></i>Slug Project</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug', $post->slug )}} " autofocus>
@@ -172,7 +173,7 @@
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                          
                             <div class="form-group row">
-                                <label for="image" class="control-label col-sm-2" >Image Project </label>
+                                <label for="image" class="control-label col-sm-2" ><i class="fas fa-file mr-2"></i>Image Project </label>
                                 <div class="col-sm-10">
                                     <input type="hidden" name="oldImage" value="{{ $post->image }}">
                                                 @if($post->image)
@@ -197,7 +198,7 @@
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="excerpt">Keterangan</label>
+                                <label class="control-label col-sm-2" for="excerpt"><i class="fas fa-file mr-2"></i>Keterangan</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('excerpt') is-invalid @enderror" id="excerpt" name="excerpt" required value="{{ old('excerpt', $post->excerpt )}} " autofocus>
@@ -211,7 +212,7 @@
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="body">Penjelasan</label>
+                                <label class="control-label col-sm-2" for="body"><i class="fas fa-file mr-2"></i>Penjelasan</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('body') is-invalid @enderror" id="body" name="body" required value="{{ old('body', $post->body )}} " autofocus>
@@ -225,7 +226,7 @@
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="lokasi">Lokasi</label>
+                                <label class="control-label col-sm-2" for="lokasi"><i class="fas fa-road mr-2"></i>Lokasi</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('lokasi') is-invalid @enderror" id="lokasi" name="lokasi" required value="{{ old('lokasi', $post->lokasi )}} " autofocus>
@@ -238,23 +239,23 @@
                             </div>
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
-<div class="form-group row">
-    <label class="control-label col-sm-2" for="anggaran">Anggaran</label>
-    <div class="col-sm-10">
-        {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-        <input type="text" class="form-control @error('anggaran') is-invalid @enderror" id="anggaran" name="anggaran" required value="{{ old('anggaran', isset($post) ? number_format($post->anggaran, 0, ',', '.') : '') }}" autofocus>
-    </div>
-    @error('anggaran')
-    <div class="invalid-feedback mb-2">
-        {{ $message }}
-    </div>
-    @enderror
-</div>
+                            <div class="form-group row">
+                                <label class="control-label col-sm-2" for="anggaran"><i class="fas fa-money-bill mr-2"></i>Anggaran</label>
+                                <div class="col-sm-10">
+                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
+                                    <input type="text" class="form-control @error('anggaran') is-invalid @enderror" id="anggaran" name="anggaran" required value="{{ old('anggaran', isset($post) ? number_format($post->anggaran, 0, ',', '.') : '') }}" autofocus>
+                                </div>
+                                @error('anggaran')
+                                <div class="invalid-feedback mb-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
 
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="waktu_pelaksanaan">Waktu</label>
+                                <label class="control-label col-sm-2" for="waktu_pelaksanaan"><i class="fa fa-clock-o mr-2"></i>Waktu</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('waktu_pelaksanaan') is-invalid @enderror" id="waktu_pelaksanaan" name="waktu_pelaksanaan" required value="{{ old('waktu_pelaksanaan', $post->waktu_pelaksanaan )}} " autofocus>
@@ -268,7 +269,7 @@
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="tujuan_proyek">Tujuan</label>
+                                <label class="control-label col-sm-2" for="tujuan_proyek"><i class="fas fa-file mr-2"></i>Tujuan</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('tujuan_proyek') is-invalid @enderror" id="tujuan_proyek" name="tujuan_proyek" required value="{{ old('tujuan_proyek', $post->tujuan_proyek )}} " autofocus>
@@ -282,7 +283,7 @@
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="risiko_mitigasi">Resiko</label>
+                                <label class="control-label col-sm-2" for="risiko_mitigasi"><i class="fas fa-list mr-2"></i>Resiko</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('risiko_mitigasi') is-invalid @enderror" id="risiko_mitigasi" name="risiko_mitigasi" required value="{{ old('risiko_mitigasi', $post->risiko_mitigasi )}} " autofocus>
@@ -296,7 +297,7 @@
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="dampak_lingkungan">Dampak</label>
+                                <label class="control-label col-sm-2" for="dampak_lingkungan"><i class="fas fa-tree mr-2"></i>Dampak</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('dampak_lingkungan') is-invalid @enderror" id="risiko_mitigasi" name="dampak_lingkungan" required value="{{ old('dampak_lingkungan', $post->dampak_lingkungan )}} " autofocus>
@@ -308,39 +309,26 @@
                                 @enderror
                             </div>
                             
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            {{-- <div class="form-group row">
-                                <label class="control-label col-sm-2" for="status">Status</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status" required value="{{ old('status', $post->status )}} " autofocus>
-                                </div>
-                                @error('status')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div> --}}
-                            
+{{-- ------------------------------------------------------------------------------------------ --}}       
 
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="status">Status</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control @error('status') is-invalid @enderror" id="status" name="status" required autofocus>
-                                        <option value="sedang_berjalan" {{ old('status', $post->status) === 'sedang_berjalan' ? 'selected' : '' }}>Sedang Berjalan</option>
-                                        <option value="selesai" {{ old('status', $post->status) === 'selesai' ? 'selected' : '' }}>Selesai</option>
-                                        <option value="tertunda" {{ old('status', $post->status) === 'tertunda' ? 'selected' : '' }}>Tertunda</option>
-                                    </select>
-                                </div>
-                                @error('status')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
+                                <div class="form-group row">
+                                    <label for="exampleFormControlSelect1" class="control-label col-sm-2"><i class="fa fa-user-secret mr-2"></i>Status<i class="fas fa-key ml-2"></i></label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" name="datapekerjaanstatus_id" id="datapekerjaanstatus_id">
+                                            @foreach($datapekerjaanstatus as $data_status)
+                                            @if(old('datapekerjaanstatus_id', $post->category_id) == $data_status->id) <!--  category_id bernilai string dan categgori panah satu bernilai integer == ( 2 sama dengan artinya string ) dan === ( 3 sama dengan artinya adalah integer)  -->
+                                            <option value="{{ $data_status->id }}" selected>{{ $data_status->nama_status }}</option>
+                                            @else
+                                            <option value="{{ $data_status->id }}">{{ $data_status->nama_status }}</option>
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
                             </div>
-                            
+      
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="tanggal_mulai">Tanggal Mulai Pekerjaan</label>
+                                <label class="control-label col-sm-2" for="tanggal_mulai"><i class="fa fa-clock-o mr-2"></i>Tanggal Mulai Pekerjaan</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('tanggal_mulai') is-invalid @enderror" id="tanggal_mulai" name="tanggal_mulai" required value="{{ old('tanggal_mulai', $post->tanggal_mulai )}} " autofocus>
@@ -354,7 +342,7 @@
                             
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="tanggal_selesai">Tanggal Mulai Pekerjaan</label>
+                                <label class="control-label col-sm-2" for="tanggal_selesai"><i class="fa fa-clock-o mr-2"></i>Tanggal Mulai Pekerjaan</label>
                                 <div class="col-sm-10">
                                     {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
                                     <input type="text" class="form-control @error('tanggal_selesai') is-invalid @enderror" id="tanggal_selesai" name="tanggal_selesai" required value="{{ old('tanggal_selesai', $post->tanggal_selesai )}} " autofocus>

@@ -40,19 +40,22 @@ class PostController extends Controller
             // "post"     => Post::all()
             // MENGGUNAKAN TOOLS EIGER LOADING AGAR OPTIMAL DALAM MANGANTISIPASI QUERY YANG ADA 
             // "post" => Post::latest()->get() PAKET 1
-            // "post" => Post::latest()->filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString(),
+            "post" => Post::whereHas('user', function ($query) {
+                $query->where('username', auth()->user()->username);
+                        })->filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString(),
+           
             //  "post" => $post->get() // PAKET 2
             'categories'    => Category::all(),
                 
-                $latestPosts = Post::latest()->filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString(),
+                // $latestPosts = Post::latest()->filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString(),
 
-                $userPosts = Post::where('user_id', auth()->user()->id)
-                ->orderBy('created_at', 'desc')
-                ->get(),
+                // $userPosts = Post::where('user_id', auth()->user()->id)
+                // ->orderBy('created_at', 'desc')
+                // ->get(),
                 
-                $post = $latestPosts->concat($userPosts),
+                // $post = $latestPosts->concat($userPosts),
                 
-                "post" => $post,
+                // "post" => $post,
 
             
             // Gunakan $posts sesuai kebutuhan Anda

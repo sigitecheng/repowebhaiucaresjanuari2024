@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dataproject_status extends Model
+class Datapekerjaanstatus extends Model
 {
     use HasFactory;
 
-    // protected $fillable = ['nama_kategori', 'slug'];
     protected $guarded = ['id'];
 
     public function posts()

@@ -179,3 +179,21 @@
         <!--Header Menu-->
     </div>
     <!--Header-->
+
+    <!-- Tambahkan jQuery (pastikan Anda menyertakan jQuery di proyek Anda) -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    var header = $(".header");
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) { // Ubah nilai 100 sesuai dengan ketinggian yang Anda inginkan sebelum header tetap
+            header.addClass("header-fixed");
+        } else {
+            header.removeClass("header-fixed");
+        }
+    });
+});
+</script>
+
