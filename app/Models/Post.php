@@ -92,4 +92,24 @@ class Post extends Model
     {
         return $this->belongsTo(Datapekerjaanstatus::class);
     }
+
+    public function be_datakontraktor()
+    {
+        return $this->belongsTo(Be_datakontraktor::class);
+    }
+
+    public function be_datarumahmakan()
+    {
+        return $this->belongsTo(Be_datarumahmakan::class);
+    }
+
+    public function be_datarumahsakit()
+    {
+        return $this->belongsTo(Be_datarumahsakit::class);
+    }
+
+    public function be_datainstansipendidikan()
+    {
+        return $this->belongsTo(Be_datainstansipendidikan::class);
+    }
 }

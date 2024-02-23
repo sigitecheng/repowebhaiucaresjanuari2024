@@ -21,7 +21,10 @@
 
             <p class="hero-text">
 
-                Kami merupakan pilar utama dalam sektor kemanusiaan, menyelenggarakan berbagai layanan di bidang infrastruktur, kesehatan, pendidikan, lapangan kerja, dan distribusi barang. Melalui inisiatif ini, kami bertekad untuk membawa perubahan positif kepada masyarakat, menciptakan lingkungan yang berkelanjutan, dan memberikan dukungan yang sangat dibutuhkan untuk meningkatkan kualitas hidup dan kesejahteraan umum. </p>
+                @foreach($adminlayanankami as $data)
+                {{ $data->layanan_kami}}
+
+                @endforeach
 
                 <a href="#footer">
                 <button class="btn-2">Kontak Kami</button>

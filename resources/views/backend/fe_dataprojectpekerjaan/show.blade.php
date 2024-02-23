@@ -25,44 +25,7 @@
                                     </button>
                                 </a>
                                 
-                                <button type="button" class="btn btn-danger icon-round shadow pull-right mr-2" data-toggle="modal" data-target="#deleteModal">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-
-
-                                <!-- Modal Konfirmasi Penghapusan -->
-                                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Delete</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body text-center">
-                                                Apakah Anda yakin ingin menghapus Project ini ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <!-- Tombol untuk menutup modal -->
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>
-                                                    Close</button>
-                                                <!-- Tombol untuk menghapus post (ganti dengan form jika diperlukan) -->
-                                                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-danger mt-3" ><i class="fa fa-trash"></i> Hapus</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <a href="/dashboard/posts/{{ $post->slug }}/edit">
-                                    <button class="btn btn-success icon-round shadow pull-right mr-2" data-toggle="modal" ><i class="fas fa-file"></i></button>
-                                </a>
-
-                                <div class="clearfix"></div>
+                                
                             </div>
                         </div>
                         

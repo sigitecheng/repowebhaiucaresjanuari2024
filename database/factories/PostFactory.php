@@ -20,7 +20,10 @@ class PostFactory extends Factory
         return [
             'user_id' => mt_rand(1, 8),
             'category_id' => mt_rand(1, 4),
-            'kontraktor_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
+            'be_datakontraktor_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
+            'be_datarumahmakan_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
+            'be_datarumahsakit_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
+            'be_datainstansipendidikan_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
             'penanggung_jawab_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah penanggung jawab yang sesuai
             'pengawas_lapangan_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah pengawas lapangan yang sesuai
             'datapekerjaanstatus_id' => mt_rand(1, 4),

@@ -22,15 +22,11 @@ class DashboardPostController extends Controller
     {
 
         return view('backend.fe_dataprojectpekerjaan.index', [
-            // 'posts'        => POst::all(),
-            // 'posts'             => Post::where('user_id', auth()->user()->id)
-            //                         ->orderBy('created_at', 'desc') // Menambahkan orderBy untuk mengurutkan berdasarkan waktu pembuatan secara descending
-            //                             ->get(),
-             'posts' => Post::whereHas('user', function ($query) {
-                                $query->where('username', auth()->user()->username);
-                                        })
-                                        ->orderBy('created_at', 'desc')
-                                        ->get(),
+            'posts' => Post::whereHas('user', function ($query) {
+                $query->where('username', auth()->user()->username);
+            })
+            ->orderBy('created_at', 'desc')
+            ->paginate(10),
                             
             'title'             => 'Data Project',
             'title_dashboard'   => 'Data Project Pekerjaan',
@@ -182,7 +178,6 @@ class DashboardPostController extends Controller
             $validateData['image'] = $request->file('image')->store('post-images');
         }
 
-
         $validateData['user_id'] = auth()->user()->id;
         $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
@@ -190,6 +185,7 @@ class DashboardPostController extends Controller
             ->update($validateData);
 
         return redirect('/dashboard/posts')->with('update', 'Project has been updated was successfully !');
+    
     }
 
     /**

@@ -157,6 +157,10 @@
         </tbody>
     </table>
 
+    <div class="pagination-container" style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+        {{ $post->links() }}
+    </div>
+
     
     @include('backend.dashboard.part.menufooter')
 

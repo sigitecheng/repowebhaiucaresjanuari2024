@@ -23,11 +23,13 @@
             {{-- <p class="hero-subtitle">Selamat Datang ! di HaiuCare Bangun Indonesia</p> --}}
 
             <h3 class="h2 hero-title">Daftar Project Kami </h3>
-
-            <p class="hero-text">
-                Program Kemanusiaan Kami berfokus pada inisiatif kontribusi positif dalam pengembangan infrastruktur, pendidikan, kesehatan, dan pangan. Daftar program ini mewakili komitmen kami untuk meningkatkan kualitas hidup dan membawa perubahan positif dalam berbagai aspek kehidupan masyarakat yang membutuhkan. Di HaiuCare, kami memberikan bantuan pada setiap program kemanusiaan ini dengan harapan dapat memberikan dampak yang signifikan.            
-              </p>
-                <a href="#footer">
+@foreach ($adminprojectkami as $data)
+    
+<p class="hero-text">
+{{ $data->project_kami}}
+</p>
+<a href="#footer">
+                  @endforeach
                   <button class="btn-2">Kontak Kami</button>
                 </a>
         </div>
@@ -49,9 +51,6 @@
 {{-- =============================================== --}}
       <section class="section blog" id="blog">
         <div class="container">
-
-            {{-- <h2 style="font-family: var(--ff-source-sans-pro); text-align: center; font-size: 32px; font-weight: bold; margin-top: 0px; margin-bottom: 10px;">Infrastruktur</h2> --}}
-            {{-- <h3 class="h2 hero-title underline">Infrastruktur</h3> --}}
             <h2 class="h2 section-title underline">Infrastruktur</h2>
 
 

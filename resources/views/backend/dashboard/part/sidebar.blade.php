@@ -22,10 +22,53 @@
                     <!--Sidebar Navigation Menu-->
                     <div class="sidebar-menu-container">
                         <ul class="sidebar-menu mt-4 mb-4">
-                            
+
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('tables'); return false" class=""><i class="far fa-file mr-3"></i>
+                                    <span class="none">Dashboard Frontend <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+                                <ul class="children" id="tables">
+                                    <li class="child">
+                                        <a href="/adminberanda/post" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                                <i class="fas fa-home mr-2"></i>Beranda
+                                        </a>
+                                    </li> 
+                                    <li class="child">
+                                        <a href="/adminberanda/tentangkami" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                                <i class="fas fa-info-circle mr-2"></i>Tentang
+                                        </a>
+                                    </li> 
+
+                                    <li class="child">
+                                        <a href="/adminberanda/layanankami" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                                <i class="fas fa-cogs mr-2"></i>Layanan
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/adminberanda/donasi" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                                <i class="fas fa-donate mr-2"></i>Donasi
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/adminberanda/projectkami" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                                <i class="fas fa-folder mr-2"></i>Project
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="basic-tables.html" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                                <i class="fas fa-address-book mr-2"></i>Kontak
+                                        </a>
+                                    </li> 
+
+                                </ul>
+                            </li>
+
                             
                             <li class="parent">
-                                <a href="/dashboard/posts" onclick="toggle_menu('form_element'); return false" class=""><i class="fa fa-pencil-square mr-3"></i>
+                                <a href="#" onclick="toggle_menu('form_element'); return false " ><i class="fa fa-database mr-3"></i>
                                     <span class="none">Data Pekerjaan <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
 
@@ -41,44 +84,55 @@
 
                                     <ul class="children" id="form_element">
                                         <li class="child">
-                                            <a href="/dashboard/posts" class="ml-4 btn btn-sn btn-success mb-2 rounded mr-4">
+                                            <a href="/dashboard/posts" class="ml-4 btn btn-sn btn-success mb-2 rounded mr-4" style="text-align: left;">
                                                 <span data-feather="file-plus"></span>
-                                                <i class="fas fa-database mr-2"></i> All Data
+                                                <i class="fas fa-database mr-2 justify-left"></i> All Data
                                             </a>
                                         </li>
                                         @foreach ($categories as $cat)
-                                            <li class="child">
-                                                <a href="/blog?category={{ $cat->slug }}" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4">
-                                                    <span data-feather="file-plus"></span>
-                                                    <i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}
-                                                </a>
-                                            </li>
+                                        <li class="child">
+                                            <a href="/blog?category={{ $cat->slug }}" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                                <span data-feather="file-plus"></span>
+                                                <i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}
+                                            </a>
+                                        </li>
+                                        
                                         @endforeach
                                     </ul>
-
-                                {{-- <ul class="children" id="form_element">
-                                    <li class="child"><a href="/dashboard/posts" class="ml-4"><i class="fa fa-database mr-2"></i> All Data</a></li>
-                                    <li class="child"><a href="/sub/sub-infrastruktur" class="ml-4"><i class="fas fa-hammer mr-2"></i> Infrastruktur</a></li>
-                                    <li class="child"><a href="/categories" class="ml-4"><i class="fa fa-book mr-2"></i> Pendidikan</a></li>
-                                    <li class="child"><a href="" class="ml-4"><i class="fa fa-hospital mr-2"></i> Kesehatan</a></li>
-                                    <li class="child"><a href="" class="ml-4"><i class="fas fa-utensils mr-2"></i> Makanan</a></li>
-                                </ul> --}}
                             </li>
 
-{{-- 
                             <li class="parent">
-                                <a href="/dashboard/posts" class=""><i class="fa fa-pencil-square-o mr-3"></i>
-                                    <span class="none">Project Pekerjaan </span>
+                                <a href="#" onclick="toggle_menu('tables1'); return false" class=""><i class="fas fa-warehouse mr-3"></i>
+                                    <span class="none">Daftar Mitra <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
-                            </li> --}}
-                            
-                            
-                            
-                            <li class="parent">
-                                <a href="/dashboard" class=""><i class="fa fa-home mr-3"></i>
-                                    <span class="none">Dashboard Backend </span>
-                                </a>
+
+                                <ul class="children" id="tables1">
+                                    <li class="child">
+                                        <a href="/backend/kontraktor" class="ml-4 btn btn-sn btn-warning mb-2 rounded mr-4" style="text-align: left;">
+                                                <i class="fas fa-hammer mr-2"></i>Kontraktor
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/backend/rumahmakan" class="ml-4 btn btn-sn btn-info mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fas fa-utensils mr-2"></i> Rumah Makan                         
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/backend/rumahsakit" class="ml-4 btn btn-sn btn-success mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fas fa-hospital mr-2"></i> Rumah Sakit                         
+                                        </a>
+                                    </li> 
+
+                                    <li class="child">
+                                        <a href="/backend/instansipendidikan" class="ml-4 btn btn-sn btn-info mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fas fa-graduation-cap mr-2"></i>Instansi Pendidikan                         
+                                        </a>
+                                    </li> 
+                                </ul>
                             </li>
+                            
                             
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('dashboard'); return false" ><i class="fa fa-dashboard mr-3"> </i>
@@ -137,16 +191,7 @@
                                     <li class="child"><a href="summernote.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Summernote editor</a></li>
                                 </ul>
                             </li>
-                            <li class="parent">
-                                <a href="#" onclick="toggle_menu('tables'); return false" class=""><i class="fa fa-pencil-square mr-3"></i>
-                                    <span class="none">Tables <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                </a>
-                                <ul class="children" id="tables">
-                                    <li class="child"><a href="basic-tables.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Basic Tables</a></li>
-                                    <li class="child"><a href="datatable.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Datatables</a></li>
-                                    <li class="child"><a href="jsgrid-table.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> JSGrid Tables</a></li>
-                                </ul>
-                            </li>
+                            
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
                                     <span class="none">Charts <i class="fa fa-angle-down pull-right align-bottom"></i></span>

@@ -16,7 +16,7 @@ class DatausersandroidController extends Controller
         return view('backend.fe_datausersandroid.index', [
             "title"                 => "Data Users",
             "title_database"        => "Halaman Data Users Android",
-            'data_usersandroid'     => Datausersandroid::all()
+            // 'data_usersandroid'     => Datausersandroid::all()
         ]);
     }
 
@@ -39,10 +39,10 @@ class DatausersandroidController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Datausersandroid $datausersandroid)
-    {
-        //
-    }
+    // public function show(Datausersandroid $datausersandroid)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -50,27 +50,27 @@ class DatausersandroidController extends Controller
     // app/Http/Controllers/DatausersandroidController.php
     public function edit($id)
     {
-        $datausersandroid = Datausersandroid::find($id);
-        return view('backend.fe_datausersandroid.edit',[
-            "title"             => "Edit Data Users Android",
-            "title_database"    => "Halaman Data Users Android",
-                  ])->with('data', $datausersandroid);
+        // $datausersandroid = Datausersandroid::find($id);
+        // return view('backend.fe_datausersandroid.edit',[
+        //     "title"             => "Edit Data Users Android",
+        //     "title_database"    => "Halaman Data Users Android",
+        //           ])->with('data', $datausersandroid);
     }
 
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Datausersandroid $datausersandroid)
-    {
-        //
-    }
+    // public function update(Request $request, Datausersandroid $datausersandroid)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Datausersandroid $datausersandroid)
-    {
+    // public function destroy(Datausersandroid $datausersandroid)
+    // {
         //
-    }
+    // }
 }

@@ -46,7 +46,11 @@
     @endforeach
 
         
-      @if(session()->has('success'))
+
+    {{-- ---------------------------------------------------------------------------------------------------------------------------------------- --}}
+    {{-- FORM VALIDATIONS --}}
+    {{-- ---------------------------------------------------------------------------------------------------------------------------------------- --}}
+    @if(session()->has('success'))
       <div class="alert alert-success alert-dismissible fade show col-lg-12" role="alert">
           <strong>{{ session('success') }}</strong>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -135,10 +139,11 @@
                     Close</button>
                 <!-- Tombol untuk menghapus post (ganti dengan form jika diperlukan) -->
                 <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
-                    @method('delete')
                     @csrf
+                    @method('delete')
                     <button type="submit" class="btn btn-danger mt-3" ><i class="fa fa-trash"></i> Hapus</button>
                 </form>
+            
             </div>
         </div>
     </div>
@@ -146,13 +151,18 @@
 
 
                 </td>
-
             </tr>
+
             @endforeach
 
 
         </tbody>
     </table>
+
+    <div class="pagination-container" style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+        {{ $posts->links() }}
+    </div>
+    
 
     @include('backend.dashboard.part.menufooter')
 </div>

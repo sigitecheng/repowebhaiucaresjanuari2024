@@ -53,10 +53,11 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function invoice_pesanan()
+    public function fe_adminberanda()
     {
-        return $this->hasMany(Invoice_pesanan::class);
+        return $this->hasMany(Fe_AdminBeranda::class);
     }
+
 
 
     // public function adminitembrangdanhargas()

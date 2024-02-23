@@ -16,7 +16,7 @@
 
                         
                         <div class="row border-bottom mb-4">
-                            <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header">{{ $title_halaman }} -> {{ $post->category->nama_kategori }} </h6></div>
+                            <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header"><button class="btn btn-secondary mr-2"><i class="fa fa-file-excel"></i></button>{{ $title_halaman }} <i class="fas fa-arrow-right mr-2 ml-2"></i> {{ $post->category->nama_kategori }} </h6></div>
                             
                             <div class="col-sm-4 text-right pb-3">
                                 
@@ -45,8 +45,8 @@
                                                     Close</button>
                                                 <!-- Tombol untuk menghapus post (ganti dengan form jika diperlukan) -->
                                                 <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
-                                                    @method('delete')
                                                     @csrf
+                                                    @method('delete')
                                                     <button type="submit" class="btn btn-danger mt-3" ><i class="fa fa-trash"></i> Hapus</button>
                                                 </form>
                                             </div>

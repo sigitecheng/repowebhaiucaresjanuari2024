@@ -5,7 +5,7 @@
 
 use App\Models\User;
 use App\Models\Category;
-use App\Models\Feadminberanda;
+use App\Models\Fe_AdminBeranda;
 
 use Illuminate\Support\Facades\Route;
 
@@ -13,17 +13,15 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
-use App\Http\Controllers\AdminCategoryController;
-use App\Http\Controllers\AdminDashboardInvoicePesananController;
-use App\Http\Controllers\Fe_adminberandawebController;
 use App\Http\Controllers\DatausersandroidController;
+use App\Http\Controllers\Fe_AdminBerandaController;
+use App\Http\Controllers\Be_DatakontraktorController;
+use App\Http\Controllers\Be_DatarumahmakanController;
+use App\Http\Controllers\Be_DatarumahsakitController;
 use App\Http\Controllers\SubController;
-// use App\Http\Controllers\AdminItemBarangdanHargaController;
-// use App\Http\Controllers\BarangbarangController;
-// use App\Http\Controllers\UserTabelBarangbarangController;
-// use App\Models\UserTabelBarangbarang;
-// use GuzzleHttp\Middleware;
+
 use App\Models\Datausersandroid;
+use App\Models\Fe_adminberanda as ModelsFe_adminberanda;
 
 // use App\Models\Post;
 
@@ -54,9 +52,14 @@ Route::get('/', function () {
         "donasi3"           =>  "frontendweb/donasi/donasi3.jpg",
         "donasi4"           =>  "frontendweb/donasi/donasi4.jpg",
         "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
-        
+        "adminberanda"      =>  Fe_AdminBeranda::all(),
+        'categories'        => Category::all()
     ]);
 });
+// ---------------------------------------------------------------------------------------
+// ROUTE ADMIN DASHBOARD FRONTEND 
+// ---------------------------------------------------------------------------------------
+Route::resource('/adminberanda/post', Fe_AdminBerandaController::class)->middleware('auth');
 
 
 // =======================================================================
@@ -69,10 +72,21 @@ Route::get('/tentang', function () {
         "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
         "imagetentang"      =>  "frontendweb/tentang/fetentang.png",
         "imagetentang1"      =>  "frontendweb/tentang/tentang1.png",
+        'admintentangkami'  => Fe_AdminBeranda::all(),
+        'categories'        => Category::all()
     ]);
 });
 
-// =======================================================================
+// ---------------------------------------------------------------------------------------
+// ROUTE ADMIN DASHBOARD FRONTEND 
+// ---------------------------------------------------------------------------------------
+Route::get('/adminberanda/tentangkami', [Fe_AdminBerandaController::class, 'tentangkami'])->middleware('auth');
+Route::get('/adminberanda/post/{tentang_kami}/tentangkamiedit', [Fe_AdminBerandaController::class, 'tentangkamiedit'])
+    ->name('tentangkami.edit');
+Route::put('/adminberanda/post/{tentang_kami}/update', [Fe_AdminBerandaController::class, 'tentangkamiupdate'])
+    ->name('tentangkami.update');
+
+    // =======================================================================
 // HALAMAAN DASHBOARD FRONTEND WEB LAYANAN
 
 Route::get('/layanan', function () {
@@ -80,9 +94,19 @@ Route::get('/layanan', function () {
         "title"             => "Layanan",
         "active"            => 'layanan',
         "imagelayanan"      =>  "frontendweb/layanan/felayanan.png",
+        'adminlayanankami'  => Fe_AdminBeranda::all(),
+        'categories'        => Category::all()
     ]);
 });
-
+// ---------------------------------------------------------------------------------------
+// ROUTE ADMIN DASHBOARD FRONTEND 
+// ---------------------------------------------------------------------------------------
+Route::get('/adminberanda/layanankami', [Fe_AdminBerandaController::class, 'layanankami'])->middleware('auth');
+Route::get('/adminberanda/post/{layanan_kami}/layanankamiedit', [Fe_AdminBerandaController::class, 'layanankamiedit'])
+    ->name('layanankami.edit');
+Route::patch('/adminberanda/post/{layanan_kami}/update', [Fe_AdminBerandaController::class, 'layanankamiupdate'])
+        ->name('layanankami.update');
+    
 
 
 // =======================================================================
@@ -97,8 +121,21 @@ Route::get('/donasi', function () {
         "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
         "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
         "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
+        'admindonasi'           => Fe_AdminBeranda::all(),
+        'categories'            => Category::all()
     ]);
 });
+// ---------------------------------------------------------------------------------------
+// ROUTE ADMIN DASHBOARD FRONTEND 
+// ---------------------------------------------------------------------------------------
+Route::get('/adminberanda/donasi', [Fe_AdminBerandaController::class, 'donasi'])->middleware('auth');
+Route::get('/adminberanda/post/{donasi}/donasiedit', [Fe_AdminBerandaController::class, 'donasiedit'])
+    ->name('donasi.edit');
+Route::patch('/donasi/{donasi}/update', [Fe_AdminBerandaController::class, 'donasiupdate'])
+    ->name('donasi.update');
+    
+
+
 
 
 // =======================================================================
@@ -113,8 +150,22 @@ Route::get('/project', function () {
         "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
         "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
         "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
+        'adminprojectkami'      => Fe_AdminBeranda::all(),
+        'categories'            => Category::all()
     ]);
 });
+// ---------------------------------------------------------------------------------------
+// ROUTE ADMIN DASHBOARD FRONTEND 
+// ---------------------------------------------------------------------------------------
+Route::get('/adminberanda/projectkami', [Fe_AdminBerandaController::class, 'projectkami'])->middleware('auth');
+Route::get('/adminberanda/post/{project_kami}/projectkamiedit', [Fe_AdminBerandaController::class, 'projectkamiedit'])
+    ->name('projectkami.edit');
+// Route::patch('/adminberanda/post/{project_kami}/update', [Fe_AdminBerandaController::class, 'projectkamiupdate'])
+//     ->name('projectkami.update');
+Route::patch('/projectkami/{project_kami}/update', [Fe_AdminBerandaController::class, 'projectkamiupdate'])
+    ->name('projectkami.update');
+
+
 
 // =======================================================================
 // HALAMAAN PROJECT FRONTEND WEB PROJECT 
@@ -186,7 +237,6 @@ Route::get('/dashboard', function () {
 // Route::get('/backendberanda', [Fe_DashboardwebadminController::class, 'index']);
 // Route::get('/backendberanda/edit/{dataadminberanda}', [Fe_DashboardwebController::class, 'edit']);
 
-Route::resource('/backendberanda', Fe_adminberandawebController::class)->middleware('auth');
 // routes/web.php
 Route::resource('/datausers', DatausersandroidController::class)->middleware('auth');
 
@@ -196,6 +246,14 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 // Route::resource('/dashboard/posts/sub_infrastruktur', DashboardPostController::class,'sub_infrastruktur')->middleware('auth');
 Route::get('/sub/sub-infrastruktur', [SubController::class, 'sub_infrastruktur'])->middleware('auth');
 
+// DAFTAR MITRA HAIUCARE {DATA KONTRAKTOR}
+Route::resource('/backend/kontraktor', Be_DatakontraktorController::class)->middleware('auth');
+
+// DAFTAR MITRA HAIUCARE {DATA RUMAH MAKAN}
+Route::resource('/backend/rumahmakan', Be_DatarumahmakanController::class)->middleware('auth');
+
+// DAFTAR MITRA HAIUCARE {DATA RUMAH SAKIT}
+Route::resource('/backend/rumahmakan', Be_DatarumahsakitController::class)->middleware('auth');
 
 
 
@@ -231,7 +289,9 @@ Route::get('/sub/sub-infrastruktur', [SubController::class, 'sub_infrastruktur']
 
 
 Route::get('/blog', [PostController::class, 'index']);
+Route::get('/blogproject', [PostController::class, 'blogproject']);
 Route::delete('/blog/{slug}', [PostController::class, 'destroy']);
+
 
 // Route::get('/blog', function () {
 

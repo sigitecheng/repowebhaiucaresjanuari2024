@@ -43,7 +43,7 @@
     --gradient-2: linear-gradient(90deg,var(--razzmatazz) ,var(--rajah));
     --gradient-3: linear-gradient(90deg, hsl(210, 100%, 70%), hsl(240, 100%, 20%));
     --gradient-4: linear-gradient(90deg, hsl(0, 0%, 50%), hsl(210, 100%, 70%));
-    --gradient-5: linear-gradient(90deg, hsl(220, 100%, 20%), hsl(240, 100%, 50%));
+    --gradient-5: linear-gradient(90deg, hsl(220, 100%, 20%), hsl(240, 100%, 70%));
     --gradient-6: linear-gradient(90deg, hsl(0, 90%, 60%),  hsl(335, 87%, 40%));
     --gradient-fedonasi: linear-gradient(90deg, hsl(120, 100%, 25%), hsl(60, 100%, 50%));
 
@@ -231,7 +231,7 @@ h2 {
     transition: var(--transition-2);
     margin-top: 1px;
   }
-
+  
   .btn-donasi1 {
     background-image: var(--gradient-3);
     background-size: 150%;
@@ -277,11 +277,11 @@ h2 {
 
   .btn-judul {
     background-image: var(--gradient-5);
-    background-size: 100%;
+    background-size: 200%;
     color: var(--white);
     padding: 12px 20px;
-    font-size: var(--fs-8);
-    font-weight: var(--fw-500);
+    font-size: 12px;
+    font-weight: var(--fw-300);
     border-radius: 0 25px;
     transition: var(--transition-2);
     margin-bottom: 1px;

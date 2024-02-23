@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->foreignId('user_id');
-            $table->foreignId('kontraktor_id');
+            $table->foreignId('be_datakontraktor_id');
+            $table->foreignId('be_datarumahmakan_id');
+            $table->foreignId('be_datarumahsakit_id');
+            $table->foreignId('be_datainstansipendidikan_id');
             // $table->foreignId('kontraktor_id')->constrained('kontraktors');
             $table->foreignId('penanggung_jawab_id');
             // $table->foreignId('penanggung_jawab_id')->constrained('penanggung_jawabs');

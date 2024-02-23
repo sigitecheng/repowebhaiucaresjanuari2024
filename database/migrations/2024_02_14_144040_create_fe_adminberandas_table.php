@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feadminberandas', function (Blueprint $table) {
-            $table->id('id_feadminberanda');
+        Schema::create('fe_adminberandas', function (Blueprint $table) {
+            $table->id('id');
             $table->string('beranda1');
             $table->string('beranda2');
             $table->string('visi');
             $table->string('misi');
-            $table->string('fokus_pekerjaan');
-            $table->string('judul_pekerjaan');
-            $table->string('keterangan_pekerjaan');
+            $table->text('fokus_pekerjaan');
+            $table->text('tentang_kami');
+            $table->text('layanan_kami');
+            $table->text('donasi');
+            $table->text('project_kami');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('feadminberandas');
+        Schema::dropIfExists('fe_adminberandas');
     }
 };

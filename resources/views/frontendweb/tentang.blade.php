@@ -21,13 +21,15 @@
             {{-- <p class="hero-subtitle">Selamat Datang ! di HaiuCare Bangun Indonesia</p> --}}
 
             <h3 class="h2 hero-title">Tentang Kami</h3>
-
+@foreach($admintentangkami as $data)
             <p class="hero-text">
 
-                "Kami adalah perusahaan yang didedikasikan untuk misi kemanusiaan. Dalam setiap langkah dan inisiatif kami, tujuan utama adalah memberikan kontribusi positif kepada masyarakat dan dunia"            </p>
-<a href="#footer">
+              {{ $data->tentang_kami }}
+                <a href="#footer">
   <button class="btn-2">Kontak Kami</button>
 </a>
+
+@endforeach
 
           </div>
 

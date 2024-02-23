@@ -20,9 +20,11 @@
 
             <h3 class="h2 hero-title">Program Donasi</h3>
 
+            @foreach ($admindonasi as $data)
             <p class="hero-text">
-                Program Donasi kami bertujuan untuk memberikan dampak positif melalui kontribusi pada infrastruktur, pendidikan, kesehatan, dan pangan. Dengan dukungan ini, kami berkomitmen meningkatkan kualitas hidup dan menciptakan perubahan positif dalam berbagai aspek kehidupan sehari-hari masyarakat.
+                {{ $data->donasi }}
             </p>
+            @endforeach
             <a href="#footer">
               <button class="btn-2">Kontak Kami</button>
             </a>

@@ -9,101 +9,102 @@
   <main>
     <article>
       <section class="hero" id="home">
+        
+        @foreach($adminberanda as $beranda)
         <div class="container">
 
           <div class="hero-content">
 
             <p class="hero-subtitle">Selamat Datang ! di HaiuCare Bangun Indonesia</p>
 
-            <h3 class="h2 hero-title">Tangan Membantu Menginspirasi Perubahan Bersama</h3>
-
+            <h3 class="h2 hero-title">{{ $beranda->beranda1 }}</h3>
             <p class="hero-text">
-
-            "Tangan membantu merupakan sumber inspirasi untuk menciptakan perubahan bersama."
+              {{ $beranda->beranda2}}
             </p>
-
+            
             <a href="#footer" >
               <button class="btn-2" >Kontak Kami</button>
             </a>
-
+            
           </div>
-
+          
           <figure class="hero-banner">
             <img src="img/<?= $imagehome ?> " width="694" height="529" loading="lazy" alt="hero-banner"
-              class="w-100 banner-animation">
+            class="w-100 banner-animation">
           </figure>
-
+          
         </div>
       </section>
-
-{{-- ======================================================================================== --}}
-{{-- HALAMAN ABOUT KAMI HAIU CARE INDONESIA --}}
-{{-- ======================================================================================== --}}
-
-    <section class="section about" id="about">
+      
+      {{-- ======================================================================================== --}}
+      {{-- HALAMAN ABOUT KAMI HAIU CARE INDONESIA --}}
+      {{-- ======================================================================================== --}}
+      
+      <section class="section about" id="about">
         <div class="container">
-
-            <figure class="about-banner">
-                <img src="img/<?= $imagehome2 ?> " width="694" height="529" loading="lazy" alt="about-banner"
-                  class="w-100 banner-animation">
-              </figure>
-
+          
+          <figure class="about-banner">
+            <img src="img/<?= $imagehome2 ?> " width="694" height="529" loading="lazy" alt="about-banner"
+            class="w-100 banner-animation">
+          </figure>
+          
           <div class="about-content">
-
+            
             {{-- <h2 class="h2 section-title underline"> ~ Mengapa Memilih Kami !?</h2> --}}
             
             <h2 class="h2 section-title underline">Mengapa Memilih Kami !? </h2>
-
-          {{-- <h2 class="h2 section-title underline">Mengapa Memilih Kami !? </h2> --}}
-
-
+            
+            {{-- <h2 class="h2 section-title underline">Mengapa Memilih Kami !? </h2> --}}
+            
+            
             <a href="" class="btn-misi">
-                {{-- <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon> --}}
-                <span>Visi</span>
-              </a>
-        
-              <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-                <ion-icon name="menu-outline"></ion-icon>
-              </button>
+              {{-- <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon> --}}
+              <span>Visi</span>
+            </a>
+            
+            <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+              <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            <br>
+            <p class="about-text">
+            {{$beranda->visi}}
+            </p>
+            
+            
+            <a href="" class="btn-misi">
+              {{-- <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon> --}}
+              <span>Misi</span>
+            </a>
+            
+            <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+              <ion-icon name="menu-outline"></ion-icon>
+            </button>
               <br>
             <p class="about-text">
-                "Menjadi pionir dalam membentuk Indonesia yang berdaya, berinspirasi, dan terjalin erat melalui tangan bantuan yang memberikan dampak nyata, menciptakan perubahan positif, dan memperkuat fondasi bagi pertumbuhan dan kemajuan bersama."
-            </p>
+            {{ $beranda->misi}}
+              </p>
 
-
-            <a href="" class="btn-misi">
-                {{-- <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon> --}}
-                <span>Misi</span>
-              </a>
-        
-              <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-                <ion-icon name="menu-outline"></ion-icon>
-              </button>
-              <br>
-            <p class="about-text">
-                "Menjadi agen perubahan yang mendukung masyarakat Indonesia dengan memberikan tangan bantuan yang membawa inspirasi, menyokong perubahan positif, dan membangun sinergi bersama demi kemajuan dan kesejahteraan bersama."
-            </p>
-
-
-          </div>
-        <div class="div">  
-          <a href="" class="btn-2">
+              
+            </div>
+            <div class="div">  
+              <a href="" class="btn-2">
             {{-- <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon> --}}
             <span>Fokus Pekerjaan Kami</span>
           </a>
-    
+          
           <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
             <ion-icon name="menu-outline"></ion-icon>
           </button>
           <br>
 
           <p class="about-text">
-            Dalam menghadapi realitas bangunan tak layak, kebutuhan akan makanan gratis, dan tantangan akses pendidikan yang terbatas, kami berkomitmen untuk merangkul misi kemanusiaan. Melalui inisiatif kami, kami berupaya memberikan bantuan sejauh yang kami mampu, menyediakan bantuan pangan secara gratis, dan memberikan kesempatan pendidikan kepada mereka yang kurang beruntung. Bersama-sama, kami berusaha membangun fondasi yang lebih kokoh untuk kesejahteraan dan pertumbuhan masyarakat.
-        </p>
+        {{ $beranda->fokus_pekerjaan}}
+          </p>
 
+        @endforeach
 
         <ul class="stats-list">
-
+          
           <li class="stats-card">
             <h4>Pekerjaan</h4> <br>
             <p class="h3 stats-title">0</p>
