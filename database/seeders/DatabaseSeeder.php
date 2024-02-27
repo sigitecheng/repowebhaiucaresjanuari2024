@@ -84,7 +84,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // ==================================================================
-        Fe_AdminBeranda::create([
+        Fe_adminberanda::create([
             'beranda1'          => 'Tangan Membantu Menginspirasi Perubahan Bersama',
             'beranda2'          => '"Tangan membantu merupakan sumber inspirasi untuk menciptakan perubahan bersama"',
             'visi'              => '"Menjadi pionir dalam membentuk Indonesia yang berdaya, berinspirasi, dan terjalin erat melalui tangan bantuan yang memberikan dampak nyata, menciptakan perubahan positif, dan memperkuat fondasi bagi pertumbuhan dan kemajuan bersama."',

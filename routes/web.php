@@ -24,7 +24,6 @@ use App\Http\Controllers\DatapenanggungjawabController;
 use App\Http\Controllers\SubController;
 use App\Http\Controllers\UsersController;
 use App\Models\Datapenanggungjawab;
-use App\Models\Datausersandroid;
 use App\Models\Fe_adminberanda as ModelsFe_adminberanda;
 
 // use App\Models\Post;
