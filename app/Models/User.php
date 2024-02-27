@@ -58,6 +58,26 @@ class User extends Authenticatable
         return $this->hasMany(Fe_AdminBeranda::class);
     }
 
+    public function be_datakontraktor()
+    {
+        return $this->hasMany(Be_datakontraktor::class);
+    }
+
+    public function be_datarumahmakan()
+    {
+        return $this->hasMany(Be_datarumahmakan::class);
+    }
+
+    public function be_datarumahsakit()
+    {
+        return $this->hasMany(Be_datarumahsakit::class);
+    }
+
+    public function be_instansipendidikan()
+    {
+        return $this->hasMany(Be_datainstansipendidikan::class);
+    }
+
 
 
     // public function adminitembrangdanhargas()

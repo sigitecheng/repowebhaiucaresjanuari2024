@@ -46,6 +46,25 @@ class Be_DatakontraktorController extends Controller
     public function store(StoreBe_datakontraktorRequest $request)
     {
         //
+        $validateData = $request->validate([
+            'nama_perusahaan'           => 'required',
+            'alamat'                    => 'required',
+            'kota'                      => 'required',
+            'nomor_telepon'             => 'required',
+            'email'                     => 'required',
+            'pimpinan_perusahaan'       => 'required',
+            'sertifikat'                => 'required',
+            'pengalaman'                => 'required',
+            'bidang_keahlian'           => 'required',
+            'dokumen'                   => 'required'
+        ]);
+
+        $validateData['user_id'] = auth()->user()->id;
+
+        Be_datakontraktor::create($validateData);
+
+        return redirect('/backend/kontraktor')->with('success', 'New Kontraktor has been added was successfully !');
+    
     }
 
     /**

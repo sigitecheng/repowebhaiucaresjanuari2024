@@ -6,6 +6,7 @@
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Fe_AdminBeranda;
+use App\Models\Post;
 
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,11 @@ use App\Http\Controllers\Fe_AdminBerandaController;
 use App\Http\Controllers\Be_DatakontraktorController;
 use App\Http\Controllers\Be_DatarumahmakanController;
 use App\Http\Controllers\Be_DatarumahsakitController;
+use App\Http\Controllers\Be_DatainstansipendidikanController;
+use App\Http\Controllers\DatapenanggungjawabController;
 use App\Http\Controllers\SubController;
-
+use App\Http\Controllers\UsersController;
+use App\Models\Datapenanggungjawab;
 use App\Models\Datausersandroid;
 use App\Models\Fe_adminberanda as ModelsFe_adminberanda;
 
@@ -226,8 +230,34 @@ Route::post('/register', [RegisterController::class, 'store']);
 //Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard', function () {
     return view('backend/dashboard.index', [
-        "title"        => "Dashboard",
-        'categories'        => Category::all()
+        "title"             => "Dashboard",
+        "title_dashboard"   => "Data Interface Dashboard",
+        'categories'        => Category::all(),
+
+        $datausersCount = User::count(),
+        'datausers'        => $datausersCount,
+        
+        $datapostsCount = Post::count(),
+        'datapost'        => $datapostsCount,
+
+        $datapenanggungjawabCount = Datapenanggungjawab::count(),
+        'datapenanggungjawab'        => $datapenanggungjawabCount,
+
+        'dataposts'     => Post::orderBy('created_at', 'desc')->paginate(5),
+
+        // Menghitung total anggaran untuk kategori 'infrastruktur' dengan format angka yang diformat
+        $totalInfrastruktur = number_format(Post::where('category_id', 1)->sum('anggaran'), 2, ',', '.'),
+        'totalanggaraninfrastruktur' => $totalInfrastruktur,
+
+        $totalPendidikan = number_format(Post::where('category_id', 2)->sum('anggaran'), 2, ',', '.'),
+        'totalanggaranpendidikan' => $totalPendidikan,
+
+        $totalKesehatan = number_format(Post::where('category_id', 3)->sum('anggaran'), 2, ',', '.'),
+        'totalanggarankesehatan' => $totalKesehatan,
+
+        $totalMakanan = number_format(Post::where('category_id', 4)->sum('anggaran'), 2, ',', '.'),
+        'totalanggaranmakanan' => $totalMakanan,
+        
     ]);
 })->middleware('auth');
 
@@ -237,12 +267,23 @@ Route::get('/dashboard', function () {
 // Route::get('/backendberanda', [Fe_DashboardwebadminController::class, 'index']);
 // Route::get('/backendberanda/edit/{dataadminberanda}', [Fe_DashboardwebController::class, 'edit']);
 
+
+// ---------------- ---------------- ---------------- ---------------- ---------------- ----------------
+// ROUTE UNTUK PANGAMBILAN DATA USERS ALL DATA
+Route::resource('/users', UsersController::class)->middleware('auth'); 
+
+// ---------------- ---------------- ---------------- ---------------- ---------------- ----------------
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/datapenanggungjawab/data', DatapenanggungjawabController::class)->middleware('auth');
+
 // routes/web.php
 Route::resource('/datausers', DatausersandroidController::class)->middleware('auth');
 
 // ---------------- ---------------- ---------------- ---------------- ---------------- ----------------
 // ROUTE UNTUK PANGAMBILAN DATA PROJECT
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::get('dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+
 // Route::resource('/dashboard/posts/sub_infrastruktur', DashboardPostController::class,'sub_infrastruktur')->middleware('auth');
 Route::get('/sub/sub-infrastruktur', [SubController::class, 'sub_infrastruktur'])->middleware('auth');
 
@@ -253,7 +294,10 @@ Route::resource('/backend/kontraktor', Be_DatakontraktorController::class)->midd
 Route::resource('/backend/rumahmakan', Be_DatarumahmakanController::class)->middleware('auth');
 
 // DAFTAR MITRA HAIUCARE {DATA RUMAH SAKIT}
-Route::resource('/backend/rumahmakan', Be_DatarumahsakitController::class)->middleware('auth');
+Route::resource('/backend/rumahsakit', Be_DatarumahsakitController::class)->middleware('auth');
+
+// DAFTAR MITRA HAIUCARE {DATA INSTANSI PENDIDIKAN}
+Route::resource('/backend/instansipendidikan', Be_DatainstansipendidikanController::class)->middleware('auth');
 
 
 

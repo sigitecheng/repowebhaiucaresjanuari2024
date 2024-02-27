@@ -6,11 +6,11 @@
                     <span>&copy; All rights reserved 2024 designed by <a class="text-info" href="#"> HaiuCare Bangun Indonesia</a></span>
                 </div>
                 <div class="col-sm-4 text-right">
-                    <button class="ml-2 btn btn-primary">
+                    <button class="ml-2 btn button-custom ">
                         <i class="fas fa-phone"></i> 
                         Contact Us
                     </button>
-                    <button class="ml-2 btn btn-primary">
+                    <button class="ml-2 btn button-custom ">
                         <i class="fas fa-life-ring"></i> <!-- Ini adalah ikon support -->
                         Support
                     </button>

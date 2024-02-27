@@ -105,9 +105,9 @@
                                     </tr>  
                                 
                             </table>
-                            <a href="">
+                            <a href="/backend/kontraktor">
                                 <div class="text-right">
-                                    <button class="btn btn-outline-theme"><i class="fa fa-eye"></i> View Full Project</button>
+                                    <button class="btn btn-outline-warning text-dark"><i class="fa fa-eye"></i> View Data Kontraktor</button>
                                 </div>
                             </a>
                         </div>

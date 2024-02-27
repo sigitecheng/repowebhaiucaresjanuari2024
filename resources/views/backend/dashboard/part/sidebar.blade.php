@@ -1,7 +1,7 @@
 
         <!--Main Content-->
 
-        <div class="row main-content h-screen">
+        <div class="row main-content h-screen" color: #fff;">
             <!--Sidebar left-->
             <div class="col-sm-3 col-xs-6 sidebar pl-0">
                 <div class="inner-sidebar mr-3">
@@ -24,51 +24,50 @@
                         <ul class="sidebar-menu mt-4 mb-4">
 
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('tables'); return false" class=""><i class="far fa-file mr-3"></i>
+                                <a href="#" onclick="toggle_menu('tables'); return false" class=""><i class="fab fa-ravelry mr-3"></i>
                                     <span class="none">Dashboard Frontend <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="tables">
                                     <li class="child">
-                                        <a href="/adminberanda/post" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/adminberanda/post" class="ml-4 btn btn-sn button-custom mb-2 rounded mr-4" style="text-align: left;">
                                                 <i class="fas fa-home mr-2"></i>Beranda
                                         </a>
                                     </li> 
                                     <li class="child">
-                                        <a href="/adminberanda/tentangkami" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/adminberanda/tentangkami" class="ml-4 btn btn-sn button-custom mb-2 rounded mr-4" style="text-align: left;">
                                                 <i class="fas fa-info-circle mr-2"></i>Tentang
                                         </a>
                                     </li> 
 
                                     <li class="child">
-                                        <a href="/adminberanda/layanankami" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/adminberanda/layanankami" class="ml-4 btn btn-sn button-custom mb-2 rounded mr-4" style="text-align: left;">
                                                 <i class="fas fa-cogs mr-2"></i>Layanan
                                         </a>
                                     </li>
 
                                     <li class="child">
-                                        <a href="/adminberanda/donasi" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/adminberanda/donasi" class="ml-4 btn btn-sn button-custom mb-2 rounded mr-4" style="text-align: left;">
                                                 <i class="fas fa-donate mr-2"></i>Donasi
                                         </a>
                                     </li>
 
                                     <li class="child">
-                                        <a href="/adminberanda/projectkami" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/adminberanda/projectkami" class="ml-4 btn btn-sn button-custom mb-2 rounded mr-4" style="text-align: left;">
                                                 <i class="fas fa-folder mr-2"></i>Project
                                         </a>
                                     </li>
 
-                                    <li class="child">
-                                        <a href="basic-tables.html" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
-                                                <i class="fas fa-address-book mr-2"></i>Kontak
-                                        </a>
-                                    </li> 
-
                                 </ul>
                             </li>
 
+                            <li class="parent">
+                                <a href="/dashboard" class=""><i class="fab fa-bandcamp mr-3"> </i>
+                                    <span class="none">Data Interface </span>
+                                </a>
+                            </li>
                             
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('form_element'); return false " ><i class="fa fa-database mr-3"></i>
+                                <a href="#" onclick="toggle_menu('form_element'); return false " ><i class="fas fa-hdd mr-3"></i>
                                     <span class="none">Data Pekerjaan <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
 
@@ -84,14 +83,14 @@
 
                                     <ul class="children" id="form_element">
                                         <li class="child">
-                                            <a href="/dashboard/posts" class="ml-4 btn btn-sn btn-success mb-2 rounded mr-4" style="text-align: left;">
+                                            <a href="/dashboard/posts" class="ml-4 btn btn-sn button-edit mb-2 rounded mr-4" style="text-align: left;">
                                                 <span data-feather="file-plus"></span>
                                                 <i class="fas fa-database mr-2 justify-left"></i> All Data
                                             </a>
                                         </li>
                                         @foreach ($categories as $cat)
                                         <li class="child">
-                                            <a href="/blog?category={{ $cat->slug }}" class="ml-4 btn btn-sn btn-primary mb-2 rounded mr-4" style="text-align: left;">
+                                            <a href="/blog?category={{ $cat->slug }}" class="ml-4 btn btn-sn button-custom mb-2 rounded mr-4" style="text-align: left;">
                                                 <span data-feather="file-plus"></span>
                                                 <i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}
                                             </a>
@@ -102,73 +101,65 @@
                             </li>
 
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('tables1'); return false" class=""><i class="fas fa-warehouse mr-3"></i>
+                                <a href="#" onclick="toggle_menu('tables1'); return false" class=""><i class="fas fa-users mr-3"></i>
                                     <span class="none">Daftar Mitra <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
 
                                 <ul class="children" id="tables1">
                                     <li class="child">
-                                        <a href="/backend/kontraktor" class="ml-4 btn btn-sn btn-warning mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/backend/kontraktor" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
                                                 <i class="fas fa-hammer mr-2"></i>Kontraktor
                                         </a>
                                     </li>
 
                                     <li class="child">
-                                        <a href="/backend/rumahmakan" class="ml-4 btn btn-sn btn-info mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/backend/rumahmakan" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
                                             <i class="fas fa-utensils mr-2"></i> Rumah Makan                         
                                         </a>
                                     </li>
 
                                     <li class="child">
-                                        <a href="/backend/rumahsakit" class="ml-4 btn btn-sn btn-success mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/backend/rumahsakit" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
                                             <i class="fas fa-hospital mr-2"></i> Rumah Sakit                         
                                         </a>
                                     </li> 
 
                                     <li class="child">
-                                        <a href="/backend/instansipendidikan" class="ml-4 btn btn-sn btn-info mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/backend/instansipendidikan" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
                                             <i class="fas fa-graduation-cap mr-2"></i>Instansi Pendidikan                         
                                         </a>
                                     </li> 
                                 </ul>
                             </li>
-                            
-                            
-                            <li class="parent">
-                                <a href="#" onclick="toggle_menu('dashboard'); return false" ><i class="fa fa-dashboard mr-3"> </i>
-                                    <span class="none">Dashboard Web <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                </a>
-                                <ul class="children none" id="dashboard">
-                                    <li class="child"><a href="/backendberanda" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Beranda</a></li>
-                                    <li class="child"><a href="index2.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Tentang </a></li>
-                                    <li class="child"><a href="index3.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Layanan </a></li>
-                                    <li class="child"><a href="index4.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Donasi</a></li>
-                                    <li class="child"><a href="index4.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Project</a></li>
-                                </ul>
-                            </li>
-                            </li>
-                            
-                            <li class="parent">
-                                <a href="#" onclick="toggle_menu('ul_element'); return false" class=""><i class="fa fa-puzzle-piece mr-3"></i>
-                                    <span class="none">Database Users <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                </a>
-                                <ul class="children" id="ul_element">
-                                    <li class="child"><a href="accordion.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Accordions</a></li>
-                                    <li class="child"><a href="buttons.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Buttons</a></li>
-                                    <li class="child"><a href="badges.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Badges</a></li>
-                                    <li class="child"><a href="breadcrumb.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Breadcrumbs</a></li>
-                                    <li class="child"><a href="cards.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Cards</a></li>
-                                    <li class="child"><a href="icons.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Icons</a></li>
-                                    <li class="child"><a href="modal.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Modals</a></li>
-                                    <li class="child"><a href="notification.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Notification</a></li>
-                                    <li class="child"><a href="progressbar.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Progressbar</a></li>
-                                    <li class="child"><a href="sweetalert.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Sweet alert</a></li>
-                                    <li class="child"><a href="tabs.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Tabs</a></li>
-                                    <li class="child"><a href="tooltip-popover.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Tooltip and Popovers</a></li>
-                                    <li class="child"><a href="typography.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Typography</a></li>
-                                </ul>
-                            </li>
 
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('tables2'); return false" class=""><i class="fas fa-users mr-3"></i>
+                                    <span class="none">Daftar Pekerja <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+
+                                <ul class="children" id="tables2">
+                                  
+                                    <li class="child">
+                                        <a href="/users" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fas fa-user mr-2"></i> Users App                         
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/datapenanggungjawab/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fas fa-user mr-2"></i> Penanggung Jawab                         
+                                        </a>
+                                    </li> 
+                                
+                                    <li class="child">
+                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fas fa-user mr-2"></i> Pengawas Lapangan                         
+                                        </a>
+                                    </li> 
+                                
+                                </ul>
+                            </li>
+                        
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('form_element'); return false" class=""><i class="fa fa-pencil-square mr-3"></i>
                                     <span class="none">Form Elements <i class="fa fa-angle-down pull-right align-bottom"></i></span>
@@ -180,18 +171,7 @@
                                     <li class="child"><a href="form-wizard.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Form Wizard</a></li>
                                 </ul>
                             </li>
-                            <li class="parent">
-                                <a href="#" onclick="toggle_menu('editors'); return false" class=""><i class="fa fa-pencil-square-o mr-3"></i>
-                                    <span class="none">Text Editors <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                </a>
-                                <ul class="children" id="editors">
-                                    <li class="child"><a href="ckeditor-classic.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Ckeditor classic</a></li>
-                                    <li class="child"><a href="ckeditor-inline.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Ckeditor inline</a></li>
-                                    <li class="child"><a href="ckeditor-document.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Ckeditor document</a></li>
-                                    <li class="child"><a href="summernote.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Summernote editor</a></li>
-                                </ul>
-                            </li>
-                            
+
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
                                     <span class="none">Charts <i class="fa fa-angle-down pull-right align-bottom"></i></span>
@@ -206,58 +186,7 @@
                                     <li class="child"><a href="sparkline.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Sparkline JS</a></li>
                                 </ul>
                             </li>
-                            <li class="parent">
-                                <a href="icons.html" class=""><i class="fa fa-toggle-on mr-3"></i>
-                                    <span class="none">Icons</span>
-                                </a>
-                            </li>
-                            <li class="parent">
-                                <a href="#" onclick="toggle_menu('ecommerce'); return false" class=""><i class="fa fa-shopping-cart mr-3"></i>
-                                    <span class="none">Ecommerce <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                </a>
-                                <ul class="children" id="ecommerce">
-                                    <li class="child"><a href="products.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> ProductList</a></li>
-                                    <li class="child"><a href="product-detail.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> ProductDetail</a></li>
-                                    <li class="child"><a href="orders.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> OrderList</a></li>
-                                    <li class="child"><a href="invoice.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Invoice</a></li>
-                                </ul>
-                            </li>
-                            <li class="parent">
-                                <a href="#" onclick="toggle_menu('maps'); return false" class=""><i class="fa fa-map mr-3"></i>
-                                    <span class="none">Maps <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                </a>
-                                <ul class="children" id="maps">
-                                    <li class="child"><a href="jvector-maps.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Jvector Maps</a></li>
-                                    <li class="child"><a href="google-maps.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Google Maps</a></li>
-                                </ul>
-                            </li>
-                            <li class="parent">
-                                <a href="#" onclick="toggle_menu('pages'); return false" class=""><i class="fa fa-file mr-3"></i>
-                                    <span class="none">Pages <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                </a>
-                                <ul class="children" id="pages">
-                                    <li class="child"><a href="email-inbox.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Email-Inbox</a></li>
-                                    <li class="child"><a href="email.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Email-Compose</a></li>
-                                    <li class="child"><a href="login.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Login</a></li>
-                                    <li class="child"><a href="register.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Signup</a></li>
-                                    <li class="child"><a href="lockscreen.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Lock Screen</a></li>
-                                    <li class="child"><a href="forgot-password.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Forgot Password</a></li>
-                                    <li class="child"><a href="profile.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Profile</a></li>
-                                    <li class="child"><a href="gallery.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Gallery</a></li>
-                                    <li class="child"><a href="invoice.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Invoice</a></li>
-                                    <li class="child"><a href="search-result.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Search</a></li>
-                                    <li class="child"><a href="pricing.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Pricing</a></li>
-                                    <li class="child"><a href="blank.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Blank Page</a></li>
-                                    <li class="child"><a href="error-404.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Error 404</a></li>
-                                    <li class="child"><a href="error-500.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Error 500</a></li>
-                                    <li class="child"><a href="error-504.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Error 504</a></li>
-                                </ul>
-                            </li>
-                            <li class="parent">
-                                <a href="fullcalendar.html" class=""><i class="fa fa-calendar-o mr-3"> </i>
-                                    <span class="none">Full Calendar </span>
-                                </a>
-                            </li>
+                            
                         </ul>
                     </div>
                     <!--Sidebar Naigation Menu-->

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Be_datainstansipendidikan;
+use App\Models\Category;
 use App\Http\Requests\StoreBe_datainstansipendidikanRequest;
 use App\Http\Requests\UpdateBe_datainstansipendidikanRequest;
 
-class BeDatainstansipendidikanController extends Controller
+class Be_DatainstansipendidikanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +15,13 @@ class BeDatainstansipendidikanController extends Controller
     public function index()
     {
         //
+        return view('backend.fe_datainstansipendidikan.index', [
+            'datainstansipendidikan'    => Be_datainstansipendidikan::orderBy('created_at', 'desc')->paginate(20),
+            'title'             => 'Data Instansi Pendidikan',
+            'title_dashboard'   => 'Daftar Mitra Instansi Pendidikan',
+            'categories'        => Category::all(),
+            // 'datapekerjaanstatus' => Datapekerjaanstatus::all()
+        ]);
     }
 
     /**

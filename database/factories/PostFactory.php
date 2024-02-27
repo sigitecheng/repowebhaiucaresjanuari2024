@@ -24,8 +24,8 @@ class PostFactory extends Factory
             'be_datarumahmakan_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
             'be_datarumahsakit_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
             'be_datainstansipendidikan_id' => $this->faker->numberBetween(1, 20), // Ganti dengan jumlah kontraktor yang sesuai
-            'penanggung_jawab_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah penanggung jawab yang sesuai
-            'pengawas_lapangan_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah pengawas lapangan yang sesuai
+            'datapenanggungjawab_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah penanggung jawab yang sesuai
+            'datapengawaslapangan_id' => $this->faker->numberBetween(1, 15), // Ganti dengan jumlah pengawas lapangan yang sesuai
             'datapekerjaanstatus_id' => mt_rand(1, 4),
             'title' => $this->faker->sentence(mt_rand(5, 10)),
             'slug' => $this->faker->slug(),
@@ -41,9 +41,6 @@ class PostFactory extends Factory
             'lokasi' => $this->faker->address,
             'anggaran' => $this->faker->randomFloat(2, 100000, 1000000),
             'waktu_pelaksanaan' => $this->faker->date(),
-            'tujuan_proyek' => $this->faker->paragraph,
-            'risiko_mitigasi' => $this->faker->paragraph,
-            'dampak_lingkungan' => $this->faker->paragraph,
             'tanggal_mulai' => $this->faker->date(),
             'tanggal_selesai' => $this->faker->optional(0.7)->date(),
             'published_at' => $this->faker->optional(0.8)->dateTimeThisMonth,

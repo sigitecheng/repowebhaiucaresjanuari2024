@@ -35,9 +35,34 @@
                         <form method="post" action="/dashboard/posts" enctype="multipart/form-data">
                             @csrf
 
+                            
+{{-- ------------------------------------------------------------------------------------------ --}}                            
+                         
+<div class="form-group row">
+    <label for="image" class="control-label col-sm-2"><i class="fas fa-file mr-2 "></i>Image </label>
+    <div class="col-sm-4">
+        <input class="form-control-file @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
+        @error('image')
+        <div class="invalid-feedback mb-2">
+            {{ $message }}
+        </div>
+        @enderror
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="control-label col-sm-2"></label>
+    <div class="col-sm-10">
+        <img class="img-preview img-fluid mb-3 col-sm-5" id="image-preview" alt="Image Preview">
+    </div>
+</div>
+
+{{-- ------------------------------------------------------------------------------------------ --}}                            
+
+
 {{-- ------------------------------------------------------------------------------------------ --}}
                             <div class="form-group row">
-                                <label class="control-label col-sm-2" for="title">Judul Project</label>
+                                <label class="control-label col-sm-2" for="title"><i class="fas fa-home mr-2"></i>Judul Project</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" required value="{{ old('title')}} " autofocus>
                                 </div>
@@ -47,11 +72,45 @@
                                 </div>
                                 @enderror
                             </div>
+{{-- ------------------------------------------------------------------------------------------ --}}                            
+
+{{-- ------------------------------------------------------------------------------------------ --}}                            
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="slug"><i class="fa fa-file mr-2"></i>Tema Project <br>(Terisi Otomatis)</label>
+                    <div class="col-sm-10">
+                        {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
+                        <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug')}} " autofocus>
+                    </div>
+                    @error('slug')
+                    <div class="invalid-feedback mb-2">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+
+                
+                <script>
+                    // Mendapatkan referensi elemen input judul
+                    var titleInput = document.getElementById('title');
+
+                    // Mendapatkan referensi elemen input slug
+                    var slugInput = document.getElementById('slug');
+
+                    // Menambahkan event listener untuk memantau perubahan di input judul
+                    titleInput.addEventListener('input', function() {
+                        // Mengonversi judul ke dalam slug
+                        var slug = this.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+                        // Menetapkan nilai slug ke dalam input slug
+                        slugInput.value = slug;
+                    });
+                </script>
 
 {{-- ------------------------------------------------------------------------------------------ --}}
                             <div class="form-group row">
-                                <label for="exampleFormControlSelect1" class="control-label col-sm-2">Kategori Project</label>
                                 <div class="col-sm-2">
+                                    <i class="fas fa-globe mr-0"></i>
+                                    <label for="exampleFormControlSelect1" class="control-label col-sm-2" style="margin-left: 0px;">Kategori </label>                                    
                                     <select class="form-control" name="category_id" id="category_id">
                                         @foreach($categories as $category)
                                         @if(old('category_id')) 
@@ -62,246 +121,186 @@
                                          @endforeach
                                     </select>
                                 </div>
-                            </div>
 
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="user_id">User</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('user_id') is-invalid @enderror" id="user_id" name="user_id" required value="{{ old('user_id')}} " autofocus>
-                                </div>
-                                @error('user_id')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
+                                {{-- -------------- --}}
 
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="kontraktor_id">Kontraktor</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('kontraktor_id') is-invalid @enderror" id="kontraktor_id" name="kontraktor_id" required value="{{ old('kontraktor_id')}} " autofocus>
+                                <div class="col-sm-3">
+                                    <i class="fas fa-hammer mr-0"></i>
+                                    <label for="exampleFormControlSelect1" class="control-label col-sm-2" style="margin-left: 0px;">Kontraktor</label>
+                                    <select class="form-control" name="be_datakontraktor_id" id="be_datakontraktor_id">
+                                        <option style="color:red;" value="">Bukan Kategori</option> <!-- Opsi "Bukan Kategori" -->
+                                        @foreach($datakontraktor as $data)
+                                            @if(old('be_datakontraktor_id') && old('be_datakontraktor_id') == $data->id)
+                                                <option value="{{ $data->id }}" selected>{{ $data->nama_perusahaan }}</option>
+                                            @else
+                                                <option value="{{ $data->id }}">{{ $data->nama_perusahaan }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
                                 </div>
-                                @error('kontraktor_id')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
 
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="penanggung_jawab_id">PIC</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('penanggung_jawab_id') is-invalid @enderror" id="penanggung_jawab_id" name="penanggung_jawab_id" required value="{{ old('penanggung_jawab_id')}} " autofocus>
-                                </div>
-                                @error('penanggung_jawab_id')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
+                                  {{-- -------------- --}}
 
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="pengawas_lapangan_id">Pengawas Lapangan</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('pengawas_lapangan_id') is-invalid @enderror" id="pengawas_lapangan_id" name="pengawas_lapangan_id" required value="{{ old('pengawas_lapangan_id')}} " autofocus>
+                                  <div class="col-sm-3">
+                                    <i class="fas fa-utensil-spoon"></i>
+                                    <label for="exampleFormControlSelect1" class="control-label col-sm-2" style="margin-left: 0px;">R.Makan</label>
+                                    <select class="form-control" name="be_datarumahmakan_id" id="be_datarumahmakan_id">
+                                        <option style="color:red;" value="">Bukan Kategori</option> <!-- Opsi "Bukan Kategori" -->
+                                        @foreach($datarumahmakan as $data)
+                                            @if(old('be_datarumahmakan_id') && old('be_datarumahmakan_id') == $data->id)
+                                                <option value="{{ $data->id }}" selected>{{ $data->nama_rumahmakan }}</option>
+                                            @else
+                                                <option value="{{ $data->id }}">{{ $data->nama_rumahmakan }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
                                 </div>
-                                @error('pengawas_lapangan_id')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
 
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="slug">Slug Project</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug')}} " autofocus>
-                                </div>
-                                @error('slug')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
+                                {{-- -------------- --}}
 
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                         
-                            {{-- <div class="form-group row">
-                                <label for="image" class="control-label col-sm-2" >Image Project </label>
-                                <img class="img-preview img-fluid mb-3 col-sm-5">
-                                <div class="col-sm-10">
-                                    <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">                          
-                               </div>
-                               @error('image')
-                               <div class="invalid-feedback mb-2">
-                                   {{ $message }}
-                               </div>
-                               @enderror
-                            </div> --}}
+                                <div class="col-sm-4">
+                                    <i class="fas fa-hospital"></i>
+                                    <label for="exampleFormControlSelect1" class="control-label col-sm-2" style="margin-left: 0px;">R.Sakit</label>
+                                    <select class="form-control" name="be_datarumahsakit_id" id="be_datarumahsakit_id">
+                                        <option style="color:red;" value="">Bukan Kategori</option> <!-- Opsi "Bukan Kategori" -->
+                                        @foreach($datarumahsakit as $data)
+                                            @if(old('be_datarumahsakit_id') && old('be_datarumahsakit_id') == $data->id)
+                                                <option value="{{ $data->id }}" selected>{{ $data->nama_rumahsakit }}</option>
+                                            @else
+                                                <option value="{{ $data->id }}">{{ $data->nama_rumahsakit }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                            <div class="form-group row">
-                                <label for="image" class="control-label col-sm-2">Image Project</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control-file @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
-                                    @error('image')
-                                    <div class="invalid-feedback mb-2">
-                                        {{ $message }}
+                                {{-- -------------- --}}
+
+                                <div class="col-sm-4">
+                                    <i class="fas fa-book"></i>
+                                    <label for="exampleFormControlSelect1" class="control-label col-sm-2" style="margin-left: 0px;">Instansi</label>
+                                    <select class="form-control" name="be_datainstansipendidikan_id" id="be_datainstansipendidikan_id">
+                                        <option style="color:red;" value="">Bukan Kategori</option> <!-- Opsi "Bukan Kategori" -->
+                                        @foreach($datainstansipendidikan as $data)
+                                            @if(old('be_datainstansipendidikan_id') && old('be_datainstansipendidikan_id') == $data->id)
+                                                <option value="{{ $data->id }}" selected>{{ $data->nama_instansi }}</option>
+                                            @else
+                                                <option value="{{ $data->id }}">{{ $data->nama_instansi }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                {{-- -------------- --}}
+
+                                <div class="col-sm-4">
+                                    <i class="fas fa-user"></i>
+                                    <label for="exampleFormControlSelect1" class="control-label col-sm-2">PIC</label>
+                                    <select class="form-control" name="datapenanggungjawab_id" id="datapenanggungjawab_id">
+                                        @foreach($datapenanggungjawab as $data)
+                                        @if(old('datapenanggungjawab_id')) 
+                                        <option value="{{ $data->id }}" selected>{{ $data->nama }}</option>
+                                        @else
+                                        <option value="{{ $data->id }}">{{ $data->nama }}</option>
+                                        @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                    {{-- -------------- --}}
+
+                                    <div class="col-sm-4">
+                                        <i class="fas fa-users"></i>
+                                        <label for="exampleFormControlSelect1" class="control-label col-sm-2">Pengawas</label>
+                                        <select class="form-control" name="datapengawaslapangan_id" id="datapengawaslapangan_id">
+                                            @foreach($datapengawaslapangan as $data)
+                                            @if(old('datapengawaslapangan_id')) 
+                                            <option value="{{ $data->id }}" selected>{{ $data->nama }}</option>
+                                            @else
+                                            <option value="{{ $data->id }}">{{ $data->nama }}</option>
+                                            @endif
+                                            @endforeach
+                                        </select>
                                     </div>
-                                    @enderror
-                                </div>
+
+                                        {{-- -------------- --}}
+
+
+
                             </div>
-                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2"></label>
-                                <div class="col-sm-10">
-                                    <img class="img-preview img-fluid mb-3 col-sm-5" id="image-preview" alt="Image Preview">
-                                </div>
-                            </div>
-                            
+                    {{-- ------------------------------------------------------------------------------------------ --}}
+                                 
 {{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="excerpt">Keterangan</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('excerpt') is-invalid @enderror" id="excerpt" name="excerpt" required value="{{ old('excerpt')}} " autofocus>
-                                </div>
-                                @error('excerpt')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="body">Penjelasan</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('body') is-invalid @enderror" id="body" name="body" required value="{{ old('body')}} " autofocus>
-                                </div>
-                                @error('body')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
+                <div class="form-group row">
+                            <div class="col-sm-6">
+                                <i class="fas fa-road"></i>
                                 <label class="control-label col-sm-2" for="lokasi">Lokasi</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('lokasi') is-invalid @enderror" id="lokasi" name="lokasi" required value="{{ old('lokasi' )}} " autofocus>
-                                </div>
-                                @error('lokasi')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
+                                {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
+                                <input type="text" class="form-control @error('lokasi') is-invalid @enderror" id="lokasi" name="lokasi" required value="{{ old('lokasi' )}} " autofocus>
                             </div>
-                            
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                <div class="form-group row">
-                    <label class="control-label col-sm-2" for="anggaran">Anggaran</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control @error('anggaran') is-invalid @enderror" id="anggaran" name="anggaran" required value="{{ old('anggaran') }}" autofocus>
-                        @error('anggaran')
-                        <div class="invalid-feedback mb-2">
-                            {{ $message }}
+                            @error('lokasi')
+                            <div class="invalid-feedback mb-2">
+                                {{ $message }}
+                            </div>
+                            @enderror
+
+                        {{-- -------------- --}}
+                        <div class="col-sm-6">
+                            <i class="fas fa-money-bill"></i>
+                            <label class="control-label col-sm-2" for="anggaran">Anggaran</label>
+                            <input type="number" class="form-control @error('anggaran') is-invalid @enderror" id="anggaran" name="anggaran" required value="{{ old('anggaran') }}" autofocus>
+                            @error('anggaran')
+                            <div class="invalid-feedback mb-2">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
-                        @enderror
-                    </div>
-                </div>
-
-                
-
-
-                            
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="waktu_pelaksanaan">Waktu</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="date" class="form-control @error('waktu_pelaksanaan') is-invalid @enderror" id="waktu_pelaksanaan" name="waktu_pelaksanaan" required value="{{ old('waktu_pelaksanaan') }}" autofocus>
-                                </div>
-                                    @error('waktu_pelaksanaan')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="tujuan_proyek">Tujuan</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('tujuan_proyek') is-invalid @enderror" id="tujuan_proyek" name="tujuan_proyek" required value="{{ old('tujuan_proyek')}} " autofocus>
-                                </div>
-                                @error('tujuan_proyek')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="risiko_mitigasi">Resiko</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('risiko_mitigasi') is-invalid @enderror" id="risiko_mitigasi" name="risiko_mitigasi" required value="{{ old('risiko_mitigasi' )}} " autofocus>
-                                </div>
-                                @error('risiko_mitigasi')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            
-{{-- ------------------------------------------------------------------------------------------ --}}                            
-                            <div class="form-group row">
-                                <label class="control-label col-sm-2" for="dampak_lingkungan">Dampak</label>
-                                <div class="col-sm-10">
-                                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
-                                    <input type="text" class="form-control @error('dampak_lingkungan') is-invalid @enderror" id="risiko_mitigasi" name="dampak_lingkungan" required value="{{ old('dampak_lingkungan' )}} " autofocus>
-                                </div>
-                                @error('dampak_lingkungan')
-                                <div class="invalid-feedback mb-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            
-{{-- ------------------------------------------------------------------------------------------ --}}                            
+            </div>
                                             
-                <div class="form-group row">
-                    <label for="exampleFormControlSelect1" class="control-label col-sm-2">Kategori Project</label>
-                    <div class="col-sm-2">
-                        <select class="form-control" name="datapekerjaanstatus_id" id="datapekerjaanstatus_id">
-                            @foreach($datapekerjaanstatus as $status)
-                            @if(old('datapekerjaanstatus_id')) 
-                            <option value="{{ $status->id }}" selected>{{ $status->nama_status }}</option>
-                            @else
-                            <option value="{{ $status->id }}">{{ $status->nama_status }}</option>
-                            @endif
-                            @endforeach
-                        </select>
-                    </div>
+{{-- ------------------------------------------------------------------------------------------ --}}                            
+{{-- ------------------------------------------------------------------------------------------ --}}                            
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="body"><i class="fas fa-question-circle mr-2"></i>Keterangan</label>
+                <div class="col-sm-10">
+                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
+                    <input type="text" class="form-control @error('body') is-invalid @enderror" id="body" name="body" required value="{{ old('body')}} " autofocus>
                 </div>
+                @error('body')
+                <div class="invalid-feedback mb-2">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
 
+            {{-- ------------------------------------------------------------------------------------------ --}}
 
-                            
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <i class="fas fa-clock"></i>
+                    <label class="control-label col-sm-2" for="waktu_pelaksanaan">Waktu</label>
+                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
+                    <input type="number" class="form-control @error('waktu_pelaksanaan') is-invalid @enderror" id="waktu_pelaksanaan" name="waktu_pelaksanaan" required value="{{ old('waktu_pelaksanaan') }}" autofocus placeholder="Masukkan jumlah hari">
+                </div>
+                    @error('waktu_pelaksanaan')
+                        <div class="invalid-feedback mb-2">
+                    {{ $message }}
+                    </div>
+                @enderror
+
+                {{-- --------------- --}}
+
+                <div class="col-sm-10">
+                    <i class="fas fa-file"></i>
+                    <label class="control-label col-sm-2" for="excerpt">Penjelasan</label>
+                    {{-- <input type="text" class="form-control" id="input-1" placeholder="John Doe" /> --}}
+                    <input type="text" class="form-control @error('excerpt') is-invalid @enderror" id="excerpt" name="excerpt" required value="{{ old('excerpt')}} " autofocus>
+                </div>
+                @error('excerpt')
+                <div class="invalid-feedback mb-2">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+           
 {{-- ------------------------------------------------------------------------------------------ --}}                            
                             <div class="form-group row">
                                 <label class="control-label col-sm-2" for="tanggal_mulai">Tanggal Mulai Pekerjaan</label>
@@ -329,6 +328,24 @@
                                 </div>
                                 @enderror
                             </div>
+
+{{-- ------------------------------------------------------------------------------------------ --}}                                                                        
+                <div class="form-group row">
+                    <label for="exampleFormControlSelect1" class="control-label col-sm-2">Kategori Project</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="datapekerjaanstatus_id" id="datapekerjaanstatus_id">
+                            @foreach($datapekerjaanstatus as $status)
+                            @if(old('datapekerjaanstatus_id')) 
+                            <option value="{{ $status->id }}" selected>{{ $status->nama_status }}</option>
+                            @else
+                            <option value="{{ $status->id }}">{{ $status->nama_status }}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                    </div>
+                </div>                            
+
+
                             <hr>
                             <button type="submit" class="btn btn-primary mb-4"><i class="fa fa-file"></i> Create New Project </button>
                     </div>
@@ -346,5 +363,42 @@
     <!--Main Content-->
 
 </div>
+
+
+
+<script>
+    // const title = document.querySelector('#title');
+    // const slug = document.querySelector('#slug');
+
+
+    // PEMANGGILAN FETCH DIBAWAH HARUS MEMILIKI METHOD YANG DI LAKUKAN OLEH CONTROLLER DI FOLDER CONTROLLER MAKA BUATLAH TERLEBIH DAHULU METHODNYA 
+    title.addEventListener('change', function() {
+        fetch('/dashboard/posts/checkSlug?title=' + title.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+    });
+
+    document.addEventListener('trix-file-accept', function(e) {
+        e.preventDefault();
+    })
+
+    // ALGORITMA FITUR UNTUK MENAMBAHKAN LIVE PREVIEW SEBELUM GAMBAR DI UPLOAD KE WEBSITE 
+
+    function previewImage() {
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result;
+        }
+
+
+    }
+</script>
 
 @endsection

@@ -20,23 +20,19 @@ return new class extends Migration
             $table->foreignId('be_datarumahsakit_id');
             $table->foreignId('be_datainstansipendidikan_id');
             // $table->foreignId('kontraktor_id')->constrained('kontraktors');
-            $table->foreignId('penanggung_jawab_id');
+            $table->foreignId('datapenanggungjawab_id');
             // $table->foreignId('penanggung_jawab_id')->constrained('penanggung_jawabs');
-            $table->foreignId('pengawas_lapangan_id');
+            $table->foreignId('datapengawaslapangan_id');
             // $table->foreignId('pengawas_lapangan_id')->constrained('pengawas_lapangans');
             $table->foreignId('datapekerjaanstatus_id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->text('excerpt');
-            $table->text('body');
-           
+            $table->text('body');  
             $table->string('lokasi');
             $table->double('anggaran', 10, 2);
             $table->date('waktu_pelaksanaan');
-            $table->text('tujuan_proyek')->nullable();
-            $table->text('risiko_mitigasi')->nullable();
-            $table->text('dampak_lingkungan')->nullable();
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai')->nullable();
             $table->timestamp('published_at')->nullable();

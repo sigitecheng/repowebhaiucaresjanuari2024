@@ -1,12 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
+use App\Models\User;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Datapekerjaanstatus;
-
-
+use App\Models\Be_datakontraktor;
+use App\Models\Be_datarumahmakan;
+use App\Models\Be_datarumahsakit;
+use App\Models\Be_datainstansipendidikan;
+use App\Models\Datapenanggungjawab;
+use App\Models\Datapengawaslapangan;
 use Illuminate\Http\Request;
 use Psy\CodeCleaner\ReturnTypePass;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -61,10 +67,20 @@ class DashboardPostController extends Controller
     public function create() // UNTUK MELAKUKAN PEMANGGILAN TANGKAP DATA DARI FORM YANG DIKIRIMKAN USERS
     {
         return view('backend.fe_dataprojectpekerjaan.create', [
-            // 'post'                  => $post,
-            'post'                  => Post::all(),
+           
+            $username = Auth::user()->username, // Mendapatkan username pengguna yang sedang masuk
+
+            $datausers = User::where('username', $username)->get(['username']),
+
             'categories'            => Category::all(),
             'datapekerjaanstatus'   => Datapekerjaanstatus::all(),
+            'datakontraktor'        => Be_datakontraktor::all(),
+            'datarumahmakan'        => Be_datarumahmakan::all(),
+            'datarumahsakit'        => Be_datarumahsakit::all(),
+            'datainstansipendidikan'        => Be_datainstansipendidikan::all(),
+            'datapenanggungjawab'           => Datapenanggungjawab::all(),
+            'datapengawaslapangan'          => Datapengawaslapangan::all(),
+            'datausers'             => $datausers,
             'title'                 => 'Create New Project',
             'title_halaman'         => 'Create New Project'
         ]);
@@ -81,24 +97,25 @@ class DashboardPostController extends Controller
             'title'                     => 'required|max:255',
             'slug'                      => 'required|unique:posts',
             'category_id'               => 'required',
-            'image'                     => 'image|file|max:1024',
-            'body'                      => 'required',
-            'kontraktor_id'             => 'required',
-            'penanggung_jawab_id'       => 'required',
-            'pengawas_lapangan_id'      => 'required',
+            // 'user_id'                   => 'required',
+            'be_datakontraktor_id'      => 'required',
+            'be_datarumahmakan_id'      => 'required',
+            'be_datarumahsakit_id'      => 'required',
+            'be_datainstansipendidikan_id'      => 'required',
+            'datapenanggungjawab_id'       => 'required',
+            'datapengawaslapangan_id'      => 'required',
             'lokasi'                    => 'required',
             'anggaran'                  => 'required',
+            'body'                      => 'required',
+            'image'                     => 'image|file|max:1024',
             'waktu_pelaksanaan'         => 'required',
-            'tujuan_proyek'             => 'required',
-            'risiko_mitigasi'           => 'required',
-            'dampak_lingkungan'         => 'required',
-            'datapekerjaanstatus_id'    => 'required',
             'tanggal_mulai'             => 'required',
-            'tanggal_selesai'           => 'required'
+            'tanggal_selesai'           => 'required',
+            'datapekerjaanstatus_id'    => 'required'
         ]);
 
         if ($request->file('image')) {
-            $validateData['image'] = $request->file('image')->store('post-images');
+            $validateData['image'] = $request->file('image')->store('daftar-pekerjaan');
         }
 
         $validateData['user_id'] = auth()->user()->id;
@@ -150,15 +167,15 @@ class DashboardPostController extends Controller
             'category_id'               => 'required',
             'image'                     => 'image|file|max:1024',
             'body'                      => 'required',
-            'kontraktor_id'             => 'required',
+            'be_datakontraktor_id'      => 'required',
+            'be_datarumahmakan_id'      => 'required',
+            'be_datarumahsakit_id'      => 'required',
+            'be_datainstansipendidikan_id'      => 'required',
             'penanggung_jawab_id'       => 'required',
             'pengawas_lapangan_id'      => 'required',
             'lokasi'                    => 'required',
             'anggaran'                  => 'required',
             'waktu_pelaksanaan'         => 'required',
-            'tujuan_proyek'             => 'required',
-            'risiko_mitigasi'           => 'required',
-            'dampak_lingkungan'         => 'required',
             'datapekerjaanstatus_id'    => 'required',
             'tanggal_mulai'             => 'required',
             'tanggal_selesai'           => 'required'
@@ -175,7 +192,7 @@ class DashboardPostController extends Controller
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $validateData['image'] = $request->file('image')->store('post-images');
+            $validateData['image'] = $request->file('image')->store('daftar-pekerjaan');
         }
 
         $validateData['user_id'] = auth()->user()->id;
@@ -200,6 +217,7 @@ class DashboardPostController extends Controller
         Post::destroy($post->id);
 
         return redirect('/dashboard/posts')->with('delete', 'Project has been deleted was successfully !');
+    
     }
 
     public function checkSlug(request $request)

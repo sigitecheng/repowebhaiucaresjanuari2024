@@ -4,617 +4,438 @@
 
 <!--Content right-->
 <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
-    <h5 class="mb-3 mt-3" ><i class='fa fa-map-signs'></i> <strong>Halaman | {{ $title }}</strong></h5>
+    <h5 class="mb-3 mt-3" ><i class='fa fa-map-signs'></i> <strong>Halaman | {{ $title_dashboard }}</strong></h5>
     <hr>
-                <h5 class="mt-0 mb-2"><i class="fa fa-database text-success"></i><strong> Database Project </strong></h5>
+       
+    <button class="btn btn-dark btn-block mb-4">
+        <h6 class="mt-0 mb-2"><i class="fa fa-database mr-2"></i><strong> Database HaiuCare Indonesia </strong></h6>
+    </button>
+    
+    
 
+    
 {{-- ============================== HALAMAN DATABASE PROJECT SUB BIDANG PEKERJAAN =========================== --}}
                 <!--Dashboard widget-->
-                <div class="mt-1 mb-3 button-container">
-                    <div class="row pl-0">
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-info border shadow rounded">
 
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class="fa fa-building text-theme"></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Infrastruktur</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
+                  <!--Custom cards section-->
+                  <div class="row">
+                    <!--Visitors statistics card-->
+                    <div class="col-sm-4 custom-card">
+                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-users"></i>
+                                <h5 class="mb-0 mt-2"><small>Users</small></h5>
+                                <h2>{{ $datausers }}</h2>
+                            </div>
+
+                            <svg viewBox="0 0 36 25" class="circular-chart blue">
+                                <path class="circle-bg"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <path class="circle"
+                                stroke-dasharray="40, 60"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <text x="18" y="12.00" class="percentage">&#xf0c0;</text>
+                            </svg>
+                            <div class="row mx-2">
+                                <div class="col-sm-6 col-12">
+                                    <h5>123</h5>
+                                    <span class="text-muted small"><strong>Male visitors</strong></span>
+                                </div>
+                                <div class="col-sm-6 col-12 text-right">
+                                    <h5>345</h5>
+                                    <span class="text-muted small"><strong>Female visitors</strong></span>
                                 </div>
                             </div>
-                        </a>
                         </div>
-{{-- ========================================================= --}}
-
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-info border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        {{-- <i class="fa fa-book text-theme"></i> --}}
-                                        <i class='fa fa-graduation-cap text-theme'></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Pendidikan</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-info border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class='fa fa-fire text-theme'></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Kesehatan</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-info border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class='fa fa-clone text-theme'></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Makanan</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-info border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class='fa fa-clone text-theme'></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Masjid </strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-info border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class='fa fa-clone text-theme'></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Bangunan</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-                    
                     </div>
-                </div>
-                <!--/Dashboard widget-->
+                    <!--/Visitors statistics card-->
 
-
-{{-- ================================ AKHIR HALAMAN DASHBOARD DATABASE PROJEK PEKERJAAN ===========================  --}}
-
-
-
-<hr>
-<h5 class="mt-0 mb-2"><i class="fa fa-database text-success"></i><strong> Database Users Mitra </strong></h5>
-{{-- ============================== HALAMAN DATABASE PROJECT SUB BIDANG PEKERJAAN =========================== --}}
-                <!--Dashboard widget-->
-                <div class="mt-1 mb-3 button-container">
-                    <div class="row pl-0">
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-success border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class="fa fa-building text-theme"></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Pengguna</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
+                    <!--Transaction statistics card-->
+                    <div class="col-sm-4 custom-card">
+                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-exchange-alt"></i>
+                                <h5 class="mb-0 mt-2"><small>Transactions</small></h5>
+                                <h2>{{ $datapost }}</h2>
                             </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-success border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class="fa fa-building text-theme"></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Mitra Project</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-
-                    </div>
-                </div>
-                <!--/Dashboard widget-->
-
-
-<hr>
-<h5 class="mt-0 mb-2"><i class="fa fa-database text-success"></i><strong> Database Mitra Project </strong></h5>
-{{-- ============================== HALAMAN DATABASE PROJECT SUB BIDANG PEKERJAAN =========================== --}}
-                <!--Dashboard widget-->
-                <div class="mt-1 mb-3 button-container">
-                    <div class="row pl-0">
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-secondary border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class="fa fa-building text-theme"></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>Kontraktor</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-
-{{-- ========================================================= --}}
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <a href="/blog">
-                                <div class="bg-secondary border shadow rounded">
-
-                                <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class="fa fa-building text-theme"></i>
-                                    </div>
-                                    <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-2"><strong>R Makan</strong></h3>
-                                        <h5 class="mt-0 mb-2 text-theme"><strong>Terkumpul</strong><br><strong class="shadow"></strong>Rp. 434.345.898,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-warning"><strong>Tersalurkan</strong><br><strong class="shadow"></strong> Rp. 324.876.123,-</h5>                                        
-                                        <h5 class="mt-0 mb-2 text-danger"><strong>Kebutuhan</strong><br><strong class="shadow"></strong>Rp. 90.255.824,-</h5>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-{{-- ========================================================= --}}
-
-                    </div>
-                </div>
-                <!--/Dashboard widget-->
-
-
-{{-- ================================ AKHIR HALAMAN DASHBOARD DATABASE PROJEK PEKERJAAN ===========================  --}}
-                
-                <div class="mt-4 mb-4 p-3 bg-white border shadow-sm lh-sm">
-                    <!--Order Listing-->
-                    <div class="product-list">
-                        
-                        <div class="row border-bottom mb-4">
-                            <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header">Order listing</h6></div>
-                            <div class="col-sm-4 text-right pb-3">
-                                <button type="button" class="btn btn-danger icon-round shadow pull-right">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-
-                                <div class="pull-right mr-3 btn-order-bulk">
-                                    <select class="shadow bg-secondary bulk-actions">
-                                        <option data-display="<span class='text-white'><b>Bulk status</b></span>">Status options</option>
-                                        <option value="1">Pending</option>
-                                        <option value="2">Cancelled</option>
-                                        <option value="4">Delivered</option>
-                                    </select>
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="table-responsive product-list">
                             
-                            <table class="table table-bordered table-striped mt-0" id="productList">
+                            <svg viewBox="0 0 36 25" class="circular-chart red">
+                                <path class="circle-bg"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <path class="circle"
+                                stroke-dasharray="40, 60"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <text x="18" y="12.00" class="percentage">&#xf1ed;</text>
+                            </svg>
+
+                            <div class="row mx-2">
+                                <div class="col-sm-6 col-12">
+                                    <h5>15,300</h5>
+                                    <span class="text-muted small"><strong>Payments done</strong></span>
+                                </div>
+                                <div class="col-sm-6 col-12 text-right">
+                                    <h5>67</h5>
+                                    <span class="text-muted small"><strong>Payments due</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Transaction statistics card-->
+
+                    <!--Tasks statistics card-->
+                    <div class="col-sm-4 custom-card">
+                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-users"></i>
+                                <h5 class="mb-0 mt-2"><small>PIC</small></h5>
+                                <h2>{{$datapenanggungjawab}}</h2>
+                            </div>
+
+                            <svg viewBox="0 0 36 25" class="circular-chart green">
+                                <path class="circle-bg"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <path class="circle"
+                                stroke-dasharray="40, 60"
+                                d="M18 2.0845
+                                    a 7.9567 7.9567 0 0 1 0 15.9134
+                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
+                                />
+                                <text x="18" y="12.00" class="percentage">&#xf0ae;</text>
+                            </svg>
+
+                            <div class="row mx-2">
+                                <div class="col-sm-6 col-12">
+                                    <h5>490</h5>
+                                    <span class="text-muted small"><strong>Completed</strong></span>
+                                </div>
+                                <div class="col-sm-6 col-12 text-right">
+                                    <h5>95</h5>
+                                    <span class="text-muted small"><strong>Pending</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transaction statistics card-->
+                </div>
+                <!--Custom cards Section-->
+
+
+
+                
+{{-- -------------------------------------------------------- --}}
+   <!--Content right-->
+   <div class="col-sm-12 col-xs-12 content pl-0">
+    
+    <div class="row mt-3">
+        <div class="col-sm-12">
+            <!--Inverse table-->
+                    <div class="mb-3 p-3 button-container bg-white border shadow-sm rounded" style="border-radius: 10px;">
+                        <h6><i class="fab fa-superpowers mr-2"></i>Data Project HaiuCare Bangun Indonesia </h6>
+                        {{-- <p class="mb-2">Add class <code>table-dark</code></p> --}}
+                        <hr> 
+                        <table class="table table-dark" id="project_table">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px;" class="p-0 pr-4 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="orderAll">
-                                                    <label for="orderAll"></label>
-                                                </span>
-                                            </div>
-                                        </th>
-                                        <th>Order ID</th>
-                                        <th>Customer</th>
-                                        <th>Status</th>
-                                        <th>Total</th>
-                                        <th>Order date</th>
-                                        <th>Action</th>
+                                        <th class="text-center" style="width: 50px;">No</th>
+                                        <th class="text-center" style="width: 150px;">Project</th>
+                                        <th class="text-center" style="width: 25px;">Progress</th>
+                                        <th class="text-center" style="width: 25px;">Start date</th>
+                                        <th class="text-center" style="width: 25px;">Due date</th>
+                                        <th class="text-center" style="width: 25px;">Anggaran</th>
                                     </tr>
                                 </thead>
+                                @foreach($dataposts as $data)
                                 <tbody>
                                     <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order1">
-                                                    <label for="order1"></label>
-                                                </span>
-                                            </div>
+                                        {{-- <td></td> --}}
+                                        <td class="text-center">{{ $loop->iteration }}</td>
+                                        <td>{{$data->title }}</td>
+                                        <td class="text-center">
+                                            @if (is_object($data) && isset($data->datapekerjaanstatus))
+    @php
+        $progressPercentage = 0;
+        $progressColor = 'bg-danger';
+
+        switch ($data->datapekerjaanstatus->nama_status) {
+            case 'Selesai':
+                $progressPercentage = 100;
+                $progressColor = 'bg-success';
+                break;
+            case 'Pending':
+                $progressPercentage = 50;
+                $progressColor = 'bg-warning';
+                break;
+            case 'Tertunda':
+                $progressColor = 'bg-danger';
+                break;
+            case 'Sedang Berjalan':
+                $progressPercentage = 100;
+                $progressColor = 'bg-primary';
+                break;
+            default:
+                $progressPercentage = 0;
+        }
+    @endphp
+
+    <i class="fas 
+        @if ($data->datapekerjaanstatus->nama_status == 'Selesai')
+            fa-check-circle text-success
+        @elseif ($data->datapekerjaanstatus->nama_status == 'Pending')
+            fa-exclamation-circle text-warning
+        @elseif ($data->datapekerjaanstatus->nama_status == 'Tertunda')
+            fa-clock text-danger
+        @elseif ($data->datapekerjaanstatus->nama_status == 'Sedang Berjalan')
+            fa-spinner text-primary
+        @endif
+    "></i>
+    {{ $data->datapekerjaanstatus->nama_status }}
+
+    <div class="progress mt-3" style="height: 7px;">
+        <div class="progress-bar {{ $progressColor }}" role="progressbar" aria-valuenow="{{ $progressPercentage }}" style="width: {{ $progressPercentage }}%" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+@endif
+
                                         </td>
-                                        <td>Ord#13</td>
-                                        <td class="align-middle">
-                                            Stephanie Cott
-                                        </td>
-                                        <td class="align-middle"><span class="badge badge-warning">Pending</span></td>
-                                        <td class="align-middle">$200</td>
-                                        <td>15/09/2018</td>
-                                        <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#orderUpdate"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order2">
-                                                    <label for="order2"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#14</td>
-                                        <td class="align-middle">
-                                            Andy Webb
-                                        </td>
-                                        <td class="align-middle"><span class="badge badge-danger">Cancelled</span></td>
-                                        <td class="align-middle">$200</td>
-                                        <td>15/09/2018</td>
-                                        <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#orderUpdate"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order3">
-                                                    <label for="order3"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#15</td>
-                                        <td class="align-middle">
-                                            Andy Webb
-                                        </td>
-                                        <td class="align-middle"><span class="badge badge-success">Delivered</span></td>
-                                        <td class="align-middle">$200</td>
-                                        <td>15/09/2018</td>
-                                        <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#orderUpdate"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order4">
-                                                    <label for="order4"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#16</td>
-                                        <td class="align-middle">
-                                            Stephanie Cott
-                                        </td>
-                                        <td class="align-middle"><span class="badge badge-warning">Pending</span></td>
-                                        <td class="align-middle">$200</td>
-                                        <td>15/09/2018</td>
-                                        <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#orderUpdate"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order5">
-                                                    <label for="order5"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#17</td>
-                                        <td class="align-middle">
-                                            Andy Webb
-                                        </td>
-                                        <td class="align-middle"><span class="badge badge-danger">Cancelled</span></td>
-                                        <td class="align-middle">$200</td>
-                                        <td>15/09/2018</td>
-                                        <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#orderUpdate"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order6">
-                                                    <label for="order6"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#18</td>
-                                        <td class="align-middle">
-                                            Andy Webb
-                                        </td>
-                                        <td class="align-middle"><span class="badge badge-success">Delivered</span></td>
-                                        <td class="align-middle">$200</td>
-                                        <td>15/09/2018</td>
-                                        <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#orderUpdate"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order7">
-                                                    <label for="order7"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#19</td>
-                                        <td class="align-middle">
-                                            Stephanie Cott
-                                        </td>
-                                        <td class="align-middle"><span class="badge badge-warning">Pending</span></td>
-                                        <td class="align-middle">$200</td>
-                                        <td>15/09/2018</td>
-                                        <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#orderUpdate"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
+                                        <td class="text-center">{{ $data->tanggal_mulai }}</td>
+                                        <td class="text-center">{{ $data->tanggal_selesai }}</td>
+                                        <td class="text-left">Rp. {{ $data->anggaran}}</td>
+                                    </tr>   
+                                </tbody>
+                                @endforeach
                             </table>
+                            <hr>
 
-                            <div class="text-right">
-                                <button class="btn btn-outline-theme"><i class="fa fa-eye"></i> View full orders</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Order Listing-->
-
-                    <!--Order Info Modal-->
-                    <div class="modal fade" id="orderInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Ord#13 details</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                            <div class="pagination-container" style="display: flex; justify-content: space-between;">
+                                <div class="pagination-info">
+                                    Data ke <span><strong> {{ $dataposts->firstItem() }} </strong></span> Sampai <span><strong> {{ $dataposts->lastItem() }} </strong></span> dari total <strong><span> {{ $dataposts->total() }} </strong></span> data
                                 </div>
-                                <div class="modal-body">
-                                    <table class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="row">Item</th>
-                                                <th>Quantity</th>
-                                                <th>Unit price</th>
-                                                <th>Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td scope="row">Red Shoes</td>
-                                                <td>2</td>
-                                                <td>$400</td>
-                                                <td>$800</td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row">Blue shirt</td>
-                                                <td>1</td>
-                                                <td>$400</td>
-                                                <td>$400</td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row">Knickers</td>
-                                                <td>3</td>
-                                                <td>$300</td>
-                                                <td>$900</td>
-                                            </tr>
-                                        </tbody>
+                                <div class="pagination-links">
+                                    {{ $dataposts->links() }}
+                                </div>
+                            </div>
+                                                                              
+                        </div>
+            <!--/Inverse table-->
+    <!--Main Content-->
+    </div>
+</div>
+
+{{-- -------------------------------------------------------- --}}
+
+<button class="btn btn-dark btn-block mb-4">
+    <h6 class="mt-0 mb-2"><i class="fa fa-database mr-2"></i><strong> Daftar Project HaiuCare Indonesia </strong></h6>
+</button>
+                <!--Dashboard widget-->
+                <div class="mt-1 mb-3 button-container">
+
+                    <div class="row pl-0">
+
+                        {{-- ------------------------------------------------------ --}}
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2 text-theme mb-2">
+                                        <small><strong><i class="fas fa-hammer mr-2"></i>INFRASTRUKTUR</strong></small>
+                                    </h5>
+                                    <table class="table text-center">
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-money-bill mr-2"></i>Terkumpul</td></button>
+                                            <td><h4><span class="badge badge-primary p-2">Rp.<span> {{ $totalanggaraninfrastruktur }}</span></span></h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-handshake mr-2"></i>Tersalurkan</td></button>
+                                            <td><h4><span class="badge badge-success p-2">Rp.<span> 1.355.232.675,-</span></span></h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-handshake mr-2"></i>Kebutuhan</td></button>
+                                            <td><h4><span class="badge badge-secondary p-2">Rp.<span> 1.355.232.675,-</span></span></h4></td>
+                                        </tr>
                                     </table>
-
-                                    <div class="text-right mt-4 p-4">
-                                        <p><strong>Sub - Total amount: $14,768.00</strong></p>
-                                        <p><strong>Shipping: $1000.00</strong></p>
-                                        <p><span>vat(10%): $150.00</span></p>
-                                        <h4 class="mt-2"><strong>Total: $16,050.00</strong></h4>
+                                    <hr>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="">
+                                            <button class="btn btn-outline-primary mb-2 mr-2">
+                                                <i class="fas fa-eye mr-2"></i>Details
+                                            </button>
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    
+                                </div>       
+                                                         
+                                <div class="align-bottom">
+                                    {{-- <span id="incomeBar"></span> --}}
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!--Order Info Modal-->
+                        </div>   
 
-                    <!--Order Update Modal-->
-                    <div class="modal fade" id="orderUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Ord#13 details update</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <table class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th scope="row">Item</th>
-                                                <th class="order-qty-head">Quantity</th>
-                                                <th>Unit price</th>
-                                                <th>Total</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="align-middle">01</td>
-                                                <td scope="row" class="align-middle">Red Shoes</td>
-                                                <td class="text-center align-middle"><input type="text" value="2" class="order-qty"></td>
-                                                <td class="align-middle">$400</td>
-                                                <td class="align-middle">$800</td>
-                                                <td style="width: 120px;" class="align-middle">
-                                                    <button class="btn btn-theme mr-1"><i class="fa fa-pencil-square-o"></i></button>
-                                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="align-middle">02</td>
-                                                <td class="align-middle" scope="row">Blue shirt</td>
-                                                <td class="text-center align-middle"><input type="text" value="1" class="order-qty"></td>
-                                                <td class="align-middle">$400</td>
-                                                <td class="align-middle">$400</td>
-                                                <td class="align-middle">
-                                                    <button class="btn btn-theme mr-1"><i class="fa fa-pencil-square-o"></i></button>
-                                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="align-middle">03</td>
-                                                <td class="align-middle" scope="row">Knickers</td>
-                                                <td class="text-center align-middle"><input type="text" value="3" class="order-qty"></td>
-                                                <td class="align-middle">$300</td>
-                                                <td class="align-middle">$900</td>
-                                                <td class="align-middle">
-                                                    <button class="btn btn-theme mr-1"><i class="fa fa-pencil-square-o"></i></button>
-                                                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+
+                        {{-- ------------------------------------------------------ --}}
+
+                        {{-- ------------------------------------------------------ --}}
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2 text-theme mb-2">
+                                        <small><strong><i class="fas fa-book mr-2"></i>PENDIDIKAN</strong></small>
+                                    </h5>
+                                    <table class="table text-center">
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-money-bill mr-2"></i>Terkumpul</td></button>
+                                            <td><h4><span class="badge badge-primary p-2">Rp. <span>{{ $totalanggaranpendidikan}}</span></span></h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-handshake mr-2"></i>Tersalurkan</td></button>
+                                            <td><h4><span class="badge badge-success p-2">Rp.<span> 1.355.232.675,-</span></span></h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-handshake mr-2"></i>Kebutuhan</td></button>
+                                            <td><h4><span class="badge badge-secondary p-2">Rp.<span> 1.355.232.675,-</span></span></h4></td>
+                                        </tr>
                                     </table>
-
-                                    <div class="text-right mt-4 p-4">
-                                        <p><strong>Sub - Total amount: $14,768.00</strong></p>
-                                        <p><strong>Shipping: $1000.00</strong></p>
-                                        <p><span>vat(10%): $150.00</span></p>
-                                        <h4 class="mt-2"><strong>Total: $16,050.00</strong></h4>
+                                    <hr>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="">
+                                            <button class="btn btn-outline-primary mb-2 mr-2">
+                                                <i class="fas fa-eye mr-2"></i>Details
+                                            </button>
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    
+                                </div>       
+                                                         
+                                <div class="align-bottom">
+                                    {{-- <span id="incomeBar"></span> --}}
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!--Order Update Modal-->
+                        </div>   
+
+
+                        {{-- ------------------------------------------------------ --}}
+                        {{-- ------------------------------------------------------ --}}
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2 text-theme mb-2">
+                                        <small><strong><i class="fas fa-hospital mr-2"></i>KESEHATAN</strong></small>
+                                    </h5>
+                                    <table class="table text-center">
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-money-bill mr-2"></i>Terkumpul</td></button>
+                                            <td><h4><span class="badge badge-primary p-2">Rp. <span> {{ $totalanggarankesehatan }}</span></span></h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-handshake mr-2"></i>Tersalurkan</td></button>
+                                            <td><h4><span class="badge badge-success p-2">Rp.<span> 1.355.232.675,-</span></span></h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-handshake mr-2"></i>Kebutuhan</td></button>
+                                            <td><h4><span class="badge badge-secondary p-2">Rp.<span> 1.355.232.675,-</span></span></h4></td>
+                                        </tr>
+                                    </table>
+                                    <hr>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="">
+                                            <button class="btn btn-outline-primary mb-2 mr-2">
+                                                <i class="fas fa-eye mr-2"></i>Details
+                                            </button>
+                                        </a>
+                                    </div>
+                                    
+                                </div>       
+                                                         
+                                <div class="align-bottom">
+                                    {{-- <span id="incomeBar"></span> --}}
+                                </div>
+                            </div>
+                        </div>   
+
+
+                        {{-- ------------------------------------------------------ --}}
+                        {{-- ------------------------------------------------------ --}}
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+                            <div class="bg-white border shadow">
+                                <div class="p-2 text-center">
+                                    <h5 class="mb-0 mt-2 text-theme mb-2">
+                                        <small><strong><i class="fas fa-utensils mr-2"></i>MAKANAN</strong></small>
+                                    </h5>
+                                    <table class="table text-center">
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-money-bill mr-2"></i>Terkumpul</td></button>
+                                            <td><h4><span class="badge badge-primary p-2">Rp. <span> {{ $totalanggaranmakanan }}</span></span></h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-handshake mr-2"></i>Tersalurkan</td></button>
+                                            <td><h4><span class="badge badge-success p-2">Rp.<span> 1.355.232.675,-</span></span></h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-outline-primary"><i class="fas fa-handshake mr-2"></i>Kebutuhan</td></button>
+                                            <td><h4><span class="badge badge-secondary p-2">Rp.<span> 1.355.232.675,-</span></span></h4></td>
+                                        </tr>
+                                    </table>
+                                    <hr>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="">
+                                            <button class="btn btn-outline-primary mb-2 mr-2">
+                                                <i class="fas fa-eye mr-2"></i>Details
+                                            </button>
+                                        </a>
+                                    </div>
+                                    
+                                </div>       
+                                                         
+                                <div class="align-bottom">
+                                    {{-- <span id="incomeBar"></span> --}}
+                                </div>
+                            </div>
+                        </div>   
+                        {{-- ------------------------------------------------------ --}}
+                    </div>  
                 </div>
+                <!--/Dashboard widget-->
 
 
-            </div>
+{{-- ================================ AKHIR HALAMAN DASHBOARD DATABASE PROJEK PEKERJAAN ===========================  --}}
+<button class="btn btn-dark btn-block mb-4">
+    <h6 class="mt-0 mb-2"><i class="fa fa-database mr-2"></i><strong>Chart Data HaiuCare Indonesia </strong></h6>
+</button>
+
+<div class="row mt-3">
+    <div class="col-sm-6">
+        <!--Line Chart-->
+        <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
+            <h6 class="mb-2">Chart Project</h6>
+            
+            <div id="lineChartFlot" style="width: 100%; height:350px"></div>
         </div>
-
-        <!--Main Content-->
+        <!--/Line Chart-->
 
     </div>
+    
+    
+    <div class="col-sm-6">
+        <!--Area Chart-->
+        <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
+            <h6>Realtime Chart</h6>
+
+            <div id="realTimeChartFlot" style="width: 100%; height:350px"></div>
+        </div>
+        <!--/Area Table-->
+        </div>
+    </div>
+
+    @include('backend.dashboard.part.menufooter')

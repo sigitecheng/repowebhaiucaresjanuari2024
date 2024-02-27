@@ -112,4 +112,14 @@ class Post extends Model
     {
         return $this->belongsTo(Be_datainstansipendidikan::class);
     }
+
+    public function Datapenanggungjawab()
+    {
+        return $this->belongsTo(Datapenanggungjawab::class);
+    }
+
+    public function Datapengawaslapangan()
+    {
+        return $this->belongsTo(Datapengawaslapangan::class);
+    }
 }

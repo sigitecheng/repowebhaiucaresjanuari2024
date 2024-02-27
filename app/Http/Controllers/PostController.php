@@ -139,13 +139,16 @@ class PostController extends Controller
         ]);
     }
 
-    public function destroy(Post $post)
+    public function destroy($data)
     {
-        if ($post->image) {
-            Storage::delete($post->image);
-        }
-        Post::destroy($post->id);
-
-        return redirect('/blog')->with('delete', 'Project has been deleted was successfully !');
+        // Cari pengguna berdasarkan ID yang diberikan
+        $user = User::findOrFail($data->id);
+    
+        // Hapus pengguna
+        $user->delete();
+    
+        // Redirect kembali ke halaman /users dengan pesan sukses
+        return redirect('/users')->with('delete', 'User has been successfully deleted!');
     }
+    
 }

@@ -15,7 +15,7 @@
         </strong>    
          <a href="/backend/kontraktor/create" class="btn btn-primary float-right">
              <span data-feather="file-plus"></span>
-             <i class="fas fa-cogs"></i> New Kontraktor
+             <i class="fas fa-edit"></i> New Kontraktor
            </a>
     </h5>
     <div class="table-responsive col-lg-12 ">
@@ -46,6 +46,20 @@
 
 {{-- ========================= PAKET LINK KATEGORI ======================================= --}}
   
+  
+<div class="card rounded mt-4 p-0">
+    <div class="card-body d-flex justify-content-between align-items-center">
+        <p class="card-text m-0">
+            <i class="fas fa-file mr-2"></i>Halaman 
+            <span class="badge badge-secondary"><strong>{{ $datakontraktor->currentPage() }}</strong></span>  
+            dari 
+            <span class="badge badge-warning"><strong class="text-white">{{ $title_dashboard }}</strong></span>
+
+        </p>
+    </div>
+</div>
+
+
     <table class="table table-striped table-sm mt-4">
         <thead>
             <tr>
@@ -53,7 +67,7 @@
                 <th scope="col" class="text-center" style="width: 150px;">Nama Perusahaan</th>
                 <th scope="col" class="text-center" style="width: 100px;">Alamat</th>
                 <th scope="col" class="text-center" style="width: 70px;">Nomor Telepon</th>
-                <th scope="col" class="text-center" style="width: 60px;">Aksi</th>
+                <th scope="col" class="text-center" style="width: 70px;">Aksi</th>
             </tr>
         </thead>
         <tbody>

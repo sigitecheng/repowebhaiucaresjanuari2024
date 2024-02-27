@@ -13,6 +13,8 @@ use App\Models\Be_datakontraktor;
 use App\Models\Be_datarumahmakan;
 use App\Models\Be_datarumahsakit;
 use App\Models\Be_datainstansipendidikan;
+use App\Models\Datapenanggungjawab;
+use App\Models\Datapengawaslapangan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -31,7 +33,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        User::factory(7)->create();
+        User::factory(500)->create();
 
 
 
@@ -100,6 +102,8 @@ class DatabaseSeeder extends Seeder
         be_datarumahmakan::factory(150)->create();
         be_datarumahsakit::factory(150)->create();
         Be_datainstansipendidikan::factory(150)->create();
+        Datapenanggungjawab::factory(150)->create();
+        Datapengawaslapangan::factory(150)->create();
 
     }
 }

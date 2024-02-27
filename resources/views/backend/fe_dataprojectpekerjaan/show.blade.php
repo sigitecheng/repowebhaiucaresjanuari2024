@@ -39,7 +39,7 @@
                                         <img src="{{ asset('storage/' . $post->image ) }}" class="card-img-top mt-3 mb-3" alt="{{ $post->category->nama_kategori }}" class="img-fluid">
                                     </div>
                                     @else
-                                    <img src="https://source.unsplash.com/1200x400?{{ $post->category->nama_kategori }}" class="card-img-top mt-3 mb-3" alt="{{ $post->category->nama_kategori }}" class="img-fluid">
+                                    <img src="https://source.unsplash.com/600x200?{{ $post->category->nama_kategori }}" class="card-img-top mt-3 mb-3" alt="{{ $post->category->nama_kategori }}" class="img-fluid">
                                     @endif                    
                                 
                                 </td>

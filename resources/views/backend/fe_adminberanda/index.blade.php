@@ -16,7 +16,7 @@
                     <div class="product-list">
                         
                         <div class="row border-bottom mb-4">
-                            <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header"><button class="btn btn-warning mr-2"><i class="fa fa-file-excel"></i></button>{{ $title_dashboard }} </h6></div>
+                            <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header"><button class="btn button-halaman mr-2"><i class="fa fa-file-excel"></i></button>{{ $title_dashboard }} </h6></div>
                             <div class="col-sm-4 text-right pb-3">
                               
                             </div>
@@ -93,7 +93,7 @@
                                 </table>
                                 
                                 <a href="/adminberanda/post/{{ $beranda->beranda1}}/edit">
-                                    <button type="button" class="btn btn-success icon-round shadow pull-right mr-2">
+                                    <button type="button" class="btn btn-sn button-edit shadow pull-right mr-2">
                                         <i class="fas fa-edit"></i>
                                     </button>
                                 </a>
@@ -101,7 +101,7 @@
                                 @endforeach
                                 <a href="">
                                     <div class="">
-                                        <button class="btn btn-outline-theme"><i class="fa fa-eye"></i> View All Data Dashboard Frontend </button>
+                                        <button class="btn button-custom text-white"><i class="fa fa-eye"></i> View All Data Dashboard Frontend </button>
                                     </div>
                                 </a>
 
@@ -110,12 +110,14 @@
                         </div>
                         <!--/Order Listing-->
 
-                  
+                        @include('backend.dashboard.part.menufooter')
                 </div>
 
 
             </div>
         </div>
+
+        
 
         <!--Main Content-->
 

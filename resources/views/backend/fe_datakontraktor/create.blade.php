@@ -32,9 +32,8 @@
                     </div>
                     <!--Default elements-->
 
-                        <form method="post" action="/dashboard/posts" enctype="multipart/form-data">
+                        <form method="post" action="/backend/kontraktor" enctype="multipart/form-data">
                             @csrf
-
 {{-- ------------------------------------------------------------------------------------------ --}}
                             <div class="form-group row">
                                 <label class="control-label col-sm-2" for="nama_perusahaan"><i class="fas fa-building mr-2"></i>Nama Perusahaan</label>
@@ -72,11 +71,86 @@
                                     {{ $message }}
                                 </div>
                                 @enderror
-                                <label class="control-label col-sm-2" for="kota"><i class="fas fa-building mr-2"></i>Kota</label>
+
+                                <label class="control-label col-sm-2" for="nomor_telepon"><i class="fas fa-phone mr-2"></i>Nomor Telepon</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control @error('kota') is-invalid @enderror" id="kota" name="kota" required value="{{ old('kota')}} " autofocus>
+                                    <input type="number" class="form-control @error('nomor_telepon') is-invalid @enderror" id="nomor_telepon" name="nomor_telepon" required value="{{ old('nomor_telepon')}} " autofocus>
                                 </div>
-                                @error('kota')
+                                @error('nomor_telepon')
+                                <div class="invalid-feedback mb-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+{{-- ------------------------------------------------------------------------------------------ --}}
+                            <div class="form-group row">
+                                <label class="control-label col-sm-2" for="email"><i class="fas fa-envelope mr-2"></i>Email</label>
+                                <div class="col-sm-4">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" required value="{{ old('email')}} " autofocus>
+                                </div>
+                                @error('email')
+                                <div class="invalid-feedback mb-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
+                                <label class="control-label col-sm-2" for="pimpinan_perusahaan"><i class="fas fa-user mr-2"></i>Pimpinan Perusahaan</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control @error('pimpinan_perusahaan') is-invalid @enderror" id="pimpinan_perusahaan" name="pimpinan_perusahaan" required value="{{ old('pimpinan_perusahaan')}} " autofocus>
+                                </div>
+                                @error('pimpinan_perusahaan')
+                                <div class="invalid-feedback mb-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            
+{{-- ------------------------------------------------------------------------------------------ --}}
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2" for="pengalaman"><i class="fas fa-star mr-2"></i>Pengalaman</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control @error('pengalaman') is-invalid @enderror" id="pengalaman" name="pengalaman" required value="{{ old('pengalaman')}} " autofocus>
+                            </div>
+                            @error('pengalaman')
+                            <div class="invalid-feedback mb-2">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
+            {{-- ------------------------------------------------------------------------------------------ --}}
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2" for="bidang_keahlian"><i class="fas fa-star mr-2"></i>Bidang Keahlian</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control @error('bidang_keahlian') is-invalid @enderror" id="bidang_keahlian" name="bidang_keahlian" required value="{{ old('bidang_keahlian')}} " autofocus>
+                        </div>
+                        @error('bidang_keahlian')
+                        <div class="invalid-feedback mb-2">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+
+{{-- ------------------------------------------------------------------------------------------ --}}
+                            <div class="form-group row">
+                                <label class="control-label col-sm-2" for="sertifikat"><i class="fas fa-file mr-2"></i>Sertifikat</label>
+                                <div class="col-sm-4">
+                                    <input type="file" class="form-control @error('sertifikat') is-invalid @enderror" id="sertifikat" name="sertifikat" required value="{{ old('sertifikat')}} " autofocus>
+                                </div>
+                                @error('sertifikat')
+                                <div class="invalid-feedback mb-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
+                                <label class="control-label col-sm-2" for="dokumen"><i class="fas fa-file mr-2"></i>Dokumen PT/CV</label>
+                                <div class="col-sm-4">
+                                    <input type="file" class="form-control @error('dokumen') is-invalid @enderror" id="dokumen" name="dokumen" required value="{{ old('dokumen')}} " autofocus>
+                                </div>
+                                @error('dokumen')
                                 <div class="invalid-feedback mb-2">
                                     {{ $message }}
                                 </div>
@@ -84,7 +158,7 @@
                             </div>
 
                             <hr>
-                            <button type="submit" class="btn btn-warning mb-4"><i class="fas fa-hammer mr-2"></i> Create New Kontraktor </button>
+                            <button type="submit" class="btn btn-warning mb-4"><i class="fas fa-hammer mr-2"></i> Create </button>
                     </div>
 
                     @include('backend.dashboard.part.menufooter')

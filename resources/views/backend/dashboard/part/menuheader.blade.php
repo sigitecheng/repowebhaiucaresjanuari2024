@@ -16,7 +16,7 @@
         
         <!--Logo-->
         <div class="col-sm-3 pl-0 text-center header-logo">
-           <div class="bg-primary mr-3 pt-3 pb-2 mb-0">
+           <div class="button-custom mr-3 pt-3 pb-3 mb-0">
                 <h3 class="logo"><a href="#" class="text-secondary logo"><i class='fa fa-balance-scale'></i> HaiuCare <span class="small">admin</span></a></h3>
            </div>
         </div>
@@ -143,6 +143,7 @@
                     <div class="search-rounded mr-3">
                         <input type="text" class="form-control search-box" placeholder="Enter keywords.." />
                     </div>
+                    
                     <div class="mr-4">
                         <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="assets/img/profile.jpg" alt="Adam" class="rounded-circle" width="40px" height="40px">
@@ -153,22 +154,21 @@
                             <a class="dropdown-item" href="#"><i class="fa fa-th-list pr-2"></i> Tasks</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i class="fa fa-book pr-2"></i> Projects</a>
-                            <div class="dropdown-divider"></div>
-                            @auth
-            
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="div">
+                        @auth
                             <form action="/logout" method="post">
                                 @csrf
-                                <button type="submit" class="dropdown-item"><i class="fa fa-power-off pr-2"></i> Logout</button>
+                                <button class="btn btn-outline-danger rounded-circle" style="padding: 10px; font-size: 16px;">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </button>
                             </form>
-                            
                             @endauth
-                            
-                            
-                            
-        
-                        </div>
-
                     </div>
+                    
                 </div>
                 <!--Search box and avatar-->
             </div>    
