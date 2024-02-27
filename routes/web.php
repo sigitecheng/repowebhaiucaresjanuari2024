@@ -15,7 +15,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DatausersandroidController;
-use App\Http\Controllers\Fe_AdminBerandaController;
+use App\Http\Controllers\Fe_adminberandaController;
 use App\Http\Controllers\Be_DatakontraktorController;
 use App\Http\Controllers\Be_DatarumahmakanController;
 use App\Http\Controllers\Be_DatarumahsakitController;
@@ -55,7 +55,7 @@ Route::get('/', function () {
         "donasi3"           =>  "frontendweb/donasi/donasi3.jpg",
         "donasi4"           =>  "frontendweb/donasi/donasi4.jpg",
         "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
-        "adminberanda"      =>  Fe_AdminBeranda::all(),
+        "adminberanda"      =>  Fe_adminberanda::all(),
         'categories'        => Category::all()
     ]);
 });

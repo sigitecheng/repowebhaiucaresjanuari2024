@@ -8,7 +8,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Datapekerjaanstatus;
-use App\Models\Fe_AdminBeranda;
+use App\Models\Fe_adminberanda;
 use App\Models\Be_datakontraktor;
 use App\Models\Be_datarumahmakan;
 use App\Models\Be_datarumahsakit;
