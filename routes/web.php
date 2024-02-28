@@ -5,7 +5,7 @@
 
 use App\Models\User;
 use App\Models\Category;
-use App\Models\Fe_AdminBeranda;
+use App\Models\Fe_adminberanda;
 use App\Models\Post;
 
 use Illuminate\Support\Facades\Route;
@@ -75,7 +75,7 @@ Route::get('/tentang', function () {
         "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
         "imagetentang"      =>  "frontendweb/tentang/fetentang.png",
         "imagetentang1"      =>  "frontendweb/tentang/tentang1.png",
-        'admintentangkami'  => Fe_AdminBeranda::all(),
+        'admintentangkami'  => Fe_adminberanda::all(),
         'categories'        => Category::all()
     ]);
 });
@@ -97,7 +97,7 @@ Route::get('/layanan', function () {
         "title"             => "Layanan",
         "active"            => 'layanan',
         "imagelayanan"      =>  "frontendweb/layanan/felayanan.png",
-        'adminlayanankami'  => Fe_AdminBeranda::all(),
+        'adminlayanankami'  => Fe_adminberanda::all(),
         'categories'        => Category::all()
     ]);
 });
@@ -124,7 +124,7 @@ Route::get('/donasi', function () {
         "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
         "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
         "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
-        'admindonasi'           => Fe_AdminBeranda::all(),
+        'admindonasi'           => Fe_adminberanda::all(),
         'categories'            => Category::all()
     ]);
 });
@@ -153,7 +153,7 @@ Route::get('/project', function () {
         "imagedonpendidikan"    =>  "frontendweb/donasi/donpendidikan.jpg",
         "imagedonkesehatan"     =>  "frontendweb/donasi/donkesehatan.jpg",
         "imagedonmakanan"       =>  "frontendweb/donasi/donmakanan.jpg",
-        'adminprojectkami'      => Fe_AdminBeranda::all(),
+        'adminprojectkami'      => Fe_adminberanda::all(),
         'categories'            => Category::all()
     ]);
 });
