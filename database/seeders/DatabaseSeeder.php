@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'Haiu Bangun Indonesia',
             'username' => 'hbi',
             'email' => 'hbi@haiucares.com',
-            'password' => bcrypt('adminadmin$$')
+            'password' => bcrypt('adminadmin')
 
         ]);
 
