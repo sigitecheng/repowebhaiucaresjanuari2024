@@ -45,7 +45,7 @@ use App\Models\Fe_adminberanda as ModelsFe_adminberanda;
 
 Route::get('/', function () {
     return view('frontendweb/home', [
-        "title"             => "Beranda",
+        "title"             => "Bangun Indonesia",
         "active"            => "beranda",
         "imagehome"         =>  "frontendweb/home/feberanda.png",
         "imagehome2"        =>  "frontendweb/home/home2.png",
