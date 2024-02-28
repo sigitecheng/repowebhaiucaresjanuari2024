@@ -22,10 +22,16 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
+        // $credentials = $request->validate([
+        //     'email' => 'required',  // PENGGUNAAN DNS UNTUK MENERIMA EMAIL YANG SANGAT BENAR VALID ,
+        //     'password' => 'required'
+        // ]);
+
         $credentials = $request->validate([
-            'email' => 'required',  // PENGGUNAAN DNS UNTUK MENERIMA EMAIL YANG SANGAT BENAR VALID ,
+            'email' => ['required', 'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'],
             'password' => 'required'
         ]);
+        
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
