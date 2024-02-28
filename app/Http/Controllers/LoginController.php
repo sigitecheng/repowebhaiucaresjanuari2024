@@ -28,16 +28,25 @@ class LoginController extends Controller
         // ]);
 
         $credentials = $request->validate([
-            'email' => ['required', 'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'],
+            'email' => ['required', 'email'],
             'password' => 'required'
         ]);
+
+        // Coba melakukan autentikasi pengguna
+        if (Auth::attempt($credentials)) {
+            // Jika autentikasi berhasil, arahkan pengguna ke dashboard
+            return redirect()->intended('/dashboard');
+        } else {
+            // Jika autentikasi gagal, kembalikan pengguna ke halaman login dengan pesan kesalahan
+            return back()->withErrors(['email' => 'Email atau kata sandi yang Anda masukkan salah.'])->withInput($request->only('email'));
+        }
         
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
-        }
-        return back()->with('loginError', 'Login Failed !');
+        // if (Auth::attempt($credentials)) {
+        //     $request->session()->regenerate();
+        //     return redirect()->intended('/dashboard');
+        // }
+        // return back()->with('loginError', 'Login Failed !');
 
         // dd('Berhasil Masuk Iqlima');
     }
