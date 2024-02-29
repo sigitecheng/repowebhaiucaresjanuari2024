@@ -3,6 +3,7 @@
 
 // use App\Models\Post;
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Fe_adminberanda;
@@ -20,12 +21,25 @@ use App\Http\Controllers\Be_DatakontraktorController;
 use App\Http\Controllers\Be_DatarumahmakanController;
 use App\Http\Controllers\Be_DatarumahsakitController;
 use App\Http\Controllers\Be_DatainstansipendidikanController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BussinessIntelligentController;
+use App\Http\Controllers\RunningProjectController;
 use App\Http\Controllers\DatapenanggungjawabController;
+use App\Http\Controllers\DatapengawaslapanganController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\LaporanKeuanganController;
+use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\SubController;
+use App\Http\Controllers\SuratController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UsersProjectController;
+use App\Models\BussinessIntelligent;
 use App\Models\Datapenanggungjawab;
+use App\Models\Datapengawaslapangan;
 use App\Models\Fe_adminberanda as ModelsFe_adminberanda;
+use App\Models\RunningProject;
 
 // use App\Models\Post;
 
@@ -279,6 +293,42 @@ Route::resource('/users', UsersController::class)->middleware('auth');
 // ---------------- ---------------- ---------------- ---------------- ---------------- ----------------
 // ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
 Route::resource('/datapenanggungjawab/data', DatapenanggungjawabController::class)->middleware('auth');
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/datapengawaslapangan/data', DatapengawaslapanganController::class)->middleware('auth');
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/karyawan/data', KaryawanController::class)->middleware('auth');
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/bussinessintelligent', BussinessIntelligentController::class)->middleware('auth');
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/runningproject', RunningProjectController::class)->middleware('auth');
+
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/laporankeuangan', LaporanKeuanganController::class)->middleware('auth');
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/email', EmailController::class)->middleware('auth');
+
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/berita', BeritaController::class)->middleware('auth');
+
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/usersproject', UsersProjectController::class)->middleware('auth');
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/sponsor', SponsorController::class)->middleware('auth');
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/surat', SuratController::class)->middleware('auth');
+
+// ROUTE UNTUK PANGAMBILAN DATA PENANGGUNGJAWAB
+Route::resource('/admindashboard', AdminDashboardController::class)->middleware('auth');
 
 // routes/web.php
 Route::resource('/datausers', DatausersandroidController::class)->middleware('auth');

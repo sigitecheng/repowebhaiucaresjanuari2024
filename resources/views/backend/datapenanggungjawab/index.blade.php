@@ -60,77 +60,86 @@
 </div>
 
 
-    <table class="table table-striped table-sm mt-4">
-        <thead>
-            <tr>
-                <th scope="col" class="text-center" style="width: 25px;">No</th>
-                <th scope="col" class="text-center" style="width: 100px;">Nama </th>
-                <th scope="col" class="text-center" style="width: 100px;">Telepon</th>
-                <th scope="col" class="text-center" style="width: 70px;">Alamat</th>
-                <th scope="col" class="text-center" style="width: 70px;">Tanggal Lahir</th>
-                <th scope="col" class="text-center" style="width: 70px;">Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($datapenanggungjawab as $data)
-            <tr>
-                <td class="text-center">{{ $loop->iteration }}</td>
-                <td class="text-left">{{ $data->nama }}</td>  
-                <td class="text-center">{{ $data->telepon }}</td>  
-                <td class="text-center">{{ $data->alamat }}</td>  
-                <td class="text-center">{{ $data->tanggal_lahir }}</td>  
-                <td class="text-center">
-                    <!-- HATI HATI DI BAWAH IN IMENGGUNAKAN FITU GETROUTEKEYNAME AGAR TIDAK MENCARI ID BERDASARKAN NO MELAINKAN SESUAI YANG KITA INGINKAN  DENGAN CONTOH TABLE 'SLUG'-->
-                    <a href="/datapenanggungjawab/data/{{ $data->nama }}">
-                        <button class="btn btn-primary" data-toggle="modal" ><i class="fa fa-eye"></i></button>
-                    </a>
-                    <a href="/datapenanggungjawab/data/{{ $data->nama }}/edit">
-                        <button class="btn btn-success" data-toggle="modal" ><i class="fa fa-pencil"></i></button>
-                    </a>
-                    
-                    <button type="button" class="btn btn-danger border-0" data-toggle="modal" data-target="#deleteModal">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-                    
-                    <!-- Modal Konfirmasi Penghapusan -->
-                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Delete</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+<table class="table table-striped table-sm mt-4">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center" style="width: 25px;">No</th>
+            <th scope="col" class="text-center" style="width: 100px;">Nama </th>
+            <th scope="col" class="text-center" style="width: 100px;">Telepon</th>
+            <th scope="col" class="text-center" style="width: 70px;">Usia</th>
+            <th scope="col" class="text-center" style="width: 70px;">Pendidikan</th>
+            <th scope="col" class="text-center" style="width: 70px;">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($datapenanggungjawab as $data)
+        <tr>
+            <td class="text-center" style="width: 25px;">{{ $loop->iteration }}</td>
+            <td class="text-left" style="width: 200px;">{{ $data->nama }}</td>  
+            <td class="text-center" style="width: 75px;">{{ $data->telepon }}</td> /
+            @php
+                $tanggal_lahir = \Carbon\Carbon::parse($data->tanggal_lahir);
+                $usia = $tanggal_lahir->diff(\Carbon\Carbon::now());
+                $usia_tahun = $usia->y;
+                $usia_bulan = $usia->m;
+                $usia_hari = $usia->d;
+            @endphp
+
+            <td class="text-center" style="width: 50px;">{{ $usia_tahun }} Tahun</td> 
+            <td class="text-center" style="width: 50px;">{{ $data->pendidikan_terakhir }}</td>  
+            <td class="text-center" style="width: 75px;">
+                <!-- HATI HATI DI BAWAH IN IMENGGUNAKAN FITU GETROUTEKEYNAME AGAR TIDAK MENCARI ID BERDASARKAN NO MELAINKAN SESUAI YANG KITA INGINKAN  DENGAN CONTOH TABLE 'SLUG'-->
+                <a href="/datapenanggungjawab/data/{{ $data->nama }}">
+                    <button class="btn btn-primary" data-toggle="modal" ><i class="fa fa-eye"></i></button>
+                </a>
+                <a href="/datapenanggungjawab/data/{{ $data->nama }}/edit">
+                    <button class="btn btn-success" data-toggle="modal" ><i class="fa fa-pencil"></i></button>
+                </a>
+                
+                <button type="button" class="btn btn-danger border-0" data-toggle="modal" data-target="#deleteModal">
+                    <i class="fa fa-trash"></i>
                 </button>
-            </div>
-            <div class="modal-body text-center" >
-                Apakah Anda yakin ingin menghapus <strong>Mitra</strong> ini ?
-            </div>
-            <div class="modal-footer">
-                <!-- Tombol untuk menutup modal -->
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>
-                    Close</button>
-                <!-- Tombol untuk menghapus post (ganti dengan form jika diperlukan) -->
-                <form action="/datapenanggungjawab/data/{{ $data->nama_perusahaan }}" method="post" class="d-inline">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-danger mt-3" ><i class="fa fa-trash"></i> Hapus</button>
-                </form>
-            
-            </div>
+            </td>
+                
+                <!-- Modal Konfirmasi Penghapusan -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Delete</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body text-center" >
+            Apakah Anda yakin ingin menghapus <strong>Mitra</strong> ini ?
+        </div>
+        <div class="modal-footer">
+            <!-- Tombol untuk menutup modal -->
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>
+                Close</button>
+            <!-- Tombol untuk menghapus post (ganti dengan form jika diperlukan) -->
+            <form action="/datapenanggungjawab/data/{{ $data->nama }}" method="post" class="d-inline">
+                @csrf
+                @method('delete')
+                <button type="submit" class="btn btn-danger mt-3" ><i class="fa fa-trash"></i> Hapus</button>
+            </form>
+        
         </div>
     </div>
 </div>
+</div>
 
 
-                </td>
-            </tr>
+            </td>
+        </tr>
 
-            @endforeach
+        @endforeach
 
 
-        </tbody>
-    </table>
+    </tbody>
+</table>
+
 
     <div class="pagination-container" style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
         {{ $datapenanggungjawab->links() }}

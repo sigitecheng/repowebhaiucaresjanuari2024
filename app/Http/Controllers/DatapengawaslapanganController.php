@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 
 use App\Models\Datapengawaslapangan;
+use App\Models\Category;
+
 use App\Http\Requests\StoreDatapengawaslapanganRequest;
 use App\Http\Requests\UpdateDatapengawaslapanganRequest;
 
@@ -13,6 +16,12 @@ class DatapengawaslapanganController extends Controller
      */
     public function index()
     {
+        return view('backend.datapengawaslapangan.index', [
+            'datapengawaslapangan'   => Datapengawaslapangan::latest()->paginate(15),
+            'categories'        => Category::all(),
+            'title'             => 'Data Pengawas Lapangan',
+            'title_dashboard'   => 'Data Pengawas Lapangan',
+        ]);
         //
     }
 

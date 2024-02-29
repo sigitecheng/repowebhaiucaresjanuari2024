@@ -24,7 +24,7 @@
                         <ul class="sidebar-menu mt-4 mb-4">
 
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('tables'); return false" class=""><i class="fab fa-ravelry mr-3"></i>
+                                <a href="#" onclick="toggle_menu('tables'); return false" class=""><i class="fab fa-ravelry mr-2"></i>
                                     <span class="none">Dashboard Frontend <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="tables">
@@ -61,19 +61,37 @@
                             </li>
 
                             <li class="parent">
-                                <a href="/dashboard" class=""><i class="fab fa-bandcamp mr-3"> </i>
+                                <a href="/berita" class=""><i class="fa fa-newspaper mr-2"> </i>
+                                    <span class="none">Berita </span>
+                                </a>
+                            </li>
+
+                            <li class="parent">
+                                <a href="/email" class=""><i class="fa fa-envelope mr-2"> </i>
+                                    <span class="none">Email </span>
+                                </a>
+                            </li>
+
+                            <li class="parent">
+                                <a href="/usersproject" class=""><i class="fas fa-camera mr-2"> </i>
+                                    <span class="none">Users Project </span>
+                                </a>
+                            </li>
+
+                            <li class="parent">
+                                <a href="/dashboard" class=""><i class="fab fa-bandcamp mr-2"> </i>
                                     <span class="none">Data Interface </span>
                                 </a>
                             </li>
 
                             <li class="parent">
-                                <a href="/karyawan" class=""><i class="fa fa-users mr-3"> </i>
+                                <a href="/karyawan/data" class=""><i class="fa fa-users mr-2"> </i>
                                     <span class="none">Data Karyawan </span>
                                 </a>
                             </li>
                             
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('form_element'); return false " ><i class="fas fa-hdd mr-3"></i>
+                                <a href="#" onclick="toggle_menu('form_element'); return false " ><i class="fas fa-hdd mr-2"></i>
                                     <span class="none">Data Pekerjaan <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
 
@@ -107,7 +125,7 @@
                             </li>
 
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('tables1'); return false" class=""><i class="fas fa-users mr-3"></i>
+                                <a href="#" onclick="toggle_menu('tables1'); return false" class=""><i class="fas fa-users mr-2"></i>
                                     <span class="none">Daftar Mitra <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
 
@@ -139,7 +157,7 @@
                             </li>
 
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('tables2'); return false" class=""><i class="fas fa-users mr-3"></i>
+                                <a href="#" onclick="toggle_menu('tables2'); return false" class=""><i class="fas fa-users mr-2"></i>
                                     <span class="none">Daftar Pekerja <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
 
@@ -167,27 +185,27 @@
                             </li>
                         
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('form_element2'); return false" class=""><i class="fa fa-pencil-square mr-3"></i>
+                                <a href="#" onclick="toggle_menu('form_element2'); return false" class=""><i class="fa fa-pencil-square mr-2"></i>
                                     <span class="none">Running Project <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="form_element2">
                                     <li class="child">
-                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/runningproject" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
                                             <i class="fas fa-hammer mr-2"></i> Konstruksi                         
                                         </a>
                                     </li>
                                     <li class="child">
-                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/runningproject" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
                                             <i class="fas fa-book mr-2"></i> Pendidikan                      
                                         </a>
                                     </li>
                                     <li class="child">
-                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/runningproject" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
                                             <i class="fa fa-hospital mr-2"></i> Kesehatan                         
                                         </a>
                                     </li>
                                     <li class="child">
-                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                        <a href="/runningproject" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
                                             <i class="fa fa-lemon mr-2"></i> Makanan                         
                                         </a>
                                     </li>
@@ -196,18 +214,144 @@
                             </li>
 
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
-                                    <span class="none">Charts <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-2"></i>
+                                    <span class="none">Business Intelligence <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="charts">
-                                    <li class="child"><a href="chart.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Chart JS</a></li>
-                                    <li class="child"><a href="chartist.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Chartist JS</a></li>
-                                    <li class="child"><a href="echarts.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Echarts JS</a></li>
-                                    <li class="child"><a href="flot.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Flot JS</a></li>
-                                    <li class="child"><a href="morris.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Morris JS</a></li>
-                                    <li class="child"><a href="nvd3.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> NVD3 JS</a></li>
-                                    <li class="child"><a href="sparkline.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Sparkline JS</a></li>
+                                    <li class="child">
+                                        <a href="/bussinessintelligent" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-cube mr-2"></i> Data Collections        
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="child">
+                                        <a href="/bussinessintelligent" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-cube mr-2"></i> Data Warehousing       
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="child">
+                                        <a href="/bussinessintelligent" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-cube mr-2"></i> Data Reporting       
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="child">
+                                        <a href="/bussinessintelligent" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-cube mr-2"></i> Bussiness Analysis       
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/bussinessintelligent" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-cube mr-2"></i> Big Data       
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/bussinessintelligent" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-cube mr-2"></i> Data Mining       
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/bussinessintelligent" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-cube mr-2"></i> Human Resource       
+                                        </a>
+                                    </li>
+
                                 </ul>
+                            </li>
+
+
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('charts1'); return false" class=""><i class="fa fa-money-bill mr-2"></i>
+                                    <span class="none">Laporan Keuangan <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+                                <ul class="children" id="charts1">
+                                    <li class="child">
+                                        <a href="/laporankeuangan" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-file-archive mr-2"></i> Laba Rugi        
+                                        </a>
+                                    </li>
+                            
+                                    <li class="child">
+                                        <a href="/laporankeuangan" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-file-archive mr-2"></i> Neraca        
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/laporankeuangan" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-file-archive mr-2"></i> Arus Kas     
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/laporankeuangan" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-file-archive mr-2"></i> Perubahan Ekuitas  
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('sponsor'); return false" class=""><i class="fa  fa-deviantart mr-3"></i>
+                                    <span class="none">Sponsor <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+                                <ul class="children" id="sponsor">
+                                    <li class="child">
+                                        <a href="/sponsor" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-donate mr-2"></i> Donatur        
+                                        </a>
+                                    </li>
+                                    <li class="child">
+                                        <a href="/sponsor" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-building mr-2"></i> PT/CV        
+                                        </a>
+                                    </li>
+                                    <li class="child">
+                                        <a href="/sponsor" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-university mr-2"></i> Pemerintah        
+                                        </a>
+                                    </li>
+                                    <li class="child">
+                                        <a href="/sponsor" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-users mr-2"></i> Ormas     
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('suratperjanjian'); return false" class=""><i class="fa fa-file mr-2"></i>
+                                    <span class="none">Surat Perjanjian<i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+
+                                <ul class="children" id="suratperjanjian">
+                                    <li class="child">
+                                        <a href="/Surat" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-newspaper mr-2"></i> Berita Acara        
+                                        </a>
+                                    </li>
+
+                                    <li class="child">
+                                        <a href="/Surat" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-newspaper mr-2"></i> Surat Perjanjian Kerjasama        
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                            <li class="parent">
+                                <a href="/admindashboard" class=""><i class="fa fa-cogs mr-2"> </i>
+                                    <span class="none">Admin Dashboard </span>
+                                </a>
                             </li>
                             
                         </ul>

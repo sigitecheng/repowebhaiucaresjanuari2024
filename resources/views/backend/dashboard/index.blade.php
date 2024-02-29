@@ -65,7 +65,7 @@
                                 <h2>{{ $datapost }}</h2>
                             </div>
                             
-                            <svg viewBox="0 0 36 25" class="circular-chart red">
+                            <svg viewBox="0 0 36 25" class="circular-chart blue">
                                 <path class="circle-bg"
                                 d="M18 2.0845
                                     a 7.9567 7.9567 0 0 1 0 15.9134
@@ -103,7 +103,7 @@
                                 <h2>{{$datapenanggungjawab}}</h2>
                             </div>
 
-                            <svg viewBox="0 0 36 25" class="circular-chart green">
+                            <svg viewBox="0 0 36 25" class="circular-chart blue">
                                 <path class="circle-bg"
                                 d="M18 2.0845
                                     a 7.9567 7.9567 0 0 1 0 15.9134
