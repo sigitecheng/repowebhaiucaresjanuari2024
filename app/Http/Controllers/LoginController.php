@@ -11,7 +11,7 @@ class LoginController extends Controller
     {
 
         return view('login.index', [
-            "title"         => "Silahkan Login",
+            "title"         => "Login",
             "active"        => "login",
             "imagelogin1"   =>  "login/login1.png",
             "imagelogin2"   =>  "login/login2.png",

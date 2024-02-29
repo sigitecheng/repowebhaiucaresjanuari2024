@@ -65,6 +65,12 @@
                                     <span class="none">Data Interface </span>
                                 </a>
                             </li>
+
+                            <li class="parent">
+                                <a href="/karyawan" class=""><i class="fa fa-users mr-3"> </i>
+                                    <span class="none">Data Karyawan </span>
+                                </a>
+                            </li>
                             
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('form_element'); return false " ><i class="fas fa-hdd mr-3"></i>
@@ -161,14 +167,31 @@
                             </li>
                         
                             <li class="parent">
-                                <a href="#" onclick="toggle_menu('form_element'); return false" class=""><i class="fa fa-pencil-square mr-3"></i>
-                                    <span class="none">Form Elements <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                <a href="#" onclick="toggle_menu('form_element2'); return false" class=""><i class="fa fa-pencil-square mr-3"></i>
+                                    <span class="none">Running Project <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
-                                <ul class="children" id="form_element">
-                                    <li class="child"><a href="form-general.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Basic Elements</a></li>
-                                    <li class="child"><a href="form-advanced.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Advanced Elements</a></li>
-                                    <li class="child"><a href="form-validation.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Validation</a></li>
-                                    <li class="child"><a href="form-wizard.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Form Wizard</a></li>
+                                <ul class="children" id="form_element2">
+                                    <li class="child">
+                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fas fa-hammer mr-2"></i> Konstruksi                         
+                                        </a>
+                                    </li>
+                                    <li class="child">
+                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fas fa-book mr-2"></i> Pendidikan                      
+                                        </a>
+                                    </li>
+                                    <li class="child">
+                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-hospital mr-2"></i> Kesehatan                         
+                                        </a>
+                                    </li>
+                                    <li class="child">
+                                        <a href="/datapengawaslapangan/data" class="ml-4 btn btn-sn button-custom  mb-2 rounded mr-4" style="text-align: left;">
+                                            <i class="fa fa-lemon mr-2"></i> Makanan                         
+                                        </a>
+                                    </li>
+                            
                                 </ul>
                             </li>
 

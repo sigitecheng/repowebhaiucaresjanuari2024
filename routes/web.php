@@ -21,6 +21,7 @@ use App\Http\Controllers\Be_DatarumahmakanController;
 use App\Http\Controllers\Be_DatarumahsakitController;
 use App\Http\Controllers\Be_DatainstansipendidikanController;
 use App\Http\Controllers\DatapenanggungjawabController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\SubController;
 use App\Http\Controllers\UsersController;
 use App\Models\Datapenanggungjawab;
@@ -223,8 +224,12 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.reset');
+
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
 
 //Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard', function () {
