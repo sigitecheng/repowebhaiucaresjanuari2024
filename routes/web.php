@@ -15,7 +15,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DatausersandroidController;
-use App\Http\Controllers\Fe_adminberandaController;
+use App\Http\Controllers\Fe_AdminBerandaController;
 use App\Http\Controllers\Be_DatakontraktorController;
 use App\Http\Controllers\Be_DatarumahmakanController;
 use App\Http\Controllers\Be_DatarumahsakitController;
