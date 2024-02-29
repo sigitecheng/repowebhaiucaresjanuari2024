@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fe_AdminBeranda;
+use App\Models\Fe_adminberanda;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -20,7 +20,7 @@ class Fe_AdminBerandaController extends Controller
             'title'             => 'Fe Admin Beranda',
             'title_dashboard'   => 'Data Admin Beranda',
             'categories'        => Category::all(),
-            'fe_adminberanda'   => Fe_AdminBeranda::all() 
+            'fe_adminberanda'   => Fe_adminberanda::all() 
         ]);
     }
 
@@ -31,7 +31,7 @@ class Fe_AdminBerandaController extends Controller
             'title'             => 'Fe Admin Tentang Kami ',
             'title_dashboard'   => 'Data Tentang Kami',
             'categories'        => Category::all(),
-            'fe_adminberanda'   => Fe_AdminBeranda::all() 
+            'fe_adminberanda'   => Fe_adminberanda::all() 
         ]);
     }
 
@@ -42,7 +42,7 @@ class Fe_AdminBerandaController extends Controller
             'title'             => 'Fe Admin Layanan Kami ',
             'title_dashboard'   => 'Data Layanan Kami',
             'categories'        => Category::all(),
-            'fe_adminberanda'   => Fe_AdminBeranda::all() 
+            'fe_adminberanda'   => Fe_adminberanda::all() 
         ]);
     }
 
@@ -53,7 +53,7 @@ class Fe_AdminBerandaController extends Controller
             'title'             => 'Fe Admin Donasi ',
             'title_dashboard'   => 'Data Donasi',
             'categories'        => Category::all(),
-            'fe_adminberanda'   => Fe_AdminBeranda::all() 
+            'fe_adminberanda'   => Fe_adminberanda::all() 
         ]);
     }
 
@@ -64,7 +64,7 @@ class Fe_AdminBerandaController extends Controller
             'title'             => 'Fe Project Kami ',
             'title_dashboard'   => 'Data Project Kami',
             'categories'        => Category::all(),
-            'fe_adminberanda'   => Fe_AdminBeranda::all() 
+            'fe_adminberanda'   => Fe_adminberanda::all() 
         ]);
     }
 
@@ -98,7 +98,7 @@ class Fe_AdminBerandaController extends Controller
 
      public function edit($beranda1)
      {
-         $data = Fe_AdminBeranda::where('beranda1', $beranda1)->first();
+         $data = Fe_adminberanda::where('beranda1', $beranda1)->first();
          return view('backend.fe_adminberanda.edit', [
              'adminberanda'      => $data,
              'title'             => 'Update Data',
@@ -109,7 +109,7 @@ class Fe_AdminBerandaController extends Controller
 
      public function tentangkamiedit($tentang_kami)
      {
-         $data = Fe_AdminBeranda::where('tentang_kami', $tentang_kami)->first();
+         $data = Fe_adminberanda::where('tentang_kami', $tentang_kami)->first();
          return view('backend.fe_tentangkami.edit', [
              'admintentangkami'  => $data,
              'title'             => 'Update Data',
@@ -120,7 +120,7 @@ class Fe_AdminBerandaController extends Controller
 
      public function layanankamiedit($layanan_kami)
      {
-         $data = Fe_AdminBeranda::where('layanan_kami', $layanan_kami)->first();
+         $data = Fe_adminberanda::where('layanan_kami', $layanan_kami)->first();
          return view('backend.fe_layanankami.edit', [
              'adminlayanankami'  => $data,
              'title'             => 'Update Data',
@@ -131,7 +131,7 @@ class Fe_AdminBerandaController extends Controller
 
      public function donasiedit($donasi)
      {
-         $data = Fe_AdminBeranda::where('donasi', $donasi)->first();
+         $data = Fe_adminberanda::where('donasi', $donasi)->first();
          return view('backend.fe_donasi.edit', [
              'admindonasi'  => $data,
              'title'             => 'Update Data',
@@ -142,7 +142,7 @@ class Fe_AdminBerandaController extends Controller
      
      public function projectkamiedit($project_kami)
      {
-         $data = Fe_AdminBeranda::where('project_kami', $project_kami)->first();
+         $data = Fe_adminberanda::where('project_kami', $project_kami)->first();
          return view('backend.fe_projectkami.edit', [
              'adminprojectkami'  => $data,
              'title'             => 'Update Data',
@@ -170,7 +170,7 @@ class Fe_AdminBerandaController extends Controller
             ]);
 
             // Cari data yang ingin diupdate
-            $data = Fe_AdminBeranda::where('beranda1', $beranda1)->first();
+            $data = Fe_adminberanda::where('beranda1', $beranda1)->first();
 
             // Update data berdasarkan input dari form
             $data->update([
@@ -195,7 +195,7 @@ class Fe_AdminBerandaController extends Controller
             ]);
 
             // Cari data yang ingin diupdate
-            $data = Fe_AdminBeranda::where('tentang_kami', $tentang_kami)->first();
+            $data = Fe_adminberanda::where('tentang_kami', $tentang_kami)->first();
 
             // Update data berdasarkan input dari form
             $data->update([
@@ -215,7 +215,7 @@ class Fe_AdminBerandaController extends Controller
             ]);
 
             // Cari data yang ingin diupdate
-            $data = Fe_AdminBeranda::where('layanan_kami', $layanan_kami)->first();
+            $data = Fe_adminberanda::where('layanan_kami', $layanan_kami)->first();
 
             // Update data berdasarkan input dari form
             $data->update([
@@ -235,7 +235,7 @@ class Fe_AdminBerandaController extends Controller
             ]);
 
             // Cari data yang ingin diupdate
-            $data = Fe_AdminBeranda::where('donasi', $donasi)->first();
+            $data = Fe_adminberanda::where('donasi', $donasi)->first();
 
             // Update data berdasarkan input dari form
             $data->update([
@@ -255,7 +255,7 @@ class Fe_AdminBerandaController extends Controller
             ]);
 
             // Cari data yang ingin diupdate
-            $data = Fe_AdminBeranda::where('project_kami', $project_kami)->first();
+            $data = Fe_adminberanda::where('project_kami', $project_kami)->first();
 
             // Update data berdasarkan input dari form
             $data->update([
@@ -269,11 +269,11 @@ class Fe_AdminBerandaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Fe_AdminBeranda $fe_adminberanda)
+    public function destroy(Fe_adminberanda $fe_adminberanda)
     {
         //
 
-        Fe_AdminBeranda::destroy($fe_adminberanda->fe_adminberanda_id);
+        Fe_adminberanda::destroy($fe_adminberanda->fe_adminberanda_id);
 
         return redirect('/adminberanda/post')->with('delete', 'Admin Beranda has been deleted was successfully !');
     }
