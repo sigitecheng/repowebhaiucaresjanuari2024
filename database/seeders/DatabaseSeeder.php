@@ -112,6 +112,5 @@ class DatabaseSeeder extends Seeder
         Datapenanggungjawab::factory(150)->create();
         Datapengawaslapangan::factory(150)->create();
         Berita::factory(25)->create();
-
     }
 }
