@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Category;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -13,9 +16,12 @@ class BeritaController extends Controller
     public function index()
     {
         //
-        return view('404', [
-            'title' => '404'
-          ]);
+        return view('frontendweb.berita.index', [
+            'berita'            => Berita::orderBy('created_at', 'desc')->paginate(7),
+            'title'             => 'Berita',
+            'title_dashboard'   => 'Data Berita',
+            'categories'        => Category::all(),
+        ]);
     }
 
     /**
@@ -37,9 +43,17 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Berita $berita)
+    public function show($judul)
     {
-        //
+        // return $post;
+
+        $data = Berita::where('judul', $judul)->first();
+        return view('frontendweb.berita.show', [
+            'title'             => 'Show Data Berita',
+            'title_halaman'     => 'View Data Berita',
+            'berita'            => $data,
+            'categories'        => Category::all(),
+        ]);
     }
 
     /**
@@ -61,8 +75,17 @@ class BeritaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Berita $berita)
+    public function destroy($judul)
     {
-        //
+        $berita = Berita::where('judul', $judul)->firstOrFail(); // Mencari berita berdasarkan judul
+    
+        if ($berita->image) {
+            Storage::delete($berita->image); // Menghapus gambar dari penyimpanan jika ada
+        }
+    
+        $berita->delete(); // Menghapus berita dari database
+    
+        return redirect('/berita')->with('delete', 'Berita has been deleted successfully!');
     }
+    
 }

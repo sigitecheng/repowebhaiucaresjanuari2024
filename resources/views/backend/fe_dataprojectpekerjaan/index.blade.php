@@ -115,7 +115,6 @@
                     <a href="/dashboard/posts/{{ $post->slug }}/edit">
                         <button class="btn btn-success" data-toggle="modal" ><i class="fa fa-pencil"></i></button>
                     </a>
-   
 <button type="button" class="btn btn-danger border-0" data-toggle="modal" data-target="#deleteModal">
     <i class="fa fa-trash"></i>
 </button>

@@ -13,6 +13,7 @@ use App\Models\Be_datakontraktor;
 use App\Models\Be_datarumahmakan;
 use App\Models\Be_datarumahsakit;
 use App\Models\Be_datainstansipendidikan;
+use App\Models\Berita;
 use App\Models\Datapenanggungjawab;
 use App\Models\Datapengawaslapangan;
 
@@ -110,6 +111,7 @@ class DatabaseSeeder extends Seeder
         Be_datainstansipendidikan::factory(150)->create();
         Datapenanggungjawab::factory(150)->create();
         Datapengawaslapangan::factory(150)->create();
+        Berita::factory(25)->create();
 
     }
 }

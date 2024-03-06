@@ -53,6 +53,11 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function berita()
+    {
+        return $this->hasMany(Berita::class);
+    }
+
     public function fe_adminberanda()
     {
         return $this->hasMany(Fe_AdminBeranda::class);

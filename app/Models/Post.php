@@ -71,6 +71,11 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function berita()
+    {
+        return $this->belongsTo(Berita::class);
+    }
+
     
 // PENCARIAN DENGAN TIDAK MENGGUNAKAN ID 
     public function getRouteKeyName()
