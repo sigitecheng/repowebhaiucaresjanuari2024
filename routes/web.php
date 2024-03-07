@@ -93,6 +93,18 @@ Route::get('/', function () {
         $datapenanggungjawabCount = Datapenanggungjawab::count(),
         'datapenanggungjawab'        => $datapenanggungjawabCount,
 
+        $totalInfrastruktur = number_format(Post::where('category_id', 1)->sum('anggaran'), 2, ',', '.'),
+        'totalanggaraninfrastruktur' => $totalInfrastruktur,
+
+        $totalPendidikan = number_format(Post::where('category_id', 2)->sum('anggaran'), 2, ',', '.'),
+        'totalanggaranpendidikan' => $totalPendidikan,
+
+        $totalKesehatan = number_format(Post::where('category_id', 3)->sum('anggaran'), 2, ',', '.'),
+        'totalanggarankesehatan' => $totalKesehatan,
+
+        $totalMakanan = number_format(Post::where('category_id', 4)->sum('anggaran'), 2, ',', '.'),
+        'totalanggaranmakanan' => $totalMakanan,
+
     ]);
 });
 // ---------------------------------------------------------------------------------------

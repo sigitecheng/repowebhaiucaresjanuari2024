@@ -397,28 +397,28 @@
       <div class="image-container">
         <h3 class="btn-judul">Infrastruktur</h3>
         <img src="img/<?= $donasi1 ?> " alt="<?= $donasi1 ?> ">
-        <div class="btn"><h5>Terkumpul</h5>Rp. 123.345.435,- </div>
+        <div class="btn"><h5>Terkumpul</h5>{{ $totalanggaraninfrastruktur}} </div>
         <div class="btn-2"><h5>Tersalurkan</h5>Rp. 34.345.435,- </div>
         <div class="btn-3"><h5>Potensi</h5>Rp. 76.345.435,- </div>
     </div>
     <div class="image-container">
-          <h3 class="btn-judul">Makanan</h3>
+          <h3 class="btn-judul">Pendidikan</h3>
           <img src="img/<?= $donasi2 ?> " alt="<?= $donasi2 ?> ">
-          <div class="btn"><h5>Terkumpul</h5>Rp. 123.345.435,- </div>
+          <div class="btn"><h5>Terkumpul</h5>{{ $totalanggaranpendidikan}} </div>
           <div class="btn-2"><h5>Tersalurkan</h5>Rp. 34.345.435,- </div>
           <div class="btn-3"><h5>Potensi</h5>Rp. 76.345.435,- </div>
         </div>
     <div class="image-container">
-          <h3 class="btn-judul">Pendidikan</h3>
+          <h3 class="btn-judul">Kesehatan</h3>
           <img src="img/<?= $donasi3 ?> " alt="<?= $donasi3 ?> ">
-          <div class="btn"><h5>Terkumpul</h5>Rp. 123.345.435,- </div>
+          <div class="btn"><h5>Terkumpul</h5>{{ $totalanggarankesehatan}}</div>
           <div class="btn-2"><h5>Tersalurkan</h5>Rp. 34.345.435,- </div>
           <div class="btn-3"><h5>Potensi</h5>Rp. 76.345.435,- </div>
         </div>
         <div class="image-container">
-            <h3 class="btn-judul">Kesehatan</h3>
+            <h3 class="btn-judul">Makanan</h3>
             <img src="img/<?= $donasi4 ?> " alt="<?= $donasi4 ?> ">
-        <div class="btn"><h5>Terkumpul</h5>Rp. 123.345.435,- </div>
+        <div class="btn"><h5>Terkumpul</h5>{{ $totalanggaranmakanan }}</div>
         <div class="btn-2"><h5>Tersalurkan</h5>Rp. 34.345.435,- </div>
         <div class="btn-3"><h5>Potensi</h5>Rp. 76.345.435,- </div>
       </div>
