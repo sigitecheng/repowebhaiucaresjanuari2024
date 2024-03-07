@@ -35,6 +35,7 @@ use App\Http\Controllers\SubController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UsersProjectController;
+use App\Models\Berita;
 use App\Models\BussinessIntelligent;
 use App\Models\Datapenanggungjawab;
 use App\Models\Datapengawaslapangan;
@@ -71,7 +72,27 @@ Route::get('/', function () {
         "donasi4"           =>  "frontendweb/donasi/donasi4.jpg",
         "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
         "adminberanda"      =>  Fe_adminberanda::all(),
-        'categories'        => Category::all()
+        'categories'        => Category::all(),
+        'databerita'        => Berita::orderBy('created_at', 'asc')->paginate(6),
+       
+        $totalInfrastruktur = Post::where('category_id', 1)->count(),
+        'totaldatainsfrastruktur' => $totalInfrastruktur,
+        
+        $totalPendidikan = Post::where('category_id', 2)->count(),
+        'totaldatapendidikan' => $totalPendidikan,
+
+        $totalKesehatan = Post::where('category_id', 3)->count(),
+        'totaldatakesehatan' => $totalKesehatan,
+
+        $totalMakanan = Post::where('category_id', 4)->count(),
+        'totaldatamakanan' => $totalMakanan,
+
+        $datausersCount = User::count(),
+        'datausers'        => $datausersCount,
+
+        $datapenanggungjawabCount = Datapenanggungjawab::count(),
+        'datapenanggungjawab'        => $datapenanggungjawabCount,
+
     ]);
 });
 // ---------------------------------------------------------------------------------------

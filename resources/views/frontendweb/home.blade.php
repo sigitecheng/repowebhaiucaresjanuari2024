@@ -107,24 +107,46 @@
           
           <li class="stats-card">
             <h4>Pekerjaan</h4> <br>
-            <p class="h3 stats-title">0</p>
+            <p class="h3 stats-title">{{ $totaldatainsfrastruktur }}</p>
             <br>
             <p class="stats-text">Infrastruktur</p>
           </li>
 
           <li class="stats-card">
             <h4>Pekerjaan</h4> <br>
-            <p class="h3 stats-title">0</p>
+            <p class="h3 stats-title">{{ $totaldatapendidikan }}</p>
+            <br>
+            <p class="stats-text">Pendidikan</p>
+          </li>
+
+          <li class="stats-card">
+            <h4>Pekerjaan</h4> <br>
+            <p class="h3 stats-title">{{ $totaldatakesehatan }}</p>
+            <br>
+            <p class="stats-text">Kesehatan</p>
+          </li>
+
+          <li class="stats-card">
+            <h4>Pekerjaan</h4> <br>
+            <p class="h3 stats-title">{{ $totaldatamakanan }}</p>
             <br>
             <p class="stats-text">Makanan</p>
           </li>
 
           <li class="stats-card">
-            <h4>Pekerjaan</h4> <br>
-            <p class="h3 stats-title">0</p>
+            <h4>Pengguna</h4> <br>
+            <p class="h3 stats-title">{{ $datausers }}</p>
             <br>
-            <p class="stats-text">Pendidikan</p>
+            <p class="stats-text">Mitra</p>
           </li>
+
+          <li class="stats-card">
+            <h4>Mitra</h4> <br>
+            <p class="h3 stats-title">{{ $datapenanggungjawab }}</p>
+            <br>
+            <p class="stats-text">Pekerjaan</p>
+          </li>
+
         </ul>
         </div>
         
@@ -515,12 +537,14 @@
 
           <ul class="blog-list">
 
+            @foreach($databerita as $data)
+
             <li>
               <div class="blog-card">
 
                 <figure class="banner">
                   <a href="#">
-                    <img src="./assets/images/blog-1.jpg" width="750" height="350" loading="lazy"
+                    <img src="{{ $data->gambar }}" width="750" height="350" loading="lazy"
                       alt="Vestibulum massa arcu, consectetu pellentesque scelerisque." class="img-cover">
                   </a>
                 </figure>
@@ -528,22 +552,26 @@
                 <div class="content">
 
                   <h3 class="h3 title">
-                    <a href="#">
-                      Vestibulum massa arcu, consectetu pellentesque scelerisque.
+                    <a href="#">                 
+                        {{ $data->judul}}                    
                     </a>
                   </h3>
 
                   <p class="text">
-                    Sed quis sagittis velit. Aliquam velit eros, bibendum ut massa et, consequat laoreet erat nam ac
-                    imperdiet.
+                      {{ $data->isi}}
                   </p>
 
                   <div class="meta">
 
                     <div class="publish-date">
                       <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-03-07">7 March, 2022</time>
+                      <div class="d-flex justify-content-between">
+                        <span class="text-left"> {{ $data->user->name }}</span>
+                        <span class="text-right">
+                            <button class="button-custom">{{ date('d F Y', strtotime($data->tanggal_dibuat)) }}</button>
+                        </span>
+                    </div>
+                    
                     </div>
 
                     <button class="comment" aria-label="Comment">
@@ -552,9 +580,70 @@
                       <data value="15">15</data>
                     </button>
 
-                    <button class="share" aria-label="Share">
+                    <button class="share" aria-label="Share" onclick="toggleModal()">
                       <ion-icon name="share-social-outline"></ion-icon>
-                    </button>
+                  </button>
+                  
+                  <div id="shareModal" class="modal">
+                      <div class="modal-content">
+                          <a href="https://wa.me/?text=Your%20message%20here" target="_blank" rel="noopener noreferrer">
+                              <img src="whatsapp_icon.png" alt="WhatsApp" class="social-icon" style="margin-right: 10px;">
+                          </a>
+                          <a href="https://www.facebook.com/sharer/sharer.php?u=YourPageLinkHere" target="_blank" rel="noopener noreferrer">
+                              <img src="facebook_icon.png" alt="Facebook" class="social-icon" style="margin-right: 10px;">
+                          </a>
+                          <a href="https://www.tiktok.com/en" target="_blank" rel="noopener noreferrer">
+                              <img src="tiktok_icon.png" alt="TikTok" class="social-icon" style="margin-right: 10px;">
+                          </a>
+                          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                              <img src="instagram_icon.png" alt="Instagram" class="social-icon" style="margin-right: 10px;">
+                          </a>
+                      </div>
+                  </div>
+                  
+                  <style>
+                      .modal {
+                          display: none; 
+                          position: fixed; 
+                          z-index: 1; 
+                          left: 0;
+                          top: 0;
+                          width: 100%; 
+                          height: 100%; 
+                          overflow: auto; 
+                          background-color: rgba(0,0,0,0.4);
+                      }
+                  
+                      .modal-content {
+                          background-color: #fefefe;
+                          margin: 15% auto; 
+                          padding: 20px;
+                          border: 1px solid #888;
+                          width: 80%; 
+                          text-align: center; /* Memastikan ikon sosial berada di tengah */
+                      }
+                  
+                      .social-icon {
+                          width: 50px; /* Sesuaikan ukuran ikon sosial */
+                          height: 50px; /* Sesuaikan ukuran ikon sosial */
+                          margin: 10px; /* Sesuaikan jarak antara ikon sosial */
+                      }
+                  </style>
+                  
+                  <script>
+                      function toggleModal() {
+                          var modal = document.getElementById("shareModal");
+                          modal.style.display = modal.style.display === "block" ? "none" : "block";
+                      }
+                  
+                      window.onclick = function(event) {
+                          var modal = document.getElementById("shareModal");
+                          if (event.target == modal) {
+                              modal.style.display = "none";
+                          }
+                      }
+                  </script>
+                  
 
                   </div>
 
@@ -562,154 +651,36 @@
 
               </div>
             </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="banner">
-                  <a href="#">
-                    <img src="./assets/images/blog-2.jpg" width="750" height="350" loading="lazy"
-                      alt="Quisque egestas iaculis felis eget placerat ut pulvinar mi." class="img-cover">
-                  </a>
-                </figure>
-
-                <div class="content">
-
-                  <h3 class="h3 title">
-                    <a href="#">
-                      Quisque egestas iaculis felis eget placerat ut pulvinar mi.
-                    </a>
-                  </h3>
-
-                  <p class="text">
-                    Sed quis sagittis velit. Aliquam velit eros, bibendum ut massa et, consequat laoreet erat nam ac
-                    imperdiet.
-                  </p>
-
-                  <div class="meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-03-07">7 March, 2022</time>
-                    </div>
-
-                    <button class="comment" aria-label="Comment">
-                      <ion-icon name="chatbubble-outline"></ion-icon>
-
-                      <data value="15">15</data>
-                    </button>
-
-                    <button class="share" aria-label="Share">
-                      <ion-icon name="share-social-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="banner">
-                  <a href="#">
-                    <img src="./assets/images/blog-3.jpg" width="750" height="350" loading="lazy"
-                      alt="Fusce sem ligula, imperdiet sed nisi sit amet, euismod posuere." class="img-cover">
-                  </a>
-                </figure>
-
-                <div class="content">
-
-                  <h3 class="h3 title">
-                    <a href="#">
-                      Fusce sem ligula, imperdiet sed nisi sit amet, euismod posuere.
-                    </a>
-                  </h3>
-
-                  <p class="text">
-                    Sed quis sagittis velit. Aliquam velit eros, bibendum ut massa et, consequat laoreet erat nam ac
-                    imperdiet.
-                  </p>
-
-                  <div class="meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-03-07">7 March, 2022</time>
-                    </div>
-
-                    <button class="comment" aria-label="Comment">
-                      <ion-icon name="chatbubble-outline"></ion-icon>
-
-                      <data value="15">15</data>
-                    </button>
-
-                    <button class="share" aria-label="Share">
-                      <ion-icon name="share-social-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="banner">
-                  <a href="#">
-                    <img src="./assets/images/blog-4.jpg" width="750" height="350" loading="lazy"
-                      alt="Donec feugiat mollis nisi in dignissim. Morbi sollicitudin quis." class="img-cover">
-                  </a>
-                </figure>
-
-                <div class="content">
-
-                  <h3 class="h3 title">
-                    <a href="#">
-                      Donec feugiat mollis nisi in dignissim. Morbi sollicitudin quis.
-                    </a>
-                  </h3>
-
-                  <p class="text">
-                    Sed quis sagittis velit. Aliquam velit eros, bibendum ut massa et, consequat laoreet erat nam ac
-                    imperdiet.
-                  </p>
-
-                  <div class="meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-03-07">7 March, 2022</time>
-                    </div>
-
-                    <button class="comment" aria-label="Comment">
-                      <ion-icon name="chatbubble-outline"></ion-icon>
-
-                      <data value="15">15</data>
-                    </button>
-
-                    <button class="share" aria-label="Share">
-                      <ion-icon name="share-social-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
+            @endforeach
+          
         </div>
+        
+        
+      </ul>
+      <div class="pagination-container" style="margin-top: 40px; margin-bottom: 0px;">
+        <div class="pagination-inner">
+            <div class="button-custom">
+                <div class="pagination-buttons" style="display: flex; justify-content: center;">
+                    @if ($databerita->previousPageUrl())
+                        <a href="{{ $databerita->previousPageUrl() }}" class="btn pagination-button">&lt;</a>
+                    @else
+                        <button class="btn pagination-button" disabled>&lt;</button>
+                    @endif
+    
+                    @if ($databerita->nextPageUrl())
+                        <a href="{{ $databerita->nextPageUrl() }}" class="btn pagination-button">&gt;</a>
+                    @else
+                        <button class="btn pagination-button" disabled>&gt;</button>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+      </div>
+      
+      
       </section>
 
     </article>
