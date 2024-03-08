@@ -200,95 +200,42 @@
           <ul class="service-list">
 
 
-            {{-- ================================================= --}}
+            @foreach ($categories as $cat)
             <li>
-              <div class="service-card">
-                  <a href="/">
-                <div class="card-icon">
-                  <ion-icon name="home"></ion-icon>
+                <div class="service-card">
+                    <a href="/beranda/subpekerjaan?category={{ $cat->nama_kategori}}">
+                        <div class="card-icon">
+                            @if ($cat->nama_kategori == 'Infrastruktur')
+                                <ion-icon name="home-outline"></ion-icon>
+                            @elseif ($cat->nama_kategori == 'Pendidikan')
+                                <ion-icon name="school-outline"></ion-icon>
+                            @elseif ($cat->nama_kategori == 'Kesehatan')
+                                <ion-icon name="medkit-outline"></ion-icon>
+                            @elseif ($cat->nama_kategori == 'Makanan')
+                                <ion-icon name="restaurant-outline"></ion-icon>
+                            @endif
+                        </div>
+                        <br>
+                        <h3 class="h3 title">{{ $cat->nama_kategori }}</h3>
+                        <p class="text">
+                            @if ($cat->nama_kategori == 'Infrastruktur')
+                                HaiuCare fokus memberi bantuan untuk memperbaiki infrastruktur bangunan tak layak menjadi tempat yang aman, fungsional, dan menciptakan hunian yang layak.
+                            @elseif ($cat->nama_kategori == 'Pendidikan')
+                                HaiuCare fokus memberi pendidikan pada anak-anak tak mampu, menawarkan kesempatan belajar berkualitas untuk masa depan cerah.
+                            @elseif ($cat->nama_kategori == 'Kesehatan')
+                                HaiuCare fokus memberikan akses kesehatan bagi masyarakat yang membutuhkan, meningkatkan kesehatan dan kesejahteraan mereka.
+                            @elseif ($cat->nama_kategori == 'Makanan')
+                                HaiuCare fokus memberikan bantuan makanan kepada mereka yang membutuhkan, menjamin mereka memiliki akses ke makanan yang sehat dan bergizi.
+                            @endif
+                        </p>
+                        <button class="card-btn" aria-label="Show More">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
+                    </a>
                 </div>
-                <br>
-
-                <h3 class="h3 title">Infrastruktur</h3>
-
-                <p class="text">
-                    Kami, HaiuCare, akan merenovasi infrastruktur bangunan tak layak menjadi tempat yang aman, fungsional, dan menciptakan hunian yang layak.                    
-                </p>
-                
-                <button class="card-btn" aria-label="Show More">
-                  <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-                </a>
-
-              </div>
             </li>
-
-                {{-- ================================================= --}}
-                <li>
-                    <div class="service-card">
-                        <a href="/">
-                    <div class="card-icon">
-                        <ion-icon name='school'></ion-icon>
-                    </div>
-                    <br>
-                    <h3 class="h3 title">Pendidikan</h3>
-
-                    <p class="text">
-                        HaiuCare fokus memberi pendidikan pada anak-anak tak mampu, menawarkan kesempatan belajar berkualitas untuk masa depan cerah
-                    </p>
-                    
-                    <button class="card-btn" aria-label="Show More">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </button>
-                    </a>
-
-                    </div>
-                </li>
-
-                {{-- ================================================= --}}
-                <li>
-                    <div class="service-card">
-                        <a href="/">
-                    <div class="card-icon">
-                        <ion-icon name='bag'></ion-icon>
-                    </div>
-                    <br>
-                    <h3 class="h3 title">Makanan</h3>
-
-                    <p class="text">
-                    HaiuCare, kami berkomitmen untuk memberikan akses makanan kepada mereka yang membutuhkan.
-                    </p>
-                    
-                    <button class="card-btn" aria-label="Show More">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </button>
-                    </a>
-
-                    </div>
-                </li>
-                
-                {{-- ================================================= --}}
-                <li>
-                    <div class="service-card">
-                        <a href="/">
-                    <div class="card-icon">
-                      <ion-icon name="medkit"></ion-icon>
-                    </div>
-                    <br>
-                    <h3 class="h3 title">Kesehatan</h3>
-
-                    <p class="text">
-                        HaiuCare memberikan akses barang second berkualitas bagi semua, memastikan setiap orang dapat memenuhi kebutuhan sehari-hari dengan baik.    
-                    </p>
-                    
-                    <button class="card-btn" aria-label="Show More">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </button>
-                    </a>
-
-                    </div>
-                </li>
-
+            @endforeach
+            
                 
                 {{-- ================================================= --}}
                 <li>

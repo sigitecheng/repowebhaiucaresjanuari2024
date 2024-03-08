@@ -114,6 +114,36 @@ Route::resource('/adminberanda/post', Fe_AdminBerandaController::class)->middlew
 
 
 // =======================================================================
+// HALAMAAN DASHBOARD FRONTEND SUB PEKERJAAN
+
+Route::get('/beranda/subpekerjaan', function () {
+
+            $title = '';
+        if (request('category')) {
+            $category = Category::firstWhere('slug', request('category'));
+            $title = $category->nama_kategori;
+        }
+
+        if (request('user')) {
+            $author = User::firstWhere('username', request('user'));
+            $title = ' by ' . $author->name;
+        }
+
+    return view('frontendweb/subberanda', [
+        "title"             => $title ,
+        "active"            => $title,
+        'admintentangkami'  => Fe_adminberanda::all(),
+        // 'categories'        => Category::all(),
+            
+        "datapekerjaan" => Post::filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString(),
+
+        //  "post" => $post->get() // PAKET 2
+        'categories'    => Category::all(),
+            
+
+    ]);
+});
+// =======================================================================
 // HALAMAAN DASHBOARD FRONTEND WEB TENTANG
 
 Route::get('/tentang', function () {

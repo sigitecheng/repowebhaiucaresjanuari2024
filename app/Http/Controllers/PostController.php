@@ -90,11 +90,11 @@ class PostController extends Controller
 
             $category_id = 1,
             'post' => Post::whereHas('category', function ($query) use ($category_id) {
-                // Gantilah $categoryId dengan ID kategori yang diinginkan
+                // Gantilah $categoryId dengan ID kategoriost yang diinginkan
                 $query->where('id', $category_id);
             })
             ->orderBy('created_at', 'desc')
-            ->paginate(6),
+            ->paginate(10),
 
          
             // MENGGUNAKAN TOOLS EIGER LOADING AGAR OPTIMAL DALAM MANGANTISIPASI QUERY YANG ADA 

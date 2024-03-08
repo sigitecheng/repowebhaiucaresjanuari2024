@@ -8,7 +8,7 @@
       crossorigin="anonymous"
     ></script>
     {{-- <link rel="stylesheet" href="style.css" /> --}}
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title>HaiuCare | {{ $title }}</title>
   </head>
   <body>
