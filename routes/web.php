@@ -139,7 +139,9 @@ Route::get('/beranda/subpekerjaan', function () {
 
         //  "post" => $post->get() // PAKET 2
         'categories'    => Category::all(),
-            
+
+        "imagesubberanda"         =>  "frontendweb/home/subberanda.png",
+        "imagehome2"        =>  "frontendweb/home/home2.png",
 
     ]);
 });

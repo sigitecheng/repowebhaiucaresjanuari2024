@@ -17,9 +17,21 @@
 
             {{-- <p class="hero-subtitle">Selamat Datang ! di HaiuCare Bangun Indonesia</p> --}}
 
-            <h3 class="h2 hero-title">Layanan Kami</h3>
+            <h5 class="hero-title">Pekerjaan Kami</h5>
 
             <p class="hero-text">
+                @foreach($categories as $cat)
+                    @if ($cat->nama_kategori == 'Infrastruktur')
+                        HaiuCare fokus memberi bantuan untuk memperbaiki infrastruktur bangunan tak layak menjadi tempat yang aman, fungsional, dan menciptakan hunian yang layak.
+                    @elseif ($cat->nama_kategori == 'Pendidikan')
+                        HaiuCare fokus memberi pendidikan pada anak-anak tak mampu, menawarkan kesempatan belajar berkualitas untuk masa depan cerah.
+                    @elseif ($cat->nama_kategori == 'Kesehatan')
+                        HaiuCare fokus memberikan akses kesehatan bagi masyarakat yang membutuhkan, meningkatkan kesehatan dan kesejahteraan mereka.
+                    @elseif ($cat->nama_kategori == 'Makanan')
+                        HaiuCare fokus memberikan bantuan makanan kepada mereka yang membutuhkan, menjamin mereka memiliki akses ke makanan yang sehat dan bergizi.
+                    @endif
+                    @endforeach
+                </p>
 
                 {{-- @foreach($adminlayanankami as $data)
                 {{ $data->layanan_kami}}
@@ -32,12 +44,9 @@
 
             
         </div>
-        
-        <figure class="hero-banner">
-            <img src="img/ " loading="lazy" alt="hero-banner"
-              class="w-100 banner-animation">
-          </figure>
-
+        {{-- <figure class="hero-banner">
+            <img src="img/<?= $imagesubberanda ?>" width="694" height="529" loading="lazy" alt="<?= $imagesubberanda ?>" class="w-100 banner-animation">   
+          </figure> --}}
 
         </div>
       </section>
@@ -84,26 +93,33 @@
         </style>
         </head>
         <body>
-        
-        <table>
+
+            <div class="container" style="display: flex; justify-content: center; align-items: center; margin-top:10px;">
+                <button class="btn btn-outline-dark">
+                    <p style="font-size: 20px;" ><strong>Daftar Pekerjaan {{$title}}</strong></p>
+                </button>
+            </div>
+            
+
+            <table>
             <thead>
                 <tr class="text-center">
-                    <th class="text-center" style="width: 25px;">No</th>
-                    <th class="text-center" style="width: 25px;">Image</th>
-                    <th class="text-center" style="width: 100px;">Judul</th>
-                    <th class="text-center" style="width: 50px;">Anggaran</th>
-                    <th class="text-center" style="width: 50px;">Lokasi</th>
-                    <th class="text-center" style="width: 50px;">Kategori</th>
-                    <th class="text-center" style="width: 25px;">Kontraktor/Vendor</th>
-                    <th class="text-center" style="width: 25px;">Donasi</th>
-                </tr>
+                    <th style="width: 25px; text-align: center;">No</th>
+                    <th style="width: 25px; text-align: center;">Image</th>
+                    <th style="width: 100px; text-align: center;">Judul</th>
+                    <th style="width: 50px; text-align: center;">Anggaran</th>
+                    <th style="width: 50px; text-align: center;">Lokasi</th>
+                    <th style="width: 50px; text-align: center;">Kategori</th>
+                    <th style="width: 25px; text-align: center;">Kontraktor/Vendor</th>
+                    <th style="width: 25px; text-align: center;">Donasi</th>
+                </tr>                
             </thead>
             <tbody>
               @foreach ($datapekerjaan as $data)
                   
               <tr>
                 <td class="text-center" style="width: 25px;">{{ $loop->iteration}}</td>
-                <td class="text-center" style="width: 25px;"><img src="{{ $data->image }}" alt="{{ $data->image }}" style="height: 100px; width: auto;"></td>
+                <td style="width: 50px; text-align: center;"><img src="{{ $data->image }}" alt="{{ $data->image }}" style="height: 100px; width: auto;"></td>
                 <td class="text-center" style="width: 100px;">{{ $data->title }}</td>
                 
             <td class="text-center" style="width: 25px;">
