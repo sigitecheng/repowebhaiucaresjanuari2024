@@ -180,7 +180,7 @@
   /*-----------------------------------*\
     #HEADER STYLE
   \*-----------------------------------*/
-  
+  /* ============================================================================================================================== */
   .container { padding-inline: 15px; }
   
   .h2,
@@ -376,7 +376,86 @@ h2 {
     object-fit: cover;
   }
   
+  /* RESPONSIVE  */
+
+  /* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    padding-block: 12px; /* Sesuaikan padding */
+    margin-inline: 15px; /* Tambahkan margin kiri dan kanan */
+  }
   
+  .logo {
+    font-size: 2.4rem; /* Sesuaikan ukuran font */
+  }
+  
+  .navbar {
+    max-width: 250px; /* Sesuaikan lebar maksimum */
+    margin-inline: 15px; /* Tambahkan margin kiri dan kanan */
+  }
+  
+  .navbar-top .logo {
+    font-size: 2.8rem; /* Sesuaikan ukuran font */
+  }
+  
+  .navbar-link {
+    font-size: 1.8rem; /* Sesuaikan ukuran font */
+    padding-block: 10px; /* Sesuaikan padding */
+  }
+  
+  .btn,
+  .btn-2,
+  .btn-3,
+  .btn-donasi1,
+  .btn-donasi2,
+  .btn-donasi3,
+  .btn-judul,
+  .btn-misi {
+    padding: 10px 30px; /* Sesuaikan padding */
+    font-size: 1.6rem; /* Sesuaikan ukuran font */
+    margin-top: 2px; /* Sesuaikan margin atas */
+  }
+}
+
+/* Perangkat Android */
+@media only screen and (max-width: 767px) {
+  .header {
+    padding-block: 10px; /* Sesuaikan padding */
+    margin-inline: 10px; /* Tambahkan margin kiri dan kanan */
+  }
+  
+  .logo {
+    font-size: 2rem; /* Sesuaikan ukuran font */
+  }
+  
+  .navbar {
+    max-width: 200px; /* Sesuaikan lebar maksimum */
+    margin-inline: 10px; /* Tambahkan margin kiri dan kanan */
+  }
+  
+  .navbar-top .logo {
+    font-size: 2.4rem; /* Sesuaikan ukuran font */
+  }
+  
+  .navbar-link {
+    font-size: 1.4rem; /* Sesuaikan ukuran font */
+    padding-block: 8px; /* Sesuaikan padding */
+  }
+  
+  .btn,
+  .btn-2,
+  .btn-3,
+  .btn-donasi1,
+  .btn-donasi2,
+  .btn-donasi3,
+  .btn-judul,
+  .btn-misi {
+    padding: 8px 20px; /* Sesuaikan padding */
+    font-size: 1.2rem; /* Sesuaikan ukuran font */
+    margin-top: 2px; /* Sesuaikan margin atas */
+  }
+}
+
   
   
   
