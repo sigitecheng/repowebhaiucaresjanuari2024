@@ -135,9 +135,9 @@
     <!-- Hamburger icon -->
     <div class="hamburger-icon" onclick="toggleNavbar()">
         <!-- Icon bars -->
-        <div class="bar">hai</div>
-        <div class="bar">hai</div>
-        <div class="bar">hai</div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
 
     <!-- Navbar links (sembunyi pada awalnya) -->
