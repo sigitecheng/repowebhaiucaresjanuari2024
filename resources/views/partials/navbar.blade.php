@@ -59,31 +59,12 @@
                 </ul>
             </li>
             
-
-            {{-- <li class="navbar-item">
-                <a href="/project" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>
-                    Project
-                </a>
-                <ul class="dropdown">
-                    <li><a class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link href="/project">Infrastruktur</a></li>         --}}
-                    {{-- <li><a class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link href="/project">Infrastruktur</a></li>        
-                    <li><a class="navbar-link <?= ($active === "pendidikan") ? 'active' : ''; ?>" data-navbar-link href="/projectpendidikan">Pendidikan</a></li>
-                    <li><a class="navbar-link <?= ($active === "kesehatan") ? 'active' : ''; ?>" data-navbar-link href="/projectkesehatan">Kesehatan</a></li>
-                    <li><a class="navbar-link <?= ($active === "makanan") ? 'active' : ''; ?>" data-navbar-link href="/projectmakanan">Makanan</a></li> --}}
-                {{-- </ul> --}}
-            {{-- s</li> --}}
             
             <li class="navbar-item">
             <a href="#footer" class="navbar-link <?= ($active === "kontak") ? 'active' : ''; ?>" data-navbar-link>Kontak</a>
             </li>
 
-        </ul>
-
-      </nav>
-
-      <ul class="navbar-nav ms-auto">
-
-        @auth
+            @auth
 
         <li class="nav-item dropdown">
 
@@ -106,10 +87,18 @@
         </li>
 
         @else
-        <li class="nav-item"></li>
-        <a href="/login" class="btn-2 <?= ($active === "login") ? 'active' : ''; ?> text-dark"><i class="bi bi-box-arrow-in-right mr-2 text-dark"></i> Login</a>
+        <li class="nav-item">
+            <a href="/login" class="btn-2 <?= ($active === "login") ? 'active' : ''; ?> text-dark"><i class="bi bi-box-arrow-in-right mr-2 text-dark"></i> Login</a>
+        </li>
 
         @endauth
+
+        </ul>
+
+      </nav>
+
+      {{-- <ul class="navbar-nav ms-auto"> --}}
+  
     </ul>
 </div>      
         </header>
