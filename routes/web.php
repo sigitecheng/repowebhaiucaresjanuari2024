@@ -120,7 +120,6 @@ Route::resource('/adminberanda/post', Fe_AdminBerandaController::class)->middlew
 // HALAMAAN DASHBOARD FRONTEND SUB PEKERJAAN
 
 Route::get('/beranda/subpekerjaan', function () {
-
             $title = '';
         if (request('category')) {
             $category = Category::firstWhere('slug', request('category'));
@@ -181,7 +180,9 @@ Route::get('/layanan', function () {
         "active"            => 'layanan',
         "imagelayanan"      =>  "frontendweb/layanan/felayanan.png",
         'adminlayanankami'  => Fe_adminberanda::all(),
-        'categories'        => Category::all()
+        'categories'        => Category::all(),
+        "datapekerjaan" => Post::filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString(),
+
     ]);
 });
 // ---------------------------------------------------------------------------------------

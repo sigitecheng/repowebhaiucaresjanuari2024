@@ -22,11 +22,11 @@
 
             <h3 class="h2 hero-title">Tentang Kami</h3>
 @foreach($admintentangkami as $data)
-            <p class="hero-text">
+            <p class="hero-text mb-2">
 
               {{ $data->tentang_kami }}
                 <a href="#footer">
-  <button class="btn-2">Kontak Kami</button>
+  <button class="btn-2 mt-2">Kontak Kami</button>
 </a>
 
 @endforeach
