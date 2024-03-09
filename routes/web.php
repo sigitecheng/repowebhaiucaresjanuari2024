@@ -36,6 +36,7 @@ use App\Http\Controllers\SuratController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UsersProjectController;
 use App\Http\Controllers\ErrorController;
+use App\Http\Controllers\FeDonasiController;
 
 
 use App\Models\Berita;
@@ -43,6 +44,7 @@ use App\Models\BussinessIntelligent;
 use App\Models\Datapenanggungjawab;
 use App\Models\Datapengawaslapangan;
 use App\Models\Fe_adminberanda as ModelsFe_adminberanda;
+use App\Models\FeDonasi;
 use App\Models\RunningProject;
 
 // use App\Models\Post;
@@ -147,6 +149,11 @@ Route::get('/beranda/subpekerjaan', function () {
 
     ]);
 });
+
+// ---------------- ---------------- ---------------- ---------------- ---------------- ----------------
+// ROUTE UNTUK PANGAMBILAN DATA USERS ALL DATA
+Route::resource('/fedonasi', FeDonasiController::class); 
+
 // =======================================================================
 // HALAMAAN DASHBOARD FRONTEND WEB TENTANG
 

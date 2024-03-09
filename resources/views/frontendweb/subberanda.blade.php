@@ -145,9 +145,10 @@
                 align-items: center;
                 height: 100%;
               ">
-                <a href="#">
+                <a href="/fedonasi/{{ $data->title }}">
                   <ion-icon name="mail" style="font-size: 30px;"></ion-icon>
                 </a>
+                
               </div>
             </td>
             
