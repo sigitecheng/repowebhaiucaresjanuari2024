@@ -96,7 +96,7 @@
 
             <div class="container" style="display: flex; justify-content: center; align-items: center; margin-top:10px;">
                 <button class="btn btn-outline-dark">
-                    <p style="font-size: 20px;" ><strong>Daftar Pekerjaan {{$title}}</strong></p>
+                    <p style="font-size: 20px;" ><strong>Pekerjaan {{$title}}</strong></p>
                 </button>
             </div>
             
