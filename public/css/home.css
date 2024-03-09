@@ -456,6 +456,60 @@ h2 {
   }
 }
 
+/* Gaya untuk hamburger icon */
+.hamburger-icon {
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Gaya untuk hamburger bar */
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Gaya untuk navbar mobile (sembunyi pada awalnya) */
+.mobile-navbar ul {
+  display: none;
+}
+
+/* Gaya untuk tampilan desktop */
+@media screen and (min-width: 768px) {
+  .desktop-navbar {
+      /* Tampilkan navbar desktop */
+      display: flex;
+      gap: 20px;
+  }
+
+  /* Sembunyikan hamburger icon */
+  .mobile-navbar {
+      display: none;
+  }
+}
+
+/* Gaya untuk tampilan mobile */
+@media screen and (max-width: 767px) {
+  .desktop-navbar {
+      /* Sembunyikan navbar desktop */
+      display: none;
+  }
+
+  /* Tampilkan hamburger icon */
+  .mobile-navbar {
+      display: block;
+      margin-bottom: 20px;
+  }
+
+  /* Tampilkan navbar mobile saat hamburger icon diklik */
+  .mobile-navbar ul {
+      display: block;
+  }
+}
+
+
   
   
   
