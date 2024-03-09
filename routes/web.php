@@ -35,6 +35,9 @@ use App\Http\Controllers\SubController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UsersProjectController;
+use App\Http\Controllers\ErrorController;
+
+
 use App\Models\Berita;
 use App\Models\BussinessIntelligent;
 use App\Models\Datapenanggungjawab;
@@ -417,6 +420,9 @@ Route::resource('/backend/rumahsakit', Be_DatarumahsakitController::class)->midd
 
 // DAFTAR MITRA HAIUCARE {DATA INSTANSI PENDIDIKAN}
 Route::resource('/backend/instansipendidikan', Be_DatainstansipendidikanController::class)->middleware('auth');
+
+// DAFTAR MITRA HAIUCARE {DATA INSTANSI PENDIDIKAN}
+Route::resource('/error', ErrorController::class);
 
 
 

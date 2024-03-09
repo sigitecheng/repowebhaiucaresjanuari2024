@@ -240,7 +240,7 @@
                 {{-- ================================================= --}}
                 <li>
                     <div class="service-card">
-                        <a href="/">
+                        <a href="/error">
                     <div class="card-icon">
                         <ion-icon name='albums'></ion-icon>
                     </div>
@@ -262,7 +262,7 @@
                 {{-- ================================================= --}}
                 <li>
                     <div class="service-card">
-                        <a href="/">
+                        <a href="/error">
                     <div class="card-icon">
                         <ion-icon name='pencil-sharp'></ion-icon>
                     </div>
@@ -284,7 +284,7 @@
                 {{-- ================================================= --}}
                 <li>
                     <div class="service-card">
-                        <a href="/">
+                        <a href="/error">
                     <div class="card-icon">
                         <ion-icon name='bookmark-sharp'></ion-icon>
                     </div>
@@ -306,7 +306,7 @@
                 {{-- ================================================= --}}
                 <li>
                     <div class="service-card">
-                        <a href="/">
+                        <a href="/error">
                     <div class="card-icon">
                         <ion-icon name='eye'></ion-icon>
                     </div>
