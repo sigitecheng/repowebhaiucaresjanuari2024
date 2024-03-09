@@ -16,23 +16,22 @@
                     <img src="img/<?= $imagetentang ?> " width="694" height="529" loading="lazy" alt="hero-banner"
                       class="w-100 banner-animation">
                   </figure>
-          <div class="hero-content">
 
-            {{-- <p class="hero-subtitle">Selamat Datang ! di HaiuCare Bangun Indonesia</p> --}}
+                  <div class="hero-content">
 
-            <h3 class="h2 hero-title">Tentang Kami</h3>
-@foreach($admintentangkami as $data)
-            <p class="hero-text mb-2">
-
-              {{ $data->tentang_kami }}
-                <a href="#footer">
-  <button class="btn-2 mt-2">Kontak Kami</button>
-</a>
-
-@endforeach
-
-          </div>
-
+                    {{-- <p class="hero-subtitle">Selamat Datang ! di HaiuCare Bangun Indonesia</p> --}}
+        
+                    <h3 class="h2 hero-title">Tentang Kami</h3>
+        
+                    @foreach ($admintentangkami as $data)
+                    <p class="hero-text">
+                        {{ $data->tentang_kami }}
+                    </p>
+                    @endforeach
+                    <a href="#footer">
+                      <button class="btn-2">Kontak Kami</button>
+                    </a>
+                </div>
 
         </div>
       </section>

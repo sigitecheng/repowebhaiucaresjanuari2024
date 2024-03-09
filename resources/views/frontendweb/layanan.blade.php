@@ -11,32 +11,30 @@
       <article>
           <section class="hero" id="home">
               <div class="container">
-                  
+                
+                <div class="hero-content">
 
-          <div class="hero-content">
-
-            {{-- <p class="hero-subtitle">Selamat Datang ! di HaiuCare Bangun Indonesia</p> --}}
-
-            <h3 class="h2 hero-title">Layanan Kami</h3>
-
-            <p class="hero-text">
-
-                @foreach($adminlayanankami as $data)
-                {{ $data->layanan_kami}}
-
-                @endforeach
-
-                <a href="#footer">
-                <button class="btn-2">Kontak Kami</button>
-                </a>
-
-            
-        </div>
+                    {{-- <p class="hero-subtitle">Selamat Datang ! di HaiuCare Bangun Indonesia</p> --}}
         
-        <figure class="hero-banner">
-            <img src="img/<?= $imagelayanan ?> " loading="lazy" alt="hero-banner"
-              class="w-100 banner-animation">
-          </figure>
+                    <h3 class="h2 hero-title">Tentang Kami</h3>
+        
+                    @foreach ($adminlayanankami as $data)
+                    <p class="hero-text">
+                        {{ $data->layanan_kami }}
+                    </p>
+                    @endforeach
+                    <a href="#footer">
+                      <button class="btn-2">Kontak Kami</button>
+                    </a>
+                </div>  
+
+        
+                <figure class="hero-banner">
+                    <img src="img/<?= $imagelayanan ?> " loading="lazy" alt="hero-banner"
+                      class="w-100 banner-animation">
+                  </figure>
+                 
+        </div>
 
 
         </div>
@@ -100,97 +98,6 @@
         </li>
         @endforeach
         
-        
-        
-        <li>
-          <div class="service-card">
-              <a href="/">
-            <div class="card-icon">
-              <ion-icon name="home"></ion-icon>
-            </div>
-            <br>
-
-            <h3 class="h3 title">Infrastruktur</h3>
-
-            <p class="text">
-                Kami, HaiuCare, akan merenovasi infrastruktur bangunan tak layak menjadi tempat yang aman, fungsional, dan menciptakan hunian yang layak.                    
-            </p>
-            
-            <button class="card-btn" aria-label="Show More">
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </button>
-            </a>
-
-          </div>
-        </li>
-
-            {{-- ================================================= --}}
-            <li>
-                <div class="service-card">
-                    <a href="/">
-                <div class="card-icon">
-                    <ion-icon name='school'></ion-icon>
-                </div>
-                <br>
-                <h3 class="h3 title">Pendidikan</h3>
-
-                <p class="text">
-                    HaiuCare fokus memberi pendidikan pada anak-anak tak mampu, menawarkan kesempatan belajar berkualitas untuk masa depan cerah
-                </p>
-                
-                <button class="card-btn" aria-label="Show More">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-                </a>
-
-                </div>
-            </li>
-
-            {{-- ================================================= --}}
-            <li>
-                <div class="service-card">
-                    <a href="/">
-                <div class="card-icon">
-                    <ion-icon name='bag'></ion-icon>
-                </div>
-                <br>
-                <h3 class="h3 title">Makanan</h3>
-
-                <p class="text">
-                HaiuCare, kami berkomitmen untuk memberikan akses makanan kepada mereka yang membutuhkan.
-                </p>
-                
-                <button class="card-btn" aria-label="Show More">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-                </a>
-
-                </div>
-            </li>
-            
-            {{-- ================================================= --}}
-            <li>
-                <div class="service-card">
-                    <a href="/">
-                <div class="card-icon">
-                    <ion-icon name="medkit"></ion-icon>
-                </div>
-                <br>
-
-                <h3 class="h3 title">Kesehatan</h3>
-
-                <p class="text">
-                    HaiuCare memberikan akses barang second berkualitas bagi semua, memastikan setiap orang dapat memenuhi kebutuhan sehari-hari dengan baik.    
-                </p>
-                
-                <button class="card-btn" aria-label="Show More">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-                </a>
-
-                </div>
-            </li>
-
             
             {{-- ================================================= --}}
             <li>

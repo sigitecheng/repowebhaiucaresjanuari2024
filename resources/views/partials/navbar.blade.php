@@ -33,11 +33,6 @@
             <li class="navbar-item">
             <a href="/donasi" class="navbar-link <?= ($active === "donasi") ? 'active' : ''; ?>" data-navbar-link>Donasi</a>
             </li>
-{{--             
-            <li class="navbar-item">
-            <a href="/project" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>Project</a>
-            </li> --}}
-
             <li class="navbar-item">
                 @php
                                         $categoryIcons = [
@@ -50,15 +45,10 @@
                                     @endphp
 
 
-                <a href="" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>
+                <a href="/" class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link>
                     Project
                 </a>
                 <ul class="dropdown">
-                    {{-- <li>
-                        <a class="navbar-link <?= ($active === "project") ? 'active' : ''; ?>" data-navbar-link href="/project">
-                            <i class="{{ $categoryIcons['All Data'] }}"></i> All Data
-                        </a>
-                    </li> --}}
                     @foreach ($categories as $cat)
                         <li>
                             <a class="navbar-link <?= ($active === $cat->slug) ? 'active' : ''; ?>" data-navbar-link href="/blogproject?category={{ $cat->slug }}">
