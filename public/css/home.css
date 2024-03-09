@@ -379,135 +379,6 @@ h2 {
   /* RESPONSIVE  */
 
   /* Tablet */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .header {
-    padding-block: 12px; /* Sesuaikan padding */
-    margin-inline: 15px; /* Tambahkan margin kiri dan kanan */
-  }
-  
-  .logo {
-    font-size: 2.4rem; /* Sesuaikan ukuran font */
-  }
-  
-  .navbar {
-    max-width: 250px; /* Sesuaikan lebar maksimum */
-    margin-inline: 15px; /* Tambahkan margin kiri dan kanan */
-  }
-  
-  .navbar-top .logo {
-    font-size: 2.8rem; /* Sesuaikan ukuran font */
-  }
-  
-  .navbar-link {
-    font-size: 1.8rem; /* Sesuaikan ukuran font */
-    padding-block: 10px; /* Sesuaikan padding */
-  }
-  
-  .btn,
-  .btn-2,
-  .btn-3,
-  .btn-donasi1,
-  .btn-donasi2,
-  .btn-donasi3,
-  .btn-judul,
-  .btn-misi {
-    padding: 10px 30px; /* Sesuaikan padding */
-    font-size: 1.6rem; /* Sesuaikan ukuran font */
-    margin-top: 2px; /* Sesuaikan margin atas */
-  }
-}
-
-/* Perangkat Android */
-@media only screen and (max-width: 767px) {
-  .header {
-    padding-block: 10px; /* Sesuaikan padding */
-    margin-inline: 10px; /* Tambahkan margin kiri dan kanan */
-  }
-  
-  .logo {
-    font-size: 2rem; /* Sesuaikan ukuran font */
-  }
-  
-  .navbar {
-    max-width: 200px; /* Sesuaikan lebar maksimum */
-    margin-inline: 10px; /* Tambahkan margin kiri dan kanan */
-  }
-  
-  .navbar-top .logo {
-    font-size: 2.4rem; /* Sesuaikan ukuran font */
-  }
-  
-  .navbar-link {
-    font-size: 1.4rem; /* Sesuaikan ukuran font */
-    padding-block: 8px; /* Sesuaikan padding */
-  }
-  
-  .btn,
-  .btn-2,
-  .btn-3,
-  .btn-donasi1,
-  .btn-donasi2,
-  .btn-donasi3,
-  .btn-judul,
-  .btn-misi {
-    padding: 8px 20px; /* Sesuaikan padding */
-    font-size: 1.2rem; /* Sesuaikan ukuran font */
-    margin-top: 2px; /* Sesuaikan margin atas */
-  }
-}
-
-/* Gaya untuk hamburger icon */
-.hamburger-icon {
-  cursor: pointer;
-  padding: 10px;
-}
-
-/* Gaya untuk hamburger bar */
-.bar {
-  width: 30px;
-  height: 3px;
-  background-color: black;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-/* Gaya untuk navbar mobile (sembunyi pada awalnya) */
-.mobile-navbar ul {
-  display: none;
-}
-
-/* Gaya untuk tampilan desktop */
-@media screen and (min-width: 768px) {
-  .desktop-navbar {
-      /* Tampilkan navbar desktop */
-      display: flex;
-      gap: 20px;
-  }
-
-  /* Sembunyikan hamburger icon */
-  .mobile-navbar {
-      display: none;
-  }
-}
-
-/* Gaya untuk tampilan mobile */
-@media screen and (max-width: 767px) {
-  .desktop-navbar {
-      /* Sembunyikan navbar desktop */
-      display: none;
-  }
-
-  /* Tampilkan hamburger icon */
-  .mobile-navbar {
-      display: block;
-      margin-bottom: 20px;
-  }
-
-  /* Tampilkan navbar mobile saat hamburger icon diklik */
-  .mobile-navbar ul {
-      display: block;
-  }
-}
 
 
   
@@ -622,60 +493,6 @@ h2 {
     pointer-events: all;
   }
 
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Aturan CSS untuk tablet di sini */
-    .header {
-      padding-block: 10px;
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-    
-    .logo {
-      font-size: 2.8rem;
-    }
-    
-    .navbar {
-      max-width: 250px;
-      margin-left: 20px;
-    }
-    
-    .navbar-top .logo {
-      font-size: 3.2rem;
-    }
-    
-    .navbar-link {
-      font-size: 2rem;
-      padding-block: 10px;
-    }
-  }
-  
-  @media only screen and (max-width: 767px) {
-    /* Aturan CSS untuk perangkat seluler di sini */
-    .header {
-      padding-block: 8px;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-    
-    .logo {
-      font-size: 2.4rem;
-    }
-    
-    .navbar {
-      max-width: 200px;
-      margin-left: 10px;
-    }
-    
-    .navbar-top .logo {
-      font-size: 2.8rem;
-    }
-    
-    .navbar-link {
-      font-size: 1.6rem;
-      padding-block: 8px;
-    }
-  }
-  
   /* ===================================================================================================================================================================================================  */
   
   
@@ -734,6 +551,7 @@ h2 {
   /*-----------------------------------*\
     #ABOUT
   \*-----------------------------------*/
+  /* ========================================================================================== */
   
   .about-banner { margin-block-end: 30px; }
   
@@ -772,11 +590,10 @@ h2 {
   
   
   
-  
-  
   /*-----------------------------------*\
     #SERVICE
   \*-----------------------------------*/
+  /* ========================================================================================== */
   
   .service-list {
     display: grid;
@@ -861,12 +678,10 @@ h2 {
     flex: 1;
   }
   
-  
-  
   /*-----------------------------------*\
     #FEATURE
   \*-----------------------------------*/
-  
+  /* ==================================================================================================================================== */
   .features-list > li:first-child { margin-block-end: 30px; }
   
   .features-card {
@@ -896,15 +711,12 @@ h2 {
     max-width: max-content;
     margin-inline: auto;
   }
-  
-  
-  
-  
+
   
   /*-----------------------------------*\
     #BLOG
   \*-----------------------------------*/
-  
+  /* =========================================================================================================================== */
   .blog { 
     padding-block-end: 120px; 
     margin-top:0px;
@@ -981,13 +793,39 @@ h2 {
   }
   
   
-  
-  
+  /* Penyesuaian gaya untuk tampilan ponsel (<= 767px) */
+@media screen and (max-width: 767px) {
+  .blog {
+      padding-block-end: 80px; /* Kurangi padding bawah di bagian blog */
+  }
+
+  .blog-card {
+      padding: 15px; /* Kurangi padding pada kartu blog */
+  }
+
+  .blog-card .title {
+      font-size: var(--fs-7); /* Perkecil ukuran judul blog */
+  }
+
+  .blog-card .meta {
+      font-size: var(--fs-9); /* Perkecil ukuran teks meta */
+  }
+
+  .blog-card .meta ion-icon {
+      font-size: 18px; /* Perkecil ukuran ikon meta */
+      --ionicon-stroke-width: 30px;
+  }
+
+  .blog-projet {
+      padding: 10px; /* Kurangi padding pada bagian proyek blog */
+  }
+}
+ 
   
   /*-----------------------------------*\
     #FOOTER
   \*-----------------------------------*/
-  
+  /* ============================================================================================================ */
   .footer { font-size: var(--fs-8); }
   
   .footer a { color: inherit; }
@@ -1074,7 +912,72 @@ h2 {
   .copyright-link:is(:hover, :focus) { text-decoration: none; }
   
   
-  
+  /* Penyesuaian gaya untuk tampilan ponsel (<= 767px) */
+@media screen and (max-width: 767px) {
+  .footer {
+      font-size: var(--fs-9); /* Perkecil ukuran font pada footer */
+  }
+
+  .footer-top {
+      background-size: auto; /* Hapus background-size tambahan pada footer top */
+  }
+
+  .footer-brand .text {
+      font-size: var(--fs-9); /* Perkecil ukuran font teks brand pada footer */
+  }
+
+  .social-list {
+      gap: 8px; /* Perkecil jarak antara ikon media sosial pada footer */
+  }
+
+  .footer-top .social-link {
+      font-size: 16px; /* Perkecil ukuran ikon media sosial pada footer */
+      padding: 6px; /* Kurangi padding ikon media sosial pada footer */
+  }
+
+  .footer-list:not(:last-child) {
+      margin-block-end: 20px; /* Kurangi jarak antara daftar footer */
+  }
+
+  .footer-list-title {
+      font-size: var(--fs-6); /* Perkecil ukuran font judul daftar footer */
+      margin-block-end: 10px; /* Kurangi jarak antara judul daftar footer */
+  }
+
+  .footer-item {
+      gap: 8px; /* Perkecil jarak antara item footer */
+      padding-block: 8px; /* Kurangi padding pada item footer */
+  }
+
+  .footer-item-icon {
+      padding: 10px; /* Kurangi padding pada ikon footer */
+  }
+}
+
+/* Penyesuaian gaya untuk tampilan tablet (768px - 991px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-brand .text {
+      font-size: var(--fs-7); /* Perkecil ukuran font teks brand pada footer */
+  }
+
+  .footer-top .social-link {
+      font-size: 18px; /* Kembalikan ukuran font ikon media sosial pada footer */
+      padding: 8px; /* Kembalikan padding ikon media sosial pada footer */
+  }
+
+  .footer-list-title {
+      font-size: var(--fs-6); /* Perkecil ukuran font judul daftar footer */
+  }
+
+  .footer-item {
+      gap: 8px; /* Perkecil jarak antara item footer */
+  }
+
+  .footer-item-icon {
+      padding: 10px; /* Kembalikan padding pada ikon footer */
+  }
+}
+
   
   
   /*-----------------------------------*\
@@ -1613,3 +1516,282 @@ h2 {
   margin: auto; /* Memberikan margin otomatis untuk menengahkan gambar */
   margin-top: 25px;
 }
+
+
+/* ============================================================================== =======================================   */
+/* RESPONSIVE TABLET  */
+/* ============================================================================== =======================================   */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    padding-block: 12px; /* Sesuaikan padding */
+    margin-inline: 15px; /* Tambahkan margin kiri dan kanan */
+  }
+  
+  .logo {
+    font-size: 2.4rem; /* Sesuaikan ukuran font */
+  }
+  
+  .navbar {
+    max-width: 250px; /* Sesuaikan lebar maksimum */
+    margin-inline: 15px; /* Tambahkan margin kiri dan kanan */
+  }
+  
+  .navbar-top .logo {
+    font-size: 2.8rem; /* Sesuaikan ukuran font */
+  }
+  
+  .navbar-link {
+    font-size: 1.8rem; /* Sesuaikan ukuran font */
+    padding-block: 10px; /* Sesuaikan padding */
+  }
+  
+  .btn,
+  .btn-2,
+  .btn-3,
+  .btn-donasi1,
+  .btn-donasi2,
+  .btn-donasi3,
+  .btn-judul,
+  .btn-misi {
+    padding: 10px 30px; /* Sesuaikan padding */
+    font-size: 1.6rem; /* Sesuaikan ukuran font */
+    margin-top: 2px; /* Sesuaikan margin atas */
+  }
+
+
+  /* Aturan CSS untuk tablet di sini */
+  .header {
+    padding-block: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .logo {
+    font-size: 2.8rem;
+  }
+  
+  .navbar {
+    max-width: 250px;
+    margin-left: 20px;
+  }
+  
+  .navbar-top .logo {
+    font-size: 3.2rem;
+  }
+  
+  .navbar-link {
+    font-size: 2rem;
+    padding-block: 10px;
+  }
+
+.about-banner {
+  margin-block-end: 20px; /* Kurangi margin di bagian bawah banner */
+}
+
+.about .section-title {
+  margin-inline: auto; /* Tengahkan judul section */
+}
+
+.about .underline::before {
+  left: 50%;
+  transform: translateX(-50%); /* Tengahkan garis bawah */
+}
+
+.about-text {
+  font-size: var(--fs-7); /* Perkecil ukuran font untuk teks tentang */
+}
+
+.stats-list {
+  grid-template-columns: repeat(2, 1fr); /* Atur 2 kolom untuk statistik */
+}
+
+.service-list {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Atur jumlah kolom sesuai ukuran layar */
+}
+
+.service-card {
+  padding: 20px; /* Kurangi padding pada kartu layanan */
+}
+
+.service-card .card-icon {
+  max-width: 150px; /* Perkecil lebar ikon kartu */
+}
+
+.service-card .title {
+  margin-block-end: 10px; /* Kurangi margin bawah judul */
+}
+
+.service-card .text {
+  margin-block-end: 15px; /* Kurangi margin bawah teks */
+}
+
+.service-card .card-btn {
+  padding: 10px; /* Kurangi padding tombol */
+}
+.features-list > li:first-child {
+  margin-block-end: 20px; /* Kurangi margin bawah elemen pertama di dalam daftar fitur */
+}
+
+.features-card {
+  flex-direction: column; /* Atur tata letak kartu fitur menjadi tumpukan vertikal */
+  align-items: center; /* Pusatkan item di dalam kartu fitur */
+  gap: 10px; /* Perkecil jarak antara elemen di dalam kartu fitur */
+}
+
+.features-card .icon {
+  padding: 15px; /* Kurangi padding pada ikon */
+  font-size: 32px; /* Perkecil ukuran ikon */
+}
+ .blog {
+      padding-block-end: 100px; /* Kurangi padding bawah di bagian blog */
+  }
+
+  .blog-card .meta {
+      font-size: var(--fs-8); /* Perkecil ukuran teks meta */
+  }
+
+  .blog-card .meta ion-icon {
+      font-size: 20px; /* Perkecil ukuran ikon meta */
+      --ionicon-stroke-width: 32px;
+  }
+}
+
+ 
+
+
+
+/* ============================================================================== =======================================   */
+/* RESPONSIVE ANDROID  */
+/* ============================================================================== =======================================   */
+
+@media only screen and (max-width: 767px) {
+  .header {
+    padding-block: 10px; /* Sesuaikan padding */
+    margin-inline: 10px; /* Tambahkan margin kiri dan kanan */
+  }
+  
+  .logo {
+    font-size: 2rem; /* Sesuaikan ukuran font */
+  }
+  
+  .navbar {
+    max-width: 200px; /* Sesuaikan lebar maksimum */
+    margin-inline: 10px; /* Tambahkan margin kiri dan kanan */
+  }
+  
+  .navbar-top .logo {
+    font-size: 2.4rem; /* Sesuaikan ukuran font */
+  }
+  
+  .navbar-link {
+    font-size: 1.4rem; /* Sesuaikan ukuran font */
+    padding-block: 8px; /* Sesuaikan padding */
+  }
+  
+  .btn,
+  .btn-2,
+  .btn-3,
+  .btn-donasi1,
+  .btn-donasi2,
+  .btn-donasi3,
+  .btn-judul,
+  .btn-misi {
+    padding: 8px 20px; /* Sesuaikan padding */
+    font-size: 1.2rem; /* Sesuaikan ukuran font */
+    margin-top: 2px; /* Sesuaikan margin atas */
+  }
+
+
+/* HEADER */
+.header {
+    padding-block: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .logo {
+    font-size: 2.4rem;
+  }
+  
+  .navbar {
+    max-width: 200px;
+    margin-left: 10px;
+  }
+  
+  .navbar-top .logo {
+    font-size: 2.8rem;
+  }
+  
+  .navbar-link {
+    font-size: 1.6rem;
+    padding-block: 8px;
+  }
+    .about-banner {
+        margin-block-end: 10px; /* Kurangi margin di bagian bawah banner */
+    }
+  
+    .about .section-title {
+        margin-inline: auto; /* Tengahkan judul section */
+    }
+  
+    .about .underline::before {
+        left: 50%;
+        transform: translateX(-50%); /* Tengahkan garis bawah */
+    }
+  
+    .about-text {
+        font-size: var(--fs-6); /* Perkecil ukuran font untuk teks tentang */
+    }
+  
+    .stats-list {
+        grid-template-columns: 1fr; /* Atur 1 kolom untuk statistik */
+    }
+  /* Penyesuaian gaya untuk tampilan tablet (768px - 991px) */
+
+ .service-list {
+      grid-template-columns: 1fr; /* Satu kolom untuk tampilan ponsel */
+  }
+
+  .service-card {
+      padding: 15px; /* Kurangi padding pada kartu layanan */
+  }
+
+  .service-card .card-icon {
+      max-width: 100px; /* Perkecil lebar ikon kartu */
+  }
+
+  .service-card .title {
+      margin-block-end: 8px; /* Kurangi margin bawah judul */
+  }
+
+  .service-card .text {
+      margin-block-end: 10px; /* Kurangi margin bawah teks */
+  }
+
+  .service-card .card-btn {
+      padding: 8px; /* Kurangi padding tombol */
+  }
+
+    .features-list > li:first-child {
+        margin-block-end: 15px; /* Kurangi margin bawah elemen pertama di dalam daftar fitur */
+    }
+  
+    .features-card {
+        flex-direction: column; /* Atur tata letak kartu fitur menjadi tumpukan vertikal */
+        align-items: center; /* Pusatkan item di dalam kartu fitur */
+        gap: 10px; /* Perkecil jarak antara elemen di dalam kartu fitur */
+    }
+  
+    .features-card .icon {
+        padding: 12px; /* Kurangi padding pada ikon */
+        font-size: 28px; /* Perkecil ukuran ikon */
+    }
+  
+    .features-banner {
+        margin-block: 30px; /* Kurangi margin pada banner fitur */
+    }
+  }
+  
+  
+  

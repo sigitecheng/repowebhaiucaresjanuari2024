@@ -96,7 +96,7 @@
 
             <div class="container" style="display: flex; justify-content: center; align-items: center; margin-top:10px;">
                 <button class="btn btn-outline-dark">
-                    <p style="font-size: 20px;" ><strong>Pekerjaan {{$title}}</strong></p>
+                    <p style="font-size: 20px;" ><strong> {{$title}}</strong></p>
                 </button>
             </div>
             
@@ -110,7 +110,7 @@
                     <th style="width: 50px; text-align: center;">Anggaran</th>
                     <th style="width: 50px; text-align: center;">Lokasi</th>
                     <th style="width: 50px; text-align: center;">Kategori</th>
-                    <th style="width: 25px; text-align: center;">Kontraktor/Vendor</th>
+                    <th style="width: 25px; text-align: center;">Vendor/Instansi</th>
                     <th style="width: 25px; text-align: center;">Donasi</th>
                 </tr>                
             </thead>
