@@ -110,6 +110,7 @@ class ComposerStaticInit8af34b47e51b5a75b63bb3d8d3ffd0d0
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Midtrans\\' => 9,
         ),
         'L' => 
         array (
@@ -374,6 +375,10 @@ class ComposerStaticInit8af34b47e51b5a75b63bb3d8d3ffd0d0
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Midtrans\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -535,6 +540,8 @@ class ComposerStaticInit8af34b47e51b5a75b63bb3d8d3ffd0d0
         'App\\Http\\Controllers\\DatapengawaslapanganController' => __DIR__ . '/../..' . '/app/Http/Controllers/DatapengawaslapanganController.php',
         'App\\Http\\Controllers\\DatausersandroidController' => __DIR__ . '/../..' . '/app/Http/Controllers/DatausersandroidController.php',
         'App\\Http\\Controllers\\EmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmailController.php',
+        'App\\Http\\Controllers\\ErrorController' => __DIR__ . '/../..' . '/app/Http/Controllers/ErrorController.php',
+        'App\\Http\\Controllers\\FeDonasiController' => __DIR__ . '/../..' . '/app/Http/Controllers/FeDonasiController.php',
         'App\\Http\\Controllers\\Fe_AdminBerandaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Fe_AdminBerandaController.php',
         'App\\Http\\Controllers\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/ForgotPasswordController.php',
         'App\\Http\\Controllers\\InvoicepesananProgressController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvoicepesananProgressController.php',
@@ -586,6 +593,7 @@ class ComposerStaticInit8af34b47e51b5a75b63bb3d8d3ffd0d0
         'App\\Models\\Datapenanggungjawab' => __DIR__ . '/../..' . '/app/Models/Datapenanggungjawab.php',
         'App\\Models\\Datapengawaslapangan' => __DIR__ . '/../..' . '/app/Models/Datapengawaslapangan.php',
         'App\\Models\\Email' => __DIR__ . '/../..' . '/app/Models/Email.php',
+        'App\\Models\\FeDonasi' => __DIR__ . '/../..' . '/app/Models/FeDonasi.php',
         'App\\Models\\Fe_adminberanda' => __DIR__ . '/../..' . '/app/Models/Fe_adminberanda.php',
         'App\\Models\\Karyawan' => __DIR__ . '/../..' . '/app/Models/Karyawan.php',
         'App\\Models\\Laporankeuangan' => __DIR__ . '/../..' . '/app/Models/Laporankeuangan.php',
@@ -3287,6 +3295,14 @@ class ComposerStaticInit8af34b47e51b5a75b63bb3d8d3ffd0d0
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
         'League\\MimeTypeDetection\\OverridingExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php',
+        'Midtrans\\ApiRequestor' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/ApiRequestor.php',
+        'Midtrans\\Config' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Config.php',
+        'Midtrans\\CoreApi' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/CoreApi.php',
+        'Midtrans\\Notification' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Notification.php',
+        'Midtrans\\Sanitizer' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Sanitizer.php',
+        'Midtrans\\Snap' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Snap.php',
+        'Midtrans\\SnapApiRequestor' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/SnapApiRequestor.php',
+        'Midtrans\\Transaction' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Transaction.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
