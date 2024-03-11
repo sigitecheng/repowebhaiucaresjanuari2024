@@ -53,10 +53,10 @@ class FeDonasiController extends Controller
             'categories'        => Category::all(),
             'dataadminberanda'  => Fe_adminberanda::all(),
 
-            'datakontraktor'    => Be_datakontraktor::all(),
-            'datapendidikan'    => Be_datainstansipendidikan::all(),
-            'datakesehatan'     => Be_datarumahsakit::all(),
-            'datamakanan'       => Be_datarumahmakan::all(),
+            // 'datakontraktor'    => Be_datakontraktor::all(),
+            // 'datapendidikan'    => Be_datainstansipendidikan::all(),
+            // 'datakesehatan'     => Be_datarumahsakit::all(),
+            // 'datamakanan'       => Be_datarumahmakan::all(),
         ]);
     }
 

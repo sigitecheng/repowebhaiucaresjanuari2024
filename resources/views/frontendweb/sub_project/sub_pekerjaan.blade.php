@@ -26,7 +26,7 @@
             <div id="dataPekerjaan" class="hero-text">
                 {{ $datapekerjaan->body }}
             </div>
-            <button onclick="toggleData()">Read more ....</button>
+            <button class="mt-0" onclick="toggleData()">Read more ....</button>
             
             <script>
                 function toggleData() {
@@ -58,11 +58,10 @@
                 @endforeach --}}
 
 
-                <a href="#footer">
-                <button class="btn-2">Kontak Kami</button>
+                <a href="">
+                <button onclick="history.back();" class="btn-3 btn-danger">Back</button>
                 </a>
-
-            
+                
         </div>
         
         <figure class="hero-banner">
@@ -302,43 +301,61 @@
             var dataPekerjaan3 = {
                 // Your data for the third table goes here
             };
+                                    @php
+                        $kategori = $datapekerjaan->category->nama_kategori;
+                        @endphp
 
-            var modalContent3 = '<h1>Vendor/Instansi Pelaksana</h1>' +
-                '<table class="table">' +
-                '<tr><td style="width: 300px;">Nama Perusahaan</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Alamat</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Kota</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Telepon</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Email</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                             '</table>';
+                        @if($kategori === 'Infrastruktur')
+                            @php
+                            $data = $datapekerjaan->be_datakontraktor;
+                            @endphp
+                            var modalContent3 = '<div style="text-align: center;"><h1>Instansi/Vendor</h1></div>' +
+                                        '<table class="table">' +
+                                        '<tr><td style="width: 150px;">Nama Perusahaan</td><td style="text-align: left; width: 300px;" ><button class="btn btn-sm">{{$data->nama_perusahaan}}</button></td></tr>' +
+                                        '<tr><td style="width: 150px;">Alamat</td><td style="text-align: left; width: 300px;" >{{$data->alamat}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Kota</td><td style="text-align: left; width: 300px;" >{{$data->kota}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Telepon</td><td style="text-align: left; width: 300px;" >{{$data->nomor_telepon}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Email</td><td style="text-align: left; width: 300px;" >{{$data->email}}</td></tr>' +
+                                        '</table>';
+                        @elseif($kategori === 'Pendidikan')
+                            @php
+                            $data = $datapekerjaan->be_datainstansipendidikan;
+                            @endphp
+                            var modalContent3 = '<div style="text-align: center;"><h1>Instansi/Vendor</h1></div>' +
+                                        '<table class="table">' +
+                                        '<tr><td style="width: 150px;">Nama Instansi</td><td style="text-align: left; width: 300px;" ><button class="btn btn-sm">{{$data->nama_instansi}}</button></td></tr>' +
+                                        '<tr><td style="width: 150px;">Alamat</td><td style="text-align: left; width: 300px;" >{{$data->alamat}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Kota</td><td style="text-align: left; width: 300px;" >{{$data->kota}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Telepon</td><td style="text-align: left; width: 300px;" >{{$data->nomor_telepon}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Email</td><td style="text-align: left; width: 300px;" >{{$data->email}}</td></tr>' +
+                                        '</table>';
+                        @elseif($kategori === 'Kesehatan')
+                            @php
+                            $data = $datapekerjaan->be_datarumahsakit;
+                            @endphp
+                            var modalContent3 = '<div style="text-align: center;"><h1>Instansi/Vendor</h1></div>' +
+                                        '<table class="table">' +
+                                        '<tr><td style="width: 150px;">Nama Rumah Sakit</td><td style="text-align: left; width: 300px;" ><button class="btn btn-sm">{{$data->nama_rumahsakit}}</button></td></tr>' +
+                                        '<tr><td style="width: 150px;">Alamat</td><td style="text-align: left; width: 300px;" >{{$data->alamat}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Kota</td><td style="text-align: left; width: 300px;" >{{$data->kota}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Telepon</td><td style="text-align: left; width: 300px;" >{{$data->nomor_telepon}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Email</td><td style="text-align: left; width: 300px;" >{{$data->email}}</td></tr>' +
+                                        '</table>';
+                        @elseif($kategori === 'Makanan')
+                            @php
+                            $data = $datapekerjaan->be_datarumahmakan;
+                            @endphp
+                            var modalContent3 = '<div style="text-align: center;"><h1>Instansi/Vendor</h1></div>' +
+                                        '<table class="table">' +
+                                        '<tr><td style="width: 150px;">Nama Rumah Makan</td><td style="text-align: left; width: 300px;" ><button class="btn btn-sm">{{$data->nama_rumahmakan}}</button></td></tr>' +
+                                        '<tr><td style="width: 150px;">Alamat</td><td style="text-align: left; width: 300px;" >{{$data->alamat}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Kota</td><td style="text-align: left; width: 300px;" >{{$data->kota}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Telepon</td><td style="text-align: left; width: 300px;" >{{$data->nomor_telepon}}</td></tr>' +
+                                        '<tr><td style="width: 150px;">Email</td><td style="text-align: left; width: 300px;" >{{$data->email}}</td></tr>' +
+                                        '</table>';
+                        @endif
 
                              
-                '<table class="table">' +
-                '<tr><td style="width: 300px;">Nama Perusahaan</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Alamat</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Kota</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Telepon</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Email</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                             '</table>';
-
-                             
-                '<table class="table">' +
-                '<tr><td style="width: 300px;">Nama Perusahaan</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Alamat</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Kota</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Telepon</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Email</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                             '</table>';
-
-                             
-                '<table class="table">' +
-                '<tr><td style="width: 300px;">Nama Perusahaan</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Alamat</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Kota</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Telepon</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                '<tr><td style="width: 300px;">Email</td><td style="text-align: left; width: 150px;" >Sigimatika</td></tr>' +
-                             '</table>';
-
                              
 
             document.getElementById('modalContent3').innerHTML = modalContent3;
