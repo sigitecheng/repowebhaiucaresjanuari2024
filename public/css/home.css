@@ -21,6 +21,8 @@
      */
   
     --st-patricks-blue: hsl(236, 100%, 50%);
+    --hijau: hsl(120, 100%, 50%);
+
     
     --amaranth-purple: hsl(335, 88%, 20%);
 
@@ -205,6 +207,18 @@ h2 {
     font-weight: var(--fw-500);
     border-radius: 0 25px;
     transition: var(--transition-2);
+    margin-top: 1px;
+  }
+  
+  .btndonasi {
+    background-image: var(--hijau);
+    background-size: 150%;
+    color: var(--white);
+    /* padding: 12px 35px; */
+    font-size: var(--fs-8);
+    font-weight: var(--fw-500);
+    border-radius: 0 25px;
+    /* transition: var(--transition-2); */
     margin-top: 1px;
   }
 

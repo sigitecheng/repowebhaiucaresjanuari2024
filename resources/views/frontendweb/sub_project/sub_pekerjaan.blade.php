@@ -147,16 +147,76 @@
                     </td>
                     <td  style="width: 50px; text-align: center;">Rp. {{ number_format($datapekerjaan->anggaran, 0, ',', '.') }},</td>
                     <td  style="width: 50px; text-align: center;">Rp. {{ number_format($datapekerjaan->anggaran, 0, ',', '.') }},</td>
-                   <td class="d-flex justify-content-center align-items-center">
-    <div class="d-flex flex-column align-items-center text-center">
-        <a href="URL_TUJUAN">
-            <button type="button" class="btn btn-success">
-                <span class="badge badge-pill badge-light">DONASI</span>
-            </button>
-        </a>
-    </div>     
-</td>
+                
+                    <td style="width: 50px; text-align: center;">
 
+                        <button class="share" aria-label="Donasi" onclick="toggleModal()">
+                            <span style="display: inline-flex; width: 50px; height: 50px; background-color: green; border-radius: 50%; justify-content: center; align-items: center;">
+                                <ion-icon name="mail-outline" style="font-size: 2em; color: white;"></ion-icon>
+                            </span>
+                        
+                        </button>
+                    
+                    <div id="shareModal" class="modal-donasi">
+                        <div class="modal-content-donasi">
+                            <p>Pilih jumlah donasi:</p>
+                            <div class="btn-group-vertical" role="group" aria-label="Jumlah Donasi">
+                                
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(10000)">Rp 10.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(20000)">Rp 20.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(25000)">Rp 25.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(50000)">Rp 50.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(100000)">Rp 100.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(200000)">Rp 200.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(250000)">Rp 250.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(500000)">Rp 500.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setDonationAmount(1000000)">Rp 1.000.000</button>
+                                <button type="button" class="btn-2 btn-secondary" onclick="setOtherDonationAmount()">Jumlah Lainnya</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <style>
+                        .modal-donasi {
+                            display: none; 
+                            position: fixed; 
+                            z-index: 1; 
+                            left: 0;
+                            top: 0;
+                            width: 100vw; /* 100% lebar layar */
+                            height: 100vh; /* 100% tinggi layar */
+                            overflow: auto; 
+                            background-color: rgba(0,0,0,0.4);
+                        }
+                    
+                        .modal-content-donasi {
+                            background-color: #fefefe;
+                            margin: 10vh auto; /* Mengatur jarak dari atas dan bawah dengan unit vh */
+                            padding: 20px;
+                            border: 1px solid #888;
+                            width: 80vw; /* 80% lebar layar */
+                            max-width: 400px; /* Maksimum lebar modal */
+                            text-align: center; /* Memastikan konten berada di tengah */
+                        }
+                    
+                    </style>                    
+                    
+                    <script>
+                        function toggleModal() {
+                            var modal = document.getElementById("shareModal");
+                            modal.style.display = modal.style.display === "block" ? "none" : "block";
+                        }
+                    
+                        window.onclick = function(event) {
+                            var modal = document.getElementById("shareModal");
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>
+                    
+                </td>
+                
                 </tr>
                 
             </tbody>
