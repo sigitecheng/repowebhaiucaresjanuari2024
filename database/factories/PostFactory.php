@@ -5,6 +5,8 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Whoops\Run;
 
+use Carbon\Carbon;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
@@ -17,6 +19,9 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $randomDays = $this->faker->numberBetween(1, 200);
+        $date = $this->faker->date('Y-m-d', '-200 days', '+200 days');
+
         return [
             'user_id' => mt_rand(1, 8),
             'category_id' => mt_rand(1, 4),
@@ -40,7 +45,8 @@ class PostFactory extends Factory
             
             'lokasi' => $this->faker->address,
             'anggaran' => $this->faker->randomFloat(2, 100000, 1000000),
-            'waktu_pelaksanaan' => $this->faker->date(),
+            // 'waktu_pelaksanaan' => $this->faker->date(),
+            'waktu_pelaksanaan' => $randomDays,
             'tanggal_mulai' => $this->faker->date(),
             'tanggal_selesai' => $this->faker->optional(0.7)->date(),
             'published_at' => $this->faker->optional(0.8)->dateTimeThisMonth,

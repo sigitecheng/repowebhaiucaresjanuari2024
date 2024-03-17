@@ -37,8 +37,10 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UsersProjectController;
 use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\FeDonasiController;
-
-
+use App\Models\Be_datainstansipendidikan;
+use App\Models\Be_datakontraktor;
+use App\Models\Be_datarumahmakan;
+use App\Models\Be_datarumahsakit;
 use App\Models\Berita;
 use App\Models\BussinessIntelligent;
 use App\Models\Datapenanggungjawab;
@@ -65,7 +67,8 @@ use App\Models\RunningProject;
 // HALAMAAN DASHBOARD FRONTEND WEB USERS
 
 Route::get('/', function () {
-    return view('frontendweb/home', [
+    // frontendweb/home
+    return view('fe_web/beranda/index', [
         "title"             => "Bangun Indonesia",
         "active"            => "beranda",
         "imagehome"         =>  "frontendweb/home/feberanda.png",
@@ -79,7 +82,10 @@ Route::get('/', function () {
         "adminberanda"      =>  Fe_adminberanda::all(),
         'categories'        => Category::all(),
         'databerita'        => Berita::orderBy('created_at', 'asc')->paginate(6),
-       
+        
+        $posts = Post::orderBy('created_at', 'desc')->paginate(9),
+       'datapekerjaan'  => $posts,
+
         $totalInfrastruktur = Post::where('category_id', 1)->count(),
         'totaldatainsfrastruktur' => $totalInfrastruktur,
         
@@ -92,6 +98,9 @@ Route::get('/', function () {
         $totalMakanan = Post::where('category_id', 4)->count(),
         'totaldatamakanan' => $totalMakanan,
 
+        $datatotalpekerjaan = $totalInfrastruktur + $totalKesehatan + $totalPendidikan + $totalMakanan,
+        'datatotalpekerjaan' => $datatotalpekerjaan,
+        
         $datausersCount = User::count(),
         'datausers'        => $datausersCount,
 
@@ -109,6 +118,18 @@ Route::get('/', function () {
 
         $totalMakanan = number_format(Post::where('category_id', 4)->sum('anggaran'), 2, ',', '.'),
         'totalanggaranmakanan' => $totalMakanan,
+
+
+        // --------------------
+        $totalMitraKontraktor = Be_datakontraktor::count(),
+        $totalMitraPendidikan = Be_datainstansipendidikan::count(),
+        $totalMitraKesehatan = Be_datarumahsakit::count(),
+        $totalMitraMakanan = Be_datarumahmakan::count(),
+        
+        $totalmitra = $totalMitraKontraktor + $totalMitraPendidikan + $totalMitraKesehatan + $totalMitraMakanan,
+        
+        'totalmitra' => $totalmitra,
+        
 
     ]);
 });

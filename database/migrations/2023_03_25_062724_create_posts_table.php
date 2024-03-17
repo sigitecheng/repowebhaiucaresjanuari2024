@@ -32,7 +32,7 @@ return new class extends Migration
             $table->text('body');  
             $table->string('lokasi');
             $table->double('anggaran', 10, 2);
-            $table->date('waktu_pelaksanaan');
+            $table->integer('waktu_pelaksanaan'); // Menggunakan tipe data integer untuk menyimpan angka hari
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai')->nullable();
             $table->timestamp('published_at')->nullable();
