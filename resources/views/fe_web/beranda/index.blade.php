@@ -184,6 +184,7 @@
                                     <div class="p-4 pb-0 mb-4">
 
                                         <a class="d-block h5 mb-2" style="font-family: 'Quicksand', sans-serif;"><i class="fas fa-spinner fa-spin mr-2"></i> Terkumpul</a>
+                                        
                                              @php
                                             $percentage = (100000 / $data->anggaran) * 100;
                                         @endphp
@@ -307,112 +308,55 @@
                                     </div>
                                     <div class="d-flex border-top">
                                         <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
-                                            <a href="" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal2">
+                                            <a href="" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal">
                                                 <i class="fas fa-spin fa-spinner text-custom me-2"></i><strong>Progress</strong>
                                             </a>
                                         </small>
 
                                                                             <!-- Modal -->
-                                    <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Daftar Donatur</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;">
-                    <i class="fas fa-spin fa-spinner text-white me-2"></i>Progress
-                    </p>
-                    
-                <style>
-                .wizard-navigation-vertical {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-                
-                .wizard-navigation-vertical ul {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                }
-                
-                .wizard-navigation-vertical ul li {
-                    margin-bottom: 10px;
-                }
-                
-                .wizard-navigation-vertical ul li a {
-                    display: block;
-                    width: 150px; /* Sesuaikan lebar dengan kebutuhan */
-                    padding: 10px;
-                    text-align: center;
-                    color: #fff;
-                    background-color: #007bff; /* Warna latar belakang */
-                    border-radius: 5px;
-                    text-decoration: none;
-                }
-                
-                .wizard-navigation-vertical ul li a:hover {
-                    background-color: #0056b3; /* Warna latar belakang saat hover */
-                }
-                
-                .progress-with-circle {
-                    margin-bottom: 20px;
-                    position: relative;
-                    width: 50px; /* Sesuaikan lebar dengan kebutuhan */
-                }
-                
-                .progress-bar {
-                    background-color: #007bff; /* Warna garis kemajuan */
-                    width: 10px; /* Sesuaikan lebar dengan kebutuhan */
-                    position: absolute;
-                    left: 50%;
-                    top: 0;
-                    transform: translateX(-50%);
-                    border-radius: 10px;
-                }
-
-                
-
-                </style>
-                <div class="wizard-navigation-vertical">
-                    <div class="progress-with-circle">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="height: 20%;"></div>
-                    </div>
-                    <ul class="wizard-navigation-circle">
-                        <li>
-                            <a href="#step1" data-toggle="tab" class="circle button-custom" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry me-2"></i><span class="align-middle">Tender</span></a>
-                        </li>
-                        <li>
-                            {{-- <a href="#step2" data-toggle="tab" class="circle">Mobilisasi SDM </a> --}}
-                            <a href="#step1" data-toggle="tab" class="circle button-custom" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry me-2"></i><span class="align-middle">SDM </span></a>
-                        </li>
-                        <li>
-                            {{-- <a href="#step3" data-toggle="tab" class="circle">Pelaksanaan</a> --}}
-                            <a href="#step1" data-toggle="tab" class="circle button-custom" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry me-2"></i><span class="align-middle">Pelaksanaan </span></a>
-                        </li>
-                        <li>
-                            {{-- <a href="#step4" data-toggle="tab" class="circle">Penyelesaian</a> --}}
-                            <a href="#step1" data-toggle="tab" class="circle button-custom" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry me-2"></i><span class="align-middle">Penyelesaian </span></a>
-                        </li>
-                        <li>
-                            {{-- <a href="#step5" data-toggle="tab" class="circle">Evaluasi</a> --}}
-                            <a href="#step1" data-toggle="tab" class="circle button-custom" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry me-2"></i><span class="align-middle">Evaluasi</span></a>
-                        </li>
-                    </ul>
-                    
-                </div>
-                
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn button-custom" data-bs-dismiss="modal">Close</button>
-                {{-- <button type="button" class="btn btn-dark">Simpan Perubahan</button> --}}
-            </div>
-        </div>
-    </div>
-</div>
+                                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Daftar Donatur</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table" style="font-family: 'Quicksand', sans-serif;">
+                                                        <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fas fa-users text-white me-2"></i>Daftar Donatur</p>
+                                                        <thead>
+                                                            <tr class="text-center">
+                                                                <th scope="col" class="text-custom">No</th>
+                                                                <th scope="col" class="text-custom">Nama</th>
+                                                                {{-- <th scope="col">Email</th> --}}
+                                                                <th scope="col" class="text-custom">Jumlah Donasi</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="text-center">
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>John Doe</td>
+                                                                {{-- <td>JohnDoe@gmail.com</td> --}}
+                                                                <td>$100</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td>Jane Smith</td>
+                                                                {{-- <td>JaneSmith@gmail.com</td> --}}
+                                                                <td>$200</td>
+                                                            </tr>
+                                                            <!-- Tambahkan baris tambahan sesuai dengan data yang Anda miliki -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn button-custom" data-bs-dismiss="modal">Close</button>
+                                                    {{-- <button type="button" class="btn btn-dark">Simpan Perubahan</button> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                                     
 
@@ -422,57 +366,11 @@
 
 
                                         <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
-                                            <a href="/error" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal4">
+                                            <a href="/error" class="text-dark">
                                                 <i class="fas fa-spinner fa-spin text-custom me-2"></i>
                                                 <strong>Vendor/Instansi</strong>
                                             </a>
-                                        </small>
-                                        
-                                        <div class="modal fade" id="myModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Details Modal</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                     
-                                                        <table class="table" style="font-family: 'Quicksand', sans-serif;">
-                                                            <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry text-white me-2"></i>Vendor/Instansi</p>
-
-                                                            <thead>
-                                                              
-                                                            </thead>
-                                                            <tbody class="text-center">
-                                                                <tr>
-                                                                    <td>John Doe</td>
-                                                                    <td>$100</td>
-                                                                </tr>
-                                                                <!-- Tambahkan baris tambahan sesuai dengan data yang Anda miliki -->
-                                                                <tr>
-                                                                    <td>John Doe</td>
-                                                                    <td>$100</td>
-                                                                </tr>
-                                                                <!-- Tambahkan baris tambahan sesuai dengan data yang Anda miliki -->
-                                                                <tr>
-                                                                    <td>John Doe</td>
-                                                                    <td>$100</td>
-                                                                </tr>
-                                                                <!-- Tambahkan baris tambahan sesuai dengan data yang Anda miliki -->
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn button-custom" data-bs-dismiss="modal">Close</button>
-                                                        {{-- <button type="button" class="btn btn-dark">Simpan Perubahan</button> --}}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-    
-                                                        
-                                        
+                                        </small>                                      
                                     </div>
                                     
                                     <div class="d-flex border-top">
