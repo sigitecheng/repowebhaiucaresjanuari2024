@@ -21,6 +21,9 @@
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -36,6 +39,10 @@
     {{-- <link href="css/css/button-custom.css" rel="stylesheet"> --}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> --}}
+
+    
 {{-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sen:wght@400..800&display=swap" rel="stylesheet">
 

@@ -129,3 +129,30 @@
 .catatan-item:hover div * {
     color: #000080 !important;
 }
+
+
+/* ========================== */
+
+.animated-icon {
+    animation: moveUpDown 1s infinite alternate;
+  }
+  
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px); /* Sesuaikan dengan jarak pergerakan yang diinginkan */
+    }
+  }
+  
+
+  @keyframes moveRight {
+    0% {
+      transform: translateX(-15px); /* Mulai dari posisi kiri */
+    }
+    100% {
+      transform: translateX(15px); /* Bergerak ke posisi kanan */
+    }
+  }
+  
