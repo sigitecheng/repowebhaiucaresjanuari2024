@@ -15,6 +15,7 @@
         <!-- Navbar Start -->
         @include('fe_web.part.navbar')
         <!-- Navbar End -->
+<br><br><br>
 
         <!-- Header Start -->
         <div class="container-fluid header bg-white p-0" style="font-family: 'Quicksand', sans-serif;">
@@ -28,7 +29,39 @@
 
                     </div>
                 @endforeach
-                <div class="col-md-6 animated fadeIn">
+                
+        <!-- Call to Action Start -->
+        {{-- <div class="container-xxl py-5"> --}}
+            <div class="col-md-6 animated fadeIn">
+            <div class="container">
+                <div class="bg-light rounded p-3">
+                    <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                <img class="img-fluid" src="https://picsum.photos/600/250?Donation" alt="">
+                            </div>
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="mb-4">
+                                    <h5 class="mb-3" style="font-family: 'Quicksand', sans-serif;">Berikan bantuan kepada mereka yang membutuhkan di sekitar kita, klik form bantuan disini !<br>
+                                        <i class="fas fa-chevron-down animated-icon" style="animation: moveUpDown 0.2s infinite alternate;"></i>
+
+                                    </h5>
+                                    <p style="font-family: 'Quicksand', sans-serif;">Klik form di sini untuk membantu mereka yang membutuhkan di sekitar kita"</p>
+                                    {{-- <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p> --}}
+                                </div>
+                                <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fab fa-ravelry me-2"></i>Form Here</a>
+                                <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fa fa-money-bill me-2"></i>Donasi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        {{-- </div> --}}
+        <!-- Call to Action End -->
+
+
+                {{-- <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
                             <img class="img-fluid" src="https://picsum.photos/400/600?Building" alt="">
@@ -49,7 +82,7 @@
                             <img class="img-fluid" src="https://picsum.photos/400/600?Scholarship" alt="">
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <!-- Header End -->
@@ -584,35 +617,6 @@
         <!-- About End -->
     </section>
 
-
-
-        <!-- Call to Action Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="bg-light rounded p-3">
-                    <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                                <img class="img-fluid" src="https://picsum.photos/600/250?Donation" alt="">
-                            </div>
-                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="mb-4">
-                                    <h5 class="mb-3" style="font-family: 'Quicksand', sans-serif;">Berikan bantuan kepada mereka yang membutuhkan di sekitar kita, klik form bantuan disini !<br>
-                                        <i class="fas fa-chevron-down animated-icon" style="animation: moveUpDown 0.2s infinite alternate;"></i>
-
-                                    </h5>
-                                    <p style="font-family: 'Quicksand', sans-serif;">Klik form di sini untuk membantu mereka yang membutuhkan di sekitar kita"</p>
-                                    {{-- <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p> --}}
-                                </div>
-                                <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fab fa-ravelry me-2"></i>Form Here</a>
-                                <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fa fa-money-bill me-2"></i>Donasi</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Call to Action End -->
 
 
         <!-- Team Start -->
