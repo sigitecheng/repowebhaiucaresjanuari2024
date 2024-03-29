@@ -50,6 +50,7 @@
                                     {{-- <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p> --}}
                                 </div>
                                 <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fab fa-ravelry me-2"></i>Form Here</a>
+                                
                                 <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fa fa-money-bill me-2"></i>Donasi</a>
                             </div>
                         </div>
@@ -139,6 +140,59 @@
             </div>
         </div>
         <!-- Search End -->
+
+        {{-- ===================================================== --}}
+        <!-- Testimonial Start -->
+
+        
+        <section class="bg-light">
+        <div class="container-xxl pt-0 ">
+            <div class="container bg-light mt-4">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <br><br><h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry"></i> Makan Gratis</h1>
+                    <p style="font-family: 'Quicksand', sans-serif;"><strong>
+                        "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang."</strong></p>
+                    {{-- <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> --}}
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.5s">
+                    
+                    @foreach($datapekerjaan as $data)
+                    <div class="testimonial-item bg-light rounded">
+                        <div class="bg-white border rounded p-4">
+                            <h4 style="font-family: 'Quicksand', sans-serif;"><strong>{{ $data->title }}</strong></h4>
+                            <p style="font-family: 'Quicksand', sans-serif;">{{$data->body }}</p>
+                            <img src="https://picsum.photos/200/300?{{ $data->anggaran }}" alt="https://picsum.photos/200/300?{{ $data->lokasi }}" width="100" height="150">
+{{-- <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p> --}}
+                           <br>
+                            
+                           @php
+                           $percentage = (100000 / $data->anggaran) * 100;
+                            @endphp
+                            <div class="progress mt-0 mb-2">
+                                <div class="progress-bar button-merah" role="progressbar" style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100">{{ number_format($percentage, 2) }}%</div>
+                            </div>
+
+
+                           <div class="">
+                               <div class="d-flex justify-content-end">
+                                    <h5 class="text-custom mb-3" style="font-family: 'Quicksand', sans-serif;" ><strong class="text-dark" style="font-family: 'Quicksand', sans-serif;" >Kebutuhan</strong> <span class="buttom-custom">{{ 'Rp ' . number_format($data->anggaran, 0, ',', '.') }},-</span>
+                                    <button class="button-custom" style="font-family: 'Quicksand', sans-serif;">
+                                        <i class="fas fa-envelope-open-text me-2"></i>Donasi
+                                    </button>
+                                </div>
+                                
+                           </div>
+                                
+                        </div>
+                    </div>
+                    @endforeach
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  {{-- ================================================================================ --}}
 
 
 
