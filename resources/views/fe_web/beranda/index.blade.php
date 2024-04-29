@@ -33,25 +33,47 @@
         <!-- Call to Action Start -->
         {{-- <div class="container-xxl py-5"> --}}
             <div class="col-md-6 animated fadeIn">
-            <div class="container">
-                <div class="bg-light rounded p-3">
-                    <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                                <img class="img-fluid" src="https://picsum.photos/600/250?Donation" alt="">
+                                        <div class="container">
+                                            <div class="bg-light rounded p-3">
+                                                <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                                                    <div class="row g-5 align-items-center">
+                                                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                                            {{-- <img class="img-fluid" src="https://picsum.photos/1200/1000?Donation" alt=""> --}}
+                                                        
+                                                        <style>
+                                    .awal {
+                                        width: 800px; /* Lebar div container */
+                                        height: 400px; /* Tinggi div container */
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        /* border: 1px solid #ccc; */
+                                    }
+
+                                    .awal img {
+                                        max-width: 100%;
+                                        max-height: 100%;
+                                        object-fit: absolute;
+                                        margin-top: 50px;
+                                    }
+                                </style>
+
+                                <div class="awal">
+                                    <img src="https://picsum.photos/1200/1200?Donation" alt="Sample Image">
+                                </div>
+
                             </div>
                             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                                 <div class="mb-4">
-                                    <h5 class="mb-3" style="font-family: 'Quicksand', sans-serif;">Berikan bantuan kepada mereka yang membutuhkan di sekitar kita, klik form bantuan disini !<br>
+                                    {{-- <h5 class="mb-3" style="font-family: 'Quicksand', sans-serif;">Berikan bantuan kepada mereka yang membutuhkan di sekitar kita, klik form bantuan disini !<br>
                                         <i class="fas fa-chevron-down animated-icon" style="animation: moveUpDown 0.2s infinite alternate;"></i>
-
-                                    </h5>
-                                    <p style="font-family: 'Quicksand', sans-serif;">Klik form di sini untuk membantu mereka yang membutuhkan di sekitar kita"</p>
+                                    </h5> --}}
+                                    {{-- <p style="font-family: 'Quicksand', sans-serif;">Klik form di sini untuk membantu mereka yang membutuhkan di sekitar kita"</p> --}}
                                     {{-- <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p> --}}
                                 </div>
-                                <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fab fa-ravelry me-2"></i>Form Here</a>
+                                {{-- <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fab fa-ravelry me-2"></i>Form Here</a> --}}
                                 
-                                <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fa fa-money-bill me-2"></i>Donasi</a>
+                                {{-- <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fa fa-money-bill me-2"></i>Donasi</a> --}}
                             </div>
                         </div>
                     </div>
@@ -90,7 +112,7 @@
 
 
         <!-- Search Start -->
-        <div class="container-fluid button-custom mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+        {{-- <div class="container-fluid button-custom mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
             <div class="container">
                 <div class="row g-2">
                     <div class="col-md-10">
@@ -138,20 +160,20 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Search End -->
 
         {{-- ===================================================== --}}
         <!-- Testimonial Start -->
 
-        
         <section class="bg-light">
         <div class="container-xxl pt-0 ">
             <div class="container bg-light mt-4">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <br><br><h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry"></i> Makan Gratis</h1>
                     <p style="font-family: 'Quicksand', sans-serif;"><strong>
-                        "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang."</strong></p>
+                        "Dorong kebaikan dengan memberikan makanan secara gratis, bantu mereka yang membutuhkan"
+                        {{-- "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang."</strong></p> --}}
                     {{-- <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> --}}
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.5s">
@@ -171,7 +193,6 @@
                             <div class="progress mt-0 mb-2">
                                 <div class="progress-bar button-merah" role="progressbar" style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100">{{ number_format($percentage, 2) }}%</div>
                             </div>
-
 
                            <div class="">
                                <div class="d-flex justify-content-end">

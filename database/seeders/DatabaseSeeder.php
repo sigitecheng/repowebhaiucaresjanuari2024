@@ -114,18 +114,62 @@ class DatabaseSeeder extends Seeder
             'datapengawaslapangan_id'               => 3,
             'datapekerjaanstatus_id'               => 3,
             'image'                 => "fe_web/beranda/warteg.jpg",
-            'title'                 => "Piring Peduli: Menyajikan Kebaikan melalui Program Makan Gratis",
-            'slug'                  => 'makanan',
-            'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
-            'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
+            'title'                 => "Warung Makan Gratis untuk Warga Yang Kelaparan",
+            'slug'                  => 'warung-makan',
+            // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
+            // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
             'lokasi'                => 'bandung',
-            'anggaran'              => 135000,
+            'anggaran'              => 10000000,
             'waktu_pelaksanaan'     => 100,
             'tanggal_mulai'     => "1972-02-01",
             'tanggal_selesai'     => "2019-10-10",
         ]);
 
-        Post::factory(20)->create();
+        Post::create([
+            'category_id'                           => 4,
+            'user_id'                               => 3,
+            'be_datakontraktor_id'               => 3,
+            'be_datarumahmakan_id'               => 3,
+            'be_datarumahsakit_id'               => 3,
+            'be_datainstansipendidikan_id'               => 3,
+            'datapenanggungjawab_id'               => 3,
+            'datapengawaslapangan_id'               => 3,
+            'datapekerjaanstatus_id'               => 3,
+            'image'                 => "fe_web/beranda/warteg.jpg",
+            'title'                 => "Mobil berbakti menggerakan kebaikan untuk makanan gratis",
+            'slug'                  => 'mobil-berbakti',
+            // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
+            // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
+            'lokasi'                => 'bandung',
+            'anggaran'              => 2000000,
+            'waktu_pelaksanaan'     => 100,
+            'tanggal_mulai'     => "1972-02-01",
+            'tanggal_selesai'     => "2019-10-10",
+        ]);
+
+        Post::create([
+            'category_id'                           => 4,
+            'user_id'                               => 3,
+            'be_datakontraktor_id'               => 3,
+            'be_datarumahmakan_id'               => 3,
+            'be_datarumahsakit_id'               => 3,
+            'be_datainstansipendidikan_id'               => 3,
+            'datapenanggungjawab_id'               => 3,
+            'datapengawaslapangan_id'               => 3,
+            'datapekerjaanstatus_id'               => 3,
+            'image'                 => "fe_web/beranda/warteg.jpg",
+            'title'                 => "Panci kebaikan membantu para tukang masak untuk menyiapkan makanan ",
+            'slug'                  => 'panci-kebaikan',
+            // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
+            // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
+            'lokasi'                => 'bandung',
+            'anggaran'              => 1000000,
+            'waktu_pelaksanaan'     => 100,
+            'tanggal_mulai'     => "1972-02-01",
+            'tanggal_selesai'     => "2019-10-10",
+        ]);
+
+        // Post::factory(3)->create();
         Be_datakontraktor::factory(15)->create();
         be_datarumahmakan::factory(15)->create();
         be_datarumahsakit::factory(15)->create();

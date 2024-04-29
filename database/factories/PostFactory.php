@@ -36,12 +36,12 @@ class PostFactory extends Factory
             'slug' => $this->faker->slug(),
             'image' => $this->faker->imageUrl(),
             // 'image' => $this->faker->image(storage_path('app/public/images'), 400, 300, null, false),
-            'excerpt' => $this->faker->paragraph(),
+            // 'excerpt' => $this->faker->paragraph(),
             // 'body' => $this->faker->paragraphs(mt_rand(15, 30,)), (CARA PERTAMA)
             // 'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(mt_rand(15, 30,))) . '</p>', (CARA KEDUA)
-            'body' => collect($this->faker->paragraphs(mt_rand(5, 15,)))
-                ->map(fn ($p) => "<p>$p</p>")
-                ->implode(''),
+            // 'body' => collect($this->faker->paragraphs(mt_rand(5, 15,)))
+                // ->map(fn ($p) => "<p>$p</p>")
+                // ->implode(''),
             
             'lokasi' => $this->faker->address,
             'anggaran' => $this->faker->randomFloat(2, 100000, 1000000),

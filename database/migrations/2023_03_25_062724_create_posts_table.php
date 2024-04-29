@@ -28,10 +28,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
-            $table->text('excerpt');
-            $table->text('body');  
+            // $table->text('excerpt');
+            // $table->text('body');  
             $table->string('lokasi');
-            $table->double('anggaran', 10, 2);
+            // $table->double('anggaran', 10, 2);
+            $table->bigInteger('anggaran'); // Menyimpan angka bulat besar seperti 200 juta
             $table->integer('waktu_pelaksanaan'); // Menggunakan tipe data integer untuk menyimpan angka hari
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai')->nullable();
