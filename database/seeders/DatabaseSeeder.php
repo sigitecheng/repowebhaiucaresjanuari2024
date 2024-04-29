@@ -143,7 +143,7 @@ class DatabaseSeeder extends Seeder
             // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
             // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
             'lokasi'                => 'bandung',
-            'anggaran'              => 2000000,
+            'anggaran'              => 200000000,
             'waktu_pelaksanaan'     => 100,
             'tanggal_mulai'     => "1972-02-01",
             'tanggal_selesai'     => "2019-10-10",

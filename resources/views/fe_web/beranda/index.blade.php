@@ -167,9 +167,11 @@
         <div class="container-xxl pt-0 ">
             <div class="container bg-light mt-4">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <br><br><h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry"></i> Makan Gratis</h1>
+                    <br><br><h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry"></i> Program Makan Gratis</h1>
                     <p style="font-family: 'Quicksand', sans-serif;"><strong>
-                        "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang."</strong></p>
+                        {{-- "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang." --}}
+                        "Program Makan Gratis untuk mereka yang membutuhkan"
+                    </strong></p>
                     {{-- <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> --}}
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.5s">
@@ -226,8 +228,8 @@
                             {{-- <p style="font-family: 'Quicksand', sans-serif;">{{ $data->fokus_pekerjaan}}</p> --}}
                         </div>
                     </div>
-                    <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">                        
-                        @php
+                    {{-- <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">                         --}}
+                        {{-- @php
                         $categoryIcons = [
                             'All Data' => 'fa fa-database mr-2',
                             'Infrastruktur' => 'fas fa-hammer mr-2',
@@ -235,7 +237,7 @@
                             'Kesehatan' => 'fa fa-hospital mr-2',
                             'Makanan' => 'fas fa-utensils mr-2',
                         ];
-                        @endphp
+                        @endphp --}}
 
 
                         {{-- @foreach ($categories as $cat)
@@ -245,7 +247,7 @@
                         </a>
                         @endforeach --}}
                         
-                        
+{{--                         
                         @foreach ($categories as $cat)
                         <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
                             <li class="nav-item me-2">
@@ -254,14 +256,14 @@
                                     onmouseover="this.style.backgroundColor='#17a2b8'; this.style.color='#fff';"
                                     onmouseout="this.style.backgroundColor=''; this.style.color='#17a2b8';">
                                      <i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}
-                                 </a>
+                                 </a> --}}
                                  
                                 {{-- <a class="btn btn-outline-info active" data-bs-toggle="pill" href="/blog?category={{ $cat->slug }}"><i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}</a> --}}
-                            </li>
+                            {{-- </li>
                         </ul>
-                        @endforeach
-                    </div>
-                </div>
+                        @endforeach --}}
+                    {{-- </div> --}}
+                {{-- </div> --}}
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <div class="row g-4">
@@ -859,7 +861,7 @@
                                             <div class="card">
                                                 <img src="https://picsum.photos/200/200?{{ $data->lokasi }}" class="card-img-top" alt="{{$data->lokasi}}">
                                             </div>
-                                        </div>
+                                        </div> 
                                         @endforeach
                                         <!-- Tambahkan gambar-gambar lainnya di sini -->
                                     </div>
