@@ -17,6 +17,8 @@ use App\Models\Berita;
 use App\Models\Datapenanggungjawab;
 use App\Models\Datapengawaslapangan;
 
+use Carbon\Carbon;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -118,7 +120,7 @@ class DatabaseSeeder extends Seeder
             'slug'                  => 'warung-makan',
             // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
             // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
-            'lokasi'                => 'bandung',
+            'lokasi'                => 'jakarta',
             'anggaran'              => 10000000,
             'waktu_pelaksanaan'     => 100,
             'tanggal_mulai'     => "1972-02-01",
@@ -162,13 +164,56 @@ class DatabaseSeeder extends Seeder
             'slug'                  => 'panci-kebaikan',
             // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
             // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
-            'lokasi'                => 'bandung',
+            'lokasi'                => 'surabaya',
             'anggaran'              => 1000000,
             'waktu_pelaksanaan'     => 100,
             'tanggal_mulai'     => "1972-02-01",
             'tanggal_selesai'     => "2019-10-10",
         ]);
 
+        Berita::create([
+            'user_id'       => 1, // Ganti dengan ID user yang sesuai
+            'judul'         => 'Contoh Berita 1',
+            'gambar'        => 'makanan',
+            'isi'           => 'Ini adalah isi dari contoh berita pertama.',
+            'tanggal_dibuat' => Carbon::now(),
+            'lokasi'        => 'malang',
+            'created_at'    => Carbon::now(),
+            'updated_at'    => Carbon::now(),         
+        ]);
+        
+        Berita::create([
+            'user_id'       => 1, // Ganti dengan ID user yang sesuai
+            'judul'         => 'Contoh Berita 1',
+            'gambar'        => 'makanan',
+            'isi'           => 'Ini adalah isi dari contoh berita pertama.',
+            'tanggal_dibuat' => Carbon::now(),
+            'lokasi'        => 'malang',
+            'created_at'    => Carbon::now(),
+            'updated_at'    => Carbon::now(),         
+        ]);
+        Berita::create([
+            'user_id'       => 1, // Ganti dengan ID user yang sesuai
+            'judul'         => 'Contoh Berita 1',
+            'gambar'        => 'makanan',
+            'isi'           => 'Ini adalah isi dari contoh berita pertama.',
+            'tanggal_dibuat' => Carbon::now(),
+            'lokasi'        => 'malang',
+            'created_at'    => Carbon::now(),
+            'updated_at'    => Carbon::now(),         
+        ]);
+        Berita::create([
+            'user_id'       => 1, // Ganti dengan ID user yang sesuai
+            'judul'         => 'Contoh Berita 1',
+            'gambar'        => 'makanan',
+            'isi'           => 'Ini adalah isi dari contoh berita pertama.',
+            'tanggal_dibuat' => Carbon::now(),
+            'lokasi'        => 'malang',
+            'created_at'    => Carbon::now(),
+            'updated_at'    => Carbon::now(),         
+        ]);
+        
+        
         // Post::factory(3)->create();
         Be_datakontraktor::factory(15)->create();
         be_datarumahmakan::factory(15)->create();
@@ -176,6 +221,6 @@ class DatabaseSeeder extends Seeder
         Be_datainstansipendidikan::factory(15)->create();
         Datapenanggungjawab::factory(6)->create();
         Datapengawaslapangan::factory(6)->create();
-        Berita::factory(15)->create();
+        // Berita::factory(3)->create();
     }
 }

@@ -33,34 +33,31 @@
         <!-- Call to Action Start -->
         {{-- <div class="container-xxl py-5"> --}}
             <div class="col-md-6 animated fadeIn">
-                                        <div class="container">
-                                            <div class="bg-light rounded p-3">
-                                                <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
-                                                    <div class="row g-5 align-items-center">
-                                                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                                                            {{-- <img class="img-fluid" src="https://picsum.photos/1200/1000?Donation" alt=""> --}}
-                                                        
-                                                        <style>
-                                    .awal {
-                                        width: 800px; /* Lebar div container */
-                                        height: 400px; /* Tinggi div container */
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        /* border: 1px solid #ccc; */
-                                    }
+                <div class="container">
+                    <div class="bg-light rounded p-3">
+                        <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                            <div class="row g-5 align-items-center">
+                                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                    {{-- <img class="img-fluid" src="https://picsum.photos/1200/1000?Donation" alt=""> --}}
+                                
+                                <style>
+            .awal {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #ccc;
+            }
 
-                                    .awal img {
-                                        max-width: 100%;
-                                        max-height: 100%;
-                                        object-fit: absolute;
-                                        margin-top: 50px;
-                                    }
-                                </style>
+            .awal img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: absolute;
+            }
+        </style>
 
-                                <div class="awal">
-                                    <img src="https://picsum.photos/1200/1200?Donation" alt="Sample Image">
-                                </div>
+        <div class="awal">
+            <img src="https://picsum.photos/1200/1000?Donation" alt="Sample Image">
+        </div>
 
                             </div>
                             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -172,8 +169,7 @@
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <br><br><h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry"></i> Makan Gratis</h1>
                     <p style="font-family: 'Quicksand', sans-serif;"><strong>
-                        "Dorong kebaikan dengan memberikan makanan secara gratis, bantu mereka yang membutuhkan"
-                        {{-- "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang."</strong></p> --}}
+                        "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang."</strong></p>
                     {{-- <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> --}}
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.5s">
@@ -193,6 +189,7 @@
                             <div class="progress mt-0 mb-2">
                                 <div class="progress-bar button-merah" role="progressbar" style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100">{{ number_format($percentage, 2) }}%</div>
                             </div>
+
 
                            <div class="">
                                <div class="d-flex justify-content-end">
@@ -654,19 +651,19 @@
     </section>
         <!-- Category End -->
 
-        <section class="bg-light">
+        {{-- <section class="bg-light"> --}}
 
             <!-- About Start -->
-            <div class="container-xxl py-5">
+            {{-- <div class="container-xxl py-5">
                 <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <div class="about-img position-relative overflow-hidden p-5 pe-0">
                             <img class="img-fluid w-100" src="https://picsum.photos/200/200?Donations">
                         </div>
-                    </div>
+                    </div> --}}
 
-                    @foreach($adminberanda as $data)
+                    {{-- @foreach($adminberanda as $data)
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <a class="button-custom py-3 px-5 mt-3"style="font-family: 'Quicksand', sans-serif;" ><i class="fab fa-ravelry"></i><strong> Visi</strong></a>
                         
@@ -683,12 +680,12 @@
                              <strong>Fokus Pekerjaan Kami</strong></a>
                         
                         <h6 class="mb-4 mt-4" style="font-family: 'Quicksand', sans-serif; text-align: justify;">{{ $data->fokus_pekerjaan }}</h6>
-
-                    </div>
+ --}}
+                    {{-- </div>
                     @endforeach
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- About End -->
     </section>
 
