@@ -753,7 +753,32 @@
                     <div class="testimonial-item bg-light rounded p-3">
                         <div class="bg-white border rounded p-4">
                             <h4 style="font-family: 'Quicksand', sans-serif;"><strong>{{ $data->judul }}</strong></h4>
-                            <p style="font-family: 'Quicksand', sans-serif;">{{$data->isi }}</p>
+                            {{-- <p style="font-family: 'Quicksand', sans-serif;">{{$data->isi }}</p> --}}
+                            <div>
+                                <p id="content" style="font-family: 'Quicksand', sans-serif;">
+                                    {{ Str::limit($data->isi, 200) }}
+                                    @if (strlen($data->isi) > 200)
+                                        <span id="more" style="display: none;">{{ substr($data->isi, 200) }}</span>
+                                        <button onclick="toggleReadMore()" id="readMoreBtn">Read more</button>
+                                    @endif
+                                </p>
+                            </div>
+                            
+                            <script>
+                                function toggleReadMore() {
+                                    var moreText = document.getElementById("more");
+                                    var btnText = document.getElementById("readMoreBtn");
+                            
+                                    if (moreText.style.display === "none") {
+                                        moreText.style.display = "inline";
+                                        btnText.innerHTML = "Read less";
+                                    } else {
+                                        moreText.style.display = "none";
+                                        btnText.innerHTML = "Read more";
+                                    }
+                                }
+                            </script>
+                            
                             <img src="https://picsum.photos/200/300?{{ $data->lokasi }}" alt="https://picsum.photos/200/300?{{ $data->lokasi }}" width="100" height="150">
 {{-- <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p> --}}
                            <br>
