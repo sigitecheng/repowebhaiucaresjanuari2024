@@ -180,7 +180,9 @@
                         <div class="bg-white border rounded p-4">
                             <h4 style="font-family: 'Quicksand', sans-serif;"><strong>{{ $data->title }}</strong></h4>
                             <p style="font-family: 'Quicksand', sans-serif;">{{$data->body }}</p>
-                            <img src="{{ $data->image }}" alt="{{ $data->image }}" width="100" height="150">
+                            {{-- <img src="{{ $data->image }}" alt="{{ $data->image }}" width="100" height="150"> --}}
+                            <img src="{{ $data->image }}" alt="{{ $data->image }}" style="width: 100%; height: 150px; object-fit: cover;">
+
 {{-- <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p> --}}
                            <br>
                             
