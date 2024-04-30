@@ -182,7 +182,7 @@
                             <p style="font-family: 'Quicksand', sans-serif;">{{$data->body }}</p>
                             {{-- <img src="{{ $data->image }}" alt="{{ $data->image }}" width="100" height="150"> --}}
                             <img src="{{ $data->image }}" alt="{{ $data->image }}" style="width: 100%; height: 150px; object-fit: cover;">
-
+                            
 {{-- <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p> --}}
                            <br>
                             
@@ -197,9 +197,10 @@
                            <div class="">
                                <div class="d-flex justify-content-end">
                                     <h5 class="text-custom mb-3" style="font-family: 'Quicksand', sans-serif;" ><strong class="text-dark" style="font-family: 'Quicksand', sans-serif;" >Kebutuhan</strong> <span class="buttom-custom">{{ 'Rp ' . number_format($data->anggaran, 0, ',', '.') }},-</span>
-                                    <button class="button-custom" style="font-family: 'Quicksand', sans-serif;">
-                                        <i class="fas fa-envelope-open-text me-2"></i>Donasi
-                                    </button>
+                                        <button class="button-custom" style="font-family: 'Quicksand', sans-serif; font-size: 16px;">
+                                            <i class="fas fa-envelope-open-text me-2"></i>Donasi
+                                        </button>
+                                        
                                 </div>
                                 
                            </div>
@@ -276,7 +277,11 @@
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="{{ $data->image }}" alt=""></a> 
+                                        {{-- <a href=""><img class="img-fluid" src="{{ $data->image }}" alt=""></a>  --}}
+                                        <a href="#" style="display: inline-block; width: 400px; height: 400px; overflow: hidden;">
+                                            <img class="img-fluid" src="{{ $data->image }}" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                        </a>
+                                        
                                         <div class="button-merah rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3" style="font-family: 'Quicksand', sans-serif;" >{{ $data->waktu_pelaksanaan}} Hari</div>
                                         <div class="button-custom rounded-top text-white position-absolute start-0 bottom-0 mx-4 pt-1 px-3" style="font-family: 'Quicksand', sans-serif;" ><span class="mt-2">{{ $data->category->nama_kategori}}</span></div>
                                     </div>
