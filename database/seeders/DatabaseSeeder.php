@@ -173,9 +173,17 @@ class DatabaseSeeder extends Seeder
 
         Berita::create([
             'user_id'       => 1, // Ganti dengan ID user yang sesuai
-            'judul'         => 'Contoh Berita 1',
+            'judul'         => 'Kebaikan yang Tak Terbatas: Kisah Perjuangan Seorang Relawan dalam Menghidupkan Program Makan Gratis di Kota Terpencil',
             'gambar'        => 'makanan',
-            'isi'           => 'Ini adalah isi dari contoh berita pertama.',
+            'isi'           => 'Di tengah gemuruh kota-kota besar yang sering menjadi pusat perhatian, terdapat kisah-kisah kebaikan yang tak terduga di sudut-sudut terpencil. Salah satunya adalah kisah perjuangan seorang relawan yang dengan gigih menghidupkan sebuah program makan gratis di sebuah kota terpencil yang jarang tersentuh bantuan dari luar.
+            
+            Bertahun-tahun lamanya, warga di kota ini merasakan kesulitan akses terhadap makanan yang layak. Dengan minimnya lapangan pekerjaan dan jarak yang jauh dari pusat distribusi, masyarakat terpinggirkan di negeri sendiri. Namun, keadaan ini tak menyurutkan semangat seorang relawan lokal yang memutuskan untuk bertindak.
+            
+            Dengan tekad yang bulat dan hati yang penuh empati, relawan ini membangun jaringan kerja sama dengan toko-toko lokal dan petani di sekitar kota. Melalui donasi sukarela dan bantuan dari komunitas lokal, ia berhasil mengumpulkan bahan makanan yang cukup untuk memulai program makan gratis.
+            
+            Perjuangan tak berhenti sampai di situ. Relawan ini juga harus menghadapi tantangan logistik yang berat, mengatur distribusi makanan ke tempat-tempat terpencil yang sulit dijangkau. Namun, dengan semangat pantang menyerah dan dukungan dari sukarelawan lainnya, ia berhasil menyediakan makanan yang bergizi bagi ratusan warga setiap hari.
+            
+            Kisah ini bukan hanya tentang makanan. Ini adalah tentang kepedulian, perjuangan, dan keberanian untuk berbuat baik meskipun dalam keterbatasan. Dengan setiap piring yang disajikan, relawan ini tidak hanya memberikan makanan, tetapi juga memberikan harapan dan kehangatan kepada masyarakat yang membutuhkan.',
             'tanggal_dibuat' => Carbon::now(),
             'lokasi'        => 'malang',
             'created_at'    => Carbon::now(),
@@ -184,9 +192,16 @@ class DatabaseSeeder extends Seeder
         
         Berita::create([
             'user_id'       => 1, // Ganti dengan ID user yang sesuai
-            'judul'         => 'Contoh Berita 1',
+            'judul'         => 'Satu Piring, Banyak Harapan: Dibalik Kisah Inspiratif Seorang Pengusaha yang Menggelar Program Makan Gratis untuk Masyarakat Terdampak Krisis Ekonomi',
             'gambar'        => 'makanan',
-            'isi'           => 'Ini adalah isi dari contoh berita pertama.',
+            'isi'           => 'Dalam suasana krisis ekonomi yang memunculkan keterpurukan di banyak lapisan masyarakat, satu sosok pengusaha membawa sinar harapan dengan menginisiasi program makan gratis. Kisah inspiratif ini muncul dari kepedulian mendalam terhadap sesama serta keinginan kuat untuk berbagi rezeki di tengah-tengah kesulitan yang melanda.
+            
+            Sebagai seorang pengusaha sukses, ia menyadari betul dampak yang dirasakan oleh masyarakat yang terdampak langsung oleh krisis ekonomi. Tanpa ragu, ia memutuskan untuk mengalihkan sebagian dari sumber daya dan keuntungannya untuk membantu mereka yang membutuhkan.
+            
+            Dengan menggandeng restoran-restoran lokal dan menyatukan kekuatan dengan komunitas bisnis setempat, program makan gratis ini menjadi sebuah kenyataan. Setiap hari, piring-piring makanan lezat disajikan kepada mereka yang membutuhkan, membawa tidak hanya kelegaan fisik namun juga kehangatan emosional di saat-saat sulit.
+            
+            Melalui kesederhanaan sebuah piring makanan, tergambar harapan yang besar. Pengusaha ini membuktikan bahwa dengan sedikit kebaikan dan kepedulian, kita semua bisa menjadi agen perubahan dalam membangun solidaritas dan kesejahteraan di tengah-tengah dunia yang terus berubah.',
+            
             'tanggal_dibuat' => Carbon::now(),
             'lokasi'        => 'malang',
             'created_at'    => Carbon::now(),
@@ -194,26 +209,24 @@ class DatabaseSeeder extends Seeder
         ]);
         Berita::create([
             'user_id'       => 1, // Ganti dengan ID user yang sesuai
-            'judul'         => 'Contoh Berita 1',
+            'judul'         => 'Cerita Penuh Haru: Para Pengusaha Menjadi Pahlawan Lokal Melalui Inisiatif Membagikan Makanan Gratis kepada Sesama',
             'gambar'        => 'makanan',
-            'isi'           => 'Ini adalah isi dari contoh berita pertama.',
+            'isi'           => 'Dalam masa sulit ini, kita sering kali menemukan pahlawan di tempat yang tidak terduga. Kisah yang mengharukan datang dari sekelompok pengusaha yang, meski terkena dampak ekonomi yang serius, memilih untuk menjadi pahlawan lokal dengan membagikan makanan gratis kepada sesama.
+            
+            Keputusan mereka untuk berbagi rezeki tidak datang dengan mudah. Banyak dari mereka menghadapi tekanan finansial yang besar akibat situasi ekonomi yang memburuk. Namun, mereka memilih untuk melihat ke luar dan membantu mereka yang membutuhkan, tanpa mempedulikan kesulitan yang mereka hadapi sendiri.
+            
+            Dengan koordinasi yang cermat dan semangat yang tak kenal lelah, para pengusaha ini mengatur program pembagian makanan gratis di berbagai sudut kota. Mereka bekerja sama dengan restoran-restoran setempat dan organisasi amal untuk menyediakan makanan bergizi bagi mereka yang terdampak langsung oleh krisis.
+            
+            Cerita ini bukan hanya tentang memberi makanan, tetapi juga tentang memberi harapan. Melalui kebaikan mereka, para pengusaha ini tidak hanya memberikan makanan, tetapi juga menunjukkan bahwa dalam kesulitan, kita dapat tetap bersatu dan saling mendukung. Mereka adalah contoh nyata bahwa dalam kegelapan, ada cahaya, dan dalam kesulitan, ada kebaikan yang tetap bersinar terang.',
+            
             'tanggal_dibuat' => Carbon::now(),
+            
             'lokasi'        => 'malang',
             'created_at'    => Carbon::now(),
             'updated_at'    => Carbon::now(),         
         ]);
-        Berita::create([
-            'user_id'       => 1, // Ganti dengan ID user yang sesuai
-            'judul'         => 'Contoh Berita 1',
-            'gambar'        => 'makanan',
-            'isi'           => 'Ini adalah isi dari contoh berita pertama.',
-            'tanggal_dibuat' => Carbon::now(),
-            'lokasi'        => 'malang',
-            'created_at'    => Carbon::now(),
-            'updated_at'    => Carbon::now(),         
-        ]);
-        
-        
+
+
         // Post::factory(3)->create();
         Be_datakontraktor::factory(15)->create();
         be_datarumahmakan::factory(15)->create();

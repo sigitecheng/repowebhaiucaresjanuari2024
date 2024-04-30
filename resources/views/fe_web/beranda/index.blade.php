@@ -169,8 +169,7 @@
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <br><br><h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry"></i> Program Makan Gratis</h1>
                     <p style="font-family: 'Quicksand', sans-serif;"><strong>
-                        {{-- "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang." --}}
-                        "Program Makan Gratis untuk mereka yang membutuhkan"
+                        "Tumbuhkan kebaikan dengan memberikan makanan gratis. Liputan kami mengungkap kepedulian terhadap kelaparan dan perjuangan dalam memberikan makanan di tengah dinamika dunia yang terus berkembang."
                     </strong></p>
                     {{-- <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> --}}
                 </div>
@@ -228,8 +227,8 @@
                             {{-- <p style="font-family: 'Quicksand', sans-serif;">{{ $data->fokus_pekerjaan}}</p> --}}
                         </div>
                     </div>
-                    {{-- <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">                         --}}
-                        {{-- @php
+                    {{-- <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">                        
+                        @php
                         $categoryIcons = [
                             'All Data' => 'fa fa-database mr-2',
                             'Infrastruktur' => 'fas fa-hammer mr-2',
@@ -237,8 +236,8 @@
                             'Kesehatan' => 'fa fa-hospital mr-2',
                             'Makanan' => 'fas fa-utensils mr-2',
                         ];
-                        @endphp --}}
-
+                        @endphp
+ --}}
 
                         {{-- @foreach ($categories as $cat)
                         <a href="/blog?category={{ $cat->slug }}" class=" btn btn btn-outline-infomb-4 rounded">
@@ -256,14 +255,14 @@
                                     onmouseover="this.style.backgroundColor='#17a2b8'; this.style.color='#fff';"
                                     onmouseout="this.style.backgroundColor=''; this.style.color='#17a2b8';">
                                      <i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}
-                                 </a> --}}
-                                 
+                                 </a>
+                                  --}}
                                 {{-- <a class="btn btn-outline-info active" data-bs-toggle="pill" href="/blog?category={{ $cat->slug }}"><i class="{{ $categoryIcons[$cat->nama_kategori] }}"></i> {{ $cat->nama_kategori }}</a> --}}
                             {{-- </li>
                         </ul>
-                        @endforeach --}}
-                    {{-- </div> --}}
-                {{-- </div> --}}
+                        @endforeach
+                    </div> --}}
+                </div>
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <div class="row g-4">
@@ -651,47 +650,6 @@
             </div>
         </div>
     </section>
-        <!-- Category End -->
-
-        {{-- <section class="bg-light"> --}}
-
-            <!-- About Start -->
-            {{-- <div class="container-xxl py-5">
-                <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                            <img class="img-fluid w-100" src="https://picsum.photos/200/200?Donations">
-                        </div>
-                    </div> --}}
-
-                    {{-- @foreach($adminberanda as $data)
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <a class="button-custom py-3 px-5 mt-3"style="font-family: 'Quicksand', sans-serif;" ><i class="fab fa-ravelry"></i><strong> Visi</strong></a>
-                        
-                        <h6 class="mb-4 mt-4" style="font-family: 'Quicksand', sans-serif; text-align: justify;">{{ $data->visi }}</h6>
-                        <br>
-                        <a class="button-custom py-3 px-5 mt-3" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry"></i><strong> Misi</strong></a>
-                        
-                        <h6 class="mb-4 mt-4" style="font-family: 'Quicksand', sans-serif; text-align: justify;">{{ $data->misi }}</h6>
-                        <br>
-                        <a class="button-custom py-3 px-5 mt-3" style="font-family: 'Quicksand', sans-serif;">
-                            <i class="fas fa-chevron-right" style="animation: moveRight 0.2s infinite alternate;"></i>
-                            <i class="fas fa-chevron-right" style="animation: moveRight 0.2s infinite alternate;"></i>
-                            <i class="fas fa-chevron-right me-2" style="animation: moveRight 0.2s infinite alternate;"></i>
-                             <strong>Fokus Pekerjaan Kami</strong></a>
-                        
-                        <h6 class="mb-4 mt-4" style="font-family: 'Quicksand', sans-serif; text-align: justify;">{{ $data->fokus_pekerjaan }}</h6>
- --}}
-                    {{-- </div>
-                    @endforeach
-                </div>
-            </div>
-        </div> --}}
-        <!-- About End -->
-    </section>
-
-
 
         <!-- Team Start -->
         <section class="bg-light">
@@ -861,7 +819,7 @@
                                             <div class="card">
                                                 <img src="https://picsum.photos/200/200?{{ $data->lokasi }}" class="card-img-top" alt="{{$data->lokasi}}">
                                             </div>
-                                        </div> 
+                                        </div>
                                         @endforeach
                                         <!-- Tambahkan gambar-gambar lainnya di sini -->
                                     </div>
