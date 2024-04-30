@@ -180,7 +180,7 @@
                         <div class="bg-white border rounded p-4">
                             <h4 style="font-family: 'Quicksand', sans-serif;"><strong>{{ $data->title }}</strong></h4>
                             <p style="font-family: 'Quicksand', sans-serif;">{{$data->body }}</p>
-                            <img src="https://picsum.photos/200/300?{{ $data->anggaran }}" alt="https://picsum.photos/200/300?{{ $data->lokasi }}" width="100" height="150">
+                            <img src="{{ $data->image }}" alt="{{ $data->image }}" width="100" height="150">
 {{-- <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p> --}}
                            <br>
                             
@@ -274,7 +274,7 @@
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="https://picsum.photos/400/400?{{ $data->category->nama_kategori }}" alt=""></a> 
+                                        <a href=""><img class="img-fluid" src="{{ $data->image }}" alt=""></a> 
                                         <div class="button-merah rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3" style="font-family: 'Quicksand', sans-serif;" >{{ $data->waktu_pelaksanaan}} Hari</div>
                                         <div class="button-custom rounded-top text-white position-absolute start-0 bottom-0 mx-4 pt-1 px-3" style="font-family: 'Quicksand', sans-serif;" ><span class="mt-2">{{ $data->category->nama_kategori}}</span></div>
                                     </div>
