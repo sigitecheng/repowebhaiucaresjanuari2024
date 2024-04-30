@@ -16,7 +16,8 @@ use App\Models\Be_datainstansipendidikan;
 use App\Models\Berita;
 use App\Models\Datapenanggungjawab;
 use App\Models\Datapengawaslapangan;
-
+use App\Models\Mitra;
+use App\Models\Sponsor;
 use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
@@ -235,5 +236,7 @@ class DatabaseSeeder extends Seeder
         Datapenanggungjawab::factory(6)->create();
         Datapengawaslapangan::factory(6)->create();
         // Berita::factory(3)->create();
+        Sponsor::factory(4)->create();
+        Mitra::factory(6)->create();
     }
 }

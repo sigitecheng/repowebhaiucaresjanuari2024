@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Fe_adminberanda;
 use App\Models\Post;
+use App\Models\Sponsor;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +49,7 @@ use App\Models\Datapenanggungjawab;
 use App\Models\Datapengawaslapangan;
 use App\Models\Fe_adminberanda as ModelsFe_adminberanda;
 use App\Models\FeDonasi;
+use App\Models\Mitra;
 use App\Models\RunningProject;
 
 // use App\Models\Post;
@@ -81,6 +84,8 @@ Route::get('/', function () {
         "donasi5"           =>  "frontendweb/donasi/donasi5.jpg",
         "adminberanda"      =>  Fe_adminberanda::all(),
         'categories'        => Category::all(),
+        'sponsor'           => Sponsor::all(),
+        'mitra'             => Mitra::all(),
         'databerita'        => Berita::orderBy('created_at', 'asc')->paginate(6),
         
         $posts = Post::orderBy('created_at', 'desc')->paginate(9),
@@ -129,6 +134,8 @@ Route::get('/', function () {
         $totalmitra = $totalMitraKontraktor + $totalMitraPendidikan + $totalMitraKesehatan + $totalMitraMakanan,
         
         'totalmitra' => $totalmitra,
+        // =======================================
+
         
 
     ]);

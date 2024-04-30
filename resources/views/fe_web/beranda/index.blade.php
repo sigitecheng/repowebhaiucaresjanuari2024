@@ -661,77 +661,37 @@
                     >Sponsor & Mitra</h1>
                     {{-- <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> --}}
                 </div>
+
+
                 <div class="row g-4">
+                    @foreach($sponsor as $data)
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item rounded overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="https://picsum.photos/400/600?Company" alt="">
+                                <img class="img-fluid" src="https://picsum.photos/400/600?{{$data->instagram}}" alt="">
                                 <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                    {{-- <a class="btn button-custom mx-1" href=""><i class="fab fa-instagram"></i></a> --}}
+                                    <a class="btn button-custom mx-1" href="https://www.instagram.com/{{$data->instagram}}/">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                                                        {{-- <a class="btn button-custom mx-1" href=""><i class="fab fa-facebook-f"></i></a> --}}
+                                    <a class="btn button-custom mx-1" href="{{$data->email}}"><i class="far fa-envelope"></i></a>
+                                    <a class="btn button-custom mx-1" href="https://wa.me/{{$data->wa}}"><i class="fab fa-whatsapp"></i></a>
+                                    {{-- <a class="btn button-custom mx-1" href="https://www.tiktok.com/@username">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
+                                    </a> --}}
                                 </div>
                             </div>
                             <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
+                                <h5 class="fw-bold mb-0">{{$data->nama}}</h5>
+                                {{-- <small>Designation</small> --}}
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="https://picsum.photos/400/600?School" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="https://picsum.photos/400/600?Toyota" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="https://picsum.photos/400/600?Honda" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn button-custom mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
+                    @endforeach
                 </div>
+
+
             </div>
         </div>
         <!-- Team End -->
@@ -839,10 +799,10 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row">
-                                        @foreach($databerita as $data)
+                                        @foreach($mitra as $data)
                                         <div class="col-md-2">
                                             <div class="card">
-                                                <img src="https://picsum.photos/200/200?{{ $data->lokasi }}" class="card-img-top" alt="{{$data->lokasi}}">
+                                                <img src="https://picsum.photos/200/200?{{ $data->image }}" class="card-img-top" alt="{{$data->lokasi}}">
                                             </div>
                                         </div>
                                         @endforeach
@@ -891,35 +851,39 @@
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4 text0">Download App</h5>
                         <div class="row">
-                            <!-- Google Play Store -->
-                            <a href="https://play.google.com/store/apps/details?id=nama.package.aplikasi">
-                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play Store" width="200">
-                            </a>
+                          <!-- Google Play Store -->
+                          <a href="https://play.google.com/store/apps/details?id=nama.package.aplikasi">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play Store" width="200" style="margin-right: 20px;">
+                        </a>
+                                                
 
-                            <!-- App Store (iOS) -->
-                            <a href="https://apps.apple.com/app/nama-aplikasi/id123456789">
-                                <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="App Store" width="200">
-                            </a>
+                        <!-- App Store (iOS) -->
+                        <a href="https://apps.apple.com/app/nama-aplikasi/id123456789">
+                            <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="App Store" width="175">
+                        </a>
+
 
                             
                         </div>
                     </div>
                     
                     <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <h5 class="text-white mb-4">Email us for more information</h5>
+                        {{-- <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p> --}}
                         <div class="position-relative mx-auto" style="max-width: 400px;">
                             <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Show Me</button>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="container">
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">haiucares.com</a>, All Right Reserved. 2024
+                            &copy; PT. HaiuCare Bangun Indonesia <a class="border-bottom" href="https://www.haiucares.com">haiucares.com</a>
+                            , All Right Reserved. 2024
 							
 							{{-- <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/--> --}}
 							{{-- Designed By <a class="border-bottom" href="https://htmlcodex.com"></a> --}}
