@@ -17,6 +17,11 @@
         <!-- Navbar End -->
 <br><br><br>
 
+
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+
         <!-- Header Start -->
         <div class="container-fluid header bg-white p-0" style="font-family: 'Quicksand', sans-serif;">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
@@ -163,7 +168,11 @@
         {{-- ===================================================== --}}
         <!-- Testimonial Start -->
 
-        <section class="bg-light">
+        {{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+
+        <section id="tentang" class="bg-light">
         <div class="container-xxl pt-0 ">
             <div class="container bg-light mt-4">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
@@ -214,11 +223,14 @@
         </div>
     </section>
     
-  {{-- ================================================================================ --}}
+{{-- ================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
 
 
 
-        
+        <section id="layanan">        
         <!-- Property List Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -324,31 +336,10 @@
                                                     <div class="modal-body">
                                                      
                                                         <table class="table" style="font-family: 'Quicksand', sans-serif;">
-                                                            <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry text-white me-2"></i>Detail Pekerjaan</p>
-
-                                                            <thead>
-                                                                <tr class="text-center">
-                                                                    <th scope="col" class="text-custom">Details</th>
-                                                                    <th scope="col" class="text-custom">Nama</th>
-                                                                    {{-- <th scope="col">Email</th> --}}
-                                                                    <th scope="col" class="text-custom">Jumlah Donasi</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody class="text-center">
-                                                                <tr>
-                                                                    <th scope="row">1</th>
-                                                                    <td>John Doe</td>
-                                                                    {{-- <td>JohnDoe@gmail.com</td> --}}
-                                                                    <td>$100</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row">2</th>
-                                                                    <td>Jane Smith</td>
-                                                                    {{-- <td>JaneSmith@gmail.com</td> --}}
-                                                                    <td>$200</td>
-                                                                </tr>
-                                                                <!-- Tambahkan baris tambahan sesuai dengan data yang Anda miliki -->
-                                                            </tbody>
+                                                            <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry text-white me-2"></i>Pekerjaan Kami</p>
+                                                            <div class="div">
+                                                            </div>
+                                                          
                                                         </table>
                                                     </div>
                                                     
@@ -511,7 +502,8 @@
                                                                 .button-donasi {
                                                                     display: flex;
                                                                     flex-direction: column;
-                                                                    align-items: flex-start; /* Aligment dari kiri ke kanan */
+                                                                    align-items: stretch;
+                                                                     /* Aligment dari kiri ke kanan */
                                                                 }
                                                             
                                                                 .donasi {
@@ -524,58 +516,67 @@
                                                             <div class="button-donasi">
                                                                 
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714576004385" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:125%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 10.000
                                                                     </button>
+                                                                    
                                                                 </a>
-                                                                
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714576546980" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:122%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 20.000
                                                                     </button>
+                                                                    
                                                                 </a>
                                                                 
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714576621984" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:122%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 25.000
                                                                     </button>
+                                                                    
                                                                 </a>
                                                                 
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714576681543" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:122%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 50.000
                                                                     </button>
+                                                                    
                                                                 </a>
-
+                                                                
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714576756040" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:115%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 100.000
                                                                     </button>
+                                                                    
                                                                 </a>
 
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714576823113" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:113%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 200.000
                                                                     </button>
+                                                                    
                                                                 </a>
-
+                                                               
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714576901811" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:113%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 250.000
                                                                     </button>
+                                                                    
                                                                 </a>
 
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714577001680" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:113%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 500.000
                                                                     </button>
+                                                                    
                                                                 </a>
 
                                                                 <a href="https://app.sandbox.midtrans.com/payment-links/1714577070347" style="text-decoration: none; display: inline-block width: 100%;">
-                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:104%">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 1.000.000
                                                                     </button>
+                                                                    
                                                                 </a>
+                                                               
                                                             </div>
                                                             
                                                             <!-- Form untuk memasukkan nominal donasi -->
@@ -669,8 +670,13 @@
                 </div>
             </div>
         </div>
+
+    </section>
         <!-- Property List End -->
 
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
 
 
         <!-- Category Start -->
@@ -790,6 +796,12 @@
             </div>
         </div>
     </section>
+
+
+{{-- ================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
 
         <!-- Team Start -->
         <section class="bg-light">
@@ -929,8 +941,15 @@
                 </div>
             </div>
         </div>
-      
-      
+
+
+        
+{{-- ================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+
+            
         <section class="bg-light px-4 py-4">
             <div class="container">
                 <div class="row">
@@ -964,8 +983,14 @@
             });
         </script>
   
+{{-- ================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+{{-- ================================================================================================================================================================================================================================================================================ --}}
+
   <!-- Footer Start -->
-        <div id="#footer" class="container-fluid button-custom text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+  <section id="kontaks">
+        <div  class="container-fluid button-custom text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
@@ -1041,7 +1066,7 @@
             </div>
         </div>
         <!-- Footer End -->
-
+    </section>
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

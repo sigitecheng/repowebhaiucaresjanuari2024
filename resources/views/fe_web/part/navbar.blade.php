@@ -16,26 +16,28 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto text-custom" style="font-family: 'Quicksand', sans-serif;">
                         <a href="/" class="nav-item nav-link text-custom" style="font-family: 'Quicksand', sans-serif;"><strong>Beranda</strong></a>
-                        <a href="about.html" class="nav-item nav-link text-custom"><strong>Tentang</strong></a>
-                        <a href="about.html" class="nav-item nav-link text-custom"><strong>Layanan</strong></a>
-                        <a href="about.html" class="nav-item nav-link text-custom"><strong>Donasi</strong></a>
+                        <a href="#tentang" class="nav-item nav-link text-custom"><strong>Tentang</strong></a>
+                        <a href="#layanan" class="nav-item nav-link text-custom"><strong>Layanan</strong></a>
+                        {{-- <a href="about.html" class="nav-item nav-link text-custom"><strong>Donasi</strong></a> --}}
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle text-custom" data-bs-toggle="dropdown"><strong>Pekerjaan</strong></a>
                             <div class="dropdown-menu rounded-0 m-0 text-custom" >
-                                <a href="property-list.html" class="dropdown-item"><i class="fas fa-hammer mr-2"></i> Infrastruktur</a>
-                                <a href="property-type.html" class="dropdown-item"><i class="fas fa-book mr-2"></i> Pendidikan</a>
-                                <a href="property-agent.html" class="dropdown-item"><i class="fas fa-medkit mr-2"></i> Kesehatan</a>
-                                <a href="property-agent.html" class="dropdown-item"><i class="fas fa-utensils mr-2"></i> Makanan</a>
+                                <a href="/error" class="dropdown-item"><i class="fas fa-hammer mr-2"></i> Infrastruktur</a>
+                                <a href="/error" class="dropdown-item"><i class="fas fa-book mr-2"></i> Pendidikan</a>
+                                <a href="/error" class="dropdown-item"><i class="fas fa-medkit mr-2"></i> Kesehatan</a>
+                                <a href="/error" class="dropdown-item"><i class="fas fa-utensils mr-2"></i> Makanan</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle text-custom" data-bs-toggle="dropdown"><strong>Progress</strong></a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Error</a>
+                                <a href="/error" class="dropdown-item">Testimonial</a>
+                                <a href="/error" class="dropdown-item">Mitra</a>
+                                <a href="/error" class="dropdown-item">Sponsor</a>
+                                {{-- <a href="/error" class="dropdown-item">Testimonial</a> --}}
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link" style="font-family: 'Quicksand', sans-serif;"><strong>Contact</strong></a>
+                        <a href="#kontaks" class="nav-item nav-link" style="font-family: 'Quicksand', sans-serif;"><strong>Contact</strong></a>
                     </div>
                     <a href="/login" class="button-custom px-3 d-none d-lg-flex text-white" style="font-family: 'Quicksand', sans-serif;"><i class="fas fa-sign-in-alt mr-2 mt-1"></i>LOGIN</a>
                 </div>
