@@ -127,4 +127,9 @@ class Post extends Model
     {
         return $this->belongsTo(Datapengawaslapangan::class);
     }
+
+    public function Danamasyarakat()
+    {
+        return $this->belongsTo(Danamasyarakat::class);
+    }
 }

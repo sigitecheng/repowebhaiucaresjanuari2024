@@ -471,13 +471,7 @@
                                         </div>
                                     </div>
 
-                                                    
-
-
-
-
-
-
+                                                
                                         <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
                                             <a href="/error" class="text-dark">
                                                 <i class="fas fa-spinner fa-spin text-custom me-2"></i>
@@ -488,10 +482,149 @@
                                     
                                     <div class="d-flex border-top">
                                         <button type="button" class="button-custom d-flex flex-fill justify-content-center align-items-center border-end py-2">
-                                            <a href="/error" class="text-decoration-none text-white" style="font-family: 'Quicksand', sans-serif;">
+                                            {{-- <a href="/error" class="text-decoration-none text-white" style="font-family: 'Quicksand', sans-serif;">
                                                 <i class="fas fa-envelope-open-text me-2 " ></i> Donasi Sekarang
+                                            </a> --}}
+                                            <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myDonasisekarang">
+                                                <i class="fas fa-envelope me-2 text-white"></i><strong class="text-white">Donasi Sekarang</strong>
                                             </a>
                                         </button>
+
+                                        {{-- <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
+                                            <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal1">
+                                                <i class="fa fa-eye text-custom me-2"></i><strong>Details</strong>
+                                            </a>
+                                        </small> --}}
+
+                                        <div class="modal fade" id="myDonasisekarang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Details Modal</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                     
+                                                        <table class="table" style="font-family: 'Quicksand', sans-serif;">
+                                                            <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry text-white me-2"></i>Masukan Nominal Donasi</p>
+                                                            <style>
+                                                                .button-donasi {
+                                                                    display: flex;
+                                                                    flex-direction: column;
+                                                                    align-items: flex-start; /* Aligment dari kiri ke kanan */
+                                                                }
+                                                            
+                                                                .donasi {
+                                                                    width: 100%; /* Lebar tombol 100% dari parent */
+                                                                    margin-bottom: 10px; /* Jarak antar tombol */
+                                                                    padding: 8px;
+                                                                    text-align: left; /* Aligment teks dari kiri ke kanan */
+                                                                }
+                                                            </style>
+                                                            <div class="button-donasi">
+                                                                
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714576004385" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:125%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 10.000
+                                                                    </button>
+                                                                </a>
+                                                                
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714576546980" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:122%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 20.000
+                                                                    </button>
+                                                                </a>
+                                                                
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714576621984" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:122%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 25.000
+                                                                    </button>
+                                                                </a>
+                                                                
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714576681543" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:122%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 50.000
+                                                                    </button>
+                                                                </a>
+
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714576756040" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:115%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 100.000
+                                                                    </button>
+                                                                </a>
+
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714576823113" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:113%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 200.000
+                                                                    </button>
+                                                                </a>
+
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714576901811" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:113%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 250.000
+                                                                    </button>
+                                                                </a>
+
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714577001680" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:113%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 500.000
+                                                                    </button>
+                                                                </a>
+
+                                                                <a href="https://app.sandbox.midtrans.com/payment-links/1714577070347" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: auto; padding: 8px 16px; display: inline-block; width: 100%; margin-left:104%">
+                                                                        <i class="far fa-file me-2"></i> Rp. 1.000.000
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                            
+                                                            <!-- Form untuk memasukkan nominal donasi -->
+                                                            {{-- <form id="donationForm">
+                                                                <input type="hidden" name="nominal" id="inputNominal">
+                                                                <button type="button" onclick="submitDonation()" class="button-custom"><i class="fab fa-telegram-plane me-2"></i>Donasi Sekarang</button>
+                                                            </form> --}}
+                                                            
+                                                            <script>
+                                                                function selectNominal(amount) {
+                                                                    // Set nilai inputNominal sesuai dengan nominal yang dipilih
+                                                                    document.getElementById('inputNominal').value = amount;
+                                                            
+                                                                    // Hapus class 'selected' dari semua tombol donasi
+                                                                    var buttons = document.querySelectorAll('.donasi');
+                                                                    buttons.forEach(button => {
+                                                                        button.classList.remove('selected');
+                                                                    });
+                                                            
+                                                                    // Tambahkan class 'selected' ke tombol yang dipilih
+                                                                    var selectedButton = document.getElementById('btnNominal' + amount);
+                                                                    selectedButton.classList.add('selected');
+                                                                }
+                                                            
+                                                                function submitDonation() {
+                                                                    var nominal = document.getElementById('inputNominal').value; // Mendapatkan nilai nominal dari inputNominal
+                                                            
+                                                                    // Kirim data donasi (contoh menggunakan console.log untuk menampilkan data)
+                                                                    console.log('Nominal Donasi: ' + nominal);
+                                                            
+                                                                    // Tambahkan kode untuk mengirim data donasi ke server di sini (AJAX atau form submit)
+                                                                    // Contoh: $.post('/submit_donation', { nominal: nominal });
+                                                                }
+                                                            </script>
+                                                            
+                                                            
+                                                        </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn button-custom" data-bs-dismiss="modal">Close</button>
+                                                        {{-- <button type="button" class="btn btn-dark">Simpan Perubahan</button> --}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        
+
+                                        
                                                             
                                     </div>
                                     
@@ -675,7 +808,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item rounded overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="https://picsum.photos/400/600?{{$data->instagram}}" alt="">
+                                <img class="img-fluid" src="{{$data->image}}" alt="{{$data->image}}">
                                 <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                     {{-- <a class="btn button-custom mx-1" href=""><i class="fab fa-instagram"></i></a> --}}
                                     <a class="btn button-custom mx-1" href="https://www.instagram.com/{{$data->instagram}}/">

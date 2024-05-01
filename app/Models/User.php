@@ -83,6 +83,11 @@ class User extends Authenticatable
         return $this->hasMany(Be_datainstansipendidikan::class);
     }
 
+    public function Danamasyarakat()
+    {
+        return $this->hasMany(Danamasyarakat::class);
+    }
+
 
 
     // public function adminitembrangdanhargas()

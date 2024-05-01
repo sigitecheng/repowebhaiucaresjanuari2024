@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->foreignId('user_id');
+            // $table->foreignId('danamasyarakat_id');
             $table->foreignId('be_datakontraktor_id');
             $table->foreignId('be_datarumahmakan_id');
             $table->foreignId('be_datarumahsakit_id');
@@ -22,9 +23,13 @@ return new class extends Migration
             // $table->foreignId('kontraktor_id')->constrained('kontraktors');
             $table->foreignId('datapenanggungjawab_id');
             // $table->foreignId('penanggung_jawab_id')->constrained('penanggung_jawabs');
-            $table->foreignId('datapengawaslapangan_id');
+            // TABEL ALIAS DANA SUMBANGAN
+            $table->foreignId('datapengawaslapangan_id'); 
+
             // $table->foreignId('pengawas_lapangan_id')->constrained('pengawas_lapangans');
             $table->foreignId('datapekerjaanstatus_id');
+            // $table->foreignId('donasikotak_id');
+            // $table->foreignId('kotakdonasi_id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
@@ -39,7 +44,6 @@ return new class extends Migration
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
-
     }
 
     /**

@@ -14,8 +14,10 @@ use App\Models\Be_datarumahmakan;
 use App\Models\Be_datarumahsakit;
 use App\Models\Be_datainstansipendidikan;
 use App\Models\Berita;
+use App\Models\Danamasyarakat;
 use App\Models\Datapenanggungjawab;
 use App\Models\Datapengawaslapangan;
+use App\Models\Kotakdonasi;
 use App\Models\Mitra;
 use App\Models\Sponsor;
 use Carbon\Carbon;
@@ -121,7 +123,7 @@ class DatabaseSeeder extends Seeder
             'slug'                  => 'warung-makan',
             // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
             // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
-            'lokasi'                => 'jakarta',
+            'lokasi'                => 'Cileunyi, Bandung',
             'anggaran'              => 10000000,
             'waktu_pelaksanaan'     => 100,
             'tanggal_mulai'     => "1972-02-01",
@@ -143,7 +145,7 @@ class DatabaseSeeder extends Seeder
             'slug'                  => 'mobil-berbakti',
             // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
             // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
-            'lokasi'                => 'bandung',
+            'lokasi'                => 'Cileunyi, Bandung',
             'anggaran'              => 200000000,
             'waktu_pelaksanaan'     => 100,
             'tanggal_mulai'     => "1972-02-01",
@@ -165,7 +167,7 @@ class DatabaseSeeder extends Seeder
             'slug'                  => 'panci-kebaikan',
             // 'body'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
             // 'excerpt'                  => "Piring Peduli adalah inisiatif kemanusiaan yang bertujuan untuk memberikan bantuan makanan kepada masyarakat yang membutuhkan. Program ini merupakan upaya kolaboratif antara Warteg Cileunyi dan berbagai pihak yang peduli terhadap keberlangsungan hidup sesama",
-            'lokasi'                => 'surabaya',
+            'lokasi'                => 'Cileunyi, Bandung',
             'anggaran'              => 1000000,
             'waktu_pelaksanaan'     => 100,
             'tanggal_mulai'     => "1972-02-01",
@@ -208,6 +210,7 @@ class DatabaseSeeder extends Seeder
             'created_at'    => Carbon::now(),
             'updated_at'    => Carbon::now(),         
         ]);
+
         Berita::create([
             'user_id'       => 1, // Ganti dengan ID user yang sesuai
             'judul'         => 'Cerita Penuh Haru: Para Pengusaha Menjadi Pahlawan Lokal Melalui Inisiatif Membagikan Makanan Gratis kepada Sesama',
@@ -227,16 +230,63 @@ class DatabaseSeeder extends Seeder
             'updated_at'    => Carbon::now(),         
         ]);
 
+        Sponsor::create([      
+            'nama' => 'Pemerintah Kabupaten Bandung Barat',
+            'image' => 'img/fe_web/sponsors/bandungbarat.jpg',
+            'instagram' => 'bandungbaratkab',
+            'tiktok' => '',
+            'email' => 'dinaspuprkabbb@gmail.com.',
+            'wa' => '',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        Sponsor::create([      
+            'nama' => 'Telkomsel',
+            'image' => 'img/fe_web/sponsors/telkomsel.png',
+            'instagram' => 'telkomsel',
+            'tiktok' => '',
+            'email' => 'cs@telkomsel.com',
+            'wa' => '',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+      
+        Sponsor::create([      
+            'nama' => 'Pemerintah Provinsi Jawa Barat',
+            'image' => 'img/fe_web/sponsors/jabar.png',
+            'instagram' => '',
+            'tiktok' => '',
+            'email' => 'info@jabarprov.go.id.',
+            'wa' => '',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        Sponsor::create([      
+            'nama' => 'Toyota',
+            'image' => 'img/fe_web/sponsors/toyota.png',
+            'instagram' => 'toyotaid',
+            'tiktok' => '',
+            'email' => 'customer-care@toyota.astra.co.id.',
+            'wa' => '',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+      
+
+
+
 
         // Post::factory(3)->create();
-        Be_datakontraktor::factory(15)->create();
-        be_datarumahmakan::factory(15)->create();
-        be_datarumahsakit::factory(15)->create();
-        Be_datainstansipendidikan::factory(15)->create();
+        Be_datakontraktor::factory(7)->create();
+        be_datarumahmakan::factory(7)->create();
+        be_datarumahsakit::factory(7)->create();
+        Be_datainstansipendidikan::factory(7)->create();
         Datapenanggungjawab::factory(6)->create();
         Datapengawaslapangan::factory(6)->create();
         // Berita::factory(3)->create();
-        Sponsor::factory(4)->create();
+        // Sponsor::factory(4)->create();
         Mitra::factory(6)->create();
+        Danamasyarakat::factory(6)->create();
     }
 }
