@@ -319,6 +319,8 @@
 
                                     </div>                   
 
+
+{{-- ============================================================================================================  --}}
                                     <div class="d-flex border-top">
                                         <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
                                             <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal1">
@@ -336,11 +338,13 @@
                                                     <div class="modal-body">
                                                      
                                                         <table class="table" style="font-family: 'Quicksand', sans-serif;">
-                                                            <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry text-white me-2"></i>Pekerjaan Kami</p>
+                                                            {{-- <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry text-white me-2"></i>Pekerjaan Kami</p>
                                                             <div class="div">
-                                                            </div>
-                                                          
+                                                            </div> --}}
+                                                            <img src="{{$data->image}}" alt="{{$data->image}}" style="width: 400px; height: 400px; margin-left:35px">
+
                                                         </table>
+                                                        
                                                     </div>
                                                     
                                                     <div class="modal-footer">
@@ -354,7 +358,7 @@
                                                         
                                         
 
-
+{{-- ============================================================================================================  --}}
                                         <!-- Tombol untuk membuka modal -->
                                     <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
                                         <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -408,17 +412,17 @@
                                     </div>
 
                                                     
-                                      
+{{-- ============================================================================================================  --}}                  
                                     </div>
                                     <div class="d-flex border-top">
                                         <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
-                                            <a href="" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal">
+                                            <a href="" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModalProgress">
                                                 <i class="fas fa-spin fa-spinner text-custom me-2"></i><strong>Progress</strong>
                                             </a>
                                         </small>
 
                                                                             <!-- Modal -->
-                                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="myModalProgress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -427,7 +431,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <table class="table" style="font-family: 'Quicksand', sans-serif;">
-                                                        <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fas fa-users text-white me-2"></i>Daftar Donatur</p>
+                                                        <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fas fa-spin fa-spinner text-white me-2"></i>Daftar Progress</p>
                                                         <thead>
                                                             <tr class="text-center">
                                                                 <th scope="col" class="text-custom">No</th>
@@ -462,6 +466,7 @@
                                         </div>
                                     </div>
 
+{{-- ============================================================================================================  --}}
                                                 
                                         <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
                                             <a href="/error" class="text-dark">
