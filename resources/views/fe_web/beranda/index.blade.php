@@ -825,26 +825,31 @@
                         <div class="team-item rounded overflow-hidden">
                             <div class="position-relative">
                                 <style>
-                                     .card-mitra {
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        height: 40vh; /* Tinggi kontainer sama dengan tinggi layar */
-                                    }
-                            
-                                    // /* Gaya CSS untuk gambar responsif dengan ukuran tetap */
-                                     .card-mitra-img {
-                                        max-width: 400px; /* Lebar maksimum gambar */
-                                        max-height: 400px; /* Tinggi maksimum gambar */
-                                        width: 100%; /* Lebar gambar mengisi seluruh kontainer */
-                                        height: 100%; /* Tinggi gambar mengisi seluruh kontainer */
-                                        object-fit: contain; /* Menjaga proporsi gambar */
-                                    }
-                                </style>
+                                     .card-mitra-1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px; /* Lebar kartu */
+            height: 300px; /* Tinggi kartu */
+            border: none;
+            margin: 50px auto;
+            overflow: hidden; /* Menghilangkan konten yang melebihi batas kartu */
+            background-color: #f0f0f0; /* Warna latar belakang kartu (opsional) */
+        }
+
+        /* Gaya CSS untuk gambar di dalam kartu */
+        .card-mitra-img-1{
+            max-width: 100%; /* Lebar maksimum gambar */
+            max-height: 100%; /* Tinggi maksimum gambar */
+            width: auto; /* Lebar gambar disesuaikan untuk mempertahankan proporsi */
+            height: auto; /* Tinggi gambar disesuaikan untuk mempertahankan proporsi */
+            object-fit: contain; /* Menjaga proporsi gambar */
+        }
+                               </style>
 
                                 
-                                     <div class="card-mitra" style="width: 300px; display: flex; justify-content: center; align-items: center;">
-                                        <img src="{{ $data->image }}" class="card-mitra-img" alt="{{$data->image}}" style="max-width: 100%; max-height: 200px; object-fit: contain;">
+                                     <div class="card-mitra-1" style="width: 300px; display: flex; justify-content: center; align-items: center;">
+                                        <img src="{{ $data->image }}" class="card-mitra-img-1" alt="{{$data->image}}" style="max-width: 100%; max-height: 200px; object-fit: contain;">
                                     </div>
                                     
                                     {{-- </div> --}}
@@ -1000,7 +1005,7 @@
                                         <style>
                                             /* CSS untuk kartu mitra */
                                             .card-mitra {
-                                                width: 210px;
+                                                width: 200px;
                                                 display: flex;
                                                 justify-content: center;
                                                 align-items: center;
