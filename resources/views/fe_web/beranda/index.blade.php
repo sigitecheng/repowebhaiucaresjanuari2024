@@ -809,7 +809,7 @@
 {{-- ================================================================================================================================================================================================================================================================================ --}}
 
         <!-- Team Start -->
-        <section class="bg-light">
+        <section class="bg-white">
 
             <div class="container-xxl py-5">
                 <div class="container">
@@ -825,7 +825,38 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item rounded overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="{{$data->image}}" alt="{{$data->image}}">
+                                <style>
+                                    /* Gaya CSS untuk kontainer gambar */
+                                    .image-container-mitra {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        height: 50vh; /* Tinggi kontainer sama dengan tinggi layar */
+                                    }
+                            
+                                    /* Gaya CSS untuk gambar responsif dengan ukuran tetap */
+                                    .responsive-img-mitra {
+                                        max-width: 400px; /* Lebar maksimum gambar */
+                                        max-height: 400px; /* Tinggi maksimum gambar */
+                                        width: 100%; /* Lebar gambar mengisi seluruh kontainer */
+                                        height: 100%; /* Tinggi gambar mengisi seluruh kontainer */
+                                        object-fit: contain; /* Menjaga proporsi gambar */
+                                    }
+                                </style>
+
+                                
+                                    <div class="image-container-mitra">
+                                        <!-- Penggunaan img dengan kelas responsive-img -->
+                                        <img class="responsive-img-mitra" src="{{$data->image}}" alt="{{$data->image}}">
+                                    </div>
+                                
+                                
+                                    {{-- <div class="container">
+                                        <!-- Penggunaan img dengan kelas responsive-img -->
+                                        <img class="responsive-img-mitra" src="{{$data->image}}" alt="{{$data->image}}">
+                                    </div>
+                                 --}}
+                                {{-- <img class="img-fluid" src="{{$data->image}}" alt="{{$data->image}}"> --}}
                                 <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                     {{-- <a class="btn button-custom mx-1" href=""><i class="fab fa-instagram"></i></a> --}}
                                     <a class="btn button-custom mx-1" href="https://www.instagram.com/{{$data->instagram}}/">
@@ -855,6 +886,7 @@
     </section>
 
 
+    <section class="bg-light">
         <!-- Testimonial Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -946,7 +978,7 @@
                 </div>
             </div>
         </div>
-
+    </section>
 
         
 {{-- ================================================================================ --}}
@@ -955,7 +987,7 @@
 {{-- ================================================================================================================================================================================================================================================================================ --}}
 
             
-        <section class="bg-light px-4 py-4">
+        <section class="bg-white px-4 py-4">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -964,11 +996,50 @@
                                 <div class="carousel-item active">
                                     <div class="row">
                                         @foreach($mitra as $data)
-                                        <div class="col-md-2">
-                                            <div class="card">
-                                                <img src="https://picsum.photos/200/200?{{ $data->image }}" class="card-img-top" alt="{{$data->lokasi}}">
-                                            </div>
-                                        </div>
+                                        {{-- <div class="card" style="width: 220px; display: flex; justify-content: center; align-items: center; border: none;">
+                                            <img src="{{ $data->image }}" class="card-img-top" alt="{{$data->image}}" style="max-width: 100%; max-height: 200px; object-fit: contain;">
+                                        </div> --}}
+                                        <style>
+                                            /* CSS untuk kartu mitra */
+                                            .card-mitra {
+                                                width: 220px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                border: none;
+                                                overflow: hidden;
+                                                margin: 50px auto;
+                                            }
+                                    
+                                            /* CSS untuk gambar mitra */
+                                            .card-img-top-mitra {
+                                                max-width: 100%;
+                                                max-height: 200px;
+                                                object-fit: contain;
+                                                animation: runningImage 10s linear infinite;
+                                            }
+                                    
+                                            /* Keyframes untuk animasi */
+                                            @keyframes runningImage {
+                                                0% {
+                                                    transform: translateX(100%); /* Mulai dari luar kanan */
+                                                }
+                                                50% {
+                                                    transform: translateX(-100%); /* Tengah animasi: pindah ke kiri */
+                                                    opacity: 0; /* Hilangkan gambar di tengah animasi */
+                                                }
+                                                100% {
+                                                    transform: translateX(100%); /* Akhir di luar kanan */
+                                                    opacity: 1; /* Munculkan gambar kembali */
+                                                }
+                                            }
+                                        </style>
+
+                                    <div class="card-mitra">
+                                        <img src="{{$data->image}}" class="card-img-top-mitra" alt="{{$data->image}}">
+                                    </div>
+
+                                        
                                         @endforeach
                                         <!-- Tambahkan gambar-gambar lainnya di sini -->
                                     </div>

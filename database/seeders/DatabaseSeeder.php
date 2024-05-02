@@ -232,7 +232,7 @@ class DatabaseSeeder extends Seeder
 
         Sponsor::create([      
             'nama' => 'Pemerintah Kabupaten Bandung Barat',
-            'image' => 'img/fe_web/sponsors/bandungbarat.jpg',
+            'image' => 'img/fe_web/mitra/01.png',
             'instagram' => 'bandungbaratkab',
             'tiktok' => '',
             'email' => 'dinaspuprkabbb@gmail.com.',
@@ -242,7 +242,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Sponsor::create([      
             'nama' => 'Telkomsel',
-            'image' => 'img/fe_web/sponsors/telkomsel.png',
+            'image' => 'img/fe_web/mitra/04.png',
             'instagram' => 'telkomsel',
             'tiktok' => '',
             'email' => 'cs@telkomsel.com',
@@ -253,7 +253,7 @@ class DatabaseSeeder extends Seeder
       
         Sponsor::create([      
             'nama' => 'Pemerintah Provinsi Jawa Barat',
-            'image' => 'img/fe_web/sponsors/jabar.png',
+            'image' => 'img/fe_web/mitra/02.png',
             'instagram' => '',
             'tiktok' => '',
             'email' => 'info@jabarprov.go.id.',
@@ -264,13 +264,43 @@ class DatabaseSeeder extends Seeder
 
         Sponsor::create([      
             'nama' => 'Toyota',
-            'image' => 'img/fe_web/sponsors/toyota.png',
+            'image' => 'img/fe_web/mitra/03.png',
             'instagram' => 'toyotaid',
             'tiktok' => '',
             'email' => 'customer-care@toyota.astra.co.id.',
             'wa' => '',
             'created_at' => now(),
             'updated_at' => now(),
+        ]);
+      
+        Mitra::create([      
+            'image' => 'img/fe_web/mitra/01.png',
+            
+        ]);
+      
+        Mitra::create([      
+            'image' => 'img/fe_web/mitra/02.png',
+            
+        ]);
+      
+        Mitra::create([      
+            'image' => 'img/fe_web/mitra/03.png',
+            
+        ]);
+      
+        Mitra::create([      
+            'image' => 'img/fe_web/mitra/04.png',
+            
+        ]);
+      
+        Mitra::create([      
+            'image' => 'img/fe_web/mitra/05.png',
+            
+        ]);
+      
+        Mitra::create([      
+            'image' => 'img/fe_web/mitra/06.png',
+            
         ]);
       
 
@@ -286,7 +316,7 @@ class DatabaseSeeder extends Seeder
         Datapengawaslapangan::factory(6)->create();
         // Berita::factory(3)->create();
         // Sponsor::factory(4)->create();
-        Mitra::factory(6)->create();
+        // Mitra::factory(6)->create();
         Danamasyarakat::factory(6)->create();
     }
 }
