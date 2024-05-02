@@ -298,10 +298,10 @@ class DatabaseSeeder extends Seeder
             
         ]);
       
-        Mitra::create([      
-            'image' => 'img/fe_web/mitra/06.png',
+        // Mitra::create([      
+        //     'image' => 'img/fe_web/mitra/06.png',
             
-        ]);
+        // ]);
       
 
 

@@ -1012,6 +1012,7 @@
                                                 border: none;
                                                 overflow: hidden;
                                                 margin: 50px auto;
+
                                             }
                                     
                                             /* CSS untuk gambar mitra */
