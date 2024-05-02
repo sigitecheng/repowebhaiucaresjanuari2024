@@ -320,3 +320,6 @@ class DatabaseSeeder extends Seeder
         Danamasyarakat::factory(6)->create();
     }
 }
+
+// ssh -p 65002 u810085223@153.92.8.60
+// 098890&Poi

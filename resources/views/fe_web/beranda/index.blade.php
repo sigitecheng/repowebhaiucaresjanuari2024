@@ -70,7 +70,7 @@
                                     {{-- <h5 class="mb-3" style="font-family: 'Quicksand', sans-serif;">Berikan bantuan kepada mereka yang membutuhkan di sekitar kita, klik form bantuan disini !<br>
                                         <i class="fas fa-chevron-down animated-icon" style="animation: moveUpDown 0.2s infinite alternate;"></i>
                                     </h5> --}}
-                                    {{-- <p style="font-family: 'Quicksand', sans-serif;">Klik form di sini untuk membantu mereka yang membutuhkan di sekitar kita"</p> --}}
+                                    <p style="font-family: 'Quicksand', sans-serif;">Klik form di sini untuk membantu mereka yang membutuhkan di sekitar kita"</p>
                                     {{-- <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p> --}}
                                 </div>
                                 {{-- <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fab fa-ravelry me-2"></i>Form Here</a> --}}
@@ -359,7 +359,7 @@
                                         
 
 {{-- ============================================================================================================  --}}
-                                        <!-- Tombol untuk membuka modal -->
+                                        {{-- <!-- Tombol untuk membuka modal --> --}}
                                     <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
                                         <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal">
                                             <i class="fa fa-users text-custom me-2"></i><strong>Donatur</strong>
@@ -584,7 +584,7 @@
                                                                
                                                             </div>
                                                             
-                                                            <!-- Form untuk memasukkan nominal donasi -->
+                                                            {{-- <!-- Form untuk memasukkan nominal donasi --> --}}
                                                             {{-- <form id="donationForm">
                                                                 <input type="hidden" name="nominal" id="inputNominal">
                                                                 <button type="button" onclick="submitDonation()" class="button-custom"><i class="fab fa-telegram-plane me-2"></i>Donasi Sekarang</button>
@@ -609,10 +609,10 @@
                                                                 function submitDonation() {
                                                                     var nominal = document.getElementById('inputNominal').value; // Mendapatkan nilai nominal dari inputNominal
                                                             
-                                                                    // Kirim data donasi (contoh menggunakan console.log untuk menampilkan data)
+                                                                    Kirim data donasi (contoh menggunakan console.log untuk menampilkan data)
                                                                     console.log('Nominal Donasi: ' + nominal);
                                                             
-                                                                    // Tambahkan kode untuk mengirim data donasi ke server di sini (AJAX atau form submit)
+                                                                    Tambahkan kode untuk mengirim data donasi ke server di sini (AJAX atau form submit)
                                                                     // Contoh: $.post('/submit_donation', { nominal: nominal });
                                                                 }
                                                             </script>
@@ -814,8 +814,7 @@
             <div class="container-xxl py-5">
                 <div class="container">
                     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;"
-                    >Sponsor & Mitra</h1>
+                    <h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;">Sponsor & Mitra</h1>
                     {{-- <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> --}}
                 </div>
 
@@ -826,16 +825,15 @@
                         <div class="team-item rounded overflow-hidden">
                             <div class="position-relative">
                                 <style>
-                                    /* Gaya CSS untuk kontainer gambar */
-                                    .image-container-mitra {
+                                     .card-mitra {
                                         display: flex;
                                         justify-content: center;
                                         align-items: center;
-                                        height: 50vh; /* Tinggi kontainer sama dengan tinggi layar */
+                                        height: 40vh; /* Tinggi kontainer sama dengan tinggi layar */
                                     }
                             
-                                    /* Gaya CSS untuk gambar responsif dengan ukuran tetap */
-                                    .responsive-img-mitra {
+                                    // /* Gaya CSS untuk gambar responsif dengan ukuran tetap */
+                                     .card-mitra-img {
                                         max-width: 400px; /* Lebar maksimum gambar */
                                         max-height: 400px; /* Tinggi maksimum gambar */
                                         width: 100%; /* Lebar gambar mengisi seluruh kontainer */
@@ -845,15 +843,16 @@
                                 </style>
 
                                 
-                                    <div class="image-container-mitra">
-                                        <!-- Penggunaan img dengan kelas responsive-img -->
-                                        <img class="responsive-img-mitra" src="{{$data->image}}" alt="{{$data->image}}">
+                                     <div class="card-mitra" style="width: 300px; display: flex; justify-content: center; align-items: center;">
+                                        <img src="{{ $data->image }}" class="card-mitra-img" alt="{{$data->image}}" style="max-width: 100%; max-height: 200px; object-fit: contain;">
                                     </div>
+                                    
+                                    {{-- </div> --}}
                                 
                                 
                                     {{-- <div class="container">
                                         <!-- Penggunaan img dengan kelas responsive-img -->
-                                        <img class="responsive-img-mitra" src="{{$data->image}}" alt="{{$data->image}}">
+                                        // <img class="responsive-img-mitra" src="{{$data->image}}" alt="{{$data->image}}">
                                     </div>
                                  --}}
                                 {{-- <img class="img-fluid" src="{{$data->image}}" alt="{{$data->image}}"> --}}
@@ -891,9 +890,8 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;"
-                    >Berita Kami</h1>
-                    <p style="font-family: 'Quicksand', sans-serif;"><strong>Kisah kemanusiaan yang menginspirasi, kami hadirkan liputan mendalam untuk menyuarakan kepedulian terhadap sesama dan mencerahkan perjalanan kebaikan di tengah-tengah dunia yang terus berubah."</strong></p>
+                    <h1 class="mb-3" style="font-family: 'Quicksand', sans-serif;">Berita Kami</h1>
+                     <p style="font-family: 'Quicksand', sans-serif;"><strong>Kisah kemanusiaan yang menginspirasi, kami hadirkan liputan mendalam untuk menyuarakan kepedulian terhadap sesama dan mencerahkan perjalanan kebaikan di tengah-tengah dunia yang terus berubah."</strong></p>
                     {{-- <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> --}}
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
@@ -995,14 +993,14 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row">
-                                        @foreach($mitra as $data)
+                                        // @foreach($mitra as $data)
                                         {{-- <div class="card" style="width: 220px; display: flex; justify-content: center; align-items: center; border: none;">
                                             <img src="{{ $data->image }}" class="card-img-top" alt="{{$data->image}}" style="max-width: 100%; max-height: 200px; object-fit: contain;">
                                         </div> --}}
                                         <style>
                                             /* CSS untuk kartu mitra */
                                             .card-mitra {
-                                                width: 220px;
+                                                width: 210px;
                                                 display: flex;
                                                 justify-content: center;
                                                 align-items: center;
@@ -1016,7 +1014,7 @@
                                                 max-width: 100%;
                                                 max-height: 200px;
                                                 object-fit: contain;
-                                                animation: runningImage 10s linear infinite;
+                                                animation: runningImage 20s linear infinite;
                                             }
                                     
                                             /* Keyframes untuk animasi */
@@ -1034,14 +1032,13 @@
                                                 }
                                             }
                                         </style>
-
-                                    <div class="card-mitra">
-                                        <img src="{{$data->image}}" class="card-img-top-mitra" alt="{{$data->image}}">
-                                    </div>
+                                                <div class="card-mitra">
+                                                    <img src="{{$data->image}}" class="card-img-top-mitra" alt="{{$data->image}}">
+                                                </div>
 
                                         
                                         @endforeach
-                                        <!-- Tambahkan gambar-gambar lainnya di sini -->
+                                        // <!-- Tambahkan gambar-gambar lainnya di sini -->
                                     </div>
                                 </div>
                             </div>
