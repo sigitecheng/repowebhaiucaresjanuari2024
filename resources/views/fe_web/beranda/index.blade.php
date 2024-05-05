@@ -329,7 +329,8 @@
 {{-- ============================================================================================================  --}}
                                     <div class="d-flex border-top">
                                         <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
-                                            <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal1">
+                                            <a href="/error" class="text-dark" >
+                                            {{-- <a href="/error" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal1"> --}}
                                                 <i class="fa fa-eye text-custom me-2"></i><strong>Details</strong>
                                             </a>
                                         </small>
@@ -341,14 +342,11 @@
                                                         <h5 class="modal-title" id="exampleModalLabel">Details Modal</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
+
                                                     <div class="modal-body">
                                                      
                                                         <table class="table" style="font-family: 'Quicksand', sans-serif;">
-                                                            {{-- <p class="button-custom text-center" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry text-white me-2"></i>Pekerjaan Kami</p>
-                                                            <div class="div">
-                                                            </div> --}}
                                                             <img src="{{$data->image}}" alt="{{$data->image}}" style="width: 400px; height: 400px; margin-left:35px">
-
                                                         </table>
                                                         
                                                     </div>
@@ -367,7 +365,8 @@
 {{-- ============================================================================================================  --}}
                                         {{-- <!-- Tombol untuk membuka modal --> --}}
                                     <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
-                                        <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal">
+                                        <a href="/error" class="text-dark" >
+                                        {{-- <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModal"> --}}
                                             <i class="fa fa-users text-custom me-2"></i><strong>Donatur</strong>
                                         </a>
                                     </small>
@@ -422,7 +421,8 @@
                                     </div>
                                     <div class="d-flex border-top">
                                         <small class="flex-fill text-center border-end py-2" style="font-family: 'Quicksand', sans-serif;">
-                                            <a href="" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModalProgress">
+                                            <a href="/error" class="text-dark" >
+                                            {{-- <a href="" class="text-dark" data-bs-toggle="modal" data-bs-target="#myModalProgress"> --}}
                                                 <i class="fas fa-spin fa-spinner text-custom me-2"></i><strong>Progress</strong>
                                             </a>
                                         </small>
@@ -526,12 +526,18 @@
                                                             </style>
                                                             <div class="button-donasi">
                                                                 
+                                                                <a href="https://app.midtrans.com/payment-links/1714931027969" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                    <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
+                                                                        <i class="far fa-file me-2"></i> Rp. 5.000
+                                                                    </button>
+                                                                </a>
+                                                                
                                                                 <a href="https://app.midtrans.com/payment-links/1714929021512" style="text-decoration: none; display: inline-block width: 100%;">
                                                                     <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 10.000
                                                                     </button>
-                                                                    
                                                                 </a>
+
                                                                 <a href="https://app.midtrans.com/payment-links/1714929161813" style="text-decoration: none; display: inline-block width: 100%;">
                                                                     <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 20.000
