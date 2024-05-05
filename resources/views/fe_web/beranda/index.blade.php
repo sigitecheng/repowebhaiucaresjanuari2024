@@ -934,10 +934,13 @@
                                     }
                                 }
                             </script>
+<div class="card" style="width: 450px; height: 450px; display: flex; justify-content: center; align-items: center;">
+    <a href="#" style="display: inline-block; width: 400px; height: 400px; overflow: hidden;">
+        <img class="img-fluid" src="{{ $data->gambar }}" alt="{{$data->gambar}}" style="width: 100%; height: 100%; object-fit: cover;">
+    </a>
+    <!-- Konten card lainnya -->
+</div>
 
-                            <a href="#" style="display: inline-block; width: 450px; height: 450px; overflow: hidden;">
-                                <img class="img-fluid" src="{{ $data->gambar }}" alt="{{$data->gambar}}" style="width: 100%; height: 100%; object-fit: cover;">
-                            </a>
 
 
 {{-- 
