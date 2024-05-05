@@ -913,9 +913,11 @@
                         <div class="bg-white border rounded p-4">
                             <h4 style="font-family: 'Quicksand', sans-serif; font-size:22px"><strong>{{ $data->judul }}</strong></h4>
                             {{-- <p style="font-family: 'Quicksand', sans-serif;">{{$data->isi }}</p> --}}
-                            <p class="content-text" style="margin-bottom: 0;">{{ $data->isi }}</p>
-                            <button onclick="toggleReadMore()">Read more</button>
-                            
+                            <br>
+                            <p class="content-text" style="margin-bottom: 0; text-align: justify;">{{ $data->isi }}</p>
+
+                            {{-- <button onclick="toggleReadMore()">Read more</button> --}}
+                            <br>
                             <script>
                             function toggleReadMore() {
     var content = document.querySelector('.content-text');
