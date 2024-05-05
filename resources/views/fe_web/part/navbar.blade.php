@@ -3,8 +3,8 @@
         <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
                 <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
-                    <div class="icon p-2 me-2 text-custom">
-                        <img class="img-fluid" src="/frontend/img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+                    <div class="icon p-1 me-2 text-custom">
+                        <img class="img-fluid" src="/frontend/img/logohaiucare.png" alt="Icon" style="width: 48px; height: 48px;">
                     </div>
                     <h2 class="text-custom" style="font-family: 'Quicksand', sans-serif;"><span class="text">HaiuCare Indonesia</span></h2>
 
