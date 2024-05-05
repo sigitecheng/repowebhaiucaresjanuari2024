@@ -10,9 +10,11 @@
 
                     {{-- <h2 class="m-0 text-custom" >HaiuCare Indonesia</h2> --}}
                 </a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                
+                {{-- <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> --}}
+
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto text-custom" style="font-family: 'Quicksand', sans-serif;">
                         <a href="/" class="nav-item nav-link text-custom" style="font-family: 'Quicksand', sans-serif;"><strong>Beranda</strong></a>
