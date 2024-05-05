@@ -212,7 +212,10 @@
                                             <i class="fas fa-envelope-open-text me-2"></i>Donasi
                                         </button> --}}
                                         <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myDonasisekarang">
-                                            <i class="fas fa-envelope me-2 text-white"></i><strong style="font-family: 'Quicksand', sans-serif; font-size: 16px;" class="btn btn-sn button-custom"><i class="fas fa-inbox me-2"></i>Donasi Sekarang</strong>
+                                            {{-- <i class="fas fa-envelope me-2 text-white"></i><strong style="font-family: 'Quicksand', sans-serif; font-size: 16px;" class="btn btn-sn button-custom"><i class="fas fa-inbox me-2"></i>Donasi Sekarang</strong> --}}
+                                            <i class="fas fa-envelope me-2 text-white"></i>
+                                            <strong style="font-family: 'Quicksand', sans-serif; font-size: 14px;" class="btn btn-sn button-custom"><i class="fas fa-inbox me-2"></i>Donasi Sekarang</strong>
+                                            
                                         </a>
                                 </div>
                                 
@@ -911,29 +914,37 @@
                             <h4 style="font-family: 'Quicksand', sans-serif;"><strong>{{ $data->judul }}</strong></h4>
                             {{-- <p style="font-family: 'Quicksand', sans-serif;">{{$data->isi }}</p> --}}
                             <div>
-                                <p id="content" style="font-family: 'Quicksand', sans-serif;">
-                                    {{ Str::limit($data->isi, 200) }}
-                                    @if (strlen($data->isi) > 200)
-                                        <span id="more" style="display: none;">{{ substr($data->isi, 200) }}</span>
-                                        <button onclick="toggleReadMore()" id="readMoreBtn">Read more</button>
-                                    @endif
-                                </p>
+                                <div class="content" style="padding: 10px;">
+                                    <p class="content-text" style="margin-bottom: 0;">{{ $data->content }}</p>
+                                    <a class="read-more" style="display: block; margin-top: 10px;">Read more</a>
+                                </div>
                             </div>
                             
                             <script>
-                                function toggleReadMore() {
-                                    var moreText = document.getElementById("more");
-                                    var btnText = document.getElementById("readMoreBtn");
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    var content = document.querySelector('.content-text');
+                                    var readMoreLink = document.querySelector('.read-more');
                             
-                                    if (moreText.style.display === "none") {
-                                        moreText.style.display = "inline";
-                                        btnText.innerHTML = "Read less";
-                                    } else {
-                                        moreText.style.display = "none";
-                                        btnText.innerHTML = "Read more";
-                                    }
-                                }
+                                    var fullText = content.textContent;
+                                    var shortText = fullText.slice(0, 200);
+                                    var isExpanded = false;
+                            
+                                    content.textContent = shortText;
+                            
+                                    readMoreLink.addEventListener('click', function(event) {
+                                        event.preventDefault();
+                                        if (isExpanded) {
+                                            content.textContent = shortText;
+                                            readMoreLink.textContent = 'Read more';
+                                        } else {
+                                            content.textContent = fullText;
+                                            readMoreLink.textContent = 'Read less';
+                                        }
+                                        isExpanded = !isExpanded;
+                                    });
+                                });
                             </script>
+                            
 
 {{-- <div class="card" style="width: 450px; height: 450px; display: flex; justify-content: center; align-items: center; margin-right:90px">
     <a href="#" style="display: inline-block; width: 400px; height: 400px; overflow: hidden;">
