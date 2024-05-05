@@ -532,7 +532,7 @@
                                                                     </button>
                                                                     
                                                                 </a>
-                                                                <a href="https://app.midtrans.com/payment-links/1714927738329" style="text-decoration: none; display: inline-block width: 100%;">
+                                                                <a href="https://app.midtrans.com/payment-links/1714929161813" style="text-decoration: none; display: inline-block width: 100%;">
                                                                     <button id="btnNominal10000" class="donasi button-custom" onclick="selectNominal(10000)" style="width: 100%; padding: 8px 16px; display: inline-block; text-align: center;">
                                                                         <i class="far fa-file me-2"></i> Rp. 20.000
                                                                     </button>
