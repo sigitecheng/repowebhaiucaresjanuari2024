@@ -155,13 +155,13 @@ class DatabaseSeeder extends Seeder
         Post::create([
             'category_id'                           => 4,
             'user_id'                               => 3,
-            'be_datakontraktor_id'               => 3,
-            'be_datarumahmakan_id'               => 3,
-            'be_datarumahsakit_id'               => 3,
-            'be_datainstansipendidikan_id'               => 3,
-            'datapenanggungjawab_id'               => 3,
+            'be_datakontraktor_id'                  => 3,
+            'be_datarumahmakan_id'                  => 3,
+            'be_datarumahsakit_id'                  => 3,
+            'be_datainstansipendidikan_id'          => 3,
+            'datapenanggungjawab_id'                => 3,
             'datapengawaslapangan_id'               => 3,
-            'datapekerjaanstatus_id'               => 3,
+            'datapekerjaanstatus_id'                => 3,
             'image'                 => "img/fe_web/beranda/dapur.jpg",
             'title'                 => "Panci kebaikan membantu para tukang masak untuk menyiapkan makanan ",
             'slug'                  => 'panci-kebaikan',
@@ -176,9 +176,9 @@ class DatabaseSeeder extends Seeder
 
         Berita::create([
             'user_id'       => 1, // Ganti dengan ID user yang sesuai
-            'judul'         => 'Kebaikan yang Tak Terbatas: Kisah Perjuangan Seorang Relawan dalam Menghidupkan Program Makan Gratis di Kota Terpencil',
-            'gambar'        => 'makanan',
-            'isi'           => 'Di tengah gemuruh kota-kota besar yang sering menjadi pusat perhatian, terdapat kisah-kisah kebaikan yang tak terduga di sudut-sudut terpencil. Salah satunya adalah kisah perjuangan seorang relawan yang dengan gigih menghidupkan sebuah program makan gratis di sebuah kota terpencil yang jarang tersentuh bantuan dari luar.
+            'judul'         => 'Kebaikan yang Tak Terbatas: Kisah Perjuangan Seorang Relawan dalam Menghidupkan Program Makan Gratis di Kota Besar',
+            'gambar'        => 'img/fe_web/beranda/berita1.jpg',
+            'isi'           => 'Di tengah gemuruh kota-kota besar yang sering menjadi pusat perhatian, terdapat kisah-kisah kebaikan yang tak terduga di sudut-sudut kota. Salah satunya adalah kisah perjuangan seorang relawan yang dengan gigih menghidupkan sebuah program makan gratis di sebuah kota besar yang jarang tersentuh bantuan dari luar.
             
             Bertahun-tahun lamanya, warga di kota ini merasakan kesulitan akses terhadap makanan yang layak. Dengan minimnya lapangan pekerjaan dan jarak yang jauh dari pusat distribusi, masyarakat terpinggirkan di negeri sendiri. Namun, keadaan ini tak menyurutkan semangat seorang relawan lokal yang memutuskan untuk bertindak.
             
@@ -196,7 +196,7 @@ class DatabaseSeeder extends Seeder
         Berita::create([
             'user_id'       => 1, // Ganti dengan ID user yang sesuai
             'judul'         => 'Satu Piring, Banyak Harapan: Dibalik Kisah Inspiratif Seorang Pengusaha yang Menggelar Program Makan Gratis untuk Masyarakat Terdampak Krisis Ekonomi',
-            'gambar'        => 'makanan',
+            'gambar'        => 'img/fe_web/beranda/berita2.jpg',
             'isi'           => 'Dalam suasana krisis ekonomi yang memunculkan keterpurukan di banyak lapisan masyarakat, satu sosok pengusaha membawa sinar harapan dengan menginisiasi program makan gratis. Kisah inspiratif ini muncul dari kepedulian mendalam terhadap sesama serta keinginan kuat untuk berbagi rezeki di tengah-tengah kesulitan yang melanda.
             
             Sebagai seorang pengusaha sukses, ia menyadari betul dampak yang dirasakan oleh masyarakat yang terdampak langsung oleh krisis ekonomi. Tanpa ragu, ia memutuskan untuk mengalihkan sebagian dari sumber daya dan keuntungannya untuk membantu mereka yang membutuhkan.
@@ -214,7 +214,7 @@ class DatabaseSeeder extends Seeder
         Berita::create([
             'user_id'       => 1, // Ganti dengan ID user yang sesuai
             'judul'         => 'Cerita Penuh Haru: Para Pengusaha Menjadi Pahlawan Lokal Melalui Inisiatif Membagikan Makanan Gratis kepada Sesama',
-            'gambar'        => 'makanan',
+            'gambar'        => 'img/fe_web/beranda/berita3.jpg',
             'isi'           => 'Dalam masa sulit ini, kita sering kali menemukan pahlawan di tempat yang tidak terduga. Kisah yang mengharukan datang dari sekelompok pengusaha yang, meski terkena dampak ekonomi yang serius, memilih untuk menjadi pahlawan lokal dengan membagikan makanan gratis kepada sesama.
             
             Keputusan mereka untuk berbagi rezeki tidak datang dengan mudah. Banyak dari mereka menghadapi tekanan finansial yang besar akibat situasi ekonomi yang memburuk. Namun, mereka memilih untuk melihat ke luar dan membantu mereka yang membutuhkan, tanpa mempedulikan kesulitan yang mereka hadapi sendiri.

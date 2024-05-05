@@ -30,7 +30,7 @@
                     <h1 class="display-5 animated fadeIn mb-4"><span class="text-custom" style="font-family: 'Quicksand', sans-serif;">{{ $data->beranda1}}</span></h1>
                     <p class="animated fadeIn mb-4 pb-2" style="font-family: 'Quicksand', sans-serif;">{{ $data->beranda2 }}</p>
                     {{-- <a href="#footer" class="btn btn-info py-2 px-4 me-3 animated fadeIn text-white">Kontak Kami</a> --}}
-                    <a href="#footer" class="button-custom py-2 px-4 me-3 animated fadeIn text-white" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry me-2"></i>Kontak Kami</a>
+                    <a href="#kontaks" class="button-custom py-2 px-4 me-3 animated fadeIn text-white" style="font-family: 'Quicksand', sans-serif;"><i class="fab fa-ravelry me-2"></i>Kontak Kami</a>
 
                     </div>
                 @endforeach
@@ -42,42 +42,44 @@
                     <div class="bg-light rounded p-3">
                         <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
                             <div class="row g-5 align-items-center">
-                                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                                    {{-- <img class="img-fluid" src="https://picsum.photos/1200/1000?Donation" alt=""> --}}
+                                <div class="col-lg-12 wow fadeIn" data-wow-delay="0.1s">
+                                    {{-- <img class="img-fluid" src="img/fe_web/beranda/berita2.jpg" alt=""> --}}
                                 
                                 <style>
             .awal {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border: 1px solid #ccc;
+                /* border: 1px solid #ccc; */
             }
 
             .awal img {
-                max-width: 100%;
-                max-height: 100%;
+                max-width: 75%;
+                max-height: 75%;
                 object-fit: absolute;
+                margin-top: 25px;
             }
         </style>
-
+{{-- <p>langkah</p> --}}
         <div class="awal">
-            <img src="https://picsum.photos/1200/1000?Donation" alt="Sample Image">
+            <img src="img/fe_web/beranda/makananutama.jpg" alt="Sample Image">
         </div>
 
                             </div>
-                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="mb-4">
+                            {{-- <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s"> --}}
+                                {{-- <div class="mb-4"> --}}
                                     {{-- <h5 class="mb-3" style="font-family: 'Quicksand', sans-serif;">Berikan bantuan kepada mereka yang membutuhkan di sekitar kita, klik form bantuan disini !<br>
                                         <i class="fas fa-chevron-down animated-icon" style="animation: moveUpDown 0.2s infinite alternate;"></i>
                                     </h5> --}}
-                                    <p style="font-family: 'Quicksand', sans-serif;">Klik form di sini untuk membantu mereka yang membutuhkan di sekitar kita"</p>
+                                    {{-- <p style="font-family: 'Quicksand', sans-serif;">Klik form di sini untuk membantu mereka yang membutuhkan di sekitar kita"</p> --}}
                                     {{-- <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p> --}}
-                                </div>
+                                {{-- </div> --}}
                                 {{-- <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fab fa-ravelry me-2"></i>Form Here</a> --}}
                                 
                                 {{-- <a href="/error" class="button-custom py-3 px-4 me-2"><i class="fa fa-money-bill me-2"></i>Donasi</a> --}}
-                            </div>
-                        </div>
+                            {{-- <img src="img/fe_web/beranda/berita2.jpg" alt="img/fe_web/beranda/berita2.jpg">
+                            </div> --}}
+                        {{-- </div> --}}
                     </div>
                 </div>
             </div>
@@ -89,22 +91,22 @@
                 {{-- <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://picsum.photos/400/600?Building" alt="">
+                            <img class="img-fluid" src="img/fe_web/beranda/berita2.jpg" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://picsum.photos/400/600?Education" alt="">
+                            <img class="img-fluid" src="img/fe_web/beranda/berita2.jpg" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://picsum.photos/400/600?Health" alt="">
+                            <img class="img-fluid" src="img/fe_web/beranda/berita2.jpg" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://picsum.photos/400/600?Children" alt="">
+                            <img class="img-fluid" src="img/fe_web/beranda/berita2.jpg" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://picsum.photos/400/600?Road" alt="">
+                            <img class="img-fluid" src="img/fe_web/beranda/berita2.jpg" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://picsum.photos/400/600?Scholarship" alt="">
+                            <img class="img-fluid" src="img/fe_web/beranda/berita2.jpg" alt="">
                         </div>
                     </div>
                 </div> --}}
@@ -206,10 +208,12 @@
                            <div class="">
                                <div class="d-flex justify-content-end">
                                     <h5 class="text-custom mb-3" style="font-family: 'Quicksand', sans-serif;" ><strong class="text-dark" style="font-family: 'Quicksand', sans-serif;" >Kebutuhan</strong> <span class="buttom-custom">{{ 'Rp ' . number_format($data->anggaran, 0, ',', '.') }},-</span>
-                                        <button class="button-custom" style="font-family: 'Quicksand', sans-serif; font-size: 16px;">
+                                        {{-- <button class="button-custom" style="font-family: 'Quicksand', sans-serif; font-size: 16px;">
                                             <i class="fas fa-envelope-open-text me-2"></i>Donasi
-                                        </button>
-                                        
+                                        </button> --}}
+                                        <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myDonasisekarang">
+                                            <i class="fas fa-envelope me-2 text-white"></i><strong style="font-family: 'Quicksand', sans-serif; font-size: 16px;" class="btn btn-sn button-custom"><i class="fas fa-inbox me-2"></i>Donasi Sekarang</strong>
+                                        </a>
                                 </div>
                                 
                            </div>
@@ -930,12 +934,26 @@
                                     }
                                 }
                             </script>
+
+                            <a href="#" style="display: inline-block; width: 450px; height: 450px; overflow: hidden;">
+                                <img class="img-fluid" src="{{ $data->gambar }}" alt="{{$data->gambar}}" style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
+
+
+{{-- 
                             
-                            <img src="https://picsum.photos/200/300?{{ $data->lokasi }}" alt="https://picsum.photos/200/300?{{ $data->lokasi }}" width="100" height="150">
+                            <div class="card">
+                                <img src="{{ $data->gambar }}" alt="{{ $data->gambar }}" class="card-img">
+                                <div class="card-content">
+                                    <!-- Konten card lainnya -->
+                                </div>
+                            </div> --}}
+                            
+                            {{-- <img src="{{ $data->gambar }}" alt="{{ $data->gambar }}" width="400" height="400"> --}}
 {{-- <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p> --}}
                            <br>
                                 <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded" src="https://picsum.photos/400/600?{{ $data->lokasi }}" style="width: 45px; height: 45px;">
+                                <img class="img-fluid flex-shrink-0 rounded" src="img/fe_web/beranda/berita2.jpg $data->lokasi }}" style="width: 45px; height: 45px;">
                                 <div class="ps-3">
                                     <h6 class="fw-bold mb-1">{{ date('j F Y', strtotime($data->tanggal_dibuat)) }}</h6>
                                     {{-- <small></small> --}}
