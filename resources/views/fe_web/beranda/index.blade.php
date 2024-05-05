@@ -911,40 +911,30 @@
                     @foreach($databerita as $data)
                     <div class="testimonial-item bg-light rounded p-3">
                         <div class="bg-white border rounded p-4">
-                            <h4 style="font-family: 'Quicksand', sans-serif;"><strong>{{ $data->judul }}</strong></h4>
+                            <h4 style="font-family: 'Quicksand', sans-serif; font-size:22px"><strong>{{ $data->judul }}</strong></h4>
                             {{-- <p style="font-family: 'Quicksand', sans-serif;">{{$data->isi }}</p> --}}
-                            <div>
-                                <div class="content" style="padding: 10px;">
-                                    <p class="content-text" style="margin-bottom: 0;">{{ $data->content }}</p>
-                                    <a class="read-more" style="display: block; margin-top: 10px;">Read more</a>
-                                </div>
-                            </div>
+                            <p class="content-text" style="margin-bottom: 0;">{{ $data->isi }}</p>
+                            <button onclick="toggleReadMore()">Read more</button>
                             
                             <script>
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    var content = document.querySelector('.content-text');
-                                    var readMoreLink = document.querySelector('.read-more');
-                            
-                                    var fullText = content.textContent;
-                                    var shortText = fullText.slice(0, 200);
-                                    var isExpanded = false;
-                            
-                                    content.textContent = shortText;
-                            
-                                    readMoreLink.addEventListener('click', function(event) {
-                                        event.preventDefault();
-                                        if (isExpanded) {
-                                            content.textContent = shortText;
-                                            readMoreLink.textContent = 'Read more';
-                                        } else {
-                                            content.textContent = fullText;
-                                            readMoreLink.textContent = 'Read less';
-                                        }
-                                        isExpanded = !isExpanded;
-                                    });
-                                });
+                            function toggleReadMore() {
+    var content = document.querySelector('.content-text');
+    var buttonText = document.querySelector('button');
+    
+    var computedStyle = window.getComputedStyle(content); // Dapatkan properti CSS yang dihitung
+    var contentHeight = parseInt(computedStyle.height); // Ambil nilai tinggi tanpa unit "px"
+    
+    if (contentHeight === 200) { // Periksa apakah tingginya 200px
+        content.style.height = 'auto';
+        buttonText.textContent = 'Read less';
+    } else {
+        content.style.height = '200px';
+        buttonText.textContent = 'Read more';
+    }
+}
+
                             </script>
-                            
+                                            
 
 {{-- <div class="card" style="width: 450px; height: 450px; display: flex; justify-content: center; align-items: center; margin-right:90px">
     <a href="#" style="display: inline-block; width: 400px; height: 400px; overflow: hidden;">
