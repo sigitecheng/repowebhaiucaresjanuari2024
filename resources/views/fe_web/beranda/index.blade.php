@@ -207,7 +207,7 @@
 
                            <div class="">
                                <div class="d-flex justify-content-end">
-                                    <h5 class="text-custom mb-3" style="font-family: 'Quicksand', sans-serif;" ><strong class="text-dark" style="font-family: 'Quicksand', sans-serif;" >Kebutuhan</strong> <span class="buttom-custom">{{ 'Rp ' . number_format($data->anggaran, 0, ',', '.') }},-</span>
+                                    <h5 class="text-custom mb-3" style="font-family: 'Quicksand', sans-serif;" ><strong class="text-dark" style="font-family: 'Quicksand', sans-serif; font-size: 16px; " >Kebutuhan</strong> <span class="buttom-custom" style="font-size: 16px">{{ 'Rp ' . number_format($data->anggaran, 0, ',', '.') }},-</span>
                                         {{-- <button class="button-custom" style="font-family: 'Quicksand', sans-serif; font-size: 16px;">
                                             <i class="fas fa-envelope-open-text me-2"></i>Donasi
                                         </button> --}}
