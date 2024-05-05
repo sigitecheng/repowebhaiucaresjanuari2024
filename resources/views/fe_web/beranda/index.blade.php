@@ -934,12 +934,14 @@
                                     }
                                 }
                             </script>
-<div class="card" style="width: 450px; height: 450px; display: flex; justify-content: center; align-items: center;">
+
+{{-- <div class="card" style="width: 450px; height: 450px; display: flex; justify-content: center; align-items: center; margin-right:90px">
     <a href="#" style="display: inline-block; width: 400px; height: 400px; overflow: hidden;">
-        <img class="img-fluid" src="{{ $data->gambar }}" alt="{{$data->gambar}}" style="width: 100%; height: 100%; object-fit: cover;">
+        <img class="img-fluid" src="{{ $data->gambar }}" alt="{{$data->gambar}}" style="width: 100%; height: 100%; object-fit: cover; margin-right:100px">
     </a>
-    <!-- Konten card lainnya -->
-</div>
+    <!-- Konten card lainnya --> --}}
+{{-- </div> --}}
+<img class="img-fluid" src="{{ $data->gambar }}" alt="{{$data->gambar}}" style="width: 100%; height: 100%; object-fit: cover; margin-right:100px">
 
 
 
@@ -956,7 +958,7 @@
 {{-- <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p> --}}
                            <br>
                                 <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded" src="img/fe_web/beranda/berita2.jpg $data->lokasi }}" style="width: 45px; height: 45px;">
+                                {{-- <img class="img-fluid flex-shrink-0 rounded" src="img/fe_web/beranda/berita2.jpg $data->lokasi }}" style="width: 45px; height: 45px;"> --}}
                                 <div class="ps-3">
                                     <h6 class="fw-bold mb-1">{{ date('j F Y', strtotime($data->tanggal_dibuat)) }}</h6>
                                     {{-- <small></small> --}}
