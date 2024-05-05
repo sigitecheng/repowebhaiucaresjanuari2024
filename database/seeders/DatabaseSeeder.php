@@ -315,7 +315,7 @@ class DatabaseSeeder extends Seeder
 
 
         // Post::factory(3)->create();
-        User::factory(10)->create();
+        // User::factory(10)->create();
         Be_datakontraktor::factory(7)->create();
         be_datarumahmakan::factory(7)->create();
         be_datarumahsakit::factory(7)->create();
