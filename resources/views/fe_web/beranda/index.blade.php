@@ -197,7 +197,7 @@
                            <br>
                             
                            @php
-                           $percentage = (100000 / $data->anggaran) * 100;
+                           $percentage = (0 / $data->anggaran) * 100;
                             @endphp
                             <div class="progress mt-0 mb-2">
                                 <div class="progress-bar button-merah" role="progressbar" style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100">{{ number_format($percentage, 2) }}%</div>
