@@ -214,7 +214,7 @@
                                         <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#myDonasisekarang">
                                             {{-- <i class="fas fa-envelope me-2 text-white"></i><strong style="font-family: 'Quicksand', sans-serif; font-size: 16px;" class="btn btn-sn button-custom"><i class="fas fa-inbox me-2"></i>Donasi Sekarang</strong> --}}
                                             <i class="fas fa-envelope me-2 text-white"></i>
-                                            <strong style="font-family: 'Quicksand', sans-serif; font-size: 14px;" class="btn btn-sn button-custom"><i class="fas fa-inbox me-2"></i>Donasi Sekarang</strong>
+                                            <strong style="font-family: 'Quicksand', sans-serif; font-size: 14px;" class="btn btn-sn button-custom"><i class="fas fa-inbox me-2"></i>Donasi</strong>
                                             
                                         </a>
                                 </div>
