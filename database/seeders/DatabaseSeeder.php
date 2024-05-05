@@ -316,10 +316,10 @@ class DatabaseSeeder extends Seeder
 
         // Post::factory(3)->create();
         // User::factory(10)->create();
-        Be_datakontraktor::factory(7)->create();
-        be_datarumahmakan::factory(7)->create();
-        be_datarumahsakit::factory(7)->create();
-        Be_datainstansipendidikan::factory(7)->create();
+        Be_datakontraktor::factory(2)->create();
+        be_datarumahmakan::factory(2)->create();
+        be_datarumahsakit::factory(2)->create();
+        Be_datainstansipendidikan::factory(2)->create();
         Datapenanggungjawab::factory(6)->create();
         Datapengawaslapangan::factory(6)->create();
         // Berita::factory(3)->create();

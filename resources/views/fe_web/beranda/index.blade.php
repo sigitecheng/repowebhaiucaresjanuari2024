@@ -791,7 +791,7 @@
                                     <img class="img-fluid" src="/frontend/img/icon-condominium.png" alt="Icon">
                                 </div>
                                 <h6 style="font-family: 'Quicksand', sans-serif;"><strong class="text-custom">Sponsor/Mitra</strong></h6>
-                                <span class="text-custom" style="font-family: 'Quicksand', sans-serif;"><i>≈</i><strong>22 Sponsorship </strong><strong class="text-custom" style="font-family: 'Quicksand', sans-serif;"></strong></span>
+                                <span class="text-custom" style="font-family: 'Quicksand', sans-serif;"><i>≈</i><strong>6 Sponsorship </strong><strong class="text-custom" style="font-family: 'Quicksand', sans-serif;"></strong></span>
                             </div>
                         </a>
                     </div>
