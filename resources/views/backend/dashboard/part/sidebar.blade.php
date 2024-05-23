@@ -8,14 +8,15 @@
                     <!--Image Avatar-->
                     <div class="avatar text-center">
                         <img src="assets/img/client-img4.png" alt="" class="rounded-circle" />
-                        <p><strong>{{ auth()->user()->name }}</strong></p>
+                        <p><strong class="text-white">{{ auth()->user()->name }}</strong></p>
                         <span class="text-primary small">Anda Adalah, <strong>
-                            @if(auth()->check() && auth()->user()->is_admin == 1)
+                            @if(auth()->check() && auth()->user()->is_admin == 'super_admin')
                                 Super Admin
                             @else
-                                User
+                                Fundraiser
                             @endif
-                        </strong></span>
+                        </strong>
+                    </span>
                     </div>
                     <!--Image Avatar-->
 
@@ -90,7 +91,7 @@
                                 </a>
                             </li>
                             
-                            <li class="parent">
+                            {{-- <li class="parent">
                                 <a href="#" onclick="toggle_menu('form_element'); return false " ><i class="fas fa-hdd mr-2"></i>
                                     <span class="none">Data Pekerjaan <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
@@ -122,7 +123,7 @@
                                         
                                         @endforeach
                                     </ul>
-                            </li>
+                            </li> --}}
 
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('tables1'); return false" class=""><i class="fas fa-users mr-2"></i>
